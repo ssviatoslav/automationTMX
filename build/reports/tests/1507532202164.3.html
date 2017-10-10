@@ -1,0 +1,1890 @@
+<html lang="en"><head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/theme/standard/styles.php">
+<link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/styles.php">
+
+<!--[if IE 7]>
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/theme/standard/styles_ie7.css" />
+<![endif]-->
+<!--[if IE 6]>
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/theme/standard/styles_ie6.css" />
+<![endif]-->
+
+
+    <meta name="keywords" content="moodle, LMS: Керування: Користувачі: Облікові записи: Додати нового користувача ">
+    <title>LMS: Керування: Користувачі: Облікові записи: Додати нового користувача</title>
+    <link rel="shortcut icon" href="http://core-release-0.4.mocotms.com/favicon.ico">
+
+    <!--<style type="text/css">/*<![CDATA[*/ body{behavior:url(http://core-release-0.4.mocotms.com/lib/csshover.htc);} /*]]>*/</style>-->
+
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/javascript-static.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/javascript-mod.php"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/overlib/overlib.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/overlib/overlib_cssstyle.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/cookies.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/ufo.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/dropdown.js"></script>  
+
+<script type="text/javascript" defer="defer">
+//<![CDATA[
+setTimeout('fix_column_widths()', 20);
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+function openpopup(url, name, options, fullscreen) {
+    var fullurl = "http://core-release-0.4.mocotms.com" + url;
+    var windowobj = window.open(fullurl, name, options);
+    if (!windowobj) {
+        return true;
+    }
+    if (fullscreen) {
+        windowobj.moveTo(0, 0);
+        windowobj.resizeTo(screen.availWidth, screen.availHeight);
+    }
+    windowobj.focus();
+    return false;
+}
+
+function uncheckall() {
+    var inputs = document.getElementsByTagName('input');
+    for(var i = 0; i < inputs.length; i++) {
+        inputs[i].checked = false;
+    }
+}
+
+function checkall() {
+    var inputs = document.getElementsByTagName('input');
+    for(var i = 0; i < inputs.length; i++) {
+        inputs[i].checked = true;
+    }
+}
+
+function inserttext(text) {
+  text = ' ' + text + ' ';
+  if ( opener.document.forms['theform'].message.createTextRange && opener.document.forms['theform'].message.caretPos) {
+    var caretPos = opener.document.forms['theform'].message.caretPos;
+    caretPos.text = caretPos.text.charAt(caretPos.text.length - 1) == ' ' ? text + ' ' : text;
+  } else {
+    opener.document.forms['theform'].message.value  += text;
+  }
+  opener.document.forms['theform'].message.focus();
+}
+
+function getElementsByClassName(oElm, strTagName, oClassNames){
+	var arrElements = (strTagName == "*" && oElm.all)? oElm.all : oElm.getElementsByTagName(strTagName);
+	var arrReturnElements = new Array();
+	var arrRegExpClassNames = new Array();
+	if(typeof oClassNames == "object"){
+		for(var i=0; i<oClassNames.length; i++){
+			arrRegExpClassNames.push(new RegExp("(^|\\s)" + oClassNames[i].replace(/\-/g, "\\-") + "(\\s|$)"));
+		}
+	}
+	else{
+		arrRegExpClassNames.push(new RegExp("(^|\\s)" + oClassNames.replace(/\-/g, "\\-") + "(\\s|$)"));
+	}
+	var oElement;
+	var bMatchesAll;
+	for(var j=0; j<arrElements.length; j++){
+		oElement = arrElements[j];
+		bMatchesAll = true;
+		for(var k=0; k<arrRegExpClassNames.length; k++){
+			if(!arrRegExpClassNames[k].test(oElement.className)){
+				bMatchesAll = false;
+				break;
+			}
+		}
+		if(bMatchesAll){
+			arrReturnElements.push(oElement);
+		}
+	}
+	return (arrReturnElements)
+}
+//]]>
+</script>
+
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/style.css">
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/moco/jquery/jquery-ui.css">
+
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/js/jquery-1.8.3.js"></script>
+    <script src="http://core-release-0.4.mocotms.com/moco/jquery/development-bundle/jquery-ui.js"></script>
+
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/jquery-ui-datepicker.js"></script>
+            <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/jquery-ui-datepicker-ua.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/moco/jquery/treeview.css">
+
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/jquery.treeview.js"></script>
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/jquery.cookie.js"></script>
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/jquery.easing.1.3.js"></script>
+
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/swf/swfobject.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/menu.css">
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/js/menu.js.php"></script>
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/js/script.js"></script>
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/tree_library.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/lib/slideshow/css/camera.css">
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/slideshow/js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/slideshow/js/camera.min.1.11.js"></script> 
+    
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/moco/css/reports.css">
+<link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/moco/css/select2.css">
+    
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/custom.css">
+
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/d3.min.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/jquery.moco_chart.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/moco.core.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/moco_functions.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/reports.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/select2/select2.min.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/select2/translation/en.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/select2/translation/ru.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/select2/translation/uk.js"></script>
+
+    <script>
+        $(function() { 
+            $(window).scroll(function(){
+                if($(this).scrollTop() != 0){
+                    $('#toTop').fadeIn();
+                } else {
+                    $('#toTop').fadeOut();
+                }
+            });
+            $('#toTop').click(function() {
+                $('body,html').animate({scrollTop:0},800);
+            });
+        });
+        $('#id_language').live('change', function(){
+            window.location.href="http://core-release-0.4.mocotms.com/index.php?lang="+$(this).val();
+            return false;
+        });
+        function handleResponse(mes) {
+            if (mes.errors != null) {
+                $('#res').html('Помилка при завантаженні файлу: ' + mes.errors);
+            } else {
+                var params = new Object();
+                params.ajax = 'saveCentralImg';
+                $.ajax({
+                    type: 'POST',
+                    url: 'http://core-release-0.4.mocotms.com/theme/tmx_default_2015/ajax.php',
+                    data: params,
+                    success:
+                    function( answer ) {
+                        $('#central_img').html(answer.html);
+                    },
+                    dataType: 'json'
+                });
+            }
+        }
+    </script>
+<script src="http://core-release-0.4.mocotms.com/lib/editor/htmlarea/dialog.js"></script><script src="http://core-release-0.4.mocotms.com/lib/editor/htmlarea/popupwin.js"></script></head>
+<body class="user course-1 dir-ltr lang-uk_utf8 default" id="user-editadvanced">
+
+    <div id="toTop">
+        <div class="top_button"></div>
+    </div>
+
+            <div id="wrapper">
+        <div class="head_width">
+            <div id="head">
+                <div id="id_div_header" style="margin-right:10px;">
+                
+                    <a href="http://core-release-0.4.mocotms.com" style="float:left">
+                        <img class="logo" src="http://core-release-0.4.mocotms.com/moco/logo/logo.php?logo=L2RhdGEvdG14L21vY28vY29yZS8wLlgvcmVsZWFzZV8wLjQvbW9vZGxlZGF0YS9waXgvbG9nby9sb2dvLnBuZw==&amp;nocache=1497445703" alt="Logotype">
+                    </a>                <div class="link_panel">
+                <div id="lang_menu"><span class="lang_title">Мова:</span><select id="id_language" style="vertical-align:middle; border:1px solid #d1d3d4; color:#6E6E6E;"><option value="en_utf8">ENG</option><option value="ru_utf8">RUS</option><option value="uk_utf8" selected="selected">UKR</option></select></div><a href="http://mocotms.com" class="link_3" target="_blank">Technomatix</a><a class="exit_button" href="http://core-release-0.4.mocotms.com/login/logout.php?sesskey=nvgZWnplju">Вийти</a>                </div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div id="head_menu">
+
+	<div style="width:100%; /*max-width: 1024px;*/">
+<div class="menu_left_block"></div>
+<div class="menu_right_block"></div>
+<ul id="nav_menu" style="z-index:1001;">
+<li class="first" style="width: 20%;">
+<a href="javascript: void(0);">Компанія</a><ul>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/structure/">Структура</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/posts/">Посади</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/admin/user.php">Співробітники</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/chiefs/">Керівники</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/moderators/">Модератори</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/confirmmanualuser/">Зареєстрованi користувачi</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/uploadimg/">Завантаження фото</a><div class="clear"></div>
+</li>
+</ul>
+<div class="clear"></div>
+</li>
+<li style="width: 20%;">
+<a href="javascript: void(0);">Навчання</a><ul>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/allcourses/">Каталог</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/profiles/">Програми</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/delhistory/">Історія</a><div class="clear"></div>
+</li>
+<li>
+<hr>
+<div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/tranings/">Заходи</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/trainer/">Тренери</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/training_rooms/">Тренінгові кімнати</a><div class="clear"></div>
+</li>
+<li>
+<hr>
+<div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/scales/">Шкали оцiнок</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/alerts/">Повідомлення</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/tag/">Теги</a><div class="clear"></div>
+</li>
+</ul>
+<div class="clear"></div>
+</li>
+<li style="width: 20%;">
+<a href="javascript: void(0);">Оцінка персоналу</a><ul>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco101/index.php/usr">Користувачі і привілегії</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco101/index.php/org">Організаційна структура</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco101/index.php/messaging">Повідомлення</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco101/index.php/indicator">Індикатори</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco101/index.php/appraisal">Оцінка</a><div class="clear"></div>
+</li>
+</ul>
+<div class="clear"></div>
+</li>
+<li style="width: 20%;">
+<a href="javascript: void(0);">Звіти</a><ul>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/profiles.php">Призначені програми</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/courses.php?tab=admin">Результати по програмам</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/scorms.php?tab=report">Результати по курсам</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/tests.php?tab=report">Результати по тестам</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/testsanalytics.php">Результати по тестах (аналітика)</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/scormandtest.php">Зведені результати по курсам та тестам</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/empreport.php?tab=admin">Зведені результати по співробітнику</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/fullprofiles.php">Детальні результати по співробітникам</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/successful.php?tab=admin">Детальні результати по програмам</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/selfcourses.php">Самопризначені курси</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/vacationstats.php">Статистика навчених і звільнених</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/universal.php?tab=admin">База співробітників і результатів</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/fullprofiles2.php">Анкета співробітника</a><div class="clear"></div>
+</li>
+<li>
+<hr>
+<div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/training.php?tab=admin">Статистика тренінгів</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/trainings.php?tab=admin&amp;subtab=1&amp;find_recursive=1">Результати аудиторних заходів</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/trainer.php?tab=admin">Статистика тренерів</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/workload_trainer.php">Завантаженість тренерів</a><div class="clear"></div>
+</li>
+<li>
+<hr>
+<div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/certificate.php">Видані сертифікати</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/player_play.php">Звіт про відео</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/permissions_log.php">Історія видачі прав</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/subscriptionhistory.php">Історія скасування розсилки</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/systemroles.php">Ролі системи</a><div class="clear"></div>
+</li>
+</ul>
+<div class="clear"></div>
+</li>
+<li style="width: 20%;">
+<a href="javascript: void(0);">Додатково</a><ul>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/holiday/">Свята</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/interview/">Опитування</a><div class="clear"></div>
+</li>
+</ul>
+<div class="clear"></div>
+</li>
+<div class="clear"></div>
+</ul>
+</div>
+		<div class="clear"></div>
+		
+	<div class="breadcrumb" style="display:block; "><h2 class="accesshide ">Ви тут</h2> <ul>
+<li class="first"><a onclick="this.target='_top'" href="http://core-release-0.4.mocotms.com/">LMS</a></li><li> <span class="accesshide ">/&nbsp;</span><span class="arrow sep">&gt;</span> Керування</li><li> <span class="accesshide ">/&nbsp;</span><span class="arrow sep">&gt;</span> Користувачі</li><li> <span class="accesshide ">/&nbsp;</span><span class="arrow sep">&gt;</span> Облікові записи</li><li> <span class="accesshide ">/&nbsp;</span><span class="arrow sep">&gt;</span> Додати нового користувача</li></ul></div>
+</div>
+        <div class="clear"></div>
+
+                <div class="clear"></div>
+
+        <div id="content" class="clearfix">
+
+        <table id="layout-table" summary=""><tbody><tr><td style="width: 210px;" id="left-column"><div><a href="#sb-1" class="skip-block">Пропустити Керування сайтом</a><div id="inst5" class="block_admin_tree sideblock"><div class="header"><div class="title"><h2 class="title_block">Керування сайтом</h2></div></div><div class="content">
+<script type="text/javascript">
+//<![CDATA[
+var vh_numdivs = 21;
+var parkplatz  = new Array();
+for (var i=1; i<=vh_numdivs; i++) {
+    parkplatz[i] = null;
+}
+
+function menu_toggle(i) {
+    i = parseInt(i);
+    if (parkplatz[i] === null) {
+        collapse(i);
+    } else {
+        expand(i);
+    }
+}
+
+function collapse(i) {
+    if (parkplatz[i] !== null) {
+        return;
+    }
+    var obj = document.getElementById("vh_div"+String(i));
+    if (obj === null) {
+        return;
+    }
+    var nothing = document.createElement("span");
+    nothing.setAttribute("id", "vh_div"+String(i));
+    parkplatz[i] = obj;
+    obj.parentNode.replaceChild(nothing, obj);
+    var icon = document.getElementById("vh_div"+String(i)+"indicator");
+    icon.innerHTML = "<img src=\"http://core-release-0.4.mocotms.com/pix/i/closed.gif\" alt=\"Закрита тека\" />";
+}
+
+function expand(i) {
+    if (parkplatz[i] === null) {
+        return;
+    }
+    var nothing = document.getElementById("vh_div"+String(i));
+    var obj = parkplatz[i];
+    parkplatz[i] = null;
+    nothing.parentNode.replaceChild(obj, nothing);
+    var icon = document.getElementById("vh_div"+String(i)+"indicator");
+    icon.innerHTML = "<img src=\"http://core-release-0.4.mocotms.com/pix/i/open.gif\" alt=\"Відкрита тека\" />";
+}
+
+function expandall() {
+    for (i=1; i<=vh_numdivs; i++) {
+        expand(i);
+    }
+}
+
+function collapseall() {
+    for (var i=vh_numdivs; i>0; i--) {
+        collapse(i);
+    }
+}
+
+//]]>
+</script>
+<div class="admintree">
+
+<div class="depth0"><a class="link" href="http://core-release-0.4.mocotms.com/admin/index.php"><img src="http://core-release-0.4.mocotms.com/pix/i/item.gif" alt="">Повідомлення</a></div>
+<div class="depth0"><a href="#" onclick="menu_toggle('1');return false"><span id="vh_div1indicator"><img src="http://core-release-0.4.mocotms.com/pix/i/open.gif" alt="Відкрита тека"></span> Користувачі</a></div><div id="vh_div1">
+<div class="depth1"><a href="#" onclick="menu_toggle('2');return false"><span id="vh_div2indicator"><img src="http://core-release-0.4.mocotms.com/pix/i/closed.gif" alt="Закрита тека"></span> Аутентифікація</a></div><span id="vh_div2"></span>
+<div class="depth1"><a href="#" onclick="menu_toggle('3');return false"><span id="vh_div3indicator"><img src="http://core-release-0.4.mocotms.com/pix/i/open.gif" alt="Відкрита тека"></span> Облікові записи</a></div><div id="vh_div3">
+<div class="depth2"><a class="link" href="http://core-release-0.4.mocotms.com/admin/user.php"><img src="http://core-release-0.4.mocotms.com/pix/i/item.gif" alt="">Список користувачів</a></div>
+<div class="depth2"><a class="link" href="http://core-release-0.4.mocotms.com/admin/user/user_bulk.php"><img src="http://core-release-0.4.mocotms.com/pix/i/item.gif" alt="">Масовi дії користувача</a></div>
+<div class="depth2"><a class="link current" href="http://core-release-0.4.mocotms.com/user/editadvanced.php?id=-1"><img src="http://core-release-0.4.mocotms.com/pix/i/item.gif" alt="">Додати нового користувача</a></div>
+<div class="depth2"><a class="link" href="http://core-release-0.4.mocotms.com/admin/uploaduser.php"><img src="http://core-release-0.4.mocotms.com/pix/i/item.gif" alt="">Завантажити користувачiв</a></div>
+<div class="depth2"><a class="link" href="http://core-release-0.4.mocotms.com/admin/uploadpicture.php"><img src="http://core-release-0.4.mocotms.com/pix/i/item.gif" alt="">Завантаження зображень користувачів</a></div>
+<div class="depth2"><a class="link" href="http://core-release-0.4.mocotms.com/user/profile/index.php"><img src="http://core-release-0.4.mocotms.com/pix/i/item.gif" alt="">Поля профілю користувача</a></div>
+</div>
+<div class="depth1"><a href="#" onclick="menu_toggle('4');return false"><span id="vh_div4indicator"><img src="http://core-release-0.4.mocotms.com/pix/i/closed.gif" alt="Закрита тека"></span> Права</a></div><span id="vh_div4"></span>
+</div>
+<div class="depth0"><a href="#" onclick="menu_toggle('5');return false"><span id="vh_div5indicator"><img src="http://core-release-0.4.mocotms.com/pix/i/closed.gif" alt="Закрита тека"></span> Курси</a></div><span id="vh_div5"></span>
+<div class="depth0"><a href="#" onclick="menu_toggle('6');return false"><span id="vh_div6indicator"><img src="http://core-release-0.4.mocotms.com/pix/i/closed.gif" alt="Закрита тека"></span> Журнал оцінок</a></div><span id="vh_div6"></span>
+<div class="depth0"><a href="#" onclick="menu_toggle('8');return false"><span id="vh_div8indicator"><img src="http://core-release-0.4.mocotms.com/pix/i/closed.gif" alt="Закрита тека"></span> Локалізація</a></div><span id="vh_div8"></span>
+<div class="depth0"><a href="#" onclick="menu_toggle('9');return false"><span id="vh_div9indicator"><img src="http://core-release-0.4.mocotms.com/pix/i/closed.gif" alt="Закрита тека"></span> Мова інтерфейсу</a></div><span id="vh_div9"></span>
+<div class="depth0"><a href="#" onclick="menu_toggle('10');return false"><span id="vh_div10indicator"><img src="http://core-release-0.4.mocotms.com/pix/i/closed.gif" alt="Закрита тека"></span> Модулі</a></div><span id="vh_div10"></span>
+<div class="depth0"><a href="#" onclick="menu_toggle('14');return false"><span id="vh_div14indicator"><img src="http://core-release-0.4.mocotms.com/pix/i/closed.gif" alt="Закрита тека"></span> Безпека</a></div><span id="vh_div14"></span>
+<div class="depth0"><a href="#" onclick="menu_toggle('15');return false"><span id="vh_div15indicator"><img src="http://core-release-0.4.mocotms.com/pix/i/closed.gif" alt="Закрита тека"></span> Сторінки сайту</a></div><span id="vh_div15"></span>
+<div class="depth0"><a href="#" onclick="menu_toggle('17');return false"><span id="vh_div17indicator"><img src="http://core-release-0.4.mocotms.com/pix/i/closed.gif" alt="Закрита тека"></span> Головна сторінка</a></div><span id="vh_div17"></span>
+<div class="depth0"><a href="#" onclick="menu_toggle('18');return false"><span id="vh_div18indicator"><img src="http://core-release-0.4.mocotms.com/pix/i/closed.gif" alt="Закрита тека"></span> Сервер</a></div><span id="vh_div18"></span>
+<div class="depth0"><a href="#" onclick="menu_toggle('19');return false"><span id="vh_div19indicator"><img src="http://core-release-0.4.mocotms.com/pix/i/closed.gif" alt="Закрита тека"></span> Мережа</a></div><span id="vh_div19"></span>
+<div class="depth0"><a href="#" onclick="menu_toggle('20');return false"><span id="vh_div20indicator"><img src="http://core-release-0.4.mocotms.com/pix/i/closed.gif" alt="Закрита тека"></span> Звіти</a></div><span id="vh_div20"></span>
+<div class="depth0"><a href="#" onclick="menu_toggle('21');return false"><span id="vh_div21indicator"><img src="http://core-release-0.4.mocotms.com/pix/i/closed.gif" alt="Закрита тека"></span> Різне</a></div><span id="vh_div21"></span>
+<div class="depth0"><a class="link" href="http://core-release-0.4.mocotms.com/moco/config/admin_additional_settings/"><img src="http://core-release-0.4.mocotms.com/pix/i/item.gif" alt="">Додаткові налаштування</a></div>
+
+
+</div>
+<script type="text/javascript">
+//<![CDATA[
+collapseall();
+expand(1);
+expand(3);
+;
+//]]>
+</script></div></div><script type="text/javascript">
+//<![CDATA[
+elementCookieHide("inst5","Показати блок Керування сайтом","Сховати блок Керування сайтом");
+//]]>
+</script><span id="sb-1" class="skip-block-to"></span></div></td><td id="middle-column"><div class=" clearfix"><br><br><br>
+	<!-- модальное окно: Выбрать Должность -->
+	<div id="id_div_choosepost" style="display:none">
+		<ul id="id_treeposts" class="filetree">
+			<ul><li class="closed"><span style="margin-left:3px;"><a href="" val="159" parent_id="0"> </a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="156" parent_id="0"> 1 тест целевых групп</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="8" parent_id="0"> Accounter</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="258" parent_id="0"> Administrator</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="322" parent_id="0"> AutomationPost</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="76" parent_id="0"> AutoQA</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="7" parent_id="0"> Business manager</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="14" parent_id="0"> C# Developer</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="6" parent_id="0"> Director</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="160" parent_id="0"> HR менеджер</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="13" parent_id="0"> Java Developer</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="257" parent_id="0"> Junuior Tester</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="3" parent_id="0"> Manager</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="12" parent_id="0"> PHP Developer</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="11" parent_id="0"> PHP Project Manager</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="23" parent_id="0"> PR-менеджер</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="10" parent_id="0"> Product Manager</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="5" parent_id="0"> Product Owner</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="151" parent_id="0"> Project Manager</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="1" parent_id="0"> QA</a></span><ul><li class="closed"><span style="margin-left:3px;"><a href="" val="18" parent_id="1"> QA1</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="19" parent_id="1"> QA2</a></span></li></ul></li><li class="closed"><span style="margin-left:3px;"><a href="" val="2" parent_id="0"> QA engineer</a></span><ul><li class="closed"><span style="margin-left:3px;"><a href="" val="77" parent_id="2"> SPAM</a></span></li></ul></li><li class="closed"><span style="margin-left:3px;"><a href="" val="153" parent_id="0"> QA Lead</a></span><ul><li class="closed"><span style="margin-left:3px;"><a href="" val="154" parent_id="153"> QA Junior</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="155" parent_id="153"> QA Middle</a></span></li></ul></li><li class="closed"><span style="margin-left:3px;"><a href="" val="9" parent_id="0"> QA Team Lead</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="4" parent_id="0"> Sales Manager</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="32" parent_id="0"> Аналитик-маркетолог</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="161" parent_id="0"> АТ (ТД)</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="33" parent_id="0"> Бренд-менеджер</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="34" parent_id="0"> Ведущий бренд-менеджер</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="73" parent_id="0"> Ведущий консультант</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="150" parent_id="0"> гость</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="30" parent_id="0"> Директор по продажам</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="78" parent_id="0"> Должность 1</a></span><ul><li class="closed"><span style="margin-left:3px;"><a href="" val="255" parent_id="78"> Уборщик</a></span></li></ul></li><li class="closed"><span style="margin-left:3px;"><a href="" val="69" parent_id="0"> Должность для отображения в списках</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="24" parent_id="0"> Маркетолог</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="38" parent_id="0"> Медиа аналитик</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="72" parent_id="0"> Менеджер</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="25" parent_id="0"> Менеджер отдела связей с общественностью</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="37" parent_id="0"> Менеджер по логистике</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="22" parent_id="0"> Менеджер по продукции</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="28" parent_id="0"> Менеджер по рекламе</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="74" parent_id="0"> Оператор</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="36" parent_id="0"> Офис-менеджер</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="27" parent_id="0"> Продавец-консультант</a></span><ul><li class="closed"><span style="margin-left:3px;"><a href="" val="256" parent_id="27"> Разнорабочий</a></span></li></ul></li><li class="closed"><span style="margin-left:3px;"><a href="" val="20" parent_id="0"> Разработчик</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="26" parent_id="0"> Руководитель отдела трейд-маркетинга</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="21" parent_id="0"> Руководитель проекта</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="35" parent_id="0"> Специалист по социальным медиа</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="29" parent_id="0"> Старший менеджер</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="70" parent_id="0"> Технический специалист</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="31" parent_id="0"> Трейд-маркетолог</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="157" parent_id="0"> Тренер</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="71" parent_id="0"> Тренинговый инструктор</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="149" parent_id="0"> удаляем</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="147" parent_id="0"> ук</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="158" parent_id="0"> Юрист</a></span></li></ul>		</ul>
+	</div>
+
+	
+	<!-- модальное окно: Выбрать Подразделение -->
+	<div id="id_div_choosedep" style="display:none"></div>
+
+	<style>
+	input.select[type="button"] { margin: 2px; }
+	</style>
+	<script>
+	$(document).ready( function() {
+		$('#id_posttitle').parent('div').append('<input id="id_but_post" class="select" type="button" value="..." />');
+		$('#id_posttitle').parent('div').append('<input id="id_empty_post" class="select" type="button" value="X" />');
+
+		$('#id_deptitle').parent('div').append('<input id="id_but_dep" class="select" type="button" value="..." />');
+		$('#id_deptitle').parent('div').append('<input id="id_empty_dep" class="select" type="button" value="X" />');
+
+		// Отображаем окно для выбора Должности
+		var posttitle = '';
+		var postid = '';
+		$('#id_treeposts').treeview({ 
+			cookieId: "treeview-user-addedit",
+			persist: "cookie",
+			animated: "fast",
+			unique: true
+		});
+		$('#id_div_choosepost').dialog({
+			autoOpen:false,
+			title:'Обрати посаду',
+			height:450,
+			width:500,
+			modal:true,
+			buttons:{
+				// Выбранную категорию передаем в $_GET и перегружаем страницу
+				"Обрати ...": function(){ 
+					$('#id_posttitle').val(posttitle);
+					$('input[name=postid]').val(postid);
+					$(this).dialog("close");
+				},
+				"Відмінити": function(){ 
+					$(this).dialog("close");
+				}
+			}
+		});
+		$('#id_but_post').live('click',function(e){
+            e.preventDefault();
+            var el = $('#id_div_choosepost');
+			el.dialog('open');
+		});
+		// выделяем выбранную должность 
+		$('#id_treeposts ul li span a').click(function(){
+			$('#id_treeposts ul li span').find('a').css('font-weight', 'normal');
+			$(this).css('font-weight', 'bold');
+			// передаем данные выбранной должности
+			posttitle = $(this).html();
+			postid = $(this).attr('val');
+			//alert(postid);
+			return false;
+		});
+
+		// Отображаем окно для выбора Должности
+		var deptitle = '';
+		var depid = '';
+		$('#id_treedeps').treeview({
+			cookieId: "treeview-dep-user-addedit",
+			persist: "cookie",
+			animated: "fast",
+			unique: true
+		});
+		$('#id_div_choosedep').dialog({
+			autoOpen:false,
+			title:'Обрати підрозділ',
+			height:550,
+			width:500,
+			modal:true,
+			buttons:{
+				// Выбранную категорию передаем в $_GET и перегружаем страницу
+				"Обрати ...": function(){ 
+					$('#id_deptitle').val(deptitle);
+					$('input[name=depid]').val(depid);
+					$(this).dialog("close");
+				},
+				"Відмінити": function(){ 
+					$(this).dialog("close");
+				}
+			}
+		});
+		$('#id_but_dep').live('click',function(e){
+            e.preventDefault();
+                    
+            var container = $('#id_div_choosedep');
+          
+            loadDepartmentsStructureByAjax({
+                url: 'http://core-release-0.4.mocotms.com/moco/config/profiles/',
+                structureId : 'department',
+                container : container,
+                onBeforeExecute: function() {
+                    container.dialog('open');
+                },
+                onLoad: function(response) {
+                },
+                onLoadError : function(error, response) {
+                    showAlert(error, 
+                        'Помилка', 
+                        {closeBtnName: 'Закрити'});
+                }
+            });
+		});
+		// выделяем выбранный отдел
+		$('#id_div_choosedep ul li span a').live('click',function(){
+			$('#id_div_choosedep ul li span').find('a').css('font-weight', 'normal');
+			$(this).css('font-weight', 'bold');
+			// передаем данные выбранного отдела
+			deptitle = $(this).html();
+			depid = $(this).attr('value');
+			return false;
+		});
+
+		// Очищаем выбор данных должности
+		$('#id_empty_post').live('click',function(){
+			$('#id_posttitle').val('');
+			$('input[name=postid]').val('');
+			return false;
+		});
+		// Очищаем выбор данных подразделения
+		$('#id_empty_dep').live('click',function(){
+			$('#id_deptitle').val('');
+			$('input[name=depid]').val('');
+			return false;
+		});
+	});
+	</script>
+
+	<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/yui/yahoo/yahoo-min.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/yui/event/event-min.js"></script>
+
+<script type="text/javascript">
+//<![CDATA[
+
+var skipClientValidation = false;
+
+function qf_errorHandler(element, _qfMsg) {
+  div = element.parentNode;
+  if (_qfMsg != '') {
+    var errorSpan = document.getElementById('id_error_'+element.name);
+    if (!errorSpan) {
+      errorSpan = document.createElement("span");
+      errorSpan.id = 'id_error_'+element.name;
+      errorSpan.className = "error";
+      element.parentNode.insertBefore(errorSpan, element.parentNode.firstChild);
+    }
+
+    while (errorSpan.firstChild) {
+      errorSpan.removeChild(errorSpan.firstChild);
+    }
+
+    errorSpan.appendChild(document.createTextNode(_qfMsg.substring(3)));
+    errorSpan.appendChild(document.createElement("br"));
+
+    if (div.className.substr(div.className.length - 6, 6) != " error"
+        && div.className != "error") {
+      div.className += " error";
+    }
+
+    return false;
+  } else {
+    var errorSpan = document.getElementById('id_error_'+element.name);
+    if (errorSpan) {
+      errorSpan.parentNode.removeChild(errorSpan);
+    }
+
+    if (div.className.substr(div.className.length - 6, 6) == " error") {
+      div.className = div.className.substr(0, div.className.length - 6);
+    } else if (div.className == "error") {
+      div.className = "";
+    }
+
+    return true;
+  }
+}
+function validate_user_editadvanced_form_username(element) {
+  var value = '';
+  var errFlag = new Array();
+  var _qfGroups = {};
+  var _qfMsg = '';
+  var frm = element.parentNode;
+  while (frm && frm.nodeName.toUpperCase() != "FORM") {
+    frm = frm.parentNode;
+  }
+  value = frm.elements['username'].value;
+  if (value == '' && !errFlag['username']) {
+    errFlag['username'] = true;
+    _qfMsg = _qfMsg + '\n - Необхідно заповнити';
+  }
+
+  return qf_errorHandler(element, _qfMsg);
+}
+
+function validate_user_editadvanced_form_firstname(element) {
+  var value = '';
+  var errFlag = new Array();
+  var _qfGroups = {};
+  var _qfMsg = '';
+  var frm = element.parentNode;
+  while (frm && frm.nodeName.toUpperCase() != "FORM") {
+    frm = frm.parentNode;
+  }
+  value = frm.elements['firstname'].value;
+  if (value == '' && !errFlag['firstname']) {
+    errFlag['firstname'] = true;
+    _qfMsg = _qfMsg + '\n - Необхідно заповнити';
+  }
+
+  return qf_errorHandler(element, _qfMsg);
+}
+
+function validate_user_editadvanced_form_lastname(element) {
+  var value = '';
+  var errFlag = new Array();
+  var _qfGroups = {};
+  var _qfMsg = '';
+  var frm = element.parentNode;
+  while (frm && frm.nodeName.toUpperCase() != "FORM") {
+    frm = frm.parentNode;
+  }
+  value = frm.elements['lastname'].value;
+  if (value == '' && !errFlag['lastname']) {
+    errFlag['lastname'] = true;
+    _qfMsg = _qfMsg + '\n - Необхідно заповнити';
+  }
+
+  return qf_errorHandler(element, _qfMsg);
+}
+
+function validate_user_editadvanced_form_posttitle(element) {
+  var value = '';
+  var errFlag = new Array();
+  var _qfGroups = {};
+  var _qfMsg = '';
+  var frm = element.parentNode;
+  while (frm && frm.nodeName.toUpperCase() != "FORM") {
+    frm = frm.parentNode;
+  }
+  value = frm.elements['posttitle'].value;
+  if (value == '' && !errFlag['posttitle']) {
+    errFlag['posttitle'] = true;
+    _qfMsg = _qfMsg + '\n - Необхідно заповнити';
+  }
+
+  return qf_errorHandler(element, _qfMsg);
+}
+
+function validate_user_editadvanced_form_deptitle(element) {
+  var value = '';
+  var errFlag = new Array();
+  var _qfGroups = {};
+  var _qfMsg = '';
+  var frm = element.parentNode;
+  while (frm && frm.nodeName.toUpperCase() != "FORM") {
+    frm = frm.parentNode;
+  }
+  value = frm.elements['deptitle'].value;
+  if (value == '' && !errFlag['deptitle']) {
+    errFlag['deptitle'] = true;
+    _qfMsg = _qfMsg + '\n - Необхідно заповнити';
+  }
+
+  return qf_errorHandler(element, _qfMsg);
+}
+
+function validate_user_editadvanced_form_email(element) {
+  var value = '';
+  var errFlag = new Array();
+  var _qfGroups = {};
+  var _qfMsg = '';
+  var frm = element.parentNode;
+  while (frm && frm.nodeName.toUpperCase() != "FORM") {
+    frm = frm.parentNode;
+  }
+  value = frm.elements['email'].value;
+  if (value == '' && !errFlag['email']) {
+    errFlag['email'] = true;
+    _qfMsg = _qfMsg + '\n - Необхідно заповнити';
+  }
+
+  return qf_errorHandler(element, _qfMsg);
+}
+
+function validate_user_editadvanced_form_city(element) {
+  var value = '';
+  var errFlag = new Array();
+  var _qfGroups = {};
+  var _qfMsg = '';
+  var frm = element.parentNode;
+  while (frm && frm.nodeName.toUpperCase() != "FORM") {
+    frm = frm.parentNode;
+  }
+  value = frm.elements['city'].value;
+  if (value == '' && !errFlag['city']) {
+    errFlag['city'] = true;
+    _qfMsg = _qfMsg + '\n - Необхідно заповнити';
+  }
+
+  return qf_errorHandler(element, _qfMsg);
+}
+
+function validate_user_editadvanced_form_country(element) {
+  var value = '';
+  var errFlag = new Array();
+  var _qfGroups = {};
+  var _qfMsg = '';
+  var frm = element.parentNode;
+  while (frm && frm.nodeName.toUpperCase() != "FORM") {
+    frm = frm.parentNode;
+  }
+  value = frm.elements['country'].selectedIndex == -1? '': frm.elements['country'].options[frm.elements['country'].selectedIndex].value;
+
+  if (value == '' && !errFlag['country']) {
+    errFlag['country'] = true;
+    _qfMsg = _qfMsg + '\n - Необхідно заповнити';
+  }
+
+  return qf_errorHandler(element, _qfMsg);
+}
+
+function validate_user_editadvanced_form_newpassword(element) {
+  var value = '';
+  var errFlag = new Array();
+  var _qfGroups = {};
+  var _qfMsg = '';
+  var frm = element.parentNode;
+  while (frm && frm.nodeName.toUpperCase() != "FORM") {
+    frm = frm.parentNode;
+  }
+  value = frm.elements['newpassword'].value;
+  if (value == '' && !errFlag['newpassword']) {
+    errFlag['newpassword'] = true;
+    _qfMsg = _qfMsg + '\n - Необхідно заповнити';
+  }
+
+  return qf_errorHandler(element, _qfMsg);
+}
+
+function validate_user_editadvanced_form(frm) {
+  if (skipClientValidation) {
+     return true;
+  }
+  var ret = true;
+
+  var frm = document.getElementById('mform1')
+  var first_focus = false;
+
+  ret = validate_user_editadvanced_form_username(frm.elements['username']) && ret;
+  if (!ret && !first_focus) {
+    first_focus = true;
+    frm.elements['username'].focus();
+  }
+
+  ret = validate_user_editadvanced_form_firstname(frm.elements['firstname']) && ret;
+  if (!ret && !first_focus) {
+    first_focus = true;
+    frm.elements['firstname'].focus();
+  }
+
+  ret = validate_user_editadvanced_form_lastname(frm.elements['lastname']) && ret;
+  if (!ret && !first_focus) {
+    first_focus = true;
+    frm.elements['lastname'].focus();
+  }
+
+  ret = validate_user_editadvanced_form_posttitle(frm.elements['posttitle']) && ret;
+  if (!ret && !first_focus) {
+    first_focus = true;
+    frm.elements['posttitle'].focus();
+  }
+
+  ret = validate_user_editadvanced_form_deptitle(frm.elements['deptitle']) && ret;
+  if (!ret && !first_focus) {
+    first_focus = true;
+    frm.elements['deptitle'].focus();
+  }
+
+  ret = validate_user_editadvanced_form_email(frm.elements['email']) && ret;
+  if (!ret && !first_focus) {
+    first_focus = true;
+    frm.elements['email'].focus();
+  }
+
+  ret = validate_user_editadvanced_form_city(frm.elements['city']) && ret;
+  if (!ret && !first_focus) {
+    first_focus = true;
+    frm.elements['city'].focus();
+  }
+
+  ret = validate_user_editadvanced_form_country(frm.elements['country']) && ret;
+  if (!ret && !first_focus) {
+    first_focus = true;
+    frm.elements['country'].focus();
+  }
+
+  ret = validate_user_editadvanced_form_newpassword(frm.elements['newpassword']) && ret;
+  if (!ret && !first_focus) {
+    first_focus = true;
+    frm.elements['newpassword'].focus();
+  }
+;
+  return ret;
+}
+//]]>
+</script>
+
+<form autocomplete="off" action="http://core-release-0.4.mocotms.com/user/editadvanced.php" method="post" accept-charset="utf-8" id="mform1" class="mform" onsubmit="try { var myValidator = validate_user_editadvanced_form; } catch(e) { return true; } return myValidator(this);" enctype="multipart/form-data">
+	<div style="display: none;"><input name="MAX_FILE_SIZE" value="268435456" type="hidden">
+<input name="id" value="-1" type="hidden">
+<input name="course" value="1" type="hidden">
+<input name="mform_showadvanced_last" value="1" type="hidden">
+<input name="postid" value="" type="hidden">
+<input name="depid" value="" type="hidden">
+<input name="sesskey" value="nvgZWnplju" type="hidden">
+<input name="_qf__user_editadvanced_form" value="1" type="hidden">
+</div>
+
+	<fieldset class="clearfix" id="moodle">
+		<legend class="ftoggler">Основне</legend>
+		<div class="advancedbutton"><img class="adv" title="Додатковий елемент" alt="Додатковий елемент" src="http://core-release-0.4.mocotms.com/pix/adv.gif"><input value="Сховати додаткове" name="mform_showadvanced" type="button"><script id="moodle_script" type="text/javascript">
+showAdvancedInit('moodle_script', 'mform_showadvanced', 'Сховати додаткове', 'Сховати додаткове', 'Показати додаткове');
+</script><noscript><div style="display:inline"><input name="mform_showadvanced" value="Сховати додаткове" type="submit" /></div></noscript></div><div class="fcontainer clearfix">
+		
+		<div class="fitem required"><div class="fitemtitle"><label for="id_username">Логiн<img class="req" title="Обов'язкове поле" alt="Обов'язкове поле" src="http://core-release-0.4.mocotms.com/pix/req.gif"> </label></div><div class="felement ftext"><input size="30" name="username" onblur="validate_user_editadvanced_form_username(this)" onchange="validate_user_editadvanced_form_username(this)" id="id_username" type="text"></div></div>
+		<div class="fitem advanced"><div class="fitemtitle"><label for="id_auth">Оберіть спосіб ідентифікації:<img class="adv" title="Додатковий елемент" alt="Додатковий елемент" src="http://core-release-0.4.mocotms.com/pix/adv.gif"> <span class="helplink"><a title="Допомогти з Оберіть спосіб ідентифікації: (нове вікно)" href="http://core-release-0.4.mocotms.com/help.php?module=moodle&amp;file=authchange.html&amp;forcelang=" onclick="this.target='popup'; return openpopup('/help.php?module=moodle&amp;file=authchange.html&amp;forcelang=', 'popup', 'menubar=0,location=0,scrollbars,resizable,width=500,height=400', 0);"><img class="iconhelp" alt="Допомогти з Оберіть спосіб ідентифікації: (нове вікно)" src="http://core-release-0.4.mocotms.com/pix/help.gif"></a></span>&nbsp;</label></div><div class="felement fselect"><select name="auth" id="id_auth">
+	<option value="cas">Використати CAS сервер (SSO)</option>
+	<option value="db">Використати зовнішню базу даних</option>
+	<option value="email">E-mail - ідентифікація</option>
+	<option value="fc">Використовують сервер FirstClass</option>
+	<option value="imap">Використати IMAP-сервер</option>
+	<option value="ldap">Використати LDAP-сервер</option>
+	<option value="manual" selected="selected">Тільки вручну заведені облікові записи.</option>
+	<option value="mnet">Аутентифікація Мережі Мудл</option>
+	<option value="moco">Моко аутентифікація</option>
+	<option value="nntp">Використовувати NNTP-сервер</option>
+	<option value="nologin">Не входити</option>
+	<option value="none">Не використовувати ідентифікацію</option>
+	<option value="pam">PAM (Pluggable Authentication Modules)</option>
+	<option value="pop3">Використати POP3-сервер</option>
+	<option value="radius">Використати сервер RADIUS</option>
+	<option value="shibboleth">Shibboleth</option>
+</select></div></div>
+		<div class="fitem"><div class="fitemtitle"><div class="fstaticlabel"><label> </label></div></div><div class="felement fstatic">Пароль має включати як найменьше 8 символів, як найменьше 1 цифр, як найменьше 1 букв в нижньому регістрі, як найменьше 1 букв в верхньому регістрі, як найменьше 1 не буквенно-цифрових символів&nbsp;</div></div>
+		<div class="fitem required"><div class="fitemtitle"><label for="id_newpassword">Новий пароль<img class="req" title="Обов'язкове поле" alt="Обов'язкове поле" src="http://core-release-0.4.mocotms.com/pix/req.gif"> <span class="helplink"><a title="Допомогти з Залишіть поле порожнім, щоб зберегти поточний пароль (нове вікно)" href="http://core-release-0.4.mocotms.com/help.php?module=moodle&amp;file=newpassword.html&amp;forcelang=" onclick="this.target='popup'; return openpopup('/help.php?module=moodle&amp;file=newpassword.html&amp;forcelang=', 'popup', 'menubar=0,location=0,scrollbars,resizable,width=500,height=400', 0);"><img class="iconhelp" alt="Допомогти з Залишіть поле порожнім, щоб зберегти поточний пароль (нове вікно)" src="http://core-release-0.4.mocotms.com/pix/help.gif"></a></span>&nbsp;</label></div><div class="felement fpassword"><input size="30" autocomplete="off" name="newpassword" onblur="validate_user_editadvanced_form_newpassword(this)" onchange="validate_user_editadvanced_form_newpassword(this)" id="id_newpassword" type="password"><script type="text/javascript">
+//<![CDATA[
+document.write('<div class="unmask"><input id="id_newpasswordunmask" value="1" type="checkbox" onclick="unmaskPassword(\'id_newpassword\')"/><label for="id_newpasswordunmask">Показати<\/label><\/div>');
+document.getElementById("id_newpassword").setAttribute("autocomplete", "off");
+//]]>
+</script><div class="unmask"><input id="id_newpasswordunmask" value="1" onclick="unmaskPassword('id_newpassword')" type="checkbox"><label for="id_newpasswordunmask">Показати</label></div></div></div>
+		<div class="fitem"><div class="fitemtitle"><label for="id_99bb66">Примусити змінити пароль <span class="helplink"><a title="Допомогти з Примусити змінити пароль (нове вікно)" href="http://core-release-0.4.mocotms.com/help.php?module=moodle&amp;file=forcepasswordchange.html&amp;forcelang=" onclick="this.target='popup'; return openpopup('/help.php?module=moodle&amp;file=forcepasswordchange.html&amp;forcelang=', 'popup', 'menubar=0,location=0,scrollbars,resizable,width=500,height=400', 0);"><img class="iconhelp" alt="Допомогти з Примусити змінити пароль (нове вікно)" src="http://core-release-0.4.mocotms.com/pix/help.gif"></a></span>&nbsp;</label></div><div class="felement fcheckbox"><span><input name="preference_auth_forcepasswordchange" value="0" type="hidden"><input name="preference_auth_forcepasswordchange" value="1" id="id_99bb66" type="checkbox"></span></div></div>
+		<div class="fitem required"><div class="fitemtitle"><label for="id_lastname">Прізвище<img class="req" title="Обов'язкове поле" alt="Обов'язкове поле" src="http://core-release-0.4.mocotms.com/pix/req.gif"> </label></div><div class="felement ftext"><input maxlength="100" size="30" name="lastname" onblur="validate_user_editadvanced_form_lastname(this)" onchange="validate_user_editadvanced_form_lastname(this)" id="id_lastname" type="text"></div></div>
+		<div class="fitem required"><div class="fitemtitle"><label for="id_firstname">Ім'я<img class="req" title="Обов'язкове поле" alt="Обов'язкове поле" src="http://core-release-0.4.mocotms.com/pix/req.gif"> </label></div><div class="felement ftext"><input maxlength="100" size="30" name="firstname" onblur="validate_user_editadvanced_form_firstname(this)" onchange="validate_user_editadvanced_form_firstname(this)" id="id_firstname" type="text"></div></div>
+		<div class="fitem required"><div class="fitemtitle"><label for="id_posttitle">Посада<img class="req" title="Обов'язкове поле" alt="Обов'язкове поле" src="http://core-release-0.4.mocotms.com/pix/req.gif"> </label></div><div class="felement ftext"><input name="posttitle" value="" onblur="validate_user_editadvanced_form_posttitle(this)" onchange="validate_user_editadvanced_form_posttitle(this)" id="id_posttitle" type="text"></div></div>
+		<div class="fitem required"><div class="fitemtitle"><label for="id_deptitle">Підрозділ<img class="req" title="Обов'язкове поле" alt="Обов'язкове поле" src="http://core-release-0.4.mocotms.com/pix/req.gif"> </label></div><div class="felement ftext"><input name="deptitle" value="" onblur="validate_user_editadvanced_form_deptitle(this)" onchange="validate_user_editadvanced_form_deptitle(this)" id="id_deptitle" type="text"></div></div>
+		<div class="fitem advanced"><div class="fitemtitle"><div class="fgrouplabel"><label>Дата прийняття на роботу<img class="adv" title="Додатковий елемент" alt="Додатковий елемент" src="http://core-release-0.4.mocotms.com/pix/adv.gif"> </label></div></div><fieldset class="felement fdate_selector">
+        <script>
+            $(document).ready( function() {
+
+              // Пересчет дней  для всех элементов dateselector-а на форме
+              $("select[name*='[month]']").each(function (){
+                var selected_month = $(this).val();
+                var selected_year = $(this).next().next().val();
+                var selected_day = $(this).prev().prev().val();
+                var day_element_id = $(this).prev().prev().attr("id");
+                var day_this_month = new Date(selected_year,selected_month,0).getDate();
+
+                recreate_day_select(day_this_month, selected_day, day_element_id);                
+              });
+
+              // Пересчет дней в месяце при смене месяца
+              $("select[name*='[month]']").change(function(){
+                var selected_month = $(this).val();
+                var selected_year = $(this).next().next().val();
+                var selected_day = $(this).prev().prev().val();
+                var day_element_id = $(this).prev().prev().attr("id");
+                var day_this_month = new Date(selected_year,selected_month,0).getDate();
+
+                recreate_day_select(day_this_month, selected_day, day_element_id);                
+              });
+
+              // При смене года пересчитываем дни, только если выбран месяц февраль
+              $("select[name*='[year]']").change(function(){
+                var selected_month = $(this).prev().prev().val();
+                if (selected_month == 2){
+                    var selected_year = $(this).val();
+                    var selected_day = $(this).prev().prev().prev().prev().val();
+                    var day_element_id = $(this).prev().prev().prev().prev().attr("id");
+                    var day_this_month = new Date(selected_year,selected_month,0).getDate();
+
+                    recreate_day_select(day_this_month, selected_day, day_element_id);
+                }
+
+              });
+
+              function recreate_day_select(day_this_month, selected_day, day_element_id){
+                    $("#"+day_element_id).empty();
+                    var i;
+                    for (i = 1; i <= day_this_month; i++) {
+                        if (i == selected_day)
+                            $("#"+day_element_id).append("<option value='"+i+"' selected='selected'>"+i+"</option>");
+                        else
+                            $("#"+day_element_id).append("<option value='"+i+"'>"+i+"</option>");
+                    }
+              }  
+
+            });
+        </script><label class="accesshide" for="id_87f1e2">День</label><select name="hired[day]" id="id_87f1e2">
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+	<option value="5">5</option>
+	<option value="6">6</option>
+	<option value="7">7</option>
+	<option value="8">8</option>
+	<option value="9" selected="selected">9</option>
+	<option value="10">10</option>
+	<option value="11">11</option>
+	<option value="12">12</option>
+	<option value="13">13</option>
+	<option value="14">14</option>
+	<option value="15">15</option>
+	<option value="16">16</option>
+	<option value="17">17</option>
+	<option value="18">18</option>
+	<option value="19">19</option>
+	<option value="20">20</option>
+	<option value="21">21</option>
+	<option value="22">22</option>
+	<option value="23">23</option>
+	<option value="24">24</option>
+	<option value="25">25</option>
+	<option value="26">26</option>
+	<option value="27">27</option>
+	<option value="28">28</option>
+	<option value="29">29</option>
+	<option value="30">30</option>
+	<option value="31">31</option>
+</select>&nbsp;<label class="accesshide" for="id_a0c5aa">Місяць</label><select name="hired[month]" id="id_a0c5aa">
+	<option value="1">Січень</option>
+	<option value="2">Лютий</option>
+	<option value="3">Березень</option>
+	<option value="4">Квітень</option>
+	<option value="5">Травень</option>
+	<option value="6">Червень</option>
+	<option value="7">Липень</option>
+	<option value="8">Серпень</option>
+	<option value="9">Вересень</option>
+	<option value="10" selected="selected">Жовтень</option>
+	<option value="11">Листопад</option>
+	<option value="12">Грудень</option>
+</select>&nbsp;<label class="accesshide" for="id_dc34b5">Рік</label><select name="hired[year]" id="id_dc34b5">
+	<option value="1970">1970</option>
+	<option value="1971">1971</option>
+	<option value="1972">1972</option>
+	<option value="1973">1973</option>
+	<option value="1974">1974</option>
+	<option value="1975">1975</option>
+	<option value="1976">1976</option>
+	<option value="1977">1977</option>
+	<option value="1978">1978</option>
+	<option value="1979">1979</option>
+	<option value="1980">1980</option>
+	<option value="1981">1981</option>
+	<option value="1982">1982</option>
+	<option value="1983">1983</option>
+	<option value="1984">1984</option>
+	<option value="1985">1985</option>
+	<option value="1986">1986</option>
+	<option value="1987">1987</option>
+	<option value="1988">1988</option>
+	<option value="1989">1989</option>
+	<option value="1990">1990</option>
+	<option value="1991">1991</option>
+	<option value="1992">1992</option>
+	<option value="1993">1993</option>
+	<option value="1994">1994</option>
+	<option value="1995">1995</option>
+	<option value="1996">1996</option>
+	<option value="1997">1997</option>
+	<option value="1998">1998</option>
+	<option value="1999">1999</option>
+	<option value="2000">2000</option>
+	<option value="2001">2001</option>
+	<option value="2002">2002</option>
+	<option value="2003">2003</option>
+	<option value="2004">2004</option>
+	<option value="2005">2005</option>
+	<option value="2006">2006</option>
+	<option value="2007">2007</option>
+	<option value="2008">2008</option>
+	<option value="2009">2009</option>
+	<option value="2010">2010</option>
+	<option value="2011">2011</option>
+	<option value="2012">2012</option>
+	<option value="2013">2013</option>
+	<option value="2014">2014</option>
+	<option value="2015">2015</option>
+	<option value="2016">2016</option>
+	<option value="2017" selected="selected">2017</option>
+</select></fieldset></div>
+		<div class="fitem advanced"><div class="fitemtitle"><div class="fgrouplabel"><label>Дата прийняття на посаду<img class="adv" title="Додатковий елемент" alt="Додатковий елемент" src="http://core-release-0.4.mocotms.com/pix/adv.gif"> </label></div></div><fieldset class="felement fdate_selector">
+        <script>
+            $(document).ready( function() {
+
+              // Пересчет дней  для всех элементов dateselector-а на форме
+              $("select[name*='[month]']").each(function (){
+                var selected_month = $(this).val();
+                var selected_year = $(this).next().next().val();
+                var selected_day = $(this).prev().prev().val();
+                var day_element_id = $(this).prev().prev().attr("id");
+                var day_this_month = new Date(selected_year,selected_month,0).getDate();
+
+                recreate_day_select(day_this_month, selected_day, day_element_id);                
+              });
+
+              // Пересчет дней в месяце при смене месяца
+              $("select[name*='[month]']").change(function(){
+                var selected_month = $(this).val();
+                var selected_year = $(this).next().next().val();
+                var selected_day = $(this).prev().prev().val();
+                var day_element_id = $(this).prev().prev().attr("id");
+                var day_this_month = new Date(selected_year,selected_month,0).getDate();
+
+                recreate_day_select(day_this_month, selected_day, day_element_id);                
+              });
+
+              // При смене года пересчитываем дни, только если выбран месяц февраль
+              $("select[name*='[year]']").change(function(){
+                var selected_month = $(this).prev().prev().val();
+                if (selected_month == 2){
+                    var selected_year = $(this).val();
+                    var selected_day = $(this).prev().prev().prev().prev().val();
+                    var day_element_id = $(this).prev().prev().prev().prev().attr("id");
+                    var day_this_month = new Date(selected_year,selected_month,0).getDate();
+
+                    recreate_day_select(day_this_month, selected_day, day_element_id);
+                }
+
+              });
+
+              function recreate_day_select(day_this_month, selected_day, day_element_id){
+                    $("#"+day_element_id).empty();
+                    var i;
+                    for (i = 1; i <= day_this_month; i++) {
+                        if (i == selected_day)
+                            $("#"+day_element_id).append("<option value='"+i+"' selected='selected'>"+i+"</option>");
+                        else
+                            $("#"+day_element_id).append("<option value='"+i+"'>"+i+"</option>");
+                    }
+              }  
+
+            });
+        </script><label class="accesshide" for="id_ade537">День</label><select name="changed[day]" id="id_ade537">
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+	<option value="5">5</option>
+	<option value="6">6</option>
+	<option value="7">7</option>
+	<option value="8">8</option>
+	<option value="9" selected="selected">9</option>
+	<option value="10">10</option>
+	<option value="11">11</option>
+	<option value="12">12</option>
+	<option value="13">13</option>
+	<option value="14">14</option>
+	<option value="15">15</option>
+	<option value="16">16</option>
+	<option value="17">17</option>
+	<option value="18">18</option>
+	<option value="19">19</option>
+	<option value="20">20</option>
+	<option value="21">21</option>
+	<option value="22">22</option>
+	<option value="23">23</option>
+	<option value="24">24</option>
+	<option value="25">25</option>
+	<option value="26">26</option>
+	<option value="27">27</option>
+	<option value="28">28</option>
+	<option value="29">29</option>
+	<option value="30">30</option>
+	<option value="31">31</option>
+</select>&nbsp;<label class="accesshide" for="id_d0fa92">Місяць</label><select name="changed[month]" id="id_d0fa92">
+	<option value="1">Січень</option>
+	<option value="2">Лютий</option>
+	<option value="3">Березень</option>
+	<option value="4">Квітень</option>
+	<option value="5">Травень</option>
+	<option value="6">Червень</option>
+	<option value="7">Липень</option>
+	<option value="8">Серпень</option>
+	<option value="9">Вересень</option>
+	<option value="10" selected="selected">Жовтень</option>
+	<option value="11">Листопад</option>
+	<option value="12">Грудень</option>
+</select>&nbsp;<label class="accesshide" for="id_7c9510">Рік</label><select name="changed[year]" id="id_7c9510">
+	<option value="1970">1970</option>
+	<option value="1971">1971</option>
+	<option value="1972">1972</option>
+	<option value="1973">1973</option>
+	<option value="1974">1974</option>
+	<option value="1975">1975</option>
+	<option value="1976">1976</option>
+	<option value="1977">1977</option>
+	<option value="1978">1978</option>
+	<option value="1979">1979</option>
+	<option value="1980">1980</option>
+	<option value="1981">1981</option>
+	<option value="1982">1982</option>
+	<option value="1983">1983</option>
+	<option value="1984">1984</option>
+	<option value="1985">1985</option>
+	<option value="1986">1986</option>
+	<option value="1987">1987</option>
+	<option value="1988">1988</option>
+	<option value="1989">1989</option>
+	<option value="1990">1990</option>
+	<option value="1991">1991</option>
+	<option value="1992">1992</option>
+	<option value="1993">1993</option>
+	<option value="1994">1994</option>
+	<option value="1995">1995</option>
+	<option value="1996">1996</option>
+	<option value="1997">1997</option>
+	<option value="1998">1998</option>
+	<option value="1999">1999</option>
+	<option value="2000">2000</option>
+	<option value="2001">2001</option>
+	<option value="2002">2002</option>
+	<option value="2003">2003</option>
+	<option value="2004">2004</option>
+	<option value="2005">2005</option>
+	<option value="2006">2006</option>
+	<option value="2007">2007</option>
+	<option value="2008">2008</option>
+	<option value="2009">2009</option>
+	<option value="2010">2010</option>
+	<option value="2011">2011</option>
+	<option value="2012">2012</option>
+	<option value="2013">2013</option>
+	<option value="2014">2014</option>
+	<option value="2015">2015</option>
+	<option value="2016">2016</option>
+	<option value="2017" selected="selected">2017</option>
+</select></fieldset></div>
+		<div class="fitem required"><div class="fitemtitle"><label for="id_email">ел.пошта<img class="req" title="Обов'язкове поле" alt="Обов'язкове поле" src="http://core-release-0.4.mocotms.com/pix/req.gif"> </label></div><div class="felement ftext"><input maxlength="100" size="30" name="email" onblur="validate_user_editadvanced_form_email(this)" onchange="validate_user_editadvanced_form_email(this)" id="id_email" type="text"></div></div>
+		<div class="fitem advanced"><div class="fitemtitle"><label for="id_maildisplay">Показувати ел.пошту<img class="adv" title="Додатковий елемент" alt="Додатковий елемент" src="http://core-release-0.4.mocotms.com/pix/adv.gif"> </label></div><div class="felement fselect"><select name="maildisplay" id="id_maildisplay">
+	<option value="0">Не показувати мою адресу</option>
+	<option value="1">Всім</option>
+	<option value="2" selected="selected">Тільки іншим слухачам курсу</option>
+</select></div></div>
+		<div class="fitem advanced"><div class="fitemtitle"><label for="id_emailstop">електронну пошту активовано<img class="adv" title="Додатковий елемент" alt="Додатковий елемент" src="http://core-release-0.4.mocotms.com/pix/adv.gif"> </label></div><div class="felement fselect"><select name="emailstop" id="id_emailstop">
+	<option value="0">Ця електронна адреса включена</option>
+	<option value="1">Ця електронна адреса відключена</option>
+</select></div></div>
+		<div class="fitem advanced"><div class="fitemtitle"><label for="id_mailformat">Формат повідомлень ел.пошти<img class="adv" title="Додатковий елемент" alt="Додатковий елемент" src="http://core-release-0.4.mocotms.com/pix/adv.gif"> </label></div><div class="felement fselect"><select name="mailformat" id="id_mailformat">
+	<option value="0">Текстовий формат</option>
+	<option value="1" selected="selected">HTML-формат</option>
+</select></div></div>
+		<div class="fitem advanced"><div class="fitemtitle"><label for="id_maildigest">Тип огляду<img class="adv" title="Додатковий елемент" alt="Додатковий елемент" src="http://core-release-0.4.mocotms.com/pix/adv.gif"> </label></div><div class="felement fselect"><select name="maildigest" id="id_maildigest">
+	<option value="0" selected="selected">Не прочитані (окремі листи)</option>
+	<option value="1">Зведення (щоденна пошта з повним текстом)</option>
+	<option value="2">Теми (щоденна пошта тільки з темами)</option>
+</select></div></div>
+		<div class="fitem advanced"><div class="fitemtitle"><label for="id_autosubscribe">Автопідписка на форум<img class="adv" title="Додатковий елемент" alt="Додатковий елемент" src="http://core-release-0.4.mocotms.com/pix/adv.gif"> </label></div><div class="felement fselect"><select name="autosubscribe" id="id_autosubscribe">
+	<option value="1" selected="selected">Так, коли я відправляю повідомлення, я хочу, щоб мене автоматично підписували на форум</option>
+	<option value="0">Ні, не підписуйте мене автоматично на форуми</option>
+</select></div></div>
+		<div class="fitem advanced"><div class="fitemtitle"><label for="id_trackforums">Стеження за форумами<img class="adv" title="Додатковий елемент" alt="Додатковий елемент" src="http://core-release-0.4.mocotms.com/pix/adv.gif"> </label></div><div class="felement fselect"><select name="trackforums" id="id_trackforums">
+	<option value="0" selected="selected">Ні: не інформувати про нові повідомлення</option>
+	<option value="1">Так: інформувати про нові повідомлення</option>
+</select></div></div>
+		<div class="fitem advanced"><div class="fitemtitle"><label for="id_htmleditor">Під час редагування тексту<img class="adv" title="Додатковий елемент" alt="Додатковий елемент" src="http://core-release-0.4.mocotms.com/pix/adv.gif"> </label></div><div class="felement fselect"><select name="htmleditor" id="id_htmleditor">
+	<option value="0">Використовувати стандартні web-форми</option>
+	<option value="1" selected="selected">Використати Richtext HTML-редактор</option>
+</select></div></div>
+		<div class="fitem advanced"><div class="fitemtitle"><label for="id_ajax">AJAX та Javascript<img class="adv" title="Додатковий елемент" alt="Додатковий елемент" src="http://core-release-0.4.mocotms.com/pix/adv.gif"> </label></div><div class="felement fselect"><select name="ajax" id="id_ajax">
+	<option value="0" selected="selected">Ні: використовувати основні web можливості</option>
+	<option value="1">Так: використовувати розширені web можливості</option>
+</select></div></div>
+		<div class="fitem required"><div class="fitemtitle"><label for="id_city">Місто<img class="req" title="Обов'язкове поле" alt="Обов'язкове поле" src="http://core-release-0.4.mocotms.com/pix/req.gif"> </label></div><div class="felement ftext"><input maxlength="20" size="21" name="city" onblur="validate_user_editadvanced_form_city(this)" onchange="validate_user_editadvanced_form_city(this)" id="id_city" type="text"></div></div>
+		<div class="fitem required"><div class="fitemtitle"><label for="id_country">Країна<img class="req" title="Обов'язкове поле" alt="Обов'язкове поле" src="http://core-release-0.4.mocotms.com/pix/req.gif"> </label></div><div class="felement fselect"><select name="country" onblur="validate_user_editadvanced_form_country(this)" onchange="validate_user_editadvanced_form_country(this)" id="id_country">
+	<option value="">Країна...</option>
+	<option value="AU">Австралія</option>
+	<option value="AT">Австрія</option>
+	<option value="AZ">Азербайджан</option>
+	<option value="AX">Аландські острови</option>
+	<option value="AL">Албанія</option>
+	<option value="DZ">Алжир</option>
+	<option value="AS">Американське Самоа</option>
+	<option value="AI">Анґілья</option>
+	<option value="AO">Анґола</option>
+	<option value="AD">Андорра</option>
+	<option value="AQ">Антарктика</option>
+	<option value="AG">Антиґуа і Барбуда</option>
+	<option value="AN">Антильські Острови (Нід.)</option>
+	<option value="AR">Аргентина</option>
+	<option value="AW">Аруба</option>
+	<option value="AF">Афганістан</option>
+	<option value="BS">Багами</option>
+	<option value="BD">Банґладеш</option>
+	<option value="BB">Барбадос</option>
+	<option value="BH">Бахрейн</option>
+	<option value="BE">Бельгія</option>
+	<option value="BZ">Беліз</option>
+	<option value="BJ">Бенін</option>
+	<option value="BM">Бермуди</option>
+	<option value="BY">Білорусь</option>
+	<option value="BG">Болгарія</option>
+	<option value="BO">Болівія</option>
+	<option value="BA">Боснія і Герцеґовина</option>
+	<option value="BW">Ботсвана</option>
+	<option value="BR">Бразилія</option>
+	<option value="IO">Британська територія в Індійському океані</option>
+	<option value="BN">Бруней</option>
+	<option value="BF">Буркіна-Фасо</option>
+	<option value="BI">Бурунді</option>
+	<option value="BT">Бутан</option>
+	<option value="VU">Вануату</option>
+	<option value="VA">Ватикан</option>
+	<option value="GB">Велика Британія</option>
+	<option value="VE">Венесуела</option>
+	<option value="VN">В'єтнам</option>
+	<option value="VG">Віргінські Острови (Брит.)</option>
+	<option value="VI">Віргінські Острови (США)</option>
+	<option value="AM">Вірменія</option>
+	<option value="HT">Гаїті</option>
+	<option value="GH">Гана</option>
+	<option value="GG">Гернсей</option>
+	<option value="HN">Гондурас</option>
+	<option value="GR">Греція</option>
+	<option value="GE">Грузія</option>
+	<option value="GA">Ґабон</option>
+	<option value="GY">Ґайана</option>
+	<option value="GM">Ґамбія</option>
+	<option value="GP">Ґваделупа</option>
+	<option value="GT">Ґватемала</option>
+	<option value="GN">Ґвінея</option>
+	<option value="GW">Ґвінея-Бісау</option>
+	<option value="GI">Ґібралтар</option>
+	<option value="HK">Ґонконг (Сянґан)</option>
+	<option value="GD">Ґренада</option>
+	<option value="GL">Ґренландія</option>
+	<option value="GU">Ґуам</option>
+	<option value="DK">Данія</option>
+	<option value="ZR">Демократична Республіка Конґо (Заїр)</option>
+	<option value="JE">Джерсей</option>
+	<option value="DJ">Джібуті</option>
+	<option value="DM">Домініка</option>
+	<option value="DO">Домініканська Республіка</option>
+	<option value="EG">Єгипет</option>
+	<option value="EC">Еквадор</option>
+	<option value="GQ">Екваторіальна Ґвінея</option>
+	<option value="YE">Ємен</option>
+	<option value="ER">Еритрея</option>
+	<option value="EE">Естонія</option>
+	<option value="ET">Ефіопія</option>
+	<option value="ZM">Замбія</option>
+	<option value="EH">Західна Сахара</option>
+	<option value="ZW">Зімбабве</option>
+	<option value="IL">Ізраїль</option>
+	<option value="IN">Індія</option>
+	<option value="ID">Індонезія</option>
+	<option value="IQ">Ірак</option>
+	<option value="IR">Іран</option>
+	<option value="IE">Ірландія</option>
+	<option value="IS">Ісландія</option>
+	<option value="ES">Іспанія</option>
+	<option value="IT">Італія</option>
+	<option value="JO">Йорданія</option>
+	<option value="CV">Кабо-Верде</option>
+	<option value="KZ">Казахстан</option>
+	<option value="KY">Кайманові Острови</option>
+	<option value="KH">Камбоджа</option>
+	<option value="CM">Камерун</option>
+	<option value="CA">Канада</option>
+	<option value="QA">Катар</option>
+	<option value="KE">Кенія</option>
+	<option value="KG">Киргизстан</option>
+	<option value="CN">Китай</option>
+	<option value="CY">Кіпр</option>
+	<option value="KI">Кірибаті</option>
+	<option value="CC">Кокосові (Кілінґ) Острови</option>
+	<option value="CO">Колумбія</option>
+	<option value="KM">Комори</option>
+	<option value="CD">Конго, Демократична Республіка</option>
+	<option value="CG">Конґо</option>
+	<option value="KR">Корея Південна</option>
+	<option value="KP">Корея Північна</option>
+	<option value="KO">Косово</option>
+	<option value="CR">Коста-Ріка</option>
+	<option value="CI">Кот-д'Івуар</option>
+	<option value="CU">Куба</option>
+	<option value="KW">Кувейт</option>
+	<option value="LA">Лаос</option>
+	<option value="LV">Латвія</option>
+	<option value="LS">Лесото</option>
+	<option value="LT">Литва</option>
+	<option value="LR">Ліберія</option>
+	<option value="LB">Ліван</option>
+	<option value="LY">Лівія</option>
+	<option value="LI">Ліхтенштейн</option>
+	<option value="LU">Люксембурґ</option>
+	<option value="MU">Маврикій</option>
+	<option value="MR">Мавританія</option>
+	<option value="MG">Мадаґаскар</option>
+	<option value="YT">Майотта</option>
+	<option value="MO">Макау</option>
+	<option value="MK">Македонія</option>
+	<option value="MW">Малаві</option>
+	<option value="MY">Малайзія</option>
+	<option value="MV">Мальдіви</option>
+	<option value="ML">Малі</option>
+	<option value="MT">Мальта</option>
+	<option value="MA">Марокко</option>
+	<option value="MQ">Мартиніка</option>
+	<option value="MH">Маршаллові Острови</option>
+	<option value="MX">Мексика</option>
+	<option value="MZ">Мозамбік</option>
+	<option value="MD">Молдова</option>
+	<option value="MC">Монако</option>
+	<option value="MN">Монголія</option>
+	<option value="MS">Монтсеррат</option>
+	<option value="MM">М'янма</option>
+	<option value="NA">Намібія</option>
+	<option value="NR">Науру</option>
+	<option value="NP">Непал</option>
+	<option value="NE">Ніґер</option>
+	<option value="NG">Ніґерія</option>
+	<option value="NL">Нідерланди</option>
+	<option value="NI">Нікараґуа</option>
+	<option value="DE">Німеччина</option>
+	<option value="NU">Ніуе</option>
+	<option value="NZ">Нова Зеландія</option>
+	<option value="NC">Нова Каледонія</option>
+	<option value="NO">Норвегія</option>
+	<option value="AE">Об'єднані Арабські Емірати</option>
+	<option value="BV">о. Буве</option>
+	<option value="WF">о-ви Волліс і Футуна</option>
+	<option value="HM">о-ви Герд і Макдональд</option>
+	<option value="CK">о-ви Кука</option>
+	<option value="TC">о-ви Теркс і Кайкос</option>
+	<option value="SJ">о-ви Ян-Маєн і Свалбард</option>
+	<option value="OM">Оман</option>
+	<option value="NF">о. Норфолк</option>
+	<option value="CX">о. Різдва</option>
+	<option value="SH">о. Св. Єлени</option>
+	<option value="IM">Острів Мен</option>
+	<option value="PK">Пакистан</option>
+	<option value="PW">Палау</option>
+	<option value="PS">Палестина</option>
+	<option value="PA">Панама</option>
+	<option value="PG">Папуа-Нова Ґвінея</option>
+	<option value="PY">Параґвай</option>
+	<option value="PE">Перу</option>
+	<option value="ZA">Південна Африка</option>
+	<option value="GS">Південна Джорджія</option>
+	<option value="MP">Північні Маріанські Острови</option>
+	<option value="PN">Піткерн</option>
+	<option value="PL">Польща</option>
+	<option value="PT">Португалія</option>
+	<option value="PR">Пуерто-Рико</option>
+	<option value="RE">Реюньйон</option>
+	<option value="RU">Росія</option>
+	<option value="RW">Руанда</option>
+	<option value="RO">Румунія</option>
+	<option value="SV">Сальвадор</option>
+	<option value="WS">Самоа</option>
+	<option value="SM">Сан-Марино</option>
+	<option value="BL">СантБарталам'ю</option>
+	<option value="MF">СантМартін</option>
+	<option value="ST">Сан-Томе і Принсіпі</option>
+	<option value="SA">Саудівська Аравія</option>
+	<option value="SZ">Свазіленд</option>
+	<option value="SC">Сейшельські Острови</option>
+	<option value="SN">Сенеґал</option>
+	<option value="PM">Сен-П'єр і Мікелон</option>
+	<option value="VC">Сент-Вінсент і Ґренадини</option>
+	<option value="KN">Сент-Кітс і Невіс</option>
+	<option value="LC">Сент-Люсія</option>
+	<option value="RS">Сербія</option>
+	<option value="CS">Сербія і Чорногорія</option>
+	<option value="SL">Сьєрра-Леоне</option>
+	<option value="SY">Сирія</option>
+	<option value="SG">Сінґапур</option>
+	<option value="SK">Словаччина</option>
+	<option value="SI">Словенія</option>
+	<option value="SB">Соломонові Острови</option>
+	<option value="SO">Сомалі</option>
+	<option value="US">Сполучені Штати Америки</option>
+	<option value="SD">Судан</option>
+	<option value="SR">Суринам</option>
+	<option value="TP">Східний Тімор</option>
+	<option value="UM">США віддалені острови</option>
+	<option value="TJ">Таджикистан</option>
+	<option value="TH">Таїланд</option>
+	<option value="TW">Тайвань</option>
+	<option value="TZ">Танзанія</option>
+	<option value="TL">Тімор-Лесте</option>
+	<option value="TG">Тоґо</option>
+	<option value="TK">Токелау</option>
+	<option value="TO">Тонґа</option>
+	<option value="TT">Тринідад і Тобаґо</option>
+	<option value="TV">Тувалу</option>
+	<option value="TN">Туніс</option>
+	<option value="TR">Туреччина</option>
+	<option value="TM">Туркменістан</option>
+	<option value="HU">Угорщина</option>
+	<option value="UG">Уґанда</option>
+	<option value="WA">Уельс</option>
+	<option value="UZ">Узбекистан</option>
+	<option value="UA">Україна</option>
+	<option value="UY">Уруґвай</option>
+	<option value="FO">Фарерські Острови</option>
+	<option value="FM">Федеративні Штати Мікронезії</option>
+	<option value="FJ">Фіджі</option>
+	<option value="PH">Філіппіни</option>
+	<option value="FI">Фінляндія</option>
+	<option value="FK">Фолклендські (Мальвінські) Острови</option>
+	<option value="FR">Франція</option>
+	<option value="FX">Франція; Метрополія</option>
+	<option value="GF">Французька Гвіана</option>
+	<option value="PF">Французька Полінезія</option>
+	<option value="TF">Французькі Південнополярні території</option>
+	<option value="HR">Хорватія</option>
+	<option value="CF">Центральноафриканська Республіка</option>
+	<option value="TD">Чад</option>
+	<option value="CZ">Чехія</option>
+	<option value="CL">Чилі</option>
+	<option value="ME">Чорногорія</option>
+	<option value="CH">Швейцарія</option>
+	<option value="SE">Швеція</option>
+	<option value="LK">Шрі-Ланка</option>
+	<option value="JM">Ямайка</option>
+	<option value="JP">Японія</option>
+</select></div></div>
+		<div class="fitem advanced"><div class="fitemtitle"><label for="id_timezone">Часовий пояс<img class="adv" title="Додатковий елемент" alt="Додатковий елемент" src="http://core-release-0.4.mocotms.com/pix/adv.gif"> </label></div><div class="felement fselect"><select name="timezone" id="id_timezone">
+	<option value="-13.0">UTC-13</option>
+	<option value="-12.5">UTC-12.5</option>
+	<option value="-12.0">UTC-12</option>
+	<option value="-11.5">UTC-11.5</option>
+	<option value="-11.0">UTC-11</option>
+	<option value="-10.5">UTC-10.5</option>
+	<option value="-10.0">UTC-10</option>
+	<option value="-9.5">UTC-9.5</option>
+	<option value="-9.0">UTC-9</option>
+	<option value="-8.5">UTC-8.5</option>
+	<option value="-8.0">UTC-8</option>
+	<option value="-7.5">UTC-7.5</option>
+	<option value="-7.0">UTC-7</option>
+	<option value="-6.5">UTC-6.5</option>
+	<option value="-6.0">UTC-6</option>
+	<option value="-5.5">UTC-5.5</option>
+	<option value="-5.0">UTC-5</option>
+	<option value="-4.5">UTC-4.5</option>
+	<option value="-4.0">UTC-4</option>
+	<option value="-3.5">UTC-3.5</option>
+	<option value="-3.0">UTC-3</option>
+	<option value="-2.5">UTC-2.5</option>
+	<option value="-2.0">UTC-2</option>
+	<option value="-1.5">UTC-1.5</option>
+	<option value="-1.0">UTC-1</option>
+	<option value="-0.5">UTC-0.5</option>
+	<option value="0.0">UTC</option>
+	<option value="0.5">UTC+0.5</option>
+	<option value="1.0">UTC+1</option>
+	<option value="1.5">UTC+1.5</option>
+	<option value="2.0">UTC+2</option>
+	<option value="2.5">UTC+2.5</option>
+	<option value="3.0">UTC+3</option>
+	<option value="3.5">UTC+3.5</option>
+	<option value="4.0">UTC+4</option>
+	<option value="4.5">UTC+4.5</option>
+	<option value="5.0">UTC+5</option>
+	<option value="5.5">UTC+5.5</option>
+	<option value="6.0">UTC+6</option>
+	<option value="6.5">UTC+6.5</option>
+	<option value="7.0">UTC+7</option>
+	<option value="7.5">UTC+7.5</option>
+	<option value="8.0">UTC+8</option>
+	<option value="8.5">UTC+8.5</option>
+	<option value="9.0">UTC+9</option>
+	<option value="9.5">UTC+9.5</option>
+	<option value="10.0">UTC+10</option>
+	<option value="10.5">UTC+10.5</option>
+	<option value="11.0">UTC+11</option>
+	<option value="11.5">UTC+11.5</option>
+	<option value="12.0">UTC+12</option>
+	<option value="12.5">UTC+12.5</option>
+	<option value="13.0">UTC+13</option>
+	<option value="99" selected="selected">Час на сервері</option>
+</select></div></div>
+		<div class="fitem"><div class="fitemtitle"><label for="id_lang">Мова, якій віддається перевага </label></div><div class="felement fselect"><select name="lang" id="id_lang">
+	<option value="en_utf8">English (en)</option>
+	<option value="ru_utf8">Русский (ru)</option>
+	<option value="uk_utf8" selected="selected">Українська (uk)</option>
+</select></div></div>
+		<div class="fitem"><div class="fitemtitle"><label for="id_sex">Стать </label></div><div class="felement fselect"><select name="sex" id="id_sex">
+	<option value="default_male">Не обрана</option>
+	<option value="male">Чоловік</option>
+	<option value="female">Жінка</option>
+</select></div></div>
+		<div class="fitem advanced"><div class="fitemtitle"><label for="id_description">Опис<img class="adv" title="Додатковий елемент" alt="Додатковий елемент" src="http://core-release-0.4.mocotms.com/pix/adv.gif"> <span class="helplink"><a title="Допомогти з Як написати текст (нове вікно)" href="http://core-release-0.4.mocotms.com/help.php?module=moodle&amp;file=text.html&amp;forcelang=" onclick="this.target='popup'; return openpopup('/help.php?module=moodle&amp;file=text.html&amp;forcelang=', 'popup', 'menubar=0,location=0,scrollbars,resizable,width=500,height=400', 0);"><img class="iconhelp" alt="Допомогти з Як написати текст (нове вікно)" src="http://core-release-0.4.mocotms.com/pix/help.gif"></a></span>&nbsp;</label></div><div class="felement fhtmleditor"><script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/editor/htmlarea/htmlarea.php?id=1"></script><style type="text/css">@import url(http://core-release-0.4.mocotms.com/lib/editor/htmlarea/htmlarea.css);</style>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/editor/htmlarea/lang/en.php?id=1"></script>
+<div class="htmlarea"><div class="toolbar"><table cellspacing="0px" cellpadding="0px" border="0px"><tbody><tr><td><select><option value="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif">Trebuchet</option><option value="arial,helvetica,sans-serif">Arial</option><option value="courier new,courier,monospace">Courier New</option><option value="georgia,times new roman,times,serif">Georgia</option><option value="tahoma,arial,helvetica,sans-serif">Tahoma</option><option value="times new roman,times,serif">Times New Roman</option><option value="verdana,arial,helvetica,sans-serif">Verdana</option><option value="impact">Impact</option><option value="wingdings">Wingdings</option></select></td><td><div class="space"></div></td><td><select><option value="1">1 (8 pt)</option><option value="2">2 (10 pt)</option><option value="3">3 (12 pt)</option><option value="4">4 (14 pt)</option><option value="5">5 (18 pt)</option><option value="6">6 (24 pt)</option><option value="7">7 (36 pt)</option></select></td><td><div class="space"></div></td><td><select><option value=""></option><option value="h1">Заголовок 1</option><option value="h2">Заголовок 2</option><option value="h3">Заголовок 3</option><option value="h4">Заголовок 4</option><option value="h5">Заголовок 5</option><option value="h6">Заголовок 6</option><option value="p">Стандартний</option><option value="address">Адреса</option><option value="pre">Відфоматованний</option></select></td><td><div class="space"></div></td><td><select><option value="">Мова</option><option value="aa">aa</option><option value="ab">ab</option><option value="ae">ae</option><option value="af">af</option><option value="am">am</option><option value="ar">ar</option><option value="as">as</option><option value="ay">ay</option><option value="az">az</option><option value="ba">ba</option><option value="be">be</option><option value="bg">bg</option><option value="bh">bh</option><option value="bi">bi</option><option value="bn">bn</option><option value="bo">bo</option><option value="br">br</option><option value="bs">bs</option><option value="ca">ca</option><option value="ce">ce</option><option value="ch">ch</option><option value="co">co</option><option value="cs">cs</option><option value="cu">cu</option><option value="cv">cv</option><option value="cy">cy</option><option value="da">da</option><option value="de">de</option><option value="dz">dz</option><option value="el">el</option><option value="en">en</option><option value="eo">eo</option><option value="es">es</option><option value="et">et</option><option value="eu">eu</option><option value="fa">fa</option><option value="fi">fi</option><option value="fj">fj</option><option value="fo">fo</option><option value="fr">fr</option><option value="fy">fy</option><option value="ga">ga</option><option value="gd">gd</option><option value="gl">gl</option><option value="gn">gn</option><option value="gu">gu</option><option value="gv">gv</option><option value="ha">ha</option><option value="he">he</option><option value="hi">hi</option><option value="ho">ho</option><option value="hr">hr</option><option value="hu">hu</option><option value="hy">hy</option><option value="hz">hz</option><option value="ia">ia</option><option value="id">id</option><option value="ie">ie</option><option value="ik">ik</option><option value="is">is</option><option value="it">it</option><option value="iu">iu</option><option value="ja">ja</option><option value="jw">jw</option><option value="ka">ka</option><option value="ki">ki</option><option value="kj">kj</option><option value="kk">kk</option><option value="kl">kl</option><option value="km">km</option><option value="kn">kn</option><option value="ko">ko</option><option value="ks">ks</option><option value="ku">ku</option><option value="kv">kv</option><option value="kw">kw</option><option value="ky">ky</option><option value="la">la</option><option value="lb">lb</option><option value="ln">ln</option><option value="lo">lo</option><option value="lt">lt</option><option value="lv">lv</option><option value="mg">mg</option><option value="mh">mh</option><option value="mi">mi</option><option value="mk">mk</option><option value="ml">ml</option><option value="mn">mn</option><option value="mo">mo</option><option value="mr">mr</option><option value="ms">ms</option><option value="mt">mt</option><option value="my">my</option><option value="na">na</option><option value="nb">nb</option><option value="nd">nd</option><option value="ne">ne</option><option value="ng">ng</option><option value="nl">nl</option><option value="nn">nn</option><option value="no">no</option><option value="nr">nr</option><option value="nv">nv</option><option value="ny">ny</option><option value="oc">oc</option><option value="om">om</option><option value="or">or</option><option value="os">os</option><option value="pa">pa</option><option value="ph">ph</option><option value="pi">pi</option><option value="pl">pl</option><option value="ps">ps</option><option value="pt">pt</option><option value="pt-br">pt-br</option><option value="qu">qu</option><option value="rm">rm</option><option value="rn">rn</option><option value="ro">ro</option><option value="ru">ru</option><option value="rw">rw</option><option value="sa">sa</option><option value="sc">sc</option><option value="sd">sd</option><option value="se">se</option><option value="sg">sg</option><option value="si">si</option><option value="sk">sk</option><option value="sl">sl</option><option value="sm">sm</option><option value="sn">sn</option><option value="so">so</option><option value="sq">sq</option><option value="sr">sr</option><option value="ss">ss</option><option value="st">st</option><option value="su">su</option><option value="sv">sv</option><option value="sw">sw</option><option value="ta">ta</option><option value="te">te</option><option value="tg">tg</option><option value="th">th</option><option value="tk">tk</option><option value="tl">tl</option><option value="tn">tn</option><option value="tr">tr</option><option value="ts">ts</option><option value="tt">tt</option><option value="tw">tw</option><option value="ty">ty</option><option value="ug">ug</option><option value="uk">uk</option><option value="ur">ur</option><option value="uz">uz</option><option value="vi">vi</option><option value="vo">vo</option><option value="wo">wo</option><option value="xh">xh</option><option value="yi">yi</option><option value="za">za</option><option value="zh">zh</option><option value="zu">zu</option><option value="multi">Мульті</option><option value="aa_ML">aa </option><option value="ab_ML">ab </option><option value="ae_ML">ae </option><option value="af_ML">af </option><option value="am_ML">am </option><option value="ar_ML">ar </option><option value="as_ML">as </option><option value="ay_ML">ay </option><option value="az_ML">az </option><option value="ba_ML">ba </option><option value="be_ML">be </option><option value="bg_ML">bg </option><option value="bh_ML">bh </option><option value="bi_ML">bi </option><option value="bn_ML">bn </option><option value="bo_ML">bo </option><option value="br_ML">br </option><option value="bs_ML">bs </option><option value="ca_ML">ca </option><option value="ce_ML">ce </option><option value="ch_ML">ch </option><option value="co_ML">co </option><option value="cs_ML">cs </option><option value="cu_ML">cu </option><option value="cv_ML">cv </option><option value="cy_ML">cy </option><option value="da_ML">da </option><option value="de_ML">de </option><option value="dz_ML">dz </option><option value="el_ML">el </option><option value="en_ML">en </option><option value="eo_ML">eo </option><option value="es_ML">es </option><option value="et_ML">et </option><option value="eu_ML">eu </option><option value="fa_ML">fa </option><option value="fi_ML">fi </option><option value="fj_ML">fj </option><option value="fo_ML">fo </option><option value="fr_ML">fr </option><option value="fy_ML">fy </option><option value="ga_ML">ga </option><option value="gd_ML">gd </option><option value="gl_ML">gl </option><option value="gn_ML">gn </option><option value="gu_ML">gu </option><option value="gv_ML">gv </option><option value="ha_ML">ha </option><option value="he_ML">he </option><option value="hi_ML">hi </option><option value="ho_ML">ho </option><option value="hr_ML">hr </option><option value="hu_ML">hu </option><option value="hy_ML">hy </option><option value="hz_ML">hz </option><option value="ia_ML">ia </option><option value="id_ML">id </option><option value="ie_ML">ie </option><option value="ik_ML">ik </option><option value="is_ML">is </option><option value="it_ML">it </option><option value="iu_ML">iu </option><option value="ja_ML">ja </option><option value="jw_ML">jw </option><option value="ka_ML">ka </option><option value="ki_ML">ki </option><option value="kj_ML">kj </option><option value="kk_ML">kk </option><option value="kl_ML">kl </option><option value="km_ML">km </option><option value="kn_ML">kn </option><option value="ko_ML">ko </option><option value="ks_ML">ks </option><option value="ku_ML">ku </option><option value="kv_ML">kv </option><option value="kw_ML">kw </option><option value="ky_ML">ky </option><option value="la_ML">la </option><option value="lb_ML">lb </option><option value="ln_ML">ln </option><option value="lo_ML">lo </option><option value="lt_ML">lt </option><option value="lv_ML">lv </option><option value="mg_ML">mg </option><option value="mh_ML">mh </option><option value="mi_ML">mi </option><option value="mk_ML">mk </option><option value="ml_ML">ml </option><option value="mn_ML">mn </option><option value="mo_ML">mo </option><option value="mr_ML">mr </option><option value="ms_ML">ms </option><option value="mt_ML">mt </option><option value="my_ML">my </option><option value="na_ML">na </option><option value="nb_ML">nb </option><option value="nd_ML">nd </option><option value="ne_ML">ne </option><option value="ng_ML">ng </option><option value="nl_ML">nl </option><option value="nn_ML">nn </option><option value="no_ML">no </option><option value="nr_ML">nr </option><option value="nv_ML">nv </option><option value="ny_ML">ny </option><option value="oc_ML">oc </option><option value="om_ML">om </option><option value="or_ML">or </option><option value="os_ML">os </option><option value="pa_ML">pa </option><option value="ph_ML">ph </option><option value="pi_ML">pi </option><option value="pl_ML">pl </option><option value="ps_ML">ps </option><option value="pt_ML">pt </option><option value="pt-br_ML">pt-br </option><option value="qu_ML">qu </option><option value="rm_ML">rm </option><option value="rn_ML">rn </option><option value="ro_ML">ro </option><option value="ru_ML">ru </option><option value="rw_ML">rw </option><option value="sa_ML">sa </option><option value="sc_ML">sc </option><option value="sd_ML">sd </option><option value="se_ML">se </option><option value="sg_ML">sg </option><option value="si_ML">si </option><option value="sk_ML">sk </option><option value="sl_ML">sl </option><option value="sm_ML">sm </option><option value="sn_ML">sn </option><option value="so_ML">so </option><option value="sq_ML">sq </option><option value="sr_ML">sr </option><option value="ss_ML">ss </option><option value="st_ML">st </option><option value="su_ML">su </option><option value="sv_ML">sv </option><option value="sw_ML">sw </option><option value="ta_ML">ta </option><option value="te_ML">te </option><option value="tg_ML">tg </option><option value="th_ML">th </option><option value="tk_ML">tk </option><option value="tl_ML">tl </option><option value="tn_ML">tn </option><option value="tr_ML">tr </option><option value="ts_ML">ts </option><option value="tt_ML">tt </option><option value="tw_ML">tw </option><option value="ty_ML">ty </option><option value="ug_ML">ug </option><option value="uk_ML">uk </option><option value="ur_ML">ur </option><option value="uz_ML">uz </option><option value="vi_ML">vi </option><option value="vo_ML">vo </option><option value="wo_ML">wo </option><option value="xh_ML">xh </option><option value="yi_ML">yi </option><option value="za_ML">za </option><option value="zh_ML">zh </option><option value="zu_ML">zu </option></select></td><td><div class="space"></div></td><td><div title="Жирний" class="button"><img src="http://core-release-0.4.mocotms.com/lib/editor/htmlarea/images/ed_format_bold.gif" style="width: 18px; height: 18px;"></div></td><td><div title="Курсив" class="button"><img src="http://core-release-0.4.mocotms.com/lib/editor/htmlarea/images/ed_format_italic.gif" style="width: 18px; height: 18px;"></div></td><td><div title="Підкреслити" class="button"><img src="http://core-release-0.4.mocotms.com/lib/editor/htmlarea/images/ed_format_underline.gif" style="width: 18px; height: 18px;"></div></td><td><div title="Перекреслення" class="button"><img src="http://core-release-0.4.mocotms.com/lib/editor/htmlarea/images/ed_format_strike.gif" style="width: 18px; height: 18px;"></div></td><td><div class="separator"></div></td><td><div title="Нижній індекс" class="button"><img src="http://core-release-0.4.mocotms.com/lib/editor/htmlarea/images/ed_format_sub.gif" style="width: 18px; height: 18px;"></div></td><td><div title="Верхній індекс" class="button"><img src="http://core-release-0.4.mocotms.com/lib/editor/htmlarea/images/ed_format_sup.gif" style="width: 18px; height: 18px;"></div></td><td><div class="separator"></div></td><td><div title="Очистити від HTML-тегів, які використовує MS Word" class="button"><img src="http://core-release-0.4.mocotms.com/lib/editor/htmlarea/images/ed_wordclean.gif" style="width: 18px; height: 18px;"></div></td><td><div class="separator"></div></td><td><div title="Відмінити останню дію" class="button"><img src="http://core-release-0.4.mocotms.com/lib/editor/htmlarea/images/ed_undo.gif" style="width: 18px; height: 18px;"></div></td><td><div title="Повторити останню дію" class="button"><img src="http://core-release-0.4.mocotms.com/lib/editor/htmlarea/images/ed_redo.gif" style="width: 18px; height: 18px;"></div></td></tr></tbody></table><table cellspacing="0px" cellpadding="0px" border="0px"><tbody><tr><td><div title="Вирівняти по лівому краю" class="button"><img src="http://core-release-0.4.mocotms.com/lib/editor/htmlarea/images/ed_align_left.gif" style="width: 18px; height: 18px;"></div></td><td><div title="Вирівняти по центру" class="button"><img src="http://core-release-0.4.mocotms.com/lib/editor/htmlarea/images/ed_align_center.gif" style="width: 18px; height: 18px;"></div></td><td><div title="Вирявняти по правому краю" class="button"><img src="http://core-release-0.4.mocotms.com/lib/editor/htmlarea/images/ed_align_right.gif" style="width: 18px; height: 18px;"></div></td><td><div title="Вирівняти по ширині" class="button"><img src="http://core-release-0.4.mocotms.com/lib/editor/htmlarea/images/ed_align_justify.gif" style="width: 18px; height: 18px;"></div></td><td><div class="separator"></div></td><td><div title="Зліва направо" class="button"><img src="http://core-release-0.4.mocotms.com/lib/editor/htmlarea/images/ed_left_to_right.gif" style="width: 18px; height: 18px;"></div></td><td><div title="У напрямку справа наліво" class="button"><img src="http://core-release-0.4.mocotms.com/lib/editor/htmlarea/images/ed_right_to_left.gif" style="width: 18px; height: 18px;"></div></td><td><div class="separator"></div></td><td><div title="Впорядкований список" class="button"><img src="http://core-release-0.4.mocotms.com/lib/editor/htmlarea/images/ed_list_num.gif" style="width: 18px; height: 18px;"></div></td><td><div title="Маркірований список" class="button"><img src="http://core-release-0.4.mocotms.com/lib/editor/htmlarea/images/ed_list_bullet.gif" style="width: 18px; height: 18px;"></div></td><td><div title="Зменшення відступу" class="button"><img src="http://core-release-0.4.mocotms.com/lib/editor/htmlarea/images/ed_indent_less.gif" style="width: 18px; height: 18px;"></div></td><td><div title="Збільшити відступ" class="button"><img src="http://core-release-0.4.mocotms.com/lib/editor/htmlarea/images/ed_indent_more.gif" style="width: 18px; height: 18px;"></div></td><td><div class="separator"></div></td><td><div title="Колір шрифту" class="button"><img src="http://core-release-0.4.mocotms.com/lib/editor/htmlarea/images/ed_color_fg.gif" style="width: 18px; height: 18px;"></div></td><td><div title="Колір фону" class="button"><img src="http://core-release-0.4.mocotms.com/lib/editor/htmlarea/images/ed_color_bg.gif" style="width: 18px; height: 18px;"></div></td><td><div class="separator"></div></td><td><div title="Горизонтальна пряма" class="button"><img src="http://core-release-0.4.mocotms.com/lib/editor/htmlarea/images/ed_hr.gif" style="width: 18px; height: 18px;"></div></td><td><div title="Створити закладку" class="button"><img src="http://core-release-0.4.mocotms.com/lib/editor/htmlarea/images/ed_anchor.gif" style="width: 18px; height: 18px;"></div></td><td><div title="Додати веб-посилання" class="button"><img src="http://core-release-0.4.mocotms.com/lib/editor/htmlarea/images/ed_link.gif" style="width: 18px; height: 18px;"></div></td><td><div title="Вилучити посилання" class="button"><img src="http://core-release-0.4.mocotms.com/lib/editor/htmlarea/images/ed_unlink.gif" style="width: 18px; height: 18px;"></div></td><td><div title="Заборонити атоматичне з'єднання" class="button"><img src="http://core-release-0.4.mocotms.com/lib/editor/htmlarea/images/ed_nolink.gif" style="width: 18px; height: 18px;"></div></td><td><div class="separator"></div></td><td><div title="Вставити малюнок" class="button"><img src="http://core-release-0.4.mocotms.com/lib/editor/htmlarea/images/ed_image.gif" style="width: 18px; height: 18px;"></div></td><td><div title="Вставити таблицю" class="button"><img src="http://core-release-0.4.mocotms.com/lib/editor/htmlarea/images/insert_table.gif" style="width: 18px; height: 18px;"></div></td><td><div title="Вставити смайлик" class="button"><img src="http://core-release-0.4.mocotms.com/lib/editor/htmlarea/images/em.icon.smile.gif" style="width: 18px; height: 18px;"></div></td><td><div title="Встаити спеціальний символ" class="button"><img src="http://core-release-0.4.mocotms.com/lib/editor/htmlarea/images/icon_ins_char.gif" style="width: 18px; height: 18px;"></div></td><td><div title="Пошук та заміна" class="button"><img src="http://core-release-0.4.mocotms.com/lib/editor/htmlarea/images/ed_replace.gif" style="width: 18px; height: 18px;"></div></td><td><div class="separator"></div></td><td><div title="Перемикач HTML  джерела" class="button"><img src="http://core-release-0.4.mocotms.com/lib/editor/htmlarea/images/ed_html.gif" style="width: 18px; height: 18px;"></div></td><td><div class="separator"></div></td><td><div title="Збільшити редактор" class="button"><img src="http://core-release-0.4.mocotms.com/lib/editor/htmlarea/images/fullscreen_maximize.gif" style="width: 18px; height: 18px;"></div></td></tr></tbody></table></div><iframe src="http://core-release-0.4.mocotms.com/lib/editor/htmlarea/blank.html" class="iframe" style="border-width: 1px; width: 888px; height: 185px;"></iframe><div class="statusBar"><span class="statusBarTree">Шлях: </span></div></div><textarea class="form-textarea" id="id_description" name="description" rows="10" cols="45" style="display: none; width: 888px; height: 185px;"></textarea>
+<a id="id_helplink" href="#"><img src="http://core-release-0.4.mocotms.com/lib/editor/htmlarea/images/kbhelp.gif"></a><script>
+//<![CDATA[
+$('#id_helplink').live('click', function(){
+    $('#div_helplink').dialog('open');
+    return false;
+});
+
+$('#div_helplink').dialog({
+    autoOpen:false,
+    title:"Допомога",
+    height:500,
+    width:850,
+    modal:true,
+    buttons:{
+        "Закрити": function(){
+            $(this).dialog("close");
+        }
+    }
+});
+//]]>
+</script>
+<script type="text/javascript" defer="defer">
+//<![CDATA[
+
+editor_67daf92c833c41c95db874e18fcb2786 = new HTMLArea('id_description');
+var config = editor_67daf92c833c41c95db874e18fcb2786.config;
+config.pageStyle = "body { background-color: #ffffff; font-family: Trebuchet MS,Verdana,Arial,Helvetica,sans-serif; }";
+config.killWordOnPaste = true;
+config.fontname = {
+"Trebuchet":	'Trebuchet MS,Verdana,Arial,Helvetica,sans-serif',
+"Arial":	'arial,helvetica,sans-serif',
+"Courier New":	'courier new,courier,monospace',
+"Georgia":	'georgia,times new roman,times,serif',
+"Tahoma":	'tahoma,arial,helvetica,sans-serif',
+"Times New Roman":	'times new roman,times,serif',
+"Verdana":	'verdana,arial,helvetica,sans-serif',
+"Impact":	'impact',
+"Wingdings":	'wingdings'};
+editor_67daf92c833c41c95db874e18fcb2786.generate();
+//]]>
+</script>
+</div></div>
+		</div></fieldset>
+	<fieldset class="clearfix" id="moodle_picture">
+		<legend class="ftoggler">Фото </legend>
+		<div class="advancedbutton"></div><div class="fcontainer clearfix">
+		
+		<div class="fitem"><div class="fitemtitle"><div class="fstaticlabel"><label>Поточне фото </label></div></div><div class="felement fstatic">Порожньо&nbsp;</div></div>
+		<div class="fitem"><div class="fitemtitle"><label for="id_af3679">Видалити </label></div><div class="felement fcheckbox"><span><input name="deletepicture" value="1" id="id_af3679" type="checkbox"></span></div></div>
+		<div class="fitem"><div class="fitemtitle"><label for="id_imagefile">Нове фото (Максимальний обсяг: 256Мб) <span class="helplink"><a title="Допомогти з Як завантажити малюнок (нове вікно)" href="http://core-release-0.4.mocotms.com/help.php?module=moodle&amp;file=picture.html&amp;forcelang=" onclick="this.target='popup'; return openpopup('/help.php?module=moodle&amp;file=picture.html&amp;forcelang=', 'popup', 'menubar=0,location=0,scrollbars,resizable,width=500,height=400', 0);"><img class="iconhelp" alt="Допомогти з Як завантажити малюнок (нове вікно)" src="http://core-release-0.4.mocotms.com/pix/help.gif"></a></span>&nbsp;</label></div><div class="felement ffile"><input name="imagefile" id="id_imagefile" type="file"></div></div>
+		<div class="fitem"><div class="fitemtitle"><label for="id_imagealt">Опис фотографії </label></div><div class="felement ftext"><input maxlength="100" size="30" name="imagealt" id="id_imagealt" type="text"></div></div>
+		</div></fieldset>
+	<fieldset class="clearfix" id="moodle_optional">
+		<legend class="ftoggler">Додаткове</legend>
+		<div class="advancedbutton"><img class="adv" title="Додатковий елемент" alt="Додатковий елемент" src="http://core-release-0.4.mocotms.com/pix/adv.gif"><input value="Сховати додаткове" name="mform_showadvanced" type="button"><script id="moodle_optional_script" type="text/javascript">
+showAdvancedInit('moodle_optional_script', 'mform_showadvanced', 'Сховати додаткове', 'Сховати додаткове', 'Показати додаткове');
+</script><noscript><div style="display:inline"><input name="mform_showadvanced" value="Сховати додаткове" type="submit" /></div></noscript></div><div class="fcontainer clearfix">
+		
+		<div class="fitem advanced"><div class="fitemtitle"><label for="id_skype">Skype ID<img class="adv" title="Додатковий елемент" alt="Додатковий елемент" src="http://core-release-0.4.mocotms.com/pix/adv.gif"> </label></div><div class="felement ftext"><input maxlength="50" size="25" name="skype" id="id_skype" type="text"></div></div>
+		<div class="fitem advanced"><div class="fitemtitle"><label for="id_idnumber">Індивідуальний номер<img class="adv" title="Додатковий елемент" alt="Додатковий елемент" src="http://core-release-0.4.mocotms.com/pix/adv.gif"> </label></div><div class="felement ftext"><input maxlength="255" size="25" name="idnumber" id="id_idnumber" type="text"></div></div>
+		<div class="fitem advanced"><div class="fitemtitle"><label for="id_institution">Заклад<img class="adv" title="Додатковий елемент" alt="Додатковий елемент" src="http://core-release-0.4.mocotms.com/pix/adv.gif"> </label></div><div class="felement ftext"><input maxlength="40" size="25" name="institution" id="id_institution" type="text"></div></div>
+		<div class="fitem advanced"><div class="fitemtitle"><label for="id_department">Відділ<img class="adv" title="Додатковий елемент" alt="Додатковий елемент" src="http://core-release-0.4.mocotms.com/pix/adv.gif"> </label></div><div class="felement ftext"><input maxlength="30" size="25" name="department" id="id_department" type="text"></div></div>
+		<div class="fitem"><div class="fitemtitle"><label for="id_phone1">Телефон </label></div><div class="felement ftext"><input maxlength="20" size="25" name="phone1" id="id_phone1" type="text"></div></div>
+		<div class="fitem"><div class="fitemtitle"><label for="id_phone2">Мобільний телефон </label></div><div class="felement ftext"><input maxlength="20" size="25" name="phone2" id="id_phone2" type="text"></div></div>
+		</div></fieldset>
+	<fieldset class="hidden"><div>
+		<div class="fitem"><div class="fitemtitle"><label for="id_submitbutton"> </label></div><div class="felement fsubmit"><input name="submitbutton" value="Зберегти" id="id_submitbutton" type="submit"></div></div>
+		<div class="fdescription required">Обов'язкові поля в цій формі позначені <img alt="Обов'язкове поле" src="http://core-release-0.4.mocotms.com/pix/req.gif">.</div>
+		</div></fieldset>
+</form>
+<script type="text/javascript">
+//<![CDATA[
+var mform1items = Array();
+lockoptionsallsetup('mform1');
+//]]>
+</script>
+</div></td></tr></tbody></table></div><!--content-->
+<!--br/><br/><br/ -->
+</div><div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front ui-dialog-buttons ui-draggable ui-resizable" style="display: none; position: absolute;" tabindex="-1" role="dialog" aria-describedby="div_helplink" aria-labelledby="ui-id-1"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix ui-draggable-handle"><span id="ui-id-1" class="ui-dialog-title">Допомога</span><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close" role="button" title="Close"><span class="ui-button-icon-primary ui-icon ui-icon-closethick"></span><span class="ui-button-text">Close</span></button></div><div id="div_helplink" class="ui-dialog-content ui-widget-content"><div style="text-align:center;">
+
+    <p><strong>Гарячі клавіші доступу в редакторі HTML </strong></p>
+    <p>Дані дії доступні через гарячі клавіші:</p>
+
+    <table style="text-align:left; margin:auto;" cellpadding="3" border="1">
+        <tbody><tr>
+            <td>Ctrl-O</td>
+            <td>Змінити шрифт</td>
+        </tr>
+        <tr>
+            <td>Ctrl-P</td>
+            <td>Змінити розмір шрифту</td>
+        </tr>
+        <tr>
+            <td>Ctrl-H</td>
+            <td>Змінити формат тексту (заголовок і т.д.)</td>
+        </tr>
+        <tr>
+            <td>Ctrl-1 to Ctrl-6</td>
+            <td style="vertical-align:top;">Змінити рівень заголовку</td>
+        </tr>
+        <tr>
+            <td style="vertical-align:top;">Ctrl-=</td>
+            <td>Змінити мову тексту для користувача або переробити мову під мультифільтр (це виникає після опції мульти внизу).</td>
+        </tr>
+        <tr>
+            <td>Ctrl-B</td>
+            <td>Зробити текст жирним</td>
+        </tr>
+        <tr>
+            <td>Ctrl-I</td>
+            <td>Зробити текст курсивом</td>
+        </tr>
+        <tr>
+            <td>Ctrl-U</td>
+            <td>Підкреслити текст</td>
+        </tr>
+        <tr>
+            <td>Ctrl-S</td>
+            <td>Закреслити текст</td>
+        </tr>
+        <tr>
+            <td>Ctrl-,</td>
+            <td>Підписати</td>
+        </tr>
+        <tr>
+            <td>Ctrl-.</td>
+            <td>Надписати</td>
+        </tr>
+        <tr>
+            <td>Ctrl-0</td>
+            <td>Очистити Word HTML</td>
+        </tr>
+        <tr>
+            <td>Ctrl-Z</td>
+            <td>Відмінити</td>
+        </tr>
+        <tr>
+            <td>Ctrl-Y</td>
+            <td>Вперед</td>
+        </tr>
+        <tr>
+            <td>Ctrl-L</td>
+            <td>Вирівняти вліво</td>
+        </tr>
+        <tr>
+            <td>Ctrl-E</td>
+            <td>Вирівняти по центру</td>
+        </tr>
+        <tr>
+            <td>Ctrl-J</td>
+            <td>Вимкнути строку повністю</td>
+        </tr>
+        <tr>
+            <td>Ctrl-/</td>
+            <td>Текст йде зліва на право</td>
+        </tr>
+        <tr>
+            <td>Ctrl-|</td>
+            <td>Текст йде з права на ліво</td>
+        </tr>
+        <tr>
+            <td>Ctrl-;</td>
+            <td>Зменшити абзац</td>
+        </tr>
+        <tr>
+            <td>Ctrl-'</td>
+            <td>Збільшити абзац</td>
+        </tr>
+        <tr>
+            <td>Ctrl-G</td>
+            <td>Змінити колір тексту</td>
+        </tr>
+        <tr>
+            <td>Ctrl-K</td>
+            <td>Змінити колір тла</td>
+        </tr>
+        <tr>
+            <td>Ctrl-F</td>
+            <td>Пошук та заміна</td>
+        </tr>
+        <tr>
+            <td>Ctrl-`</td>
+            <td>Переключитися на вид коду HTML</td>
+        </tr>
+        <tr>
+            <td>Ctrl-M</td>
+            <td>Переключитися на режим редактора на весь екран</td>
+        </tr>
+        <tr>
+            <td>Ctrl-Alt-O</td>
+            <td>Вставити</td>
+        </tr>
+        <tr>
+            <td>Ctrl-Alt-U</td>
+            <td>Вставити список</td>
+        </tr>
+        <tr>
+            <td>Ctrl-Alt-R</td>
+            <td>Вставити горизонтальну лінію</td>
+        </tr>
+        <tr>
+            <td>Ctrl-Alt-A</td>
+            <td>Зафіксувати</td>
+        </tr>
+        <tr>
+            <td>Ctrl-Alt-L</td>
+            <td>Зробити посилання</td>
+        </tr>
+        <tr>
+            <td>Ctrl-Alt-D</td>
+            <td>Прибрати посилання</td>
+        </tr>
+        <tr>
+            <td>Ctrl-Alt-N</td>
+            <td>Виключити автопосилання</td>
+        </tr>
+        <tr>
+            <td>Ctrl-Alt-I</td>
+            <td>Вставити малюнок</td>
+        </tr>
+        <tr>
+            <td>Ctrl-Alt-T</td>
+            <td>Вставити колонку</td>
+        </tr>
+        <tr>
+            <td>Ctrl-Alt-S</td>
+            <td>Вставити смайлик</td>
+        </tr>
+        <tr>
+            <td>Ctrl-Alt-C</td>
+            <td>Вставити спеціальний символ</td>
+        </tr>
+    </tbody></table>
+
+</div>
+
+<p>Наразі є деякі обмеження:</p>
+<ul>
+    <li>Ми не можемо зараз використовувати Ctrl- гарячою клавішею для переключення виду коду HTML на вид WYSIWYG.</li>
+    <li>Немає гарячих клавіш для операцій з таблицями (доступними тільки в повноекранному режимі). Вони не працюють з клавіатурою, оскільки залежать від використання мишки для вибору клітинки в таблиці.</li>
+</ul></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Закрити</span></button></div></div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div></div><!--wrapper-->
+
+<div id="div_bg_"> </div>
+
+<div id="footer">
+	<div id="footer_in">
+		<div id="footer_lbl">© MOCO 2010-2017. Powered by <a href="http://tmx-learning.info/" target="_blank">Technomatix</a></div>
+		<div class="social_media"><a target="_blank" href="https://www.facebook.com/Technomatix/?pnref=lhc"><img src="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/images/icon/social/facebook.png"></a><a target="_blank" href="https://myaccount.google.com/?utm_source=OGB"><img src="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/images/icon/social/google_plus.png"></a><a target="_blank" href="https://www.youtube.com/channel/UC3kgUstn4mqESPeev-O4T6A"><img src="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/images/icon/social/youtube.png"></a></div>		<div class="clear"></div>
+	</div>
+</div>
+<script>
+  function reassignFooter() {
+    if( $('body').height() < ($(window).height() ) ) {
+      $('#footer_in').css( 'bottom', 0 );
+      $('#footer_in').css( 'position', 'absolute' );
+    } 
+    if( $('body').height() > ($(window).height() - 65) ) {
+      $('#footer_in').css( 'bottom', 'auto' );
+      $('#footer_in').css( 'position', 'static' );
+    }
+  }
+  $(document).ready( function() {
+    $('#div_bg_').css( 'height', $(window).height() - 64 + 'px' );
+	reassignFooter();
+    setInterval( 'reassignFooter()', 500 );
+  } );
+</script>
+
+
+
+</body></html>

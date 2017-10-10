@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 19, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 258.529 s <<< FAILURE! - in TestSuite
+deleteChief(com.mocotms.core_release.Test.organization.chief.ChiefTest)  Time elapsed: 6.963 s  <<< FAILURE!
+com.codeborne.selenide.ex.ElementShould: 
+Element should be visible {By.xpath: //*[@id='moco-config-chiefs-index']/div[12]/div[3]/div/button[1]}
+Element: '<button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" type="button" displayed:false></button>'
+	at com.mocotms.core_release.Test.organization.chief.ChiefTest.deleteChief(ChiefTest.java:53)
+
