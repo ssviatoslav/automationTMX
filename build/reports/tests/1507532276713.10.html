@@ -1,0 +1,1025 @@
+<html lang="en"><head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/theme/standard/styles.php">
+<link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/styles.php">
+
+<!--[if IE 7]>
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/theme/standard/styles_ie7.css" />
+<![endif]-->
+<!--[if IE 6]>
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/theme/standard/styles_ie6.css" />
+<![endif]-->
+
+
+    <meta name="keywords" content="moodle, Структура компанії ">
+    <title>Структура компанії</title>
+    <link rel="shortcut icon" href="http://core-release-0.4.mocotms.com/favicon.ico">
+
+    <!--<style type="text/css">/*<![CDATA[*/ body{behavior:url(http://core-release-0.4.mocotms.com/lib/csshover.htc);} /*]]>*/</style>-->
+
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/javascript-static.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/javascript-mod.php"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/overlib/overlib.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/overlib/overlib_cssstyle.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/cookies.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/ufo.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/dropdown.js"></script>  
+
+<script type="text/javascript" defer="defer">
+//<![CDATA[
+setTimeout('fix_column_widths()', 20);
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+function openpopup(url, name, options, fullscreen) {
+    var fullurl = "http://core-release-0.4.mocotms.com" + url;
+    var windowobj = window.open(fullurl, name, options);
+    if (!windowobj) {
+        return true;
+    }
+    if (fullscreen) {
+        windowobj.moveTo(0, 0);
+        windowobj.resizeTo(screen.availWidth, screen.availHeight);
+    }
+    windowobj.focus();
+    return false;
+}
+
+function uncheckall() {
+    var inputs = document.getElementsByTagName('input');
+    for(var i = 0; i < inputs.length; i++) {
+        inputs[i].checked = false;
+    }
+}
+
+function checkall() {
+    var inputs = document.getElementsByTagName('input');
+    for(var i = 0; i < inputs.length; i++) {
+        inputs[i].checked = true;
+    }
+}
+
+function inserttext(text) {
+  text = ' ' + text + ' ';
+  if ( opener.document.forms['theform'].message.createTextRange && opener.document.forms['theform'].message.caretPos) {
+    var caretPos = opener.document.forms['theform'].message.caretPos;
+    caretPos.text = caretPos.text.charAt(caretPos.text.length - 1) == ' ' ? text + ' ' : text;
+  } else {
+    opener.document.forms['theform'].message.value  += text;
+  }
+  opener.document.forms['theform'].message.focus();
+}
+
+function getElementsByClassName(oElm, strTagName, oClassNames){
+	var arrElements = (strTagName == "*" && oElm.all)? oElm.all : oElm.getElementsByTagName(strTagName);
+	var arrReturnElements = new Array();
+	var arrRegExpClassNames = new Array();
+	if(typeof oClassNames == "object"){
+		for(var i=0; i<oClassNames.length; i++){
+			arrRegExpClassNames.push(new RegExp("(^|\\s)" + oClassNames[i].replace(/\-/g, "\\-") + "(\\s|$)"));
+		}
+	}
+	else{
+		arrRegExpClassNames.push(new RegExp("(^|\\s)" + oClassNames.replace(/\-/g, "\\-") + "(\\s|$)"));
+	}
+	var oElement;
+	var bMatchesAll;
+	for(var j=0; j<arrElements.length; j++){
+		oElement = arrElements[j];
+		bMatchesAll = true;
+		for(var k=0; k<arrRegExpClassNames.length; k++){
+			if(!arrRegExpClassNames[k].test(oElement.className)){
+				bMatchesAll = false;
+				break;
+			}
+		}
+		if(bMatchesAll){
+			arrReturnElements.push(oElement);
+		}
+	}
+	return (arrReturnElements)
+}
+//]]>
+</script>
+
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/style.css">
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/moco/jquery/jquery-ui.css">
+
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/js/jquery-1.8.3.js"></script>
+    <script src="http://core-release-0.4.mocotms.com/moco/jquery/development-bundle/jquery-ui.js"></script>
+
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/jquery-ui-datepicker.js"></script>
+            <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/jquery-ui-datepicker-ua.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/moco/jquery/treeview.css">
+
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/jquery.treeview.js"></script>
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/jquery.cookie.js"></script>
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/jquery.easing.1.3.js"></script>
+
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/swf/swfobject.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/menu.css">
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/js/menu.js.php"></script>
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/js/script.js"></script>
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/tree_library.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/lib/slideshow/css/camera.css">
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/slideshow/js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/slideshow/js/camera.min.1.11.js"></script> 
+    
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/moco/css/reports.css">
+<link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/moco/css/select2.css">
+    
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/custom.css">
+
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/d3.min.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/jquery.moco_chart.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/moco.core.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/moco_functions.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/reports.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/select2/select2.min.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/select2/translation/en.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/select2/translation/ru.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/select2/translation/uk.js"></script>
+
+    <script>
+        $(function() { 
+            $(window).scroll(function(){
+                if($(this).scrollTop() != 0){
+                    $('#toTop').fadeIn();
+                } else {
+                    $('#toTop').fadeOut();
+                }
+            });
+            $('#toTop').click(function() {
+                $('body,html').animate({scrollTop:0},800);
+            });
+        });
+        $('#id_language').live('change', function(){
+            window.location.href="http://core-release-0.4.mocotms.com/index.php?lang="+$(this).val();
+            return false;
+        });
+        function handleResponse(mes) {
+            if (mes.errors != null) {
+                $('#res').html('Помилка при завантаженні файлу: ' + mes.errors);
+            } else {
+                var params = new Object();
+                params.ajax = 'saveCentralImg';
+                $.ajax({
+                    type: 'POST',
+                    url: 'http://core-release-0.4.mocotms.com/theme/tmx_default_2015/ajax.php',
+                    data: params,
+                    success:
+                    function( answer ) {
+                        $('#central_img').html(answer.html);
+                    },
+                    dataType: 'json'
+                });
+            }
+        }
+    </script>
+</head>
+<body class="moco-config-structure course-1 dir-ltr lang-uk_utf8 default" id="moco-config-structure-index">
+
+    <div id="toTop">
+        <div class="top_button"></div>
+    </div>
+
+            <div id="wrapper">
+        <div class="head_width">
+            <div id="head">
+                <div id="id_div_header" style="margin-right:10px;">
+                
+                    <a href="http://core-release-0.4.mocotms.com" style="float:left">
+                        <img class="logo" src="http://core-release-0.4.mocotms.com/moco/logo/logo.php?logo=L2RhdGEvdG14L21vY28vY29yZS8wLlgvcmVsZWFzZV8wLjQvbW9vZGxlZGF0YS9waXgvbG9nby9sb2dvLnBuZw==&amp;nocache=1497445703" alt="Logotype">
+                    </a>                <div class="link_panel">
+                <div id="lang_menu"><span class="lang_title">Мова:</span><select id="id_language" style="vertical-align:middle; border:1px solid #d1d3d4; color:#6E6E6E;"><option value="en_utf8">ENG</option><option value="ru_utf8">RUS</option><option value="uk_utf8" selected="selected">UKR</option></select></div><a href="http://mocotms.com" class="link_3" target="_blank">Technomatix</a><a class="exit_button" href="http://core-release-0.4.mocotms.com/login/logout.php?sesskey=nvgZWnplju">Вийти</a>                </div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div id="head_menu">
+
+	<div style="width:100%; /*max-width: 1024px;*/">
+<div class="menu_left_block"></div>
+<div class="menu_right_block"></div>
+<ul id="nav_menu" style="z-index:1001;">
+<li class="first" style="width: 20%;">
+<a href="javascript: void(0);">Компанія</a><ul>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/structure/">Структура</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/posts/">Посади</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/admin/user.php">Співробітники</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/chiefs/">Керівники</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/moderators/">Модератори</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/confirmmanualuser/">Зареєстрованi користувачi</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/uploadimg/">Завантаження фото</a><div class="clear"></div>
+</li>
+</ul>
+<div class="clear"></div>
+</li>
+<li style="width: 20%;">
+<a href="javascript: void(0);">Навчання</a><ul>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/allcourses/">Каталог</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/profiles/">Програми</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/delhistory/">Історія</a><div class="clear"></div>
+</li>
+<li>
+<hr>
+<div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/tranings/">Заходи</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/trainer/">Тренери</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/training_rooms/">Тренінгові кімнати</a><div class="clear"></div>
+</li>
+<li>
+<hr>
+<div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/scales/">Шкали оцiнок</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/alerts/">Повідомлення</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/tag/">Теги</a><div class="clear"></div>
+</li>
+</ul>
+<div class="clear"></div>
+</li>
+<li style="width: 20%;">
+<a href="javascript: void(0);">Оцінка персоналу</a><ul>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco101/index.php/usr">Користувачі і привілегії</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco101/index.php/org">Організаційна структура</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco101/index.php/messaging">Повідомлення</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco101/index.php/indicator">Індикатори</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco101/index.php/appraisal">Оцінка</a><div class="clear"></div>
+</li>
+</ul>
+<div class="clear"></div>
+</li>
+<li style="width: 20%;">
+<a href="javascript: void(0);">Звіти</a><ul>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/profiles.php">Призначені програми</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/courses.php?tab=admin">Результати по програмам</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/scorms.php?tab=report">Результати по курсам</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/tests.php?tab=report">Результати по тестам</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/testsanalytics.php">Результати по тестах (аналітика)</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/scormandtest.php">Зведені результати по курсам та тестам</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/empreport.php?tab=admin">Зведені результати по співробітнику</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/fullprofiles.php">Детальні результати по співробітникам</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/successful.php?tab=admin">Детальні результати по програмам</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/selfcourses.php">Самопризначені курси</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/vacationstats.php">Статистика навчених і звільнених</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/universal.php?tab=admin">База співробітників і результатів</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/fullprofiles2.php">Анкета співробітника</a><div class="clear"></div>
+</li>
+<li>
+<hr>
+<div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/training.php?tab=admin">Статистика тренінгів</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/trainings.php?tab=admin&amp;subtab=1&amp;find_recursive=1">Результати аудиторних заходів</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/trainer.php?tab=admin">Статистика тренерів</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/workload_trainer.php">Завантаженість тренерів</a><div class="clear"></div>
+</li>
+<li>
+<hr>
+<div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/certificate.php">Видані сертифікати</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/player_play.php">Звіт про відео</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/permissions_log.php">Історія видачі прав</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/subscriptionhistory.php">Історія скасування розсилки</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/systemroles.php">Ролі системи</a><div class="clear"></div>
+</li>
+</ul>
+<div class="clear"></div>
+</li>
+<li style="width: 20%;">
+<a href="javascript: void(0);">Додатково</a><ul>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/holiday/">Свята</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/interview/">Опитування</a><div class="clear"></div>
+</li>
+</ul>
+<div class="clear"></div>
+</li>
+<div class="clear"></div>
+</ul>
+</div>
+		<div class="clear"></div>
+		
+	<div class="breadcrumb" style="display:block; "><h2 class="accesshide ">Ви тут</h2> <ul>
+<li class="first"><a onclick="this.target='_top'" href="http://core-release-0.4.mocotms.com/">LMS</a></li><li> <span class="accesshide ">/&nbsp;</span><span class="arrow sep">&gt;</span> Структура компанії</li></ul></div>
+</div>
+        <div class="clear"></div>
+
+                <div class="clear"></div>
+
+        <div id="content" class="clearfix">
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/jquery-ui-datepicker.js"></script>
+<link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/moco/jquery/droplistFilter/UI_gray/jquery.droplistfilter.css">
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/droplistFilter/jquery.droplistfilter.js"></script>
+<link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/moco/jquery/treeview.css">
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/jquery.treeview.js"></script>
+<h2 class="page_title">Структура</h2><table width="100%"><tbody><tr><td><div style="height:15px; float:left;">
+<div id="departmentadd" style="padding-right: 10px; float:left;">
+<img src="http://core-release-0.4.mocotms.com/img/icons/folder_add.png" style="vertical-align:middle;">
+<a href="javascript: void(0);" style="vertical-align:middle;">Додати підрозділ</a></div>
+<div id="departmentedit" style="display: none; padding-right: 10px; float:left;">
+<img src="http://core-release-0.4.mocotms.com/img/icons/folder_edit.png" style="vertical-align:middle;">
+<a href="javascript: void(0);" style="vertical-align:middle;">Редагувати підрозділ</a></div>
+<div id="departmentdel" style="display: none; padding-right: 10px; float:left;">
+<img src="http://core-release-0.4.mocotms.com/img/icons/folder_delete.png" style="vertical-align:middle;">
+<a href="javascript: void(0);" style="vertical-align:middle;">Видалити підрозділ</a></div>
+</div>
+</td></tr></tbody></table><div class="clear"></div><table class="help_table">
+        <tbody><tr>
+        <td style="text-align:right; width:100%;">
+        <a href="#" class="help" title="На цій сторінці можна подивитися структуру компанії і внести зміни."><img alt="?" src="http://core-release-0.4.mocotms.com/img/help.png"></a>
+        </td>
+        <td style="width:150px;">
+        <a href="#" class="help" title="На цій сторінці можна подивитися структуру компанії і внести зміни.">Довідка</a>
+        </td>
+        </tr>
+        </tbody></table><div class="clear"></div><div id="structure" style="padding:10px; border:1px solid #BBC2C8;"><link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/moco/jquery/treeview.css">
+			<style type="text/css">
+				#structure {
+					overflow: auto;
+				}
+			</style><ul class="treeview"><li class="closed"><span><a href="javascript: void(0);" value="0">Всі підрозділи</a></span></li><li class="closed" department="442"><span><a href="javascript: void(0);" value="442">AutoDep</a></span></li><li class="closed" department="486"><span><a href="javascript: void(0);" value="486">AutomationDepartment</a></span></li><li class="closed" department="418"><span><a href="javascript: void(0);" value="418">Company</a></span><ul style="display: block;"><li class="closed" department="420"><span><a href="javascript: void(0);" value="420">CourseDev Team</a></span></li><li class="closed" department="419"><span><a href="javascript: void(0);" value="419">Moco Team</a></span></li></ul></li><li class="closed" department="414"><span><a href="javascript: void(0);" value="414">Department</a></span><ul style="display: block;"><li class="closed" department="416"><span><a href="javascript: void(0);" value="416">depart</a></span></li></ul></li><li class="closed" department="252"><span><a href="javascript: void(0);" value="252">Energy</a></span></li><li class="closed" department="487"><span><a href="javascript: void(0);" value="487">ffffffffffffffffffffffffffffffffffffffffffffffffffffffffa;sgklfffffllllllfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffflllllllllllllllllllllllllllllllllllllllllllllloooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo</a></span></li><li class="closed" department="270"><span><a href="javascript: void(0);" value="270">Marketing</a></span></li><li class="closed" department="115"><span><a href="javascript: void(0);" value="115">Oleg Kh</a></span><ul style="display: block;"><li class="closed" department="190"><span><a href="javascript: void(0);" value="190">Front-end development</a></span></li><li class="closed" department="111"><span><a href="javascript: void(0);" value="111">NewOne</a></span></li><li class="closed" department="168"><span><a href="javascript: void(0);" value="168">qweqwqeqwe</a></span></li><li class="closed" department="167"><span><a href="javascript: void(0);" value="167">qwerty</a></span></li></ul></li><li class="closed" department="202"><span><a href="javascript: void(0);" value="202">QA Sviatoslav</a></span><ul style="display: block;"><li class="closed" department="64"><span><a href="javascript: void(0);" value="64">AutoQA21</a></span></li><li class="closed" department="228"><span><a href="javascript: void(0);" value="228">Technomatix</a></span><ul style="display: block;"><li class="closed" department="229"><span><a href="javascript: void(0);" value="229">Отдел модерирования</a></span></li><li class="closed" department="233"><span><a href="javascript: void(0);" value="233">Отдел по работе с клиентами</a></span></li><li class="closed" department="231"><span><a href="javascript: void(0);" value="231">Отдел по работе с сотрудниками</a></span></li><li class="closed" department="232"><span><a href="javascript: void(0);" value="232">Отдел продаж</a></span></li><li class="closed" department="230"><span><a href="javascript: void(0);" value="230">Отдел работы с тренингами</a></span></li></ul></li><li class="closed" department="120"><span><a href="javascript: void(0);" value="120">Руководители</a></span></li></ul></li><li class="closed" department="236"><span><a href="javascript: void(0);" value="236">Technomatix</a></span><ul style="display: block;"><li class="closed" department="247"><span><a href="javascript: void(0);" value="247">Отдел модерирования</a></span></li><li class="closed" department="251"><span><a href="javascript: void(0);" value="251">Отдел по работе с клиентами</a></span></li><li class="closed" department="249"><span><a href="javascript: void(0);" value="249">Отдел по работе с сотрудниками</a></span></li><li class="closed" department="250"><span><a href="javascript: void(0);" value="250">Отдел продаж</a></span></li><li class="closed" department="248"><span><a href="javascript: void(0);" value="248">Отдел работы с тренингами</a></span></li></ul></li><li class="closed" department="212"><span><a href="javascript: void(0);" value="212">Test Structure </a></span><ul style="display: block;"><li class="closed" department="220"><span><a href="javascript: void(0);" value="220">Q1</a></span></li><li class="closed" department="221"><span><a href="javascript: void(0);" value="221">Q2</a></span></li><li class="closed" department="218"><span><a href="javascript: void(0);" value="218">Q3</a></span></li></ul></li><li class="closed" department="417"><span><a href="javascript: void(0);" value="417">Test_QA_GY</a></span></li><li class="closed" department="142"><span><a href="javascript: void(0);" value="142">test1</a></span><ul style="display: block;"><li class="closed" department="143"><span><a href="javascript: void(0);" value="143">test2</a></span><ul style="display: block;"><li class="closed" department="193"><span><a href="javascript: void(0);" value="193">дочерний уровень 3</a></span><ul style="display: block;"><li class="closed" department="225"><span><a href="javascript: void(0);" value="225">test13</a></span><ul style="display: block;"><li class="closed" department="207"><span><a href="javascript: void(0);" value="207">dgfdf1</a></span></li></ul></li></ul></li></ul></li></ul></li><li class="closed" department="208"><span><a href="javascript: void(0);" value="208">TMX</a></span><ul style="display: block;"><li class="closed" department="244"><span><a href="javascript: void(0);" value="244">3</a></span></li><li class="closed" department="209"><span><a href="javascript: void(0);" value="209">TMX PM</a></span></li></ul></li><li class="closed" department="271"><span><a href="javascript: void(0);" value="271">Traditional Trade</a></span><ul style="display: block;"><li class="closed" department="272"><span><a href="javascript: void(0);" value="272">ЕТП</a></span><ul style="display: block;"><li class="closed" department="316"><span><a href="javascript: void(0);" value="316">АТЛАНТ БУДКОМПЛЕКТ</a></span></li><li class="closed" department="286"><span><a href="javascript: void(0);" value="286">БГ Капитал</a></span></li><li class="closed" department="293"><span><a href="javascript: void(0);" value="293">Буд-Лидер</a></span></li><li class="closed" department="278"><span><a href="javascript: void(0);" value="278">БУДIВЕЛЬНИЙ ДВIР</a></span></li><li class="closed" department="283"><span><a href="javascript: void(0);" value="283">Будцентр 2008</a></span></li><li class="closed" department="313"><span><a href="javascript: void(0);" value="313">Валми груп</a></span></li><li class="closed" department="279"><span><a href="javascript: void(0);" value="279">ВИНЮИССТАР ВИННИЦА</a></span></li><li class="closed" department="306"><span><a href="javascript: void(0);" value="306">Вігора</a></span></li><li class="closed" department="284"><span><a href="javascript: void(0);" value="284">Віктрейдинг</a></span></li><li class="closed" department="273"><span><a href="javascript: void(0);" value="273">ВП БУДСЕРВИС</a></span></li><li class="closed" department="295"><span><a href="javascript: void(0);" value="295">ГАХ В.А.</a></span></li><li class="closed" department="308"><span><a href="javascript: void(0);" value="308">Грико</a></span></li><li class="closed" department="305"><span><a href="javascript: void(0);" value="305">Гута</a></span></li><li class="closed" department="301"><span><a href="javascript: void(0);" value="301">ДЕКЕТ</a></span></li><li class="closed" department="304"><span><a href="javascript: void(0);" value="304">ДИМЕКС</a></span></li><li class="closed" department="307"><span><a href="javascript: void(0);" value="307">Євромета</a></span></li><li class="closed" department="276"><span><a href="javascript: void(0);" value="276">Євромета ТД (СТРОИТЕЛЬНЫЕ ЛИНИИ КИЕВ)</a></span></li><li class="closed" department="298"><span><a href="javascript: void(0);" value="298">Євромета-Центр</a></span></li><li class="closed" department="277"><span><a href="javascript: void(0);" value="277">Интергипс</a></span></li><li class="closed" department="311"><span><a href="javascript: void(0);" value="311">Минимакси</a></span></li><li class="closed" department="310"><span><a href="javascript: void(0);" value="310">ООО Семнадцать</a></span></li><li class="closed" department="312"><span><a href="javascript: void(0);" value="312">ПОЛО-ИНВЕСТБУД</a></span></li><li class="closed" department="274"><span><a href="javascript: void(0);" value="274">ПРОГРУП</a></span></li><li class="closed" department="296"><span><a href="javascript: void(0);" value="296">Саната Т</a></span></li><li class="closed" department="289"><span><a href="javascript: void(0);" value="289">Смена</a></span></li><li class="closed" department="287"><span><a href="javascript: void(0);" value="287">СТАНДАРТ БУДІВЕЛЬНИЙ</a></span></li><li class="closed" department="315"><span><a href="javascript: void(0);" value="315">Статор</a></span></li><li class="closed" department="275"><span><a href="javascript: void(0);" value="275">СТРОИТЕЛЬНЫЕ ЛИНИИ КИЕВ</a></span></li><li class="closed" department="314"><span><a href="javascript: void(0);" value="314">Універсал Постач</a></span></li><li class="closed" department="299"><span><a href="javascript: void(0);" value="299">Фасад</a></span></li><li class="closed" department="291"><span><a href="javascript: void(0);" value="291">Форт-Сервис</a></span></li><li class="closed" department="282"><span><a href="javascript: void(0);" value="282">Ядро</a></span></li></ul></li><li class="closed" department="280"><span><a href="javascript: void(0);" value="280">ПРМ</a></span><ul style="display: block;"><li class="closed" department="281"><span><a href="javascript: void(0);" value="281">ВИНЮИССТАР ВИННИЦА</a></span></li><li class="closed" department="285"><span><a href="javascript: void(0);" value="285">Віктрейдинг</a></span></li><li class="closed" department="294"><span><a href="javascript: void(0);" value="294">ГАХ В.А.</a></span></li><li class="closed" department="309"><span><a href="javascript: void(0);" value="309">Грико</a></span></li><li class="closed" department="302"><span><a href="javascript: void(0);" value="302">ДЕКЕТ</a></span></li><li class="closed" department="303"><span><a href="javascript: void(0);" value="303">ДИМЕКС</a></span></li><li class="closed" department="297"><span><a href="javascript: void(0);" value="297">Саната Т</a></span></li><li class="closed" department="290"><span><a href="javascript: void(0);" value="290">Смена</a></span></li><li class="closed" department="288"><span><a href="javascript: void(0);" value="288">СТАНДАРТ БУДІВЕЛЬНИЙ</a></span></li><li class="closed" department="300"><span><a href="javascript: void(0);" value="300">Фасад</a></span></li><li class="closed" department="292"><span><a href="javascript: void(0);" value="292">Форт-Сервис</a></span></li></ul></li></ul></li><li class="closed" department="149"><span><a href="javascript: void(0);" value="149">Головний підрозділ</a></span><ul style="display: block;"><li class="closed" department="150"><span><a href="javascript: void(0);" value="150">Підлеглий підрозділ</a></span></li></ul></li><li class="closed" department="203"><span><a href="javascript: void(0);" value="203">гость</a></span><ul style="display: block;"><li class="closed" department="5"><span><a href="javascript: void(0);" value="5">Technomatix3</a></span><ul style="display: block;"><li class="closed" department="157"><span><a href="javascript: void(0);" value="157">123</a></span></li><li class="closed" department="222"><span><a href="javascript: void(0);" value="222">QA Engineer</a></span></li><li class="closed" department="164"><span><a href="javascript: void(0);" value="164">SPAM</a></span></li><li class="closed" department="1"><span><a href="javascript: void(0);" value="1">TMX</a></span><ul style="display: block;"><li class="closed" department="130"><span><a href="javascript: void(0);" value="130">test10</a></span></li><li class="closed" department="4"><span><a href="javascript: void(0);" value="4">Отдел проектирования курсов</a></span></li></ul></li><li class="closed" department="81"><span><a href="javascript: void(0);" value="81">Отдел по работе с сотрудниками</a></span></li><li class="closed" department="82"><span><a href="javascript: void(0);" value="82">Отдел продаж</a></span></li><li class="closed" department="80"><span><a href="javascript: void(0);" value="80">Отдел работы с тренингами</a></span></li><li class="closed" department="159"><span><a href="javascript: void(0);" value="159">Підрозділ</a></span></li></ul></li></ul></li><li class="closed" department="11"><span><a href="javascript: void(0);" value="11">Медиа Трейд</a></span><ul style="display: block;"><li class="closed" department="413"><span><a href="javascript: void(0);" value="413">111</a></span></li><li class="closed" department="15"><span><a href="javascript: void(0);" value="15">Отдел исследований</a></span></li><li class="closed" department="14"><span><a href="javascript: void(0);" value="14">Отдел медиа</a></span></li><li class="closed" department="17"><span><a href="javascript: void(0);" value="17">Отдел планирования спроса</a></span></li><li class="closed" department="13"><span><a href="javascript: void(0);" value="13">Отдел продаж</a></span></li><li class="closed" department="16"><span><a href="javascript: void(0);" value="16">Отдел производства</a></span></li><li class="closed" department="12"><span><a href="javascript: void(0);" value="12">Трейд-маркетинг</a></span></li></ul></li><li class="closed" department="169"><span><a href="javascript: void(0);" value="169">новое</a></span><ul style="display: block;"><li class="closed" department="210"><span><a href="javascript: void(0);" value="210">qwerty</a></span></li></ul></li><li class="closed" department="191"><span><a href="javascript: void(0);" value="191">Новое подразделение 123</a></span><ul style="display: block;"><li class="closed" department="192"><span><a href="javascript: void(0);" value="192">Ещё новее 555</a></span></li></ul></li><li class="closed" department="84"><span><a href="javascript: void(0);" value="84">ПП Євстаф'єва Ю.А.</a></span></li><li class="closed" department="85"><span><a href="javascript: void(0);" value="85">ПП Євстафєва Ю.А.</a></span></li><li class="closed" department="73"><span><a href="javascript: void(0);" value="73">ПП Петрова Ю.А.</a></span></li></ul></div>    <script type="text/javascript" language="javascript">
+
+        var structureSelected = 0;
+
+        function structureTreeClicked( el ) {
+            if (0 == 0) {
+                $('#structure').find('a').css( 'font-weight', 'normal' );
+                $(el).css( 'font-weight', 'bold' );
+            }
+
+            structureSelected = $(el).attr('value');
+
+            structureTreeExpanded(el);
+        }
+
+        function structureTreeExpanded( el ) {
+          $(el).closest('li').children('ul').children('li').children('ul.unloaded').each( function() {
+            is_check = '';
+            var ul = this;
+            var parent = $(ul).parent().attr('department');
+            var params = new Object();
+            params.ajax = 'structure';
+            params.uin = 'fdcfb734115f45d0e41bd0d3747f9e3a';
+            params.parent = parent;
+            params.get_all_dep = '';
+            $.post( 'http://core-release-0.4.mocotms.com/moco/base/structure.php', params,
+              function( json ) {
+                $(ul).empty();
+                for( i = 0; i < json.departments.length; i++ ) {
+                  var department = json.departments[i];
+                  var node = ul;
+                  if( department.parent_id != parent ) {
+                    var li = $(ul).children('li[department='+department.parent_id+']');
+                    node = $(li).children('ul');
+                    if( node.length <= 0 ) {
+                      li.append( "<ul class='unloaded'></ul>" );
+                      node = $(li).children('ul');
+                    }
+                  }
+
+                  if (is_check){
+                   $(node).append( "<li class='closed' department='" + department.id + "'>"+
+                      "<input type='checkbox' style='margin-top:3px; margin-left:6px' class='depts' id='dep_"+ department.id +"'>"+
+                      "<span style='margin-left:3px;'>"+
+                      "<a href='javascript: void(0);' value='" + department.id + "'" + ( department.marked > 0 ? " style='text-decoration: underline;'" : "" ) + ">"+
+                      department.title +
+                      "</a>"+
+                      "</span>"+
+                      "</li>");
+                   } else {
+                     $(node).append( "<li class='closed' department='" + department.id + "'>"+
+                      "<span style='margin-left:3px;'>"+
+                      "<a href='javascript: void(0);' value='" + department.id + "'" + ( department.marked > 0 ? " style='text-decoration: underline;'" : "" ) + ">"+
+                      department.title +
+                      "</a>"+
+                      "</span>"+
+                      "</li>");
+                    }  
+                }
+                $(ul).removeClass('unloaded');
+                $(ul).treeview( {
+                  unique: true,
+                  animated: "fast"
+                } );
+              }, 'json'
+            );
+          } );
+        }
+
+        function check_clicked_departments(elem){
+            var department = elem.val();
+
+            if (1 == 0) {
+                var callback = function(){};
+                callback();
+                return;
+            }
+
+            if (elem.attr('id') == 'dep_0' )  {
+                if( $('#dep_0').is(':checked') ) {
+                    uncheckAllDepts();
+                    $('#dep_0').attr('checked', 'checked');
+                }
+            } else {
+                $('#dep_0').removeAttr('checked');
+            }
+
+            if( elem.is(':checked') ){
+				// Если установлен чек-бокс на дочерний департамент, снимаем все чек-боксы с родительских
+                var v_dep = elem.attr('id').substr(4) ;
+				var params = new Object();
+                params.ajax = 'getparentdep';
+                params.id = v_dep;
+                params.dep_id = v_dep;
+                $.post( 'http://core-release-0.4.mocotms.com/moco/base/structure.php', params,
+                    function( answer ) {
+                        var dep_prnt = answer.split(',');
+                        dep_prnt.forEach(function(item, i, dep_prnt) {
+                            uncheck(item);
+                        });
+                    }
+                );
+
+				// Если установлен чек-бокс на родительский департамент, снимаем все чек-боксы с дочерних
+				elem.closest('li').find('input:checked').each(function() {
+					console.log($(this).attr('value'));
+					if ($(this).attr('value') != elem.attr('value')){
+						uncheck($(this).attr('value'));
+					}
+				});
+            } else {
+                // Снят флаг на чек-боксе
+                var v_dep = elem.attr('id').substr(4);
+                uncheck(v_dep);
+            }
+
+            font_weight_calc();
+        }
+        
+        //click по чек-боксам подразделений
+        $("input[id^='dep_']").live('click', function(){
+            check_clicked_departments($(this));
+        });
+
+        function font_weight_calc(){
+            var is_check = '';
+            if (is_check){
+                var checked_departments = new Array();
+                $('#structure').find('input.depts:checked').each( function() {
+                    checked_departments.push( $(this).val() );
+                } );
+
+                $('#structure').find('a').css( 'font-weight', 'normal' );
+                checked_departments.forEach(function(id_department) {
+                    $('a[value='+id_department+']').css( 'font-weight', 'bold' );
+                });
+            }
+        }
+
+        function uncheck(chk_id){
+            // снятие чек-боксов с департаментов
+            $('#dep_'+chk_id).removeAttr('checked');
+            font_weight_calc();
+        }
+
+        function uncheckAllDepts(){
+            $('.depts').each(function(){
+                $(this).removeAttr('checked'); 
+            });
+        }
+
+        $(document).ready( function() {
+            uncheckAllDepts();
+            $('#dep_0').attr('checked', 'checked');
+
+            $('#structure>ul').treeview( {
+                unique: true,
+                animated: "fast"
+            } );
+            var objName = $('#structure').attr('id');
+            if( 1+0 > 0 ){
+                $('#structure').show();
+            } else {
+                $('#structure').hide();
+            }
+
+            $('#structure').find('a').live( 'click', function() {
+                structureTreeClicked(this);
+            } );
+            $('#structure').find('div.hitarea').live( 'click', function() {
+                structureTreeExpanded(this);
+            } );
+        } );
+    </script><div id="departmentselector"></div>
+<div id="editdepartment" style="display: none;">
+<div class="fitem">
+<div class="fitemtitle">
+<label><sup style="color:#FF0000;">*</sup>Назва</label></div>
+<div class="felement ftext">
+<input id="departmenttitle" size="72" maxlength="255" style="width: 600px;" type="text">
+</div>
+</div>
+<br>
+<div class="fitem">
+<div class="fitemtitle">
+<label>Підпорядковується</label></div>
+<div class="felement ftext">
+<input id="departmentparent" readonly="readonly" size="72" style="width: 600px;" type="text">
+<input id="btndepartmentparent" class="select" value="…" type="button">
+</div>
+</div>
+<div style="margin-top: 10px;">
+<input name="lock_delete" value="1" id="id_lock_delete" type="checkbox">
+<label for="id_lock_delete">Блокувати для видалення</label>
+</div>
+</div>
+<div style="display:none;" id="id_div_department_delete"></div>
+<div style="display:none;" id="id_div_alert"></div>
+        <script>
+            var selectedDepartment = 0;
+            var departmentDeleteID = 0;
+            var departmentselectorSelected = 0;
+            
+            $(document).ready( function() {
+
+                $(document).tooltip();
+                
+                $('#departmentselector').dialog( {
+                    title: 'Обрати підрозділ',
+                    height: 400,
+                    width:  550,
+                    modal:  true,
+                    autoOpen:false,
+                    closeText: 'Закрити',
+                    buttons: {
+                        "Обрати": function() {
+                            $(this).dialog("close");
+                            $('#departmentparent').val('Завантаження, зачекайте ...');
+                            getDepartment( departmentselectorSelected, function( answer ) {
+                                selectedDepartment = departmentselectorSelected;
+                                $('#departmentparent').val( answer.path );
+                            } );
+                        },
+                        'Відмінити': function() {
+                            $(this).dialog("close");
+                        }
+                    }
+                });
+
+                $('a.help').click(function(e){
+                    var x = e.pageX;
+                    var y = e.pageY;
+                    if($('#id_help').css('display') == 'none'){
+                        $('#id_help').css('left', (x-180));
+                        $('#id_help').css('top', (y-90));
+                        $('#id_help').fadeIn(400);
+                    }
+                    return false;
+                });
+
+                $('#id_help').click(function(e){
+                    $('#id_help').fadeOut(400);
+                    return false;
+                });
+                
+                $(document).on('click', '#department a', function(e) {
+                    e.preventDefault();
+
+                    departmentselectorSelected = parseInt($(this).attr('value'));
+                });
+                
+                $(document).on('click', '#structure a', function(e) {
+                    e.preventDefault();
+                    structureSelected = parseInt($(this).attr('value'));
+                    departmentselectorSelected = parseInt($(this).attr('value'));
+                    structureChanged();
+                });
+                
+                //--- Вывод диалога выбора подразделения из дерева при клике на соотв. поля в диалогах
+                $(document).on('click', '#departmentparent, #btndepartmentparent', function(e) {
+                    e.preventDefault();
+                    
+                    departmentselectorSelected = 0;
+                    
+                    var container = $('#departmentselector');
+                    
+                    loadDepartmentsStructureByAjax({
+                        structureId : 'department',
+                        container : container,
+                        onBeforeExecute: function() {
+                            container.find('a[value='+selectedDepartment+']').first().css('font-weight', 'normal');
+                            container.dialog('open');
+                        },
+                        onLoad: function(response) {
+                        },
+                        onLoadError : function(error, response) {
+                            showAlert(error, 
+                                'Помилка', 
+                                {closeBtnName: 'Закрити'});
+                        }
+                    });
+                });
+                
+                $('#departmentadd>a').live('click', function() {
+                    departmentAdd( structureSelected );
+                } );
+                
+                $('#departmentedit>a').live('click', function() {
+                    departmentEdit( structureSelected );
+                } );
+                
+                $('#departmentdel>a').live('click', function() {
+                    departmentDelete( structureSelected );
+                } );
+            });
+            
+            function structureChanged() {
+                if( structureSelected > 0 ) {
+                    $('#departmentadd').show();
+                    $('#departmentedit').show();
+                    $('#departmentdel').show();
+                } else {
+                    if (0) {
+                        $('#departmentadd').hide();
+                    }
+                    $('#departmentedit').hide();
+                    $('#departmentdel').hide();
+                }
+            }
+            
+            //---- Вызывается при клике на элементах дерева для запоминания выбранного значения
+            //--- Вспомагательная функция запроса данных о подразделении
+            function getDepartment( id, func ) {
+                var p = new Object();
+                p.ajax = 'department';
+                p.id = id;
+                $.post( '?', p,
+                    function( answer ) {
+                        func( answer );
+                    },
+                    'json'
+                );
+            }
+            
+            //--- Добавление нового подразделения
+            function departmentAdd( id ) {
+                selectedDepartment = id;
+                preloader();
+                getDepartment( selectedDepartment, function( department ) {
+                    preloader(false);
+                    $('#departmenttitle').val('');
+                    $('#departmentparent').val( department.path );
+                    $('#departmenttitle').focus();
+                    $('#departmenttitle').css('border', '');
+                    departmentEditorShow( 'Додати підрозділ', '',  function() {
+                        var params = new Object();
+                        params.ajax = 'departmentadd';
+                        params.parent = selectedDepartment;
+                        params.title = $.trim($('#departmenttitle').val());
+                        
+                        if ($('#id_lock_delete').prop('checked')) {
+                            params.lock_delete = 1;
+                        } else {
+                            params.lock_delete = 0;
+                        }
+                        
+                        if( $.trim($('#departmenttitle').val()).length != 0){
+                            $.ajax({
+                                url: '?',
+                                type: 'POST',
+                                data: params,
+                                dataType: 'json',
+                                beforeSend: function (xhr) {
+                                    preloader();
+                                }
+                            })
+                            .always(function() {
+                                preloader(false);
+                            })
+                            .done(function(response) {
+                                if (response.error) {
+                                    showAlert(response.error, 
+                                        'Помилка', 
+                                        {closeBtnName: 'Закрити'});
+                                    return;
+                                }
+                                window.location.href = response.data.url;
+                            })
+                            .fail(function(jqXHR, textStatus) {
+                                console.error("Request failed: " + textStatus);
+                            });
+                        } else {
+                            $('#departmenttitle').css('border', '2px solid red');
+                        }
+                    });
+                });
+            }
+            
+            //--- Редактирование параметров подразделения
+            function departmentEdit( id ) {
+                preloader();
+                getDepartment( id, function( department ) {
+                    preloader(false);
+                    
+                    $('#departmenttitle').val( department.title );
+
+                    if (department.is_lock_delete == 1){
+                        $('#id_lock_delete').attr( 'checked', 'checked' );
+                    } else {
+                        $('#id_lock_delete').removeAttr('checked');
+                    }
+                    selectedDepartment = department.parent_id;
+                    if( selectedDepartment > 0 ) {
+                        getDepartment( selectedDepartment, function( department ) {
+                            $('#departmentparent').val( department.path );
+                            departmentEditorShow( 'Редагувати підрозділ', id,  function() {
+                                departmentEditOK( id );
+                            } );
+                        } );
+                    } else {
+                        $('#departmentparent').val('');
+                        departmentEditorShow( 'Редагувати підрозділ', id,  function() {
+                            departmentEditOK( id );
+                        } );
+                    }
+                } );
+            }
+            
+            //--- Функция вызывается после закрытия диалога редактирования подразделения
+            function departmentEditOK( id ) {
+                var params = new Object();
+                params.ajax = 'departmentmodify';
+                params.id = id;
+                params.parent = selectedDepartment;
+                params.title = $('#departmenttitle').val();
+                
+                if ($('#id_lock_delete').prop('checked')) {
+                    params.lock_delete = 1;
+                } else {
+                    params.lock_delete = 0;
+                }
+                
+                $.ajax({
+                    url: '?',
+                    type: 'POST',
+                    data: params,
+                    dataType: 'json',
+                    beforeSend: function (xhr) {
+                        preloader();
+                    }
+                })
+                .always(function() {
+                    preloader(false);
+                })
+                .done(function(response) {
+                    if (response.error) {
+                        showAlert(response.error, 
+                            'Помилка', 
+                            {closeBtnName: 'Закрити'});
+                        return;
+                    }
+                    window.location.href = response.data.url;
+                })
+                .fail(function(jqXHR, textStatus) {
+                    console.error("Request failed: " + textStatus);
+                });
+            }
+            
+            //--- Отображение диалога добавления-редактирования подразделения
+            function departmentEditorShow( title, id,  func ) { 
+                $('#departmenttitle').css('border', '');
+                $('#editdepartment').dialog( {
+                    title: title,
+                    height: 319,
+                    width:  700,
+                    modal:  true,
+                    closeText: 'Закрити',
+                    buttons: {
+                        "Зберегти": function() {
+                            if( $.trim(id) == $.trim(selectedDepartment) ){
+                                showAlert('Увага! Вкажіть інший пiдроздiл', 
+                                    'Помилка', 
+                                    {closeBtnName: 'Закрити'});
+                                return;
+                            } 
+                            if( $.trim($('#departmenttitle').val()).length != 0){
+                                func(); 
+                            } else {
+                                $('#departmenttitle').css('border', '2px solid red');
+                            }
+                        },
+                        'Відмінити': function() {
+                            $(this).dialog("close");
+                        }
+                    }
+                } );
+                $('#departmenttitle').focus();
+            }
+            
+            //--- Удаление подразделения
+            function departmentDelete( id ) {
+                departmentDeleteID = id;
+
+                data = new Object();
+                data.ajax = 'CheckDeleteDepartment';
+                data.id = departmentDeleteID;
+
+                $.ajax({
+                    url: '?',
+                    type: 'POST',
+                    data: data,
+                    dataType: 'json',
+                    beforeSend: function (xhr) {
+                        preloader();
+                    }
+                })
+                .always(function() {
+                    preloader(false);
+                })
+                .done(function(response) {
+                    if (response.error) {
+                        showAlert(response.error,
+                            'Помилка',
+                            {closeBtnName: 'Закрити'});
+                        return;
+                    }
+
+                    var modal = $('#id_div_department_delete');
+
+                    modal.html(response.data.html);
+
+                    modal.dialog({
+                        title: 'Видалити підрозділ?',
+                        closeText: 'Закрити',
+                        modal: true,
+                        height: response.data.height,
+                        width: response.data.width,            
+                        buttons: {
+                            "Видалити": function() {
+
+                                var frm = $('#department-delete-frm');
+                                var data = frm.serializeArray();
+                                data.push({name: 'id', value: departmentDeleteID});
+                                data.push({name: 'ajax', value: 'departmentdelete'});
+
+                                $.ajax({
+                                    url: '?',
+                                    type: 'POST',
+                                    data: data,
+                                    dataType: 'json',
+                                    beforeSend: function (xhr) {
+                                        preloader();
+                                    }
+                                })
+                                .always(function() {
+                                    preloader(false);
+                                })
+                                .done(function(response) {
+                                    if (response.error) {
+                                        showAlert(response.error,
+                                            'Помилка',
+                                            {closeBtnName: 'Закрити'});
+                                        return;
+                                    }
+                                    window.location.reload();
+                                })
+                                .fail(function(jqXHR, textStatus) {
+                                    console.error('Request failed: ' + textStatus);
+                                });
+                            },
+                            'Відмінити': function() {
+                                $(this).dialog("close");
+                                return false;
+                            }
+                        }
+                    });
+                })
+                .fail(function(jqXHR, textStatus) {
+                    console.error('Request failed: ' + textStatus);
+                });
+            }
+        </script>
+        </div><!--content-->
+<!--br/><br/><br/ -->
+</div><!--wrapper-->
+
+<div id="div_bg_"> </div>
+
+<div id="footer">
+	<div id="footer_in">
+		<div id="footer_lbl">© MOCO 2010-2017. Powered by <a href="http://tmx-learning.info/" target="_blank">Technomatix</a></div>
+		<div class="social_media"><a target="_blank" href="https://www.facebook.com/Technomatix/?pnref=lhc"><img src="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/images/icon/social/facebook.png"></a><a target="_blank" href="https://myaccount.google.com/?utm_source=OGB"><img src="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/images/icon/social/google_plus.png"></a><a target="_blank" href="https://www.youtube.com/channel/UC3kgUstn4mqESPeev-O4T6A"><img src="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/images/icon/social/youtube.png"></a></div>		<div class="clear"></div>
+	</div>
+</div>
+<script>
+  function reassignFooter() {
+    if( $('body').height() < ($(window).height() ) ) {
+      $('#footer_in').css( 'bottom', 0 );
+      $('#footer_in').css( 'position', 'absolute' );
+    } 
+    if( $('body').height() > ($(window).height() - 65) ) {
+      $('#footer_in').css( 'bottom', 'auto' );
+      $('#footer_in').css( 'position', 'static' );
+    }
+  }
+  $(document).ready( function() {
+    $('#div_bg_').css( 'height', $(window).height() - 64 + 'px' );
+	reassignFooter();
+    setInterval( 'reassignFooter()', 500 );
+  } );
+</script>
+
+
+
+</body></html>

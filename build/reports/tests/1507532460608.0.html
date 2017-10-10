@@ -1,0 +1,2016 @@
+<html lang="en"><head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/theme/standard/styles.php">
+<link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/styles.php">
+
+<!--[if IE 7]>
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/theme/standard/styles_ie7.css" />
+<![endif]-->
+<!--[if IE 6]>
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/theme/standard/styles_ie6.css" />
+<![endif]-->
+
+
+    <meta name="keywords" content="moodle, Управління модераторами ">
+    <title>Управління модераторами</title>
+    <link rel="shortcut icon" href="http://core-release-0.4.mocotms.com/favicon.ico">
+
+    <!--<style type="text/css">/*<![CDATA[*/ body{behavior:url(http://core-release-0.4.mocotms.com/lib/csshover.htc);} /*]]>*/</style>-->
+
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/javascript-static.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/javascript-mod.php"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/overlib/overlib.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/overlib/overlib_cssstyle.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/cookies.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/ufo.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/dropdown.js"></script>  
+
+<script type="text/javascript" defer="defer">
+//<![CDATA[
+setTimeout('fix_column_widths()', 20);
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+function openpopup(url, name, options, fullscreen) {
+    var fullurl = "http://core-release-0.4.mocotms.com" + url;
+    var windowobj = window.open(fullurl, name, options);
+    if (!windowobj) {
+        return true;
+    }
+    if (fullscreen) {
+        windowobj.moveTo(0, 0);
+        windowobj.resizeTo(screen.availWidth, screen.availHeight);
+    }
+    windowobj.focus();
+    return false;
+}
+
+function uncheckall() {
+    var inputs = document.getElementsByTagName('input');
+    for(var i = 0; i < inputs.length; i++) {
+        inputs[i].checked = false;
+    }
+}
+
+function checkall() {
+    var inputs = document.getElementsByTagName('input');
+    for(var i = 0; i < inputs.length; i++) {
+        inputs[i].checked = true;
+    }
+}
+
+function inserttext(text) {
+  text = ' ' + text + ' ';
+  if ( opener.document.forms['theform'].message.createTextRange && opener.document.forms['theform'].message.caretPos) {
+    var caretPos = opener.document.forms['theform'].message.caretPos;
+    caretPos.text = caretPos.text.charAt(caretPos.text.length - 1) == ' ' ? text + ' ' : text;
+  } else {
+    opener.document.forms['theform'].message.value  += text;
+  }
+  opener.document.forms['theform'].message.focus();
+}
+
+function getElementsByClassName(oElm, strTagName, oClassNames){
+	var arrElements = (strTagName == "*" && oElm.all)? oElm.all : oElm.getElementsByTagName(strTagName);
+	var arrReturnElements = new Array();
+	var arrRegExpClassNames = new Array();
+	if(typeof oClassNames == "object"){
+		for(var i=0; i<oClassNames.length; i++){
+			arrRegExpClassNames.push(new RegExp("(^|\\s)" + oClassNames[i].replace(/\-/g, "\\-") + "(\\s|$)"));
+		}
+	}
+	else{
+		arrRegExpClassNames.push(new RegExp("(^|\\s)" + oClassNames.replace(/\-/g, "\\-") + "(\\s|$)"));
+	}
+	var oElement;
+	var bMatchesAll;
+	for(var j=0; j<arrElements.length; j++){
+		oElement = arrElements[j];
+		bMatchesAll = true;
+		for(var k=0; k<arrRegExpClassNames.length; k++){
+			if(!arrRegExpClassNames[k].test(oElement.className)){
+				bMatchesAll = false;
+				break;
+			}
+		}
+		if(bMatchesAll){
+			arrReturnElements.push(oElement);
+		}
+	}
+	return (arrReturnElements)
+}
+//]]>
+</script>
+
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/style.css">
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/moco/jquery/jquery-ui.css">
+
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/js/jquery-1.8.3.js"></script>
+    <script src="http://core-release-0.4.mocotms.com/moco/jquery/development-bundle/jquery-ui.js"></script>
+
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/jquery-ui-datepicker.js"></script>
+            <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/jquery-ui-datepicker-ua.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/moco/jquery/treeview.css">
+
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/jquery.treeview.js"></script>
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/jquery.cookie.js"></script>
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/jquery.easing.1.3.js"></script>
+
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/swf/swfobject.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/menu.css">
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/js/menu.js.php"></script>
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/js/script.js"></script>
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/tree_library.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/lib/slideshow/css/camera.css">
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/slideshow/js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/slideshow/js/camera.min.1.11.js"></script> 
+    
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/moco/css/reports.css">
+<link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/moco/css/select2.css">
+    
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/custom.css">
+
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/d3.min.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/jquery.moco_chart.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/moco.core.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/moco_functions.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/reports.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/select2/select2.min.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/select2/translation/en.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/select2/translation/ru.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/select2/translation/uk.js"></script>
+
+    <script>
+        $(function() { 
+            $(window).scroll(function(){
+                if($(this).scrollTop() != 0){
+                    $('#toTop').fadeIn();
+                } else {
+                    $('#toTop').fadeOut();
+                }
+            });
+            $('#toTop').click(function() {
+                $('body,html').animate({scrollTop:0},800);
+            });
+        });
+        $('#id_language').live('change', function(){
+            window.location.href="http://core-release-0.4.mocotms.com/index.php?lang="+$(this).val();
+            return false;
+        });
+        function handleResponse(mes) {
+            if (mes.errors != null) {
+                $('#res').html('Помилка при завантаженні файлу: ' + mes.errors);
+            } else {
+                var params = new Object();
+                params.ajax = 'saveCentralImg';
+                $.ajax({
+                    type: 'POST',
+                    url: 'http://core-release-0.4.mocotms.com/theme/tmx_default_2015/ajax.php',
+                    data: params,
+                    success:
+                    function( answer ) {
+                        $('#central_img').html(answer.html);
+                    },
+                    dataType: 'json'
+                });
+            }
+        }
+    </script>
+</head>
+<body class="moco-config-moderators course-1 dir-ltr lang-uk_utf8 default" id="moco-config-moderators-index">
+
+    <div id="toTop">
+        <div class="top_button"></div>
+    </div>
+
+            <div id="wrapper">
+        <div class="head_width">
+            <div id="head">
+                <div id="id_div_header" style="margin-right:10px;">
+                
+                    <a href="http://core-release-0.4.mocotms.com" style="float:left">
+                        <img class="logo" src="http://core-release-0.4.mocotms.com/moco/logo/logo.php?logo=L2RhdGEvdG14L21vY28vY29yZS8wLlgvcmVsZWFzZV8wLjQvbW9vZGxlZGF0YS9waXgvbG9nby9sb2dvLnBuZw==&amp;nocache=1497445703" alt="Logotype">
+                    </a>                <div class="link_panel">
+                <div id="lang_menu"><span class="lang_title">Мова:</span><select id="id_language" style="vertical-align:middle; border:1px solid #d1d3d4; color:#6E6E6E;"><option value="en_utf8">ENG</option><option value="ru_utf8">RUS</option><option value="uk_utf8" selected="selected">UKR</option></select></div><a href="http://mocotms.com" class="link_3" target="_blank">Technomatix</a><a class="exit_button" href="http://core-release-0.4.mocotms.com/login/logout.php?sesskey=jC2xH6JUt8">Вийти</a>                </div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div id="head_menu">
+
+	<div style="width:100%; /*max-width: 1024px;*/">
+<div class="menu_left_block"></div>
+<div class="menu_right_block"></div>
+<ul id="nav_menu" style="z-index:1001;">
+<li class="first" style="width: 20%;">
+<a href="javascript: void(0);">Компанія</a><ul>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/structure/">Структура</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/posts/">Посади</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/admin/user.php">Співробітники</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/chiefs/">Керівники</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/moderators/">Модератори</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/confirmmanualuser/">Зареєстрованi користувачi</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/uploadimg/">Завантаження фото</a><div class="clear"></div>
+</li>
+</ul>
+<div class="clear"></div>
+</li>
+<li style="width: 20%;">
+<a href="javascript: void(0);">Навчання</a><ul>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/allcourses/">Каталог</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/profiles/">Програми</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/delhistory/">Історія</a><div class="clear"></div>
+</li>
+<li>
+<hr>
+<div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/tranings/">Заходи</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/trainer/">Тренери</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/training_rooms/">Тренінгові кімнати</a><div class="clear"></div>
+</li>
+<li>
+<hr>
+<div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/scales/">Шкали оцiнок</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/alerts/">Повідомлення</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/tag/">Теги</a><div class="clear"></div>
+</li>
+</ul>
+<div class="clear"></div>
+</li>
+<li style="width: 20%;">
+<a href="javascript: void(0);">Оцінка персоналу</a><ul>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco101/index.php/usr">Користувачі і привілегії</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco101/index.php/org">Організаційна структура</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco101/index.php/messaging">Повідомлення</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco101/index.php/indicator">Індикатори</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco101/index.php/appraisal">Оцінка</a><div class="clear"></div>
+</li>
+</ul>
+<div class="clear"></div>
+</li>
+<li style="width: 20%;">
+<a href="javascript: void(0);">Звіти</a><ul>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/profiles.php">Призначені програми</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/courses.php?tab=admin">Результати по програмам</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/scorms.php?tab=report">Результати по курсам</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/tests.php?tab=report">Результати по тестам</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/testsanalytics.php">Результати по тестах (аналітика)</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/scormandtest.php">Зведені результати по курсам та тестам</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/empreport.php?tab=admin">Зведені результати по співробітнику</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/fullprofiles.php">Детальні результати по співробітникам</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/successful.php?tab=admin">Детальні результати по програмам</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/selfcourses.php">Самопризначені курси</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/vacationstats.php">Статистика навчених і звільнених</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/universal.php?tab=admin">База співробітників і результатів</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/fullprofiles2.php">Анкета співробітника</a><div class="clear"></div>
+</li>
+<li>
+<hr>
+<div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/training.php?tab=admin">Статистика тренінгів</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/trainings.php?tab=admin&amp;subtab=1&amp;find_recursive=1">Результати аудиторних заходів</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/trainer.php?tab=admin">Статистика тренерів</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/workload_trainer.php">Завантаженість тренерів</a><div class="clear"></div>
+</li>
+<li>
+<hr>
+<div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/certificate.php">Видані сертифікати</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/player_play.php">Звіт про відео</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/permissions_log.php">Історія видачі прав</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/subscriptionhistory.php">Історія скасування розсилки</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/systemroles.php">Ролі системи</a><div class="clear"></div>
+</li>
+</ul>
+<div class="clear"></div>
+</li>
+<li style="width: 20%;">
+<a href="javascript: void(0);">Додатково</a><ul>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/holiday/">Свята</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/interview/">Опитування</a><div class="clear"></div>
+</li>
+</ul>
+<div class="clear"></div>
+</li>
+<div class="clear"></div>
+</ul>
+</div>
+		<div class="clear"></div>
+		
+	<div class="breadcrumb" style="display:block; "><h2 class="accesshide ">Ви тут</h2> <ul>
+<li class="first"><a onclick="this.target='_top'" href="http://core-release-0.4.mocotms.com/">LMS</a></li><li> <span class="accesshide ">/&nbsp;</span><span class="arrow sep">&gt;</span> Управління модераторами</li></ul></div>
+</div>
+        <div class="clear"></div>
+
+                <div class="clear"></div>
+
+        <div id="content" class="clearfix">
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+<h2 class="page_title">Модератори</h2><table style="margin-top:10px;" class="borderless">
+<tbody><tr>
+<td style="vertical-align:middle; ">
+<a href="#" class="moderator-add-link">
+<img src="http://core-release-0.4.mocotms.com/img/icons/user_add.png" style="width:16px;" border="0">
+</a>
+</td>
+<td style="vertical-align:middle; padding-left:0;">
+<a href="#" class="moderator-add-link" style="font-size:14px;">Додати модератора</a></td>
+</tr>
+</tbody></table>
+<br>
+<div class="moco-table"><table onload="" onloadshow="no" nosortfirst="yes" hash="de5535ac99106752bbce4df2da18c9b2" class="" id="admin-moderators-index" style="" width="100%" border="1" align="center">
+<tbody>
+<tr header="header">
+<th id="_0_0" class="moco-table-sort" width="10%" align="center">П.І.Б.</th><th id="_0_1" class="moco-table-sort" width="10%" align="center">Підрозділ</th><th id="_0_2" class="moco-table-sort" width="12%" align="center">Посада</th><th id="_0_3" class="moco-table-sort" width="10%" align="center">Категорія програм навчання</th><th id="_0_4" class="moco-table-sort" width="15%" align="center">Дозволи</th><th id="_0_5" class="moco-table-sort" width="10%" align="center">Категорія курсів</th><th id="_0_6" class="moco-table-sort" width="10%" align="center">Дозволи</th><th id="_0_7" class="moco-table-sort" width="15%" align="left">Загальні дозволи</th><th id="_0_8" class="moco-table-sort" width="1%" align="left">&nbsp;</th></tr>
+<tr class="moderator_720 strong">
+<td id="_1_0" class="odd cell  row_first" style="text-align: left;" width="10%" align="left"><a class="moderator-change-link" data-userid="720" href="#">Kayak Kayak</a></td><td id="_1_1" class="even cell  row_first" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="720" data-tabid="0" href="#" value="720" fullname="Kayak Kayak"><ul><li>Department</li></ul></a></td><td id="_1_2" class="odd cell  row_first" style="text-align: left;" width="12%" align="left"><a class="moderator-edit-link" data-userid="720" data-tabid="0" href="#" value="720" fullname="Kayak Kayak"><ul><li>Всі</li></ul></a></td><td id="_1_3" class="even cell  row_first" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="720" data-tabid="1" href="#" value="720" fullname="Kayak Kayak">Всі</a></td><td id="_1_4" class="odd cell  row_first" style="text-align: left;" width="15%" align="left"><li><a class="moderator-edit-link" data-userid="720" data-tabid="3" href="#" value="720" fullname="Kayak Kayak">Створення програм</a><br>
+</li><li><a class="moderator-edit-link" data-userid="720" data-tabid="3" href="#" value="720" fullname="Kayak Kayak">Видалення програм</a><br>
+</li><li><a class="moderator-edit-link" data-userid="720" data-tabid="3" href="#" value="720" fullname="Kayak Kayak">Зміна програм</a><br>
+</li><li><a class="moderator-edit-link" data-userid="720" data-tabid="3" href="#" value="720" fullname="Kayak Kayak">Призначення програм</a><br>
+</li><li><a class="moderator-edit-link" data-userid="720" data-tabid="3" href="#" value="720" fullname="Kayak Kayak">Додавання прив'язки програми до всіх майбутнім дат заходу</a><br>
+</li></td><td id="_1_5" class="even cell  row_first" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="720" data-tabid="2" href="#" value="720" fullname="Kayak Kayak">Всі</a></td><td id="_1_6" class="odd cell  row_first" style="text-align: left;" width="10%" align="left"><li><a class="moderator-edit-link" data-userid="720" data-tabid="3" href="#" value="720" fullname="Kayak Kayak">Створення, зміна, видалення курсів</a><br>
+</li></td><td id="_1_7" class="even cell  row_first" style="text-align: left;" width="15%" align="left"><li><a class="moderator-edit-link" data-userid="720" data-tabid="3" href="#" value="720" fullname="Kayak Kayak">Перегляд звітів з навчання</a><br>
+</li><li><a class="moderator-edit-link" data-userid="720" data-tabid="3" href="#" value="720" fullname="Kayak Kayak">Вхід під ім'ям підлеглого</a><br>
+</li><li><a class="moderator-edit-link" data-userid="720" data-tabid="3" href="#" value="720" fullname="Kayak Kayak">Перегляд списку співробітників</a><br>
+</li><li><a class="moderator-edit-link" data-userid="720" data-tabid="3" href="#" value="720" fullname="Kayak Kayak">Додавання, зміна та видалення співробітників</a><br>
+</li><li><a class="moderator-edit-link" data-userid="720" data-tabid="3" href="#" value="720" fullname="Kayak Kayak">Додавання, зміна та видалення підрозділів</a><br>
+</li><li><a class="moderator-edit-link" data-userid="720" data-tabid="3" href="#" value="720" fullname="Kayak Kayak">Редагування довідника керівників</a><br>
+</li><li><a class="moderator-edit-link" data-userid="720" data-tabid="3" href="#" value="720" fullname="Kayak Kayak">Редагування шаблонів повідомлень</a><br>
+</li><li><a class="moderator-edit-link" data-userid="720" data-tabid="3" href="#" value="720" fullname="Kayak Kayak">Видалення спроб проходження тестів</a><br>
+</li></td><td id="_1_8" class="odd cell  row_first" width="1%" align="left"><a class="moderator-delete-link" data-userid="720" href="#"><img src="http://core-release-0.4.mocotms.com/img/icons/user_delete.png" border="0"></a></td></tr>
+<tr class="moderator_454 strong">
+<td id="_2_0" class="odd cell  row_second" style="text-align: left;" width="10%" align="left"><a class="moderator-change-link" data-userid="454" href="#">moder kir</a></td><td id="_2_1" class="even cell  row_second" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="454" data-tabid="0" href="#" value="454" fullname="moder kir"><ul><li>AutoQA21</li></ul></a></td><td id="_2_2" class="odd cell  row_second" style="text-align: left;" width="12%" align="left"><a class="moderator-edit-link" data-userid="454" data-tabid="0" href="#" value="454" fullname="moder kir"><ul><li>Всі</li></ul></a></td><td id="_2_3" class="even cell  row_second" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="454" data-tabid="1" href="#" value="454" fullname="moder kir">Всі</a></td><td id="_2_4" class="odd cell  row_second" style="text-align: left;" width="15%" align="left"><li><a class="moderator-edit-link" data-userid="454" data-tabid="3" href="#" value="454" fullname="moder kir">Призначення програм</a><br>
+</li></td><td id="_2_5" class="even cell  row_second" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="454" data-tabid="2" href="#" value="454" fullname="moder kir">Всі</a></td><td id="_2_6" class="odd cell  row_second" style="text-align: left;" width="10%" align="left">
+</td><td id="_2_7" class="even cell  row_second" style="text-align: left;" width="15%" align="left"><li><a class="moderator-edit-link" data-userid="454" data-tabid="3" href="#" value="454" fullname="moder kir">Перегляд звітів з навчання</a><br>
+</li></td><td id="_2_8" class="odd cell  row_second" width="1%" align="left"><a class="moderator-delete-link" data-userid="454" href="#"><img src="http://core-release-0.4.mocotms.com/img/icons/user_delete.png" border="0"></a></td></tr>
+<tr class="moderator_462 strong">
+<td id="_3_0" class="odd cell  row_first" style="text-align: left;" width="10%" align="left"><a class="moderator-change-link" data-userid="462" href="#">moder12 kir</a></td><td id="_3_1" class="even cell  row_first" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="462" data-tabid="0" href="#" value="462" fullname="moder12 kir"><ul><li>Energy</li></ul></a></td><td id="_3_2" class="odd cell  row_first" style="text-align: left;" width="12%" align="left"><a class="moderator-edit-link" data-userid="462" data-tabid="0" href="#" value="462" fullname="moder12 kir"><ul><li>Менеджер</li></ul></a></td><td id="_3_3" class="even cell  row_first" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="462" data-tabid="1" href="#" value="462" fullname="moder12 kir">Всі</a></td><td id="_3_4" class="odd cell  row_first" style="text-align: left;" width="15%" align="left"><li><a class="moderator-edit-link" data-userid="462" data-tabid="3" href="#" value="462" fullname="moder12 kir">Призначення програм</a><br>
+</li></td><td id="_3_5" class="even cell  row_first" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="462" data-tabid="2" href="#" value="462" fullname="moder12 kir">Всі</a></td><td id="_3_6" class="odd cell  row_first" style="text-align: left;" width="10%" align="left">
+</td><td id="_3_7" class="even cell  row_first" style="text-align: left;" width="15%" align="left"><li><a class="moderator-edit-link" data-userid="462" data-tabid="3" href="#" value="462" fullname="moder12 kir">Перегляд звітів з навчання</a><br>
+</li></td><td id="_3_8" class="odd cell  row_first" width="1%" align="left"><a class="moderator-delete-link" data-userid="462" href="#"><img src="http://core-release-0.4.mocotms.com/img/icons/user_delete.png" border="0"></a></td></tr>
+<tr class="moderator_450 strong">
+<td id="_4_0" class="odd cell  row_second" style="text-align: left;" width="10%" align="left"><a class="moderator-change-link" data-userid="450" href="#">Sereda Nazar</a></td><td id="_4_1" class="even cell  row_second" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="450" data-tabid="0" href="#" value="450" fullname="Sereda Nazar"><ul><li>Test Structure </li></ul></a></td><td id="_4_2" class="odd cell  row_second" style="text-align: left;" width="12%" align="left"><a class="moderator-edit-link" data-userid="450" data-tabid="0" href="#" value="450" fullname="Sereda Nazar"><ul><li>QA1</li></ul></a></td><td id="_4_3" class="even cell  row_second" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="450" data-tabid="1" href="#" value="450" fullname="Sereda Nazar">Немає</a></td><td id="_4_4" class="odd cell  row_second" style="text-align: left;" width="15%" align="left"><li><a class="moderator-edit-link" data-userid="450" data-tabid="3" href="#" value="450" fullname="Sereda Nazar">Створення програм</a><br>
+</li><li><a class="moderator-edit-link" data-userid="450" data-tabid="3" href="#" value="450" fullname="Sereda Nazar">Видалення програм</a><br>
+</li><li><a class="moderator-edit-link" data-userid="450" data-tabid="3" href="#" value="450" fullname="Sereda Nazar">Зміна програм</a><br>
+</li><li><a class="moderator-edit-link" data-userid="450" data-tabid="3" href="#" value="450" fullname="Sereda Nazar">Призначення програм</a><br>
+</li></td><td id="_4_5" class="even cell  row_second" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="450" data-tabid="2" href="#" value="450" fullname="Sereda Nazar">Всі</a></td><td id="_4_6" class="odd cell  row_second" style="text-align: left;" width="10%" align="left"><li><a class="moderator-edit-link" data-userid="450" data-tabid="3" href="#" value="450" fullname="Sereda Nazar">Створення, зміна, видалення курсів</a><br>
+</li></td><td id="_4_7" class="even cell  row_second" style="text-align: left;" width="15%" align="left"><li><a class="moderator-edit-link" data-userid="450" data-tabid="3" href="#" value="450" fullname="Sereda Nazar">Перегляд звітів з навчання</a><br>
+</li><li><a class="moderator-edit-link" data-userid="450" data-tabid="3" href="#" value="450" fullname="Sereda Nazar">Вхід під ім'ям підлеглого</a><br>
+</li><li><a class="moderator-edit-link" data-userid="450" data-tabid="3" href="#" value="450" fullname="Sereda Nazar">Перегляд списку співробітників</a><br>
+</li><li><a class="moderator-edit-link" data-userid="450" data-tabid="3" href="#" value="450" fullname="Sereda Nazar">Додавання, зміна та видалення співробітників</a><br>
+</li><li><a class="moderator-edit-link" data-userid="450" data-tabid="3" href="#" value="450" fullname="Sereda Nazar">Додавання, зміна та видалення підрозділів</a><br>
+</li><li><a class="moderator-edit-link" data-userid="450" data-tabid="3" href="#" value="450" fullname="Sereda Nazar">Редагування довідника керівників</a><br>
+</li><li><a class="moderator-edit-link" data-userid="450" data-tabid="3" href="#" value="450" fullname="Sereda Nazar">Редагування шаблонів повідомлень</a><br>
+</li><li><a class="moderator-edit-link" data-userid="450" data-tabid="3" href="#" value="450" fullname="Sereda Nazar">Видалення спроб проходження тестів</a><br>
+</li></td><td id="_4_8" class="odd cell  row_second" width="1%" align="left"><a class="moderator-delete-link" data-userid="450" href="#"><img src="http://core-release-0.4.mocotms.com/img/icons/user_delete.png" border="0"></a></td></tr>
+<tr class="moderator_388 strong">
+<td id="_5_0" class="odd cell  row_first" style="text-align: left;" width="10%" align="left"><a class="moderator-change-link" data-userid="388" href="#">Test User</a></td><td id="_5_1" class="even cell  row_first" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="388" data-tabid="0" href="#" value="388" fullname="Test User"><ul><li>Всі</li></ul></a></td><td id="_5_2" class="odd cell  row_first" style="text-align: left;" width="12%" align="left"><a class="moderator-edit-link" data-userid="388" data-tabid="0" href="#" value="388" fullname="Test User"><ul><li>Всі</li></ul></a></td><td id="_5_3" class="even cell  row_first" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="388" data-tabid="1" href="#" value="388" fullname="Test User">Всі</a></td><td id="_5_4" class="odd cell  row_first" style="text-align: left;" width="15%" align="left"><li><a class="moderator-edit-link" data-userid="388" data-tabid="3" href="#" value="388" fullname="Test User">Створення програм</a><br>
+</li><li><a class="moderator-edit-link" data-userid="388" data-tabid="3" href="#" value="388" fullname="Test User">Видалення програм</a><br>
+</li><li><a class="moderator-edit-link" data-userid="388" data-tabid="3" href="#" value="388" fullname="Test User">Зміна програм</a><br>
+</li><li><a class="moderator-edit-link" data-userid="388" data-tabid="3" href="#" value="388" fullname="Test User">Призначення програм</a><br>
+</li><li><a class="moderator-edit-link" data-userid="388" data-tabid="3" href="#" value="388" fullname="Test User">Додавання прив'язки програми до всіх майбутнім дат заходу</a><br>
+</li></td><td id="_5_5" class="even cell  row_first" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="388" data-tabid="2" href="#" value="388" fullname="Test User">Всі</a></td><td id="_5_6" class="odd cell  row_first" style="text-align: left;" width="10%" align="left"><li><a class="moderator-edit-link" data-userid="388" data-tabid="3" href="#" value="388" fullname="Test User">Створення, зміна, видалення курсів</a><br>
+</li></td><td id="_5_7" class="even cell  row_first" style="text-align: left;" width="15%" align="left"><li><a class="moderator-edit-link" data-userid="388" data-tabid="3" href="#" value="388" fullname="Test User">Перегляд звітів з навчання</a><br>
+</li><li><a class="moderator-edit-link" data-userid="388" data-tabid="3" href="#" value="388" fullname="Test User">Вхід під ім'ям підлеглого</a><br>
+</li><li><a class="moderator-edit-link" data-userid="388" data-tabid="3" href="#" value="388" fullname="Test User">Перегляд списку співробітників</a><br>
+</li><li><a class="moderator-edit-link" data-userid="388" data-tabid="3" href="#" value="388" fullname="Test User">Додавання, зміна та видалення співробітників</a><br>
+</li><li><a class="moderator-edit-link" data-userid="388" data-tabid="3" href="#" value="388" fullname="Test User">Додавання, зміна та видалення підрозділів</a><br>
+</li><li><a class="moderator-edit-link" data-userid="388" data-tabid="3" href="#" value="388" fullname="Test User">Редагування довідника керівників</a><br>
+</li><li><a class="moderator-edit-link" data-userid="388" data-tabid="3" href="#" value="388" fullname="Test User">Редагування шаблонів повідомлень</a><br>
+</li><li><a class="moderator-edit-link" data-userid="388" data-tabid="3" href="#" value="388" fullname="Test User">Видалення спроб проходження тестів</a><br>
+</li></td><td id="_5_8" class="odd cell  row_first" width="1%" align="left"><a class="moderator-delete-link" data-userid="388" href="#"><img src="http://core-release-0.4.mocotms.com/img/icons/user_delete.png" border="0"></a></td></tr>
+<tr class="moderator_372 strong">
+<td id="_6_0" class="odd cell  row_second" style="text-align: left;" width="10%" align="left"><a class="moderator-change-link" data-userid="372" href="#">test100 test100</a></td><td id="_6_1" class="even cell  row_second" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="372" data-tabid="0" href="#" value="372" fullname="test100 test100"><ul><li>Technomatix3</li></ul></a></td><td id="_6_2" class="odd cell  row_second" style="text-align: left;" width="12%" align="left"><a class="moderator-edit-link" data-userid="372" data-tabid="0" href="#" value="372" fullname="test100 test100"><ul><li>Всі</li></ul></a></td><td id="_6_3" class="even cell  row_second" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="372" data-tabid="1" href="#" value="372" fullname="test100 test100">Всі</a></td><td id="_6_4" class="odd cell  row_second" style="text-align: left;" width="15%" align="left"><li><a class="moderator-edit-link" data-userid="372" data-tabid="3" href="#" value="372" fullname="test100 test100">Створення програм</a><br>
+</li><li><a class="moderator-edit-link" data-userid="372" data-tabid="3" href="#" value="372" fullname="test100 test100">Видалення програм</a><br>
+</li><li><a class="moderator-edit-link" data-userid="372" data-tabid="3" href="#" value="372" fullname="test100 test100">Зміна програм</a><br>
+</li><li><a class="moderator-edit-link" data-userid="372" data-tabid="3" href="#" value="372" fullname="test100 test100">Призначення програм</a><br>
+</li></td><td id="_6_5" class="even cell  row_second" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="372" data-tabid="2" href="#" value="372" fullname="test100 test100">Всі</a></td><td id="_6_6" class="odd cell  row_second" style="text-align: left;" width="10%" align="left">
+</td><td id="_6_7" class="even cell  row_second" style="text-align: left;" width="15%" align="left"><li><a class="moderator-edit-link" data-userid="372" data-tabid="3" href="#" value="372" fullname="test100 test100">Перегляд звітів з навчання</a><br>
+</li><li><a class="moderator-edit-link" data-userid="372" data-tabid="3" href="#" value="372" fullname="test100 test100">Вхід під ім'ям підлеглого</a><br>
+</li><li><a class="moderator-edit-link" data-userid="372" data-tabid="3" href="#" value="372" fullname="test100 test100">Перегляд списку співробітників</a><br>
+</li><li><a class="moderator-edit-link" data-userid="372" data-tabid="3" href="#" value="372" fullname="test100 test100">Додавання, зміна та видалення підрозділів</a><br>
+</li></td><td id="_6_8" class="odd cell  row_second" width="1%" align="left"><a class="moderator-delete-link" data-userid="372" href="#"><img src="http://core-release-0.4.mocotms.com/img/icons/user_delete.png" border="0"></a></td></tr>
+<tr class="moderator_401 strong">
+<td id="_7_0" class="odd cell  row_first" style="text-align: left;" width="10%" align="left"><a class="moderator-change-link" data-userid="401" href="#">test2 test2</a></td><td id="_7_1" class="even cell  row_first" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="401" data-tabid="0" href="#" value="401" fullname="test2 test2"><ul><li>Всі</li></ul></a></td><td id="_7_2" class="odd cell  row_first" style="text-align: left;" width="12%" align="left"><a class="moderator-edit-link" data-userid="401" data-tabid="0" href="#" value="401" fullname="test2 test2"><ul><li>Всі</li></ul></a></td><td id="_7_3" class="even cell  row_first" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="401" data-tabid="1" href="#" value="401" fullname="test2 test2">Всі</a></td><td id="_7_4" class="odd cell  row_first" style="text-align: left;" width="15%" align="left"><li><a class="moderator-edit-link" data-userid="401" data-tabid="3" href="#" value="401" fullname="test2 test2">Створення програм</a><br>
+</li><li><a class="moderator-edit-link" data-userid="401" data-tabid="3" href="#" value="401" fullname="test2 test2">Видалення програм</a><br>
+</li><li><a class="moderator-edit-link" data-userid="401" data-tabid="3" href="#" value="401" fullname="test2 test2">Зміна програм</a><br>
+</li><li><a class="moderator-edit-link" data-userid="401" data-tabid="3" href="#" value="401" fullname="test2 test2">Призначення програм</a><br>
+</li><li><a class="moderator-edit-link" data-userid="401" data-tabid="3" href="#" value="401" fullname="test2 test2">Додавання прив'язки програми до всіх майбутнім дат заходу</a><br>
+</li></td><td id="_7_5" class="even cell  row_first" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="401" data-tabid="2" href="#" value="401" fullname="test2 test2">Всі</a></td><td id="_7_6" class="odd cell  row_first" style="text-align: left;" width="10%" align="left"><li><a class="moderator-edit-link" data-userid="401" data-tabid="3" href="#" value="401" fullname="test2 test2">Створення, зміна, видалення курсів</a><br>
+</li></td><td id="_7_7" class="even cell  row_first" style="text-align: left;" width="15%" align="left"><li><a class="moderator-edit-link" data-userid="401" data-tabid="3" href="#" value="401" fullname="test2 test2">Перегляд звітів з навчання</a><br>
+</li><li><a class="moderator-edit-link" data-userid="401" data-tabid="3" href="#" value="401" fullname="test2 test2">Вхід під ім'ям підлеглого</a><br>
+</li><li><a class="moderator-edit-link" data-userid="401" data-tabid="3" href="#" value="401" fullname="test2 test2">Перегляд списку співробітників</a><br>
+</li><li><a class="moderator-edit-link" data-userid="401" data-tabid="3" href="#" value="401" fullname="test2 test2">Додавання, зміна та видалення співробітників</a><br>
+</li><li><a class="moderator-edit-link" data-userid="401" data-tabid="3" href="#" value="401" fullname="test2 test2">Додавання, зміна та видалення підрозділів</a><br>
+</li><li><a class="moderator-edit-link" data-userid="401" data-tabid="3" href="#" value="401" fullname="test2 test2">Редагування довідника керівників</a><br>
+</li><li><a class="moderator-edit-link" data-userid="401" data-tabid="3" href="#" value="401" fullname="test2 test2">Редагування шаблонів повідомлень</a><br>
+</li><li><a class="moderator-edit-link" data-userid="401" data-tabid="3" href="#" value="401" fullname="test2 test2">Видалення спроб проходження тестів</a><br>
+</li></td><td id="_7_8" class="odd cell  row_first" width="1%" align="left"><a class="moderator-delete-link" data-userid="401" href="#"><img src="http://core-release-0.4.mocotms.com/img/icons/user_delete.png" border="0"></a></td></tr>
+<tr class="moderator_149 strong">
+<td id="_8_0" class="odd cell  row_second" style="text-align: left;" width="10%" align="left"><a class="moderator-change-link" data-userid="149" href="#">Авсиевич Корней</a></td><td id="_8_1" class="even cell  row_second" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="149" data-tabid="0" href="#" value="149" fullname="Авсиевич Корней"><ul><li>Technomatix3</li></ul></a></td><td id="_8_2" class="odd cell  row_second" style="text-align: left;" width="12%" align="left"><a class="moderator-edit-link" data-userid="149" data-tabid="0" href="#" value="149" fullname="Авсиевич Корней"><ul><li>Всі</li></ul></a></td><td id="_8_3" class="even cell  row_second" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="149" data-tabid="1" href="#" value="149" fullname="Авсиевич Корней">Немає</a></td><td id="_8_4" class="odd cell  row_second" style="text-align: left;" width="15%" align="left"><li><a class="moderator-edit-link" data-userid="149" data-tabid="3" href="#" value="149" fullname="Авсиевич Корней">Створення програм</a><br>
+</li><li><a class="moderator-edit-link" data-userid="149" data-tabid="3" href="#" value="149" fullname="Авсиевич Корней">Видалення програм</a><br>
+</li><li><a class="moderator-edit-link" data-userid="149" data-tabid="3" href="#" value="149" fullname="Авсиевич Корней">Зміна програм</a><br>
+</li><li><a class="moderator-edit-link" data-userid="149" data-tabid="3" href="#" value="149" fullname="Авсиевич Корней">Призначення програм</a><br>
+</li></td><td id="_8_5" class="even cell  row_second" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="149" data-tabid="2" href="#" value="149" fullname="Авсиевич Корней">Всі</a></td><td id="_8_6" class="odd cell  row_second" style="text-align: left;" width="10%" align="left"><li><a class="moderator-edit-link" data-userid="149" data-tabid="3" href="#" value="149" fullname="Авсиевич Корней">Створення, зміна, видалення курсів</a><br>
+</li></td><td id="_8_7" class="even cell  row_second" style="text-align: left;" width="15%" align="left"><li><a class="moderator-edit-link" data-userid="149" data-tabid="3" href="#" value="149" fullname="Авсиевич Корней">Перегляд звітів з навчання</a><br>
+</li><li><a class="moderator-edit-link" data-userid="149" data-tabid="3" href="#" value="149" fullname="Авсиевич Корней">Вхід під ім'ям підлеглого</a><br>
+</li><li><a class="moderator-edit-link" data-userid="149" data-tabid="3" href="#" value="149" fullname="Авсиевич Корней">Перегляд списку співробітників</a><br>
+</li><li><a class="moderator-edit-link" data-userid="149" data-tabid="3" href="#" value="149" fullname="Авсиевич Корней">Додавання, зміна та видалення співробітників</a><br>
+</li><li><a class="moderator-edit-link" data-userid="149" data-tabid="3" href="#" value="149" fullname="Авсиевич Корней">Додавання, зміна та видалення підрозділів</a><br>
+</li><li><a class="moderator-edit-link" data-userid="149" data-tabid="3" href="#" value="149" fullname="Авсиевич Корней">Редагування довідника керівників</a><br>
+</li><li><a class="moderator-edit-link" data-userid="149" data-tabid="3" href="#" value="149" fullname="Авсиевич Корней">Редагування шаблонів повідомлень</a><br>
+</li><li><a class="moderator-edit-link" data-userid="149" data-tabid="3" href="#" value="149" fullname="Авсиевич Корней">Видалення спроб проходження тестів</a><br>
+</li></td><td id="_8_8" class="odd cell  row_second" width="1%" align="left"><a class="moderator-delete-link" data-userid="149" href="#"><img src="http://core-release-0.4.mocotms.com/img/icons/user_delete.png" border="0"></a></td></tr>
+<tr class="moderator_250 strong">
+<td id="_9_0" class="odd cell  row_first" style="text-align: left;" width="10%" align="left"><a class="moderator-change-link" data-userid="250" href="#">Алейников Артем</a></td><td id="_9_1" class="even cell  row_first" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="250" data-tabid="0" href="#" value="250" fullname="Алейников Артем"><ul><li>Всі</li></ul></a></td><td id="_9_2" class="odd cell  row_first" style="text-align: left;" width="12%" align="left"><a class="moderator-edit-link" data-userid="250" data-tabid="0" href="#" value="250" fullname="Алейников Артем"><ul><li>Всі</li></ul></a></td><td id="_9_3" class="even cell  row_first" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="250" data-tabid="1" href="#" value="250" fullname="Алейников Артем">Всі</a></td><td id="_9_4" class="odd cell  row_first" style="text-align: left;" width="15%" align="left"><li><a class="moderator-edit-link" data-userid="250" data-tabid="3" href="#" value="250" fullname="Алейников Артем">Створення програм</a><br>
+</li><li><a class="moderator-edit-link" data-userid="250" data-tabid="3" href="#" value="250" fullname="Алейников Артем">Видалення програм</a><br>
+</li><li><a class="moderator-edit-link" data-userid="250" data-tabid="3" href="#" value="250" fullname="Алейников Артем">Зміна програм</a><br>
+</li><li><a class="moderator-edit-link" data-userid="250" data-tabid="3" href="#" value="250" fullname="Алейников Артем">Призначення програм</a><br>
+</li></td><td id="_9_5" class="even cell  row_first" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="250" data-tabid="2" href="#" value="250" fullname="Алейников Артем">Всі</a></td><td id="_9_6" class="odd cell  row_first" style="text-align: left;" width="10%" align="left">
+</td><td id="_9_7" class="even cell  row_first" style="text-align: left;" width="15%" align="left"><li><a class="moderator-edit-link" data-userid="250" data-tabid="3" href="#" value="250" fullname="Алейников Артем">Перегляд звітів з навчання</a><br>
+</li></td><td id="_9_8" class="odd cell  row_first" width="1%" align="left"><a class="moderator-delete-link" data-userid="250" href="#"><img src="http://core-release-0.4.mocotms.com/img/icons/user_delete.png" border="0"></a></td></tr>
+<tr class="moderator_192 strong">
+<td id="_10_0" class="odd cell  row_second" style="text-align: left;" width="10%" align="left"><a class="moderator-change-link" data-userid="192" href="#">Базюк Христина</a></td><td id="_10_1" class="even cell  row_second" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="192" data-tabid="0" href="#" value="192" fullname="Базюк Христина"><ul><li>123</li></ul></a></td><td id="_10_2" class="odd cell  row_second" style="text-align: left;" width="12%" align="left"><a class="moderator-edit-link" data-userid="192" data-tabid="0" href="#" value="192" fullname="Базюк Христина"><ul><li>Всі</li></ul></a></td><td id="_10_3" class="even cell  row_second" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="192" data-tabid="1" href="#" value="192" fullname="Базюк Христина">Всі</a></td><td id="_10_4" class="odd cell  row_second" style="text-align: left;" width="15%" align="left"><li><a class="moderator-edit-link" data-userid="192" data-tabid="3" href="#" value="192" fullname="Базюк Христина">Створення програм</a><br>
+</li><li><a class="moderator-edit-link" data-userid="192" data-tabid="3" href="#" value="192" fullname="Базюк Христина">Видалення програм</a><br>
+</li><li><a class="moderator-edit-link" data-userid="192" data-tabid="3" href="#" value="192" fullname="Базюк Христина">Зміна програм</a><br>
+</li><li><a class="moderator-edit-link" data-userid="192" data-tabid="3" href="#" value="192" fullname="Базюк Христина">Призначення програм</a><br>
+</li></td><td id="_10_5" class="even cell  row_second" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="192" data-tabid="2" href="#" value="192" fullname="Базюк Христина">Всі</a></td><td id="_10_6" class="odd cell  row_second" style="text-align: left;" width="10%" align="left"><li><a class="moderator-edit-link" data-userid="192" data-tabid="3" href="#" value="192" fullname="Базюк Христина">Створення, зміна, видалення курсів</a><br>
+</li></td><td id="_10_7" class="even cell  row_second" style="text-align: left;" width="15%" align="left"><li><a class="moderator-edit-link" data-userid="192" data-tabid="3" href="#" value="192" fullname="Базюк Христина">Перегляд звітів з навчання</a><br>
+</li><li><a class="moderator-edit-link" data-userid="192" data-tabid="3" href="#" value="192" fullname="Базюк Христина">Вхід під ім'ям підлеглого</a><br>
+</li><li><a class="moderator-edit-link" data-userid="192" data-tabid="3" href="#" value="192" fullname="Базюк Христина">Перегляд списку співробітників</a><br>
+</li><li><a class="moderator-edit-link" data-userid="192" data-tabid="3" href="#" value="192" fullname="Базюк Христина">Додавання, зміна та видалення співробітників</a><br>
+</li><li><a class="moderator-edit-link" data-userid="192" data-tabid="3" href="#" value="192" fullname="Базюк Христина">Додавання, зміна та видалення підрозділів</a><br>
+</li><li><a class="moderator-edit-link" data-userid="192" data-tabid="3" href="#" value="192" fullname="Базюк Христина">Редагування довідника керівників</a><br>
+</li><li><a class="moderator-edit-link" data-userid="192" data-tabid="3" href="#" value="192" fullname="Базюк Христина">Редагування шаблонів повідомлень</a><br>
+</li></td><td id="_10_8" class="odd cell  row_second" width="1%" align="left"><a class="moderator-delete-link" data-userid="192" href="#"><img src="http://core-release-0.4.mocotms.com/img/icons/user_delete.png" border="0"></a></td></tr>
+<tr class="moderator_108 strong">
+<td id="_11_0" class="odd cell  row_first" style="text-align: left;" width="10%" align="left"><a class="moderator-change-link" data-userid="108" href="#">Барзул Николай</a></td><td id="_11_1" class="even cell  row_first" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="108" data-tabid="0" href="#" value="108" fullname="Барзул Николай"><ul><li>Всі</li></ul></a></td><td id="_11_2" class="odd cell  row_first" style="text-align: left;" width="12%" align="left"><a class="moderator-edit-link" data-userid="108" data-tabid="0" href="#" value="108" fullname="Барзул Николай"><ul><li>Всі</li></ul></a></td><td id="_11_3" class="even cell  row_first" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="108" data-tabid="1" href="#" value="108" fullname="Барзул Николай">Всі</a></td><td id="_11_4" class="odd cell  row_first" style="text-align: left;" width="15%" align="left"><li><a class="moderator-edit-link" data-userid="108" data-tabid="3" href="#" value="108" fullname="Барзул Николай">Створення програм</a><br>
+</li><li><a class="moderator-edit-link" data-userid="108" data-tabid="3" href="#" value="108" fullname="Барзул Николай">Видалення програм</a><br>
+</li><li><a class="moderator-edit-link" data-userid="108" data-tabid="3" href="#" value="108" fullname="Барзул Николай">Зміна програм</a><br>
+</li><li><a class="moderator-edit-link" data-userid="108" data-tabid="3" href="#" value="108" fullname="Барзул Николай">Призначення програм</a><br>
+</li></td><td id="_11_5" class="even cell  row_first" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="108" data-tabid="2" href="#" value="108" fullname="Барзул Николай">Всі</a></td><td id="_11_6" class="odd cell  row_first" style="text-align: left;" width="10%" align="left">
+</td><td id="_11_7" class="even cell  row_first" style="text-align: left;" width="15%" align="left"><li><a class="moderator-edit-link" data-userid="108" data-tabid="3" href="#" value="108" fullname="Барзул Николай">Перегляд звітів з навчання</a><br>
+</li><li><a class="moderator-edit-link" data-userid="108" data-tabid="3" href="#" value="108" fullname="Барзул Николай">Вхід під ім'ям підлеглого</a><br>
+</li><li><a class="moderator-edit-link" data-userid="108" data-tabid="3" href="#" value="108" fullname="Барзул Николай">Перегляд списку співробітників</a><br>
+</li><li><a class="moderator-edit-link" data-userid="108" data-tabid="3" href="#" value="108" fullname="Барзул Николай">Додавання, зміна та видалення співробітників</a><br>
+</li><li><a class="moderator-edit-link" data-userid="108" data-tabid="3" href="#" value="108" fullname="Барзул Николай">Редагування довідника керівників</a><br>
+</li><li><a class="moderator-edit-link" data-userid="108" data-tabid="3" href="#" value="108" fullname="Барзул Николай">Редагування шаблонів повідомлень</a><br>
+</li><li><a class="moderator-edit-link" data-userid="108" data-tabid="3" href="#" value="108" fullname="Барзул Николай">Видалення спроб проходження тестів</a><br>
+</li></td><td id="_11_8" class="odd cell  row_first" width="1%" align="left"><a class="moderator-delete-link" data-userid="108" href="#"><img src="http://core-release-0.4.mocotms.com/img/icons/user_delete.png" border="0"></a></td></tr>
+<tr class="moderator_291 strong">
+<td id="_12_0" class="odd cell  row_second" style="text-align: left;" width="10%" align="left"><a class="moderator-change-link" data-userid="291" href="#">Белик Андрей Петрович</a></td><td id="_12_1" class="even cell  row_second" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="291" data-tabid="0" href="#" value="291" fullname="Белик Андрей Петрович"><ul><li>Всі</li></ul></a></td><td id="_12_2" class="odd cell  row_second" style="text-align: left;" width="12%" align="left"><a class="moderator-edit-link" data-userid="291" data-tabid="0" href="#" value="291" fullname="Белик Андрей Петрович"><ul><li>Всі</li></ul></a></td><td id="_12_3" class="even cell  row_second" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="291" data-tabid="1" href="#" value="291" fullname="Белик Андрей Петрович">Всі</a></td><td id="_12_4" class="odd cell  row_second" style="text-align: left;" width="15%" align="left"><li><a class="moderator-edit-link" data-userid="291" data-tabid="3" href="#" value="291" fullname="Белик Андрей Петрович">Створення програм</a><br>
+</li><li><a class="moderator-edit-link" data-userid="291" data-tabid="3" href="#" value="291" fullname="Белик Андрей Петрович">Видалення програм</a><br>
+</li><li><a class="moderator-edit-link" data-userid="291" data-tabid="3" href="#" value="291" fullname="Белик Андрей Петрович">Зміна програм</a><br>
+</li><li><a class="moderator-edit-link" data-userid="291" data-tabid="3" href="#" value="291" fullname="Белик Андрей Петрович">Призначення програм</a><br>
+</li></td><td id="_12_5" class="even cell  row_second" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="291" data-tabid="2" href="#" value="291" fullname="Белик Андрей Петрович">Всі</a></td><td id="_12_6" class="odd cell  row_second" style="text-align: left;" width="10%" align="left"><li><a class="moderator-edit-link" data-userid="291" data-tabid="3" href="#" value="291" fullname="Белик Андрей Петрович">Створення, зміна, видалення курсів</a><br>
+</li></td><td id="_12_7" class="even cell  row_second" style="text-align: left;" width="15%" align="left"><li><a class="moderator-edit-link" data-userid="291" data-tabid="3" href="#" value="291" fullname="Белик Андрей Петрович">Перегляд звітів з навчання</a><br>
+</li><li><a class="moderator-edit-link" data-userid="291" data-tabid="3" href="#" value="291" fullname="Белик Андрей Петрович">Вхід під ім'ям підлеглого</a><br>
+</li><li><a class="moderator-edit-link" data-userid="291" data-tabid="3" href="#" value="291" fullname="Белик Андрей Петрович">Перегляд списку співробітників</a><br>
+</li><li><a class="moderator-edit-link" data-userid="291" data-tabid="3" href="#" value="291" fullname="Белик Андрей Петрович">Додавання, зміна та видалення співробітників</a><br>
+</li><li><a class="moderator-edit-link" data-userid="291" data-tabid="3" href="#" value="291" fullname="Белик Андрей Петрович">Додавання, зміна та видалення підрозділів</a><br>
+</li><li><a class="moderator-edit-link" data-userid="291" data-tabid="3" href="#" value="291" fullname="Белик Андрей Петрович">Редагування довідника керівників</a><br>
+</li><li><a class="moderator-edit-link" data-userid="291" data-tabid="3" href="#" value="291" fullname="Белик Андрей Петрович">Редагування шаблонів повідомлень</a><br>
+</li><li><a class="moderator-edit-link" data-userid="291" data-tabid="3" href="#" value="291" fullname="Белик Андрей Петрович">Видалення спроб проходження тестів</a><br>
+</li></td><td id="_12_8" class="odd cell  row_second" width="1%" align="left"><a class="moderator-delete-link" data-userid="291" href="#"><img src="http://core-release-0.4.mocotms.com/img/icons/user_delete.png" border="0"></a></td></tr>
+<tr class="moderator_224 strong">
+<td id="_13_0" class="odd cell  row_first" style="text-align: left;" width="10%" align="left"><a class="moderator-change-link" data-userid="224" href="#">Воронов Тарас</a></td><td id="_13_1" class="even cell  row_first" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="224" data-tabid="0" href="#" value="224" fullname="Воронов Тарас"><ul><li>AutoQA21</li></ul></a></td><td id="_13_2" class="odd cell  row_first" style="text-align: left;" width="12%" align="left"><a class="moderator-edit-link" data-userid="224" data-tabid="0" href="#" value="224" fullname="Воронов Тарас"><ul><li>Всі</li></ul></a></td><td id="_13_3" class="even cell  row_first" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="224" data-tabid="1" href="#" value="224" fullname="Воронов Тарас">Всі</a></td><td id="_13_4" class="odd cell  row_first" style="text-align: left;" width="15%" align="left"><li><a class="moderator-edit-link" data-userid="224" data-tabid="3" href="#" value="224" fullname="Воронов Тарас">Призначення програм</a><br>
+</li></td><td id="_13_5" class="even cell  row_first" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="224" data-tabid="2" href="#" value="224" fullname="Воронов Тарас">Всі</a></td><td id="_13_6" class="odd cell  row_first" style="text-align: left;" width="10%" align="left">
+</td><td id="_13_7" class="even cell  row_first" style="text-align: left;" width="15%" align="left"><li><a class="moderator-edit-link" data-userid="224" data-tabid="3" href="#" value="224" fullname="Воронов Тарас">Перегляд звітів з навчання</a><br>
+</li><li><a class="moderator-edit-link" data-userid="224" data-tabid="3" href="#" value="224" fullname="Воронов Тарас">Перегляд списку співробітників</a><br>
+</li></td><td id="_13_8" class="odd cell  row_first" width="1%" align="left"><a class="moderator-delete-link" data-userid="224" href="#"><img src="http://core-release-0.4.mocotms.com/img/icons/user_delete.png" border="0"></a></td></tr>
+<tr class="moderator_48 strong">
+<td id="_14_0" class="odd cell  row_second" style="text-align: left;" width="10%" align="left"><a class="moderator-change-link" data-userid="48" href="#">Галасик Станислав</a></td><td id="_14_1" class="even cell  row_second" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="48" data-tabid="0" href="#" value="48" fullname="Галасик Станислав"><ul><li>Всі</li></ul></a></td><td id="_14_2" class="odd cell  row_second" style="text-align: left;" width="12%" align="left"><a class="moderator-edit-link" data-userid="48" data-tabid="0" href="#" value="48" fullname="Галасик Станислав"><ul><li>Всі</li></ul></a></td><td id="_14_3" class="even cell  row_second" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="48" data-tabid="1" href="#" value="48" fullname="Галасик Станислав">Без доступу до програм</a></td><td id="_14_4" class="odd cell  row_second" style="text-align: left;" width="15%" align="left">
+</td><td id="_14_5" class="even cell  row_second" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="48" data-tabid="2" href="#" value="48" fullname="Галасик Станислав">Без доступу до курсів</a></td><td id="_14_6" class="odd cell  row_second" style="text-align: left;" width="10%" align="left">
+</td><td id="_14_7" class="even cell  row_second" style="text-align: left;" width="15%" align="left">
+</td><td id="_14_8" class="odd cell  row_second" width="1%" align="left"><a class="moderator-delete-link" data-userid="48" href="#"><img src="http://core-release-0.4.mocotms.com/img/icons/user_delete.png" border="0"></a></td></tr>
+<tr class="moderator_199 strong">
+<td id="_15_0" class="odd cell  row_first" style="text-align: left;" width="10%" align="left"><a class="moderator-change-link" data-userid="199" href="#">Журавлева Карина</a></td><td id="_15_1" class="even cell  row_first" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="199" data-tabid="0" href="#" value="199" fullname="Журавлева Карина"><ul><li>Oleg Kh</li></ul></a></td><td id="_15_2" class="odd cell  row_first" style="text-align: left;" width="12%" align="left"><a class="moderator-edit-link" data-userid="199" data-tabid="0" href="#" value="199" fullname="Журавлева Карина"><ul><li>Всі</li></ul></a></td><td id="_15_3" class="even cell  row_first" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="199" data-tabid="1" href="#" value="199" fullname="Журавлева Карина">Всі</a></td><td id="_15_4" class="odd cell  row_first" style="text-align: left;" width="15%" align="left"><li><a class="moderator-edit-link" data-userid="199" data-tabid="3" href="#" value="199" fullname="Журавлева Карина">Створення програм</a><br>
+</li><li><a class="moderator-edit-link" data-userid="199" data-tabid="3" href="#" value="199" fullname="Журавлева Карина">Видалення програм</a><br>
+</li><li><a class="moderator-edit-link" data-userid="199" data-tabid="3" href="#" value="199" fullname="Журавлева Карина">Зміна програм</a><br>
+</li><li><a class="moderator-edit-link" data-userid="199" data-tabid="3" href="#" value="199" fullname="Журавлева Карина">Призначення програм</a><br>
+</li></td><td id="_15_5" class="even cell  row_first" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="199" data-tabid="2" href="#" value="199" fullname="Журавлева Карина">Всі</a></td><td id="_15_6" class="odd cell  row_first" style="text-align: left;" width="10%" align="left">
+</td><td id="_15_7" class="even cell  row_first" style="text-align: left;" width="15%" align="left"><li><a class="moderator-edit-link" data-userid="199" data-tabid="3" href="#" value="199" fullname="Журавлева Карина">Перегляд звітів з навчання</a><br>
+</li></td><td id="_15_8" class="odd cell  row_first" width="1%" align="left"><a class="moderator-delete-link" data-userid="199" href="#"><img src="http://core-release-0.4.mocotms.com/img/icons/user_delete.png" border="0"></a></td></tr>
+<tr class="moderator_172 strong">
+<td id="_16_0" class="odd cell  row_second" style="text-align: left;" width="10%" align="left"><a class="moderator-change-link" data-userid="172" href="#">Ивасюк Станислав</a></td><td id="_16_1" class="even cell  row_second" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="172" data-tabid="0" href="#" value="172" fullname="Ивасюк Станислав"><ul><li>Technomatix3</li></ul></a></td><td id="_16_2" class="odd cell  row_second" style="text-align: left;" width="12%" align="left"><a class="moderator-edit-link" data-userid="172" data-tabid="0" href="#" value="172" fullname="Ивасюк Станислав"><ul><li>Всі</li></ul></a></td><td id="_16_3" class="even cell  row_second" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="172" data-tabid="1" href="#" value="172" fullname="Ивасюк Станислав">Всі</a></td><td id="_16_4" class="odd cell  row_second" style="text-align: left;" width="15%" align="left"><li><a class="moderator-edit-link" data-userid="172" data-tabid="3" href="#" value="172" fullname="Ивасюк Станислав">Створення програм</a><br>
+</li><li><a class="moderator-edit-link" data-userid="172" data-tabid="3" href="#" value="172" fullname="Ивасюк Станислав">Видалення програм</a><br>
+</li><li><a class="moderator-edit-link" data-userid="172" data-tabid="3" href="#" value="172" fullname="Ивасюк Станислав">Зміна програм</a><br>
+</li><li><a class="moderator-edit-link" data-userid="172" data-tabid="3" href="#" value="172" fullname="Ивасюк Станислав">Призначення програм</a><br>
+</li></td><td id="_16_5" class="even cell  row_second" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="172" data-tabid="2" href="#" value="172" fullname="Ивасюк Станислав">Всі</a></td><td id="_16_6" class="odd cell  row_second" style="text-align: left;" width="10%" align="left"><li><a class="moderator-edit-link" data-userid="172" data-tabid="3" href="#" value="172" fullname="Ивасюк Станислав">Створення, зміна, видалення курсів</a><br>
+</li></td><td id="_16_7" class="even cell  row_second" style="text-align: left;" width="15%" align="left"><li><a class="moderator-edit-link" data-userid="172" data-tabid="3" href="#" value="172" fullname="Ивасюк Станислав">Перегляд звітів з навчання</a><br>
+</li><li><a class="moderator-edit-link" data-userid="172" data-tabid="3" href="#" value="172" fullname="Ивасюк Станислав">Вхід під ім'ям підлеглого</a><br>
+</li><li><a class="moderator-edit-link" data-userid="172" data-tabid="3" href="#" value="172" fullname="Ивасюк Станислав">Перегляд списку співробітників</a><br>
+</li><li><a class="moderator-edit-link" data-userid="172" data-tabid="3" href="#" value="172" fullname="Ивасюк Станислав">Додавання, зміна та видалення співробітників</a><br>
+</li><li><a class="moderator-edit-link" data-userid="172" data-tabid="3" href="#" value="172" fullname="Ивасюк Станислав">Додавання, зміна та видалення підрозділів</a><br>
+</li><li><a class="moderator-edit-link" data-userid="172" data-tabid="3" href="#" value="172" fullname="Ивасюк Станислав">Редагування довідника керівників</a><br>
+</li><li><a class="moderator-edit-link" data-userid="172" data-tabid="3" href="#" value="172" fullname="Ивасюк Станислав">Редагування шаблонів повідомлень</a><br>
+</li></td><td id="_16_8" class="odd cell  row_second" width="1%" align="left"><a class="moderator-delete-link" data-userid="172" href="#"><img src="http://core-release-0.4.mocotms.com/img/icons/user_delete.png" border="0"></a></td></tr>
+<tr class="moderator_96 strong">
+<td id="_17_0" class="odd cell  row_first" style="text-align: left;" width="10%" align="left"><a class="moderator-change-link" data-userid="96" href="#">Илькив Владимер</a></td><td id="_17_1" class="even cell  row_first" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="96" data-tabid="0" href="#" value="96" fullname="Илькив Владимер"><ul><li>AutoQA21</li></ul></a></td><td id="_17_2" class="odd cell  row_first" style="text-align: left;" width="12%" align="left"><a class="moderator-edit-link" data-userid="96" data-tabid="0" href="#" value="96" fullname="Илькив Владимер"><ul><li>Всі</li></ul></a></td><td id="_17_3" class="even cell  row_first" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="96" data-tabid="1" href="#" value="96" fullname="Илькив Владимер">Всі</a></td><td id="_17_4" class="odd cell  row_first" style="text-align: left;" width="15%" align="left"><li><a class="moderator-edit-link" data-userid="96" data-tabid="3" href="#" value="96" fullname="Илькив Владимер">Призначення програм</a><br>
+</li></td><td id="_17_5" class="even cell  row_first" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="96" data-tabid="2" href="#" value="96" fullname="Илькив Владимер">Всі</a></td><td id="_17_6" class="odd cell  row_first" style="text-align: left;" width="10%" align="left">
+</td><td id="_17_7" class="even cell  row_first" style="text-align: left;" width="15%" align="left"><li><a class="moderator-edit-link" data-userid="96" data-tabid="3" href="#" value="96" fullname="Илькив Владимер">Перегляд звітів з навчання</a><br>
+</li></td><td id="_17_8" class="odd cell  row_first" width="1%" align="left"><a class="moderator-delete-link" data-userid="96" href="#"><img src="http://core-release-0.4.mocotms.com/img/icons/user_delete.png" border="0"></a></td></tr>
+<tr class="moderator_186 strong">
+<td id="_18_0" class="odd cell  row_second" style="text-align: left;" width="10%" align="left"><a class="moderator-change-link" data-userid="186" href="#">Киселев Константин</a></td><td id="_18_1" class="even cell  row_second" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="186" data-tabid="0" href="#" value="186" fullname="Киселев Константин"><ul><li>QA Sviatoslav</li></ul></a></td><td id="_18_2" class="odd cell  row_second" style="text-align: left;" width="12%" align="left"><a class="moderator-edit-link" data-userid="186" data-tabid="0" href="#" value="186" fullname="Киселев Константин"><ul><li>Всі</li></ul></a></td><td id="_18_3" class="even cell  row_second" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="186" data-tabid="1" href="#" value="186" fullname="Киселев Константин">Всі</a></td><td id="_18_4" class="odd cell  row_second" style="text-align: left;" width="15%" align="left"><li><a class="moderator-edit-link" data-userid="186" data-tabid="3" href="#" value="186" fullname="Киселев Константин">Створення програм</a><br>
+</li><li><a class="moderator-edit-link" data-userid="186" data-tabid="3" href="#" value="186" fullname="Киселев Константин">Видалення програм</a><br>
+</li><li><a class="moderator-edit-link" data-userid="186" data-tabid="3" href="#" value="186" fullname="Киселев Константин">Зміна програм</a><br>
+</li><li><a class="moderator-edit-link" data-userid="186" data-tabid="3" href="#" value="186" fullname="Киселев Константин">Призначення програм</a><br>
+</li></td><td id="_18_5" class="even cell  row_second" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="186" data-tabid="2" href="#" value="186" fullname="Киселев Константин">Всі</a></td><td id="_18_6" class="odd cell  row_second" style="text-align: left;" width="10%" align="left">
+</td><td id="_18_7" class="even cell  row_second" style="text-align: left;" width="15%" align="left"><li><a class="moderator-edit-link" data-userid="186" data-tabid="3" href="#" value="186" fullname="Киселев Константин">Перегляд звітів з навчання</a><br>
+</li><li><a class="moderator-edit-link" data-userid="186" data-tabid="3" href="#" value="186" fullname="Киселев Константин">Вхід під ім'ям підлеглого</a><br>
+</li><li><a class="moderator-edit-link" data-userid="186" data-tabid="3" href="#" value="186" fullname="Киселев Константин">Перегляд списку співробітників</a><br>
+</li><li><a class="moderator-edit-link" data-userid="186" data-tabid="3" href="#" value="186" fullname="Киселев Константин">Додавання, зміна та видалення співробітників</a><br>
+</li><li><a class="moderator-edit-link" data-userid="186" data-tabid="3" href="#" value="186" fullname="Киселев Константин">Додавання, зміна та видалення підрозділів</a><br>
+</li><li><a class="moderator-edit-link" data-userid="186" data-tabid="3" href="#" value="186" fullname="Киселев Константин">Редагування довідника керівників</a><br>
+</li><li><a class="moderator-edit-link" data-userid="186" data-tabid="3" href="#" value="186" fullname="Киселев Константин">Редагування шаблонів повідомлень</a><br>
+</li></td><td id="_18_8" class="odd cell  row_second" width="1%" align="left"><a class="moderator-delete-link" data-userid="186" href="#"><img src="http://core-release-0.4.mocotms.com/img/icons/user_delete.png" border="0"></a></td></tr>
+<tr class="moderator_153 strong">
+<td id="_19_0" class="odd cell  row_first" style="text-align: left;" width="10%" align="left"><a class="moderator-change-link" data-userid="153" href="#">Кравченко Павел</a></td><td id="_19_1" class="even cell  row_first" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="153" data-tabid="0" href="#" value="153" fullname="Кравченко Павел"><ul><li>Technomatix3</li></ul></a></td><td id="_19_2" class="odd cell  row_first" style="text-align: left;" width="12%" align="left"><a class="moderator-edit-link" data-userid="153" data-tabid="0" href="#" value="153" fullname="Кравченко Павел"><ul><li>Всі</li></ul></a></td><td id="_19_3" class="even cell  row_first" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="153" data-tabid="1" href="#" value="153" fullname="Кравченко Павел">Без доступу до програм</a></td><td id="_19_4" class="odd cell  row_first" style="text-align: left;" width="15%" align="left">
+</td><td id="_19_5" class="even cell  row_first" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="153" data-tabid="2" href="#" value="153" fullname="Кравченко Павел">Без доступу до курсів</a></td><td id="_19_6" class="odd cell  row_first" style="text-align: left;" width="10%" align="left">
+</td><td id="_19_7" class="even cell  row_first" style="text-align: left;" width="15%" align="left"><li><a class="moderator-edit-link" data-userid="153" data-tabid="3" href="#" value="153" fullname="Кравченко Павел">Перегляд списку співробітників</a><br>
+</li></td><td id="_19_8" class="odd cell  row_first" width="1%" align="left"><a class="moderator-delete-link" data-userid="153" href="#"><img src="http://core-release-0.4.mocotms.com/img/icons/user_delete.png" border="0"></a></td></tr>
+<tr class="moderator_55 strong">
+<td id="_20_0" class="odd cell  row_second" style="text-align: left;" width="10%" align="left"><a class="moderator-change-link" data-userid="55" href="#">Мусиенко Юлия</a></td><td id="_20_1" class="even cell  row_second" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="55" data-tabid="0" href="#" value="55" fullname="Мусиенко Юлия"><ul><li>Technomatix3</li></ul></a></td><td id="_20_2" class="odd cell  row_second" style="text-align: left;" width="12%" align="left"><a class="moderator-edit-link" data-userid="55" data-tabid="0" href="#" value="55" fullname="Мусиенко Юлия"><ul><li>QA engineer</li></ul></a></td><td id="_20_3" class="even cell  row_second" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="55" data-tabid="1" href="#" value="55" fullname="Мусиенко Юлия">Немає</a></td><td id="_20_4" class="odd cell  row_second" style="text-align: left;" width="15%" align="left"><li><a class="moderator-edit-link" data-userid="55" data-tabid="3" href="#" value="55" fullname="Мусиенко Юлия">Створення програм</a><br>
+</li><li><a class="moderator-edit-link" data-userid="55" data-tabid="3" href="#" value="55" fullname="Мусиенко Юлия">Видалення програм</a><br>
+</li><li><a class="moderator-edit-link" data-userid="55" data-tabid="3" href="#" value="55" fullname="Мусиенко Юлия">Зміна програм</a><br>
+</li><li><a class="moderator-edit-link" data-userid="55" data-tabid="3" href="#" value="55" fullname="Мусиенко Юлия">Призначення програм</a><br>
+</li></td><td id="_20_5" class="even cell  row_second" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="55" data-tabid="2" href="#" value="55" fullname="Мусиенко Юлия">Всі</a></td><td id="_20_6" class="odd cell  row_second" style="text-align: left;" width="10%" align="left"><li><a class="moderator-edit-link" data-userid="55" data-tabid="3" href="#" value="55" fullname="Мусиенко Юлия">Створення, зміна, видалення курсів</a><br>
+</li></td><td id="_20_7" class="even cell  row_second" style="text-align: left;" width="15%" align="left"><li><a class="moderator-edit-link" data-userid="55" data-tabid="3" href="#" value="55" fullname="Мусиенко Юлия">Перегляд звітів з навчання</a><br>
+</li><li><a class="moderator-edit-link" data-userid="55" data-tabid="3" href="#" value="55" fullname="Мусиенко Юлия">Вхід під ім'ям підлеглого</a><br>
+</li><li><a class="moderator-edit-link" data-userid="55" data-tabid="3" href="#" value="55" fullname="Мусиенко Юлия">Перегляд списку співробітників</a><br>
+</li><li><a class="moderator-edit-link" data-userid="55" data-tabid="3" href="#" value="55" fullname="Мусиенко Юлия">Додавання, зміна та видалення співробітників</a><br>
+</li><li><a class="moderator-edit-link" data-userid="55" data-tabid="3" href="#" value="55" fullname="Мусиенко Юлия">Додавання, зміна та видалення підрозділів</a><br>
+</li><li><a class="moderator-edit-link" data-userid="55" data-tabid="3" href="#" value="55" fullname="Мусиенко Юлия">Редагування довідника керівників</a><br>
+</li><li><a class="moderator-edit-link" data-userid="55" data-tabid="3" href="#" value="55" fullname="Мусиенко Юлия">Редагування шаблонів повідомлень</a><br>
+</li></td><td id="_20_8" class="odd cell  row_second" width="1%" align="left"><a class="moderator-delete-link" data-userid="55" href="#"><img src="http://core-release-0.4.mocotms.com/img/icons/user_delete.png" border="0"></a></td></tr>
+<tr class="moderator_377 strong">
+<td id="_21_0" class="odd cell  row_first" style="text-align: left;" width="10%" align="left"><a class="moderator-change-link" data-userid="377" href="#">Пирожкова Инна</a></td><td id="_21_1" class="even cell  row_first" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="377" data-tabid="0" href="#" value="377" fullname="Пирожкова Инна"><ul><li>Всі</li></ul></a></td><td id="_21_2" class="odd cell  row_first" style="text-align: left;" width="12%" align="left"><a class="moderator-edit-link" data-userid="377" data-tabid="0" href="#" value="377" fullname="Пирожкова Инна"><ul><li>Всі</li></ul></a></td><td id="_21_3" class="even cell  row_first" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="377" data-tabid="1" href="#" value="377" fullname="Пирожкова Инна">Всі</a></td><td id="_21_4" class="odd cell  row_first" style="text-align: left;" width="15%" align="left"><li><a class="moderator-edit-link" data-userid="377" data-tabid="3" href="#" value="377" fullname="Пирожкова Инна">Призначення програм</a><br>
+</li></td><td id="_21_5" class="even cell  row_first" style="text-align: left;" width="10%" align="left"><a class="moderator-edit-link" data-userid="377" data-tabid="2" href="#" value="377" fullname="Пирожкова Инна">Всі</a></td><td id="_21_6" class="odd cell  row_first" style="text-align: left;" width="10%" align="left">
+</td><td id="_21_7" class="even cell  row_first" style="text-align: left;" width="15%" align="left"><li><a class="moderator-edit-link" data-userid="377" data-tabid="3" href="#" value="377" fullname="Пирожкова Инна">Перегляд звітів з навчання</a><br>
+</li></td><td id="_21_8" class="odd cell  row_first" width="1%" align="left"><a class="moderator-delete-link" data-userid="377" href="#"><img src="http://core-release-0.4.mocotms.com/img/icons/user_delete.png" border="0"></a></td></tr>
+</tbody>
+</table>
+<div class="clear"></div><br>
+</div>
+<div class="clear"></div>
+            <style>
+              .moco-table tr th.moco-table-sort {
+                cursor: pointer;
+              }
+            </style>
+            <script type="text/javascript">
+              $(document).ready(function() {
+                function startLoading() {
+                  var div = $('<div />');
+                  $(div)
+                    .css( 'position', 'fixed' )
+                    .css( 'background-color', 'transparent' )
+                    .css( 'color', '#000000' )
+                    .css( 'left', '50%' )
+                    .css( 'top', '50%' )
+                    .css( 'border', 'none' )
+                    .css( 'z-index', '9999' )
+                    .append( $('<img>').attr( 'src', 'http://core-release-0.4.mocotms.com/moco/img/loading.gif' ) );
+                  $('body').append(div);
+                  return div;
+                }
+                $("td[comment]").each( function() { $(this).tooltip( {
+                  track: true,
+                  delay: 100,
+                  opacity: 0.85,
+                  bodyHandler: function() {
+                      return $(this).attr('comment');
+                  }
+                } ) } );
+                $('.moco-table .moco-table-page-link').live( 'click', function(e) {
+                  var loading = startLoading();
+                  var div = $(this).closest('div.moco-table');
+                  $(div).load( '?ajax=moco-table', {
+                    hash: $(this).closest('div.moco-table').find('table').attr('hash'),
+                    sort: $(this).closest('div.moco-table').find('table').attr('sortorder'),
+                    start: $(this).attr('start')
+                  }, function() {
+                    $(loading).remove();
+                    $(div).children('table').each( function() {
+                      var onload = $(this).attr('onload');
+                      if( onload !== undefined && onload.length > 0 ) eval( onload );
+                    } );
+                  } );
+                  e.preventDefault();
+                } );
+                $('.moco-table tr th.moco-table-sort').live( 'click', function(e) {
+
+
+                  var onloadshow =  'no';
+
+
+                  if( $(this).find('input').length > 0 ) return;
+                  if( $(this).find('a').length > 0 ) return;
+                  if( $(this).get(0).onclick ) return;
+                  var hash = $(this).closest('div.moco-table').find('table').attr('hash');
+                  if( hash.length <= 0 ) return;
+                  var sortorder = 1 + $(this).index();
+                  if( sortorder == $(this).closest('div.moco-table').find('table').attr('sortorder') ) {
+                    sortorder = -sortorder;
+                  }
+                  if (onloadshow !== 'no')
+                    var loading = startLoading();
+                  var div = $(this).closest('div.moco-table');
+                  $(div).load( '?ajax=moco-table', {
+                    hash: $(this).closest('div.moco-table').find('table').attr('hash'),
+                    sort: sortorder,
+                    start: 0
+                  }, function() {
+                    $(loading).remove();
+                    $(div).children('table').each( function() {
+                      var onload = $(this).attr('onload');
+                      if( onload !== undefined && onload.length > 0 ) eval( onload );
+                    } );
+                  } );
+                } );
+              });
+            </script>    <script type="text/javascript" language="javascript">
+
+        var div_moderator_departmentsSelected = 0;
+
+        function div_moderator_departmentsTreeClicked( el ) {
+            if (0 == 1) {
+                $('#div_moderator_departments').find('a').css( 'font-weight', 'normal' );
+                $(el).css( 'font-weight', 'bold' );
+            }
+
+            div_moderator_departmentsSelected = $(el).attr('value');
+
+            div_moderator_departmentsTreeExpanded(el);
+        }
+
+        function div_moderator_departmentsTreeExpanded( el ) {
+          $(el).closest('li').children('ul').children('li').children('ul.unloaded').each( function() {
+            is_check = '1';
+            var ul = this;
+            var parent = $(ul).parent().attr('department');
+            var params = new Object();
+            params.ajax = 'structure';
+            params.uin = 'a67d2a7e94f7ac416d85be5a59514a1f';
+            params.parent = parent;
+            params.get_all_dep = '';
+            $.post( 'http://core-release-0.4.mocotms.com/moco/base/structure.php', params,
+              function( json ) {
+                $(ul).empty();
+                for( i = 0; i < json.departments.length; i++ ) {
+                  var department = json.departments[i];
+                  var node = ul;
+                  if( department.parent_id != parent ) {
+                    var li = $(ul).children('li[department='+department.parent_id+']');
+                    node = $(li).children('ul');
+                    if( node.length <= 0 ) {
+                      li.append( "<ul class='unloaded'></ul>" );
+                      node = $(li).children('ul');
+                    }
+                  }
+
+                  if (is_check){
+                   $(node).append( "<li class='closed' department='" + department.id + "'>"+
+                      "<input type='checkbox' style='margin-top:3px; margin-left:6px' class='depts' id='dep_"+ department.id +"'>"+
+                      "<span style='margin-left:3px;'>"+
+                      "<a href='javascript: void(0);' value='" + department.id + "'" + ( department.marked > 0 ? " style='text-decoration: underline;'" : "" ) + ">"+
+                      department.title +
+                      "</a>"+
+                      "</span>"+
+                      "</li>");
+                   } else {
+                     $(node).append( "<li class='closed' department='" + department.id + "'>"+
+                      "<span style='margin-left:3px;'>"+
+                      "<a href='javascript: void(0);' value='" + department.id + "'" + ( department.marked > 0 ? " style='text-decoration: underline;'" : "" ) + ">"+
+                      department.title +
+                      "</a>"+
+                      "</span>"+
+                      "</li>");
+                    }  
+                }
+                $(ul).removeClass('unloaded');
+                $(ul).treeview( {
+                  unique: true,
+                  animated: "fast"
+                } );
+              }, 'json'
+            );
+          } );
+        }
+
+        function check_clicked_departments(elem){
+            var department = elem.val();
+
+            if (1 == 1) {
+                var callback = function(){ };
+                callback();
+                return;
+            }
+
+            if (elem.attr('id') == 'dep_0' )  {
+                if( $('#dep_0').is(':checked') ) {
+                    uncheckAllDepts();
+                    $('#dep_0').attr('checked', 'checked');
+                }
+            } else {
+                $('#dep_0').removeAttr('checked');
+            }
+
+            if( elem.is(':checked') ){
+				// Если установлен чек-бокс на дочерний департамент, снимаем все чек-боксы с родительских
+                var v_dep = elem.attr('id').substr(4) ;
+				var params = new Object();
+                params.ajax = 'getparentdep';
+                params.id = v_dep;
+                params.dep_id = v_dep;
+                $.post( 'http://core-release-0.4.mocotms.com/moco/base/structure.php', params,
+                    function( answer ) {
+                        var dep_prnt = answer.split(',');
+                        dep_prnt.forEach(function(item, i, dep_prnt) {
+                            uncheck(item);
+                        });
+                    }
+                );
+
+				// Если установлен чек-бокс на родительский департамент, снимаем все чек-боксы с дочерних
+				elem.closest('li').find('input:checked').each(function() {
+					console.log($(this).attr('value'));
+					if ($(this).attr('value') != elem.attr('value')){
+						uncheck($(this).attr('value'));
+					}
+				});
+            } else {
+                // Снят флаг на чек-боксе
+                var v_dep = elem.attr('id').substr(4);
+                uncheck(v_dep);
+            }
+
+            font_weight_calc();
+        }
+        
+        //click по чек-боксам подразделений
+        $("input[id^='dep_']").live('click', function(){
+            check_clicked_departments($(this));
+        });
+
+        function font_weight_calc(){
+            var is_check = '1';
+            if (is_check){
+                var checked_departments = new Array();
+                $('#div_moderator_departments').find('input.depts:checked').each( function() {
+                    checked_departments.push( $(this).val() );
+                } );
+
+                $('#div_moderator_departments').find('a').css( 'font-weight', 'normal' );
+                checked_departments.forEach(function(id_department) {
+                    $('a[value='+id_department+']').css( 'font-weight', 'bold' );
+                });
+            }
+        }
+
+        function uncheck(chk_id){
+            // снятие чек-боксов с департаментов
+            $('#dep_'+chk_id).removeAttr('checked');
+            font_weight_calc();
+        }
+
+        function uncheckAllDepts(){
+            $('.depts').each(function(){
+                $(this).removeAttr('checked'); 
+            });
+        }
+
+        $(document).ready( function() {
+            uncheckAllDepts();
+            $('#dep_0').attr('checked', 'checked');
+
+            $('#div_moderator_departments>ul').treeview( {
+                unique: true,
+                animated: "fast"
+            } );
+            var objName = $('#div_moderator_departments').attr('id');
+            if( 1+0 > 0 ){
+                $('#div_moderator_departments').show();
+            } else {
+                $('#div_moderator_departments').hide();
+            }
+
+            $('#div_moderator_departments').find('a').live( 'click', function() {
+                div_moderator_departmentsTreeClicked(this);
+            } );
+            $('#div_moderator_departments').find('div.hitarea').live( 'click', function() {
+                div_moderator_departmentsTreeExpanded(this);
+            } );
+        } );
+    </script>
+
+
+        <script>
+
+            var moderatorAddDialog = $('#div_moderator_add');
+            var departmentsContainer = $('#div_moderator_departments');
+            var moderatorIdCntrl = moderatorAddDialog.find('#moderator_id');
+            var postsContainer = moderatorAddDialog.find('#div_moderator_posts');
+            var profileCategoriesContainer = moderatorAddDialog.find('#div_profile_category');
+            var courseCategoriesContainer = moderatorAddDialog.find('#div_course_category');
+            var permissionsContainer = moderatorAddDialog.find('#div_permissions');
+
+            var moderator_id = 0;
+            var old_user_id = 0;
+
+            var profileCategory = 0;
+            var courseCategory = 0;
+
+            $(document).ready( function() {
+                
+                $('.moderator-add-link').on('click', function(e) {
+                    e.preventDefault();
+                    var type = typeof($(this).attr('data-type')) != 'undefined' ? parseInt($(this).attr('data-type')) : 0;
+                    moderatorAdd(null,null,null,'new',type);
+                });
+                
+                $(document).on('click', '.moderator-find-btn', function(e) {
+                    e.preventDefault();
+                    moderatorFind($('#moderator_id'));
+                });
+                
+                $(document).on('click', '.moderator-change-link', function(e) {
+                    e.preventDefault();
+                    var userid = parseInt($(this).attr('data-userid'));
+                    moderatorChange(userid);
+                });
+                
+                $(document).on('click', '.moderator-edit-link', function(e) {
+                    e.preventDefault();
+                    var userid = parseInt($(this).attr('data-userid'));
+                    var tabid = parseInt($(this).attr('data-tabid'));
+                    var type = typeof($(this).attr('data-type')) != 'undefined' ? parseInt($(this).attr('data-type')) : 0;
+                    moderatorAdd($(this), userid, tabid, null, type);
+                });
+                
+                $(document).on('click', '.moderator-delete-link', function(e) {
+                    e.preventDefault();
+                    var userid = parseInt($(this).attr('data-userid'));
+                    moderatorDelete(userid);
+                });
+                
+                // При установки отметки Создание программ устанавливается отметка на Изменение программ
+                $(".permissions[value='3']").live('click', function() {
+                    if($(this).attr("checked") == 'checked') { 
+                        $(".permissions[value='5']").attr("checked","checked");
+                    }
+                }); 
+                
+                $(document).on('click', ".pagination-employees a", function(e){
+                    e.preventDefault();
+                    moderatorFind($('#moderator_id'), parseInt($(this).attr('data-page')));
+                });
+                
+                $(document).on('click', '.moderator_select', function() {
+                    $('#div_moderator_select').dialog('close');
+                    moderator_id = $(this).attr('val');
+                });
+
+                $('#div_moderator_add').dialog( {
+                    autoOpen: false,
+                    modal: true,
+                    closeText: 'Закрити',
+                    width: 800,
+                    height: 620,
+                    dialog: true,
+                    closeText: 'Закрити',
+                    buttons: { 
+                        "Зберегти": function() {
+                            console.log(moderator_id);
+                            return false;
+                            if (moderator_id > 0) {
+                                return false;
+                                moderatorSave();
+                            } else {
+                                showAlert('Оберете користувача для присвоєння прав доступу', 
+                                    'Помилка', 
+                                    {closeBtnName: 'Закрити'});
+                                $('#moderator_id').focus();
+                            }
+                        },
+                        "Відмінити": function() {
+                            $(this).dialog("close");
+                        }
+                    }
+                } );
+
+                $('#div_moderator_change').dialog( {
+                    autoOpen: false,
+                    modal: true,
+                    width: 800,
+                    height: 460,
+                    dialog: true,
+                    closeText: 'Закрити',
+                    buttons: { 
+                        "OK": function() {
+                            if( moderator_id > 0 ) {
+                                $(this).dialog("close");
+                                var p = new Object();
+                                p.ajax = 'change';
+                                p.old_id = old_user_id;
+                                p.new_id = moderator_id;
+                                $.post( '?', p,
+                                    function( answer ) {
+                                        if( answer.trim() == 'OK' ) {
+                                            window.location.reload();
+                                        } else alert( answer );
+                                    }
+                                );
+                            }
+                        },
+                        "Відмінити": function() {
+                            $(this).dialog("close");
+                        }
+                    }
+                } );
+                
+                $('#div_moderator_select').dialog( {
+                    autoOpen: false,
+                    modal: true,
+                    width: 520,
+                    height: 580,
+                    dialog: true,
+                    closeText: 'Закрити',
+                    buttons: { 
+                        "Відмінити": function() {
+                            $(this).dialog("close");
+                        }
+                    },
+                    open: function() {
+                        $('#div_moderator_add').dialog( 'option', 'closeOnEscape', false );
+                    },
+                    close: function() {
+                        setTimeout( function() { $('#div_moderator_add').dialog( 'option', 'closeOnEscape', true ); }, 500 );
+                        $('#moderator_id').focus();
+                    }
+                } );
+                
+                $('#div_moderator_delete').dialog( {
+                    autoOpen: false,
+                    modal: true,
+                    dialog: true,
+                    title: "Видалити модератора?",
+                    closeText: 'Закрити',
+                    width: 550,
+                    buttons: { 
+                        "Видалити": function() {
+                            $(this).dialog("close");
+                            var p = new Object();
+                            p.ajax = 'delete';
+                            p.user_id = moderator_id;
+                            
+                            $.ajax({
+                                url: '?',
+                                type: 'POST',
+                                data: p,
+                                dataType: 'json',
+                                beforeSend: function (xhr) {
+                                    preloader();
+                                }
+                            })
+                            .always(function() {
+                                preloader(false);
+                            })
+                            .done(function(response) {
+                                if (response.error) {
+                                    showAlert(json.error, 
+                                        'Помилка', 
+                                        {closeBtnName: 'Закрити'});
+                                    return;
+                                }
+                                
+                                window.location.reload();
+                            })
+                            .fail(function(jqXHR, textStatus) {
+                                console.error("Request failed: " + textStatus);
+                                
+                            });
+                        },
+                        "Відмінити": function() {
+                            $(this).dialog("close");
+                        }
+                    }
+                } );
+                
+                $('#div_profile_category>ul').treeview( {
+                    unique: true,
+                    animated: "fast"
+                } );
+                
+                $('#div_profile_category').find('a').live( 'click', function() {
+                    $('#div_profile_category').find('a').css( 'font-weight', 'normal' );
+                    $(this).css( 'font-weight', 'bold' );
+                    profileCategory = $(this).attr('value');
+                } );
+                
+                $('#div_course_category>ul').treeview( {
+                    unique: true,
+                    animated: "fast"
+                } );
+                
+                $('#div_course_category').find('a').live( 'click', function() {
+                    $('#div_course_category').find('a').css( 'font-weight', 'normal' );
+                    $(this).css( 'font-weight', 'bold' );
+                    courseCategory = $(this).attr('value');
+                } );
+                
+                $('#moderator_id').keydown( function(event) {
+                    if( event.keyCode == 13 ) {
+                        event.preventDefault();
+                        moderatorFind(this);
+                    } else if( event.keyCode == 8 || event.keyCode == 46 ) {
+                        moderator_id = 0;
+                        $('#moderator_id').css( 'background-color', '#fff0f0' );
+                    }
+                } );
+                
+                $('#moderator_id').keypress( function(event) {
+                    moderator_id = 0;
+                    $('#moderator_id').css( 'background-color', '#fff0f0' );
+                } );
+                
+                $('#moderator_change_id').keydown( function(event) {
+                    if( event.keyCode == 13 ) {
+                        event.preventDefault();
+                        moderatorFind(this);
+                    } else if( event.keyCode == 8 || event.keyCode == 46 ) {
+                        moderator_id = 0;
+                        $('#moderator_change_id').css( 'background-color', '#fff0f0' );
+                    }
+                } );
+                
+                $('#moderator_change_id').keypress( function(event) {
+                    moderator_id = 0;
+                    $('#moderator_change_id').css( 'background-color', '#fff0f0' );
+                } );
+                
+                $('#div_moderator_posts').find('.posts').live( 'click', function() {
+                    if( $(this).attr( 'checked' ) ) {
+                        if( $(this).val() == 0 ) {
+                            $('#div_moderator_posts').find('.posts[value!=0]').attr( 'checked', false );
+                        } else {
+                            $('#div_moderator_posts').find('.posts[value=0]').attr( 'checked', false );
+                        }
+                    }
+                } );
+                
+                departmentsContainer.on('change', '.depts', function(e) {
+                    selectDepartment($(this));
+                });
+                
+            } );
+            
+            function selectDepartment(el)
+            {
+                var currentValue = el.val();
+                var currentChecked = el.prop('checked');
+                
+                if (currentValue == 0 && currentChecked) {
+                    departmentsContainer.find('input').prop('checked', false).prop('disabled', false);
+                    departmentsContainer.find('a').css('font-weight', 'normal');
+                    el.prop('checked', true);
+                    el.parent().css('font-weight', 'bold');
+                }
+                
+                if (currentValue != 0) {
+                    
+                    if (currentChecked) {
+                        // uncheck and unhighlight "All departments"
+                        departmentsContainer.find('.treeview a').first().css('font-weight', 'normal');
+                        departmentsContainer.find('.treeview input').first().prop('checked', false);
+                        
+                        // disable nested checkboxes
+                        el.parent().find('input').prop('checked', false).prop('disabled', true);
+                        
+                        // unhighlight nested
+                        el.parent().find('a').css('font-weight', 'normal');
+                        
+                        // enable current
+                        el.prop('checked', true).prop('disabled', false);
+                        
+                        // highlight path to the selected department
+                        el.parents('li').each(function(e) {
+                            if ($(this).hasClass('treeview')) {
+                                return false;
+                            }
+                        
+                            $(this).find('a').first().css('font-weight', 'bold');
+                        });
+                    } else {
+                        // nested nested checkboxes
+                        el.parent().find('input').prop('disabled', false);
+                        
+                        // unhighlight path
+                        el.parents('li').each(function(e) {
+                            if ($(this).hasClass('treeview')) {
+                                return false;
+                            }
+                        
+                            $(this).find('a').first().css('font-weight', 'normal');
+                        });
+                    }
+                }
+                
+                var postIds = [];
+                postsContainer.find('input:checked').each(function(e) {
+                    var id = $(this).val();
+                    postIds[id] = id;
+                });
+                
+                var exceptpost = moderatorAddDialog.find('#exceptpost').prop('checked') ? 1 : 0;
+                
+                loadPosts(postIds, exceptpost);
+            }
+            
+            function loadPosts(postIds, exceptpost, departmentIds)
+            {
+                if (typeof(postIds) == 'undefined') {
+                    postIds = [];
+                }
+                
+                if (typeof(exceptpost) == 'undefined') {
+                    exceptpost = 0;
+                }
+                
+                if (typeof(departmentIds) == 'undefined' || departmentIds.length == 0) {
+                    departmentIds = departmentsContainer.find('input:checked').map(function() {
+                        return this.value;
+                    }).get();
+                }
+                
+                var params = new Object();
+                params.ajax = 'getposts';
+                params.department_ids = departmentIds;
+                $.post( '?', params,
+                    function( json ) {
+                        var html = '<label><input type="checkbox" id="exceptpost" value="1" '+(exceptpost == 1 ? ' checked' : '')+'> Крім зазначеної посади</label><br><br>';
+                        html += "<ul>";
+                        html += "<li>";
+                        html += "<a href='javascript:void(0);' onclick='javascript:checkAllPosts();'>Виділити все</a>";
+                        html += " / ";
+                        html += "<a href='javascript:void(0);' onclick='javascript:uncheckAllPosts();'>Зняти всі</a>";
+                        html += "<br>";
+                        html += "</li>";
+                        
+                        for (i = 0; i < json.data.length; i++) {
+                            html += "<li>";
+                            html += "<label>";
+                            html += "<input type='checkbox' name='posts[]' class='posts' value='" + json.data[i].id + "'" + (postIds.length > 0 ? (postIds.in_array(json.data[i].id) ? ' checked' : '') : (json.data[i].checked ? ' checked' : '')) + " /> ";
+                            html += json.data[i].title;
+                            html += "</label>";
+                            html += "</li>";
+                        }
+                        
+                        html += "</ul>";
+                        
+                        postsContainer.html(html);
+                    },
+                    'json'
+                );
+            }
+            
+            function moderatorAdd(el, rec_id, tab, pajax, type) 
+            {
+                var permissions = {"0":"0,2,6,7","2":"0,2,6,7"}[type].split(',');
+                var texts = [{"dialog_title":"\u0414\u043e\u0434\u0430\u0432\u0430\u043d\u043d\u044f \u043c\u043e\u0434\u0435\u0440\u0430\u0442\u043e\u0440\u0430","find_title":"\u041f\u0406\u0411 \u043c\u043e\u0434\u0435\u0440\u0430\u0442\u043e\u0440\u0430:"}][type];
+                
+                $('#type_role').val(type);
+                
+                moderatorIdCntrl.val('');
+                
+                if (el) {
+                    moderator_id = $(el).attr('value');
+                    moderatorIdCntrl.val($(el).attr('fullname'));
+                    moderatorIdCntrl.css('background-color', '');
+                } else {
+                    moderatorIdCntrl.css('background-color', '#fff0f0');
+                }
+
+                if (pajax) {
+                    $('#ajax_proc').val(pajax);
+                } else {
+                    $('#ajax_proc').val('add');
+                }
+
+                var id = (rec_id ? rec_id : 0);
+                
+                moderatorAddDialog.parent().find('.ui-dialog-title').html(texts['dialog_title']);
+                moderatorAddDialog.find('#title_find').html(texts['find_title']);
+
+                if (el && id > 0) {
+                    var p = new Object();
+                    p.ajax = 'moderator';
+                    p.id = id;
+                    
+                    $.ajax({
+                        url: '?',
+                        type: 'POST',
+                        data: p,
+                        dataType: 'json',
+                        beforeSend: function (xhr) {
+                            preloader();
+                        }
+                    })
+                    .always(function() {
+                        preloader(false);
+                    })
+                    .done(function(response) {
+                        if (response.error) {
+                            showAlert(json.error, 
+                                'Помилка', 
+                                {closeBtnName: 'Закрити'});
+                            return;
+                        }
+                        
+                        profileCategory = response.data.profilecategory;
+                        courseCategory = response.data.coursecategory;
+                        
+                        departmentsContainer.find('a')
+                            .css('font-weight', 'normal')
+                                .parent().parent().find('input')
+                                    .prop('checked', false)
+                                    .prop('disabled', false)
+                                        .each(function() {
+                            
+                            // if department is selected, set checkbox and highlight path
+                            if (response.data.departments.hasOwnProperty($(this).val())) {
+                                $(this).prop('checked', true);
+                                
+                                // highlight path to the selected department
+                                $(this).parents('li').each(function(e) {
+                                    if ($(this).hasClass('treeview')) {
+                                        return false;
+                                    }
+                                    
+                                    $(this).find('a').first().css('font-weight', 'bold');
+                                });
+                                
+                                // disable nested checkboxes
+                                $(this).parent().find('input').prop('disabled', true);
+                                
+                                // enable current
+                                $(this).prop('disabled', false);
+                            }
+                        });
+                        
+                        var postIds = [];
+                        $.each(response.data.posts, function(key, value) {
+                            postIds[key] = key;
+                        });
+                        
+                        loadPosts(postIds, response.data.exceptpost);
+                        
+                        // highlight profile category
+                        profileCategoriesContainer.find('a').each(function() {
+                            if ($(this).attr('value') == profileCategory) {
+                                $(this).css('font-weight', 'bold');
+                            } else {
+                                $(this).css('font-weight', 'normal');
+                            }
+                        });
+                        
+                        // highlight course category
+                        courseCategoriesContainer.find('a').each(function() {
+                            if ($(this).attr('value') == courseCategory) {
+                                $(this).css('font-weight', 'bold');
+                            } else {
+                                $(this).css('font-weight', 'normal');
+                            }
+                        });
+                        
+                        // set permissions
+                        permissionsContainer.find('.permissions').each(function() {
+                            if (response.data.permissions.hasOwnProperty($(this).val())) {
+                                $(this).prop('checked', true);
+                            } else {
+                                $(this).prop('checked', false);
+                            }
+                        });
+
+                        selectTab(tab);
+                        moderatorAddDialog.dialog('open');
+                    })
+                    .fail(function(jqXHR, textStatus) {
+                        console.error("Request failed: " + textStatus);
+                    });
+                } else {
+                    profileCategory = 0;
+                    courseCategory = 0;
+                    
+                    departmentsContainer.find('a').css('font-weight', 'normal');
+                    departmentsContainer.find('input').each(function() {
+                        if ($(this).val() == 0) {
+                            $(this).prop('checked', true).parent().css('font-weight', 'bold');
+                        } else {
+                            $(this).prop('checked', false).prop('disabled', false);
+                        }
+                    });
+                    
+                    loadPosts([0], 0);
+                    
+                    // highlight profile category
+                    profileCategoriesContainer.find('a').each(function() {
+                        if ($(this).attr('value') == profileCategory) {
+                            $(this).css('font-weight', 'bold');
+                        } else {
+                            $(this).css('font-weight', 'normal');
+                            }
+                    });
+                            
+                    // highlight course category
+                    courseCategoriesContainer.find('a').each(function() {
+                        if ($(this).attr('value') == courseCategory) {
+                            $(this).css('font-weight', 'bold');
+                        } else {
+                            $(this).css('font-weight', 'normal');
+                        }
+                    });
+                            
+                    permissionsContainer.find('.permissions').each(function() {
+                        if (permissions.in_array($(this).val())) {
+                            $(this).prop('checked', true);
+                        } else {
+                            $(this).prop('checked', false);
+                        }
+                    });
+                    
+                    selectTab(0);
+                    moderatorAddDialog.dialog('open');
+                    //$('#moderator_id').focus();
+                }
+            }
+
+            function moderatorSave()
+            {
+                var p = new Object();
+                p.ajax = moderatorAddDialog.find('#ajax_proc').val();
+                p.user_id = moderator_id;
+                
+                p.departments = new Array();
+                departmentsContainer.find('.depts:checked').each( function() {
+                    p.departments.push($(this).val());
+                });
+                
+                p.posts = new Array();
+                postsContainer.find('.posts:checked').each( function() {
+                    p.posts.push($(this).val());
+                });
+                
+                p.exceptpost = ( postsContainer.find('#exceptpost').prop('checked') ? 1 : 0);
+                p.profile_category = profileCategory;
+                p.course_category = courseCategory;
+                
+                p.permissions = new Array();
+                permissionsContainer.find('.permissions:checked').each( function() {
+                    p.permissions.push($(this).val());
+                });
+                 console.log(p.permissions);
+                 return false;
+                p.role_type = moderatorAddDialog.find('#type_role').val();
+                
+                $.ajax({
+                    url: '?',
+                    type: 'POST',
+                    data: p,
+                    dataType: 'json',
+                    beforeSend: function (xhr) {
+                        preloader();
+                    }
+                })
+                .always(function() {
+                    preloader(false);
+                })
+                .done(function(response) {
+                    if (response.error) {
+                        showAlert(response.error, 
+                            'Помилка', 
+                            {closeBtnName: 'Закрити'});
+                        return;
+                    }
+                    
+                    window.location.reload();
+                })
+                .fail(function(jqXHR, textStatus) {
+                    console.error("Request failed: " + textStatus);
+                    
+                });
+            }
+
+            function moderatorChange( user_id ) 
+            {
+                old_user_id = user_id;
+                $('#moderator_change_id').val('');
+                $('#moderator_change_id').css( 'background-color', '#fff0f0' );
+                $('#div_moderator_change').dialog('open');
+                $('#moderator_change_id').focus();
+            }
+            
+            function moderatorDelete( id ) 
+            {
+                moderator_id = id;
+                $('#div_moderator_delete').dialog('open');
+            }
+            
+            function moderatorFind(field, page)
+            {
+                var p = new Object();
+                
+                if (typeof(page) == 'undefined' || page < 1) {
+                    p.pg = 1;
+                } else {
+                    p.pg = page;
+                }
+                
+                p.ajax = 'getemployees';
+                p.title = $(field).val();
+                
+                $.ajax({
+                    url: '?',
+                    type: 'POST',
+                    data: p,
+                    dataType: 'json',
+                    beforeSend: function (xhr) {
+                        preloader();
+                    }
+                })
+                .always(function() {
+                    preloader(false);
+                })
+                .done(function(response) {
+                    if (response.error) {
+                        showAlert(json.error, 
+                            'Помилка', 
+                            {closeBtnName: 'Закрити'});
+                        return;
+                    }
+                    
+                    $('#div_moderator_select').empty();
+                    $('#div_moderator_select').html(response.data);
+                    $('#div_moderator_select').dialog('open');
+                    $('.moderator_select').click( function() {
+                        $('#div_moderator_select').dialog('close');
+                        moderator_id = $(this).attr('val');
+                        $(field).val( $(this).attr('fullname') );
+                        $(field).css( 'background-color', '' );
+                    });
+                })
+                .fail(function(jqXHR, textStatus) {
+                    console.error("Request failed: " + textStatus);
+                    
+                });
+            }
+            
+            function checkAllPosts() 
+            {
+                $('#div_moderator_posts').find('.posts').attr( 'checked', 'checked' );
+                $('#div_moderator_posts').find('.posts[value=0]').attr( 'checked', false );
+            }
+            
+            function uncheckAllPosts() 
+            {
+                $('#div_moderator_posts').find('.posts').removeAttr( 'checked' );
+                $('#div_moderator_posts').find('.posts[value=0]').attr( 'checked', 'checked' );
+            }
+            
+            function selectTab( tab ) 
+            {
+                if( !tab ) tab = 0;
+
+                $('#div_moderator_cover').hide();
+                $('#tab_0').removeClass('onerow').removeClass('here').removeClass('selected');
+                $('#tab_0').find('a').removeClass('nolink');
+                $('#tab_0>div').remove();
+
+                $('#div_profile_category').hide();
+                $('#tab_1').removeClass('onerow').removeClass('here').removeClass('selected');
+                $('#tab_1').find('a').removeClass('nolink');
+                $('#tab_1>div').remove();
+
+                $('#div_course_category').hide();
+                $('#tab_2').removeClass('onerow').removeClass('here').removeClass('selected');
+                $('#tab_2').find('a').removeClass('nolink');
+                $('#tab_2>div').remove();
+
+                $('#div_permissions').hide();
+                $('#tab_3').removeClass('onerow').removeClass('here').removeClass('selected');
+                $('#tab_3').find('a').removeClass('nolink');
+                $('#tab_3>div').remove();
+
+                switch( tab ) {
+                    case 0:
+                        $('#div_moderator_cover').show();
+                        $('#tab_0').addClass('onerow').addClass('here').addClass('selected');
+                        $('#tab_0').find('a').addClass('nolink');
+                        $('#tab_0').append( '<div class="tabrow1 empty">&nbsp;</div>' );
+                        break;
+                    case 1:
+                        $('#div_profile_category').show();
+                        $('#tab_1').addClass('onerow').addClass('here').addClass('selected');
+                        $('#tab_1').find('a').addClass('nolink');
+                        $('#tab_1').append( '<div class="tabrow1 empty">&nbsp;</div>' );
+                        break;
+                    case 2:
+                        $('#div_course_category').show();
+                        $('#tab_2').addClass('onerow').addClass('here').addClass('selected');
+                        $('#tab_2').find('a').addClass('nolink');
+                        $('#tab_2').append( '<div class="tabrow1 empty">&nbsp;</div>' );
+                        break;
+                    case 3:
+                        $('#div_permissions').show();
+                        $('#tab_3').addClass('onerow').addClass('here').addClass('selected');
+                        $('#tab_3').find('a').addClass('nolink');
+                        $('#tab_3').append( '<div class="tabrow1 empty">&nbsp;</div>' );
+                        break;
+                }
+            }
+            
+        </script>
+        </div><!--content-->
+<!--br/><br/><br/ -->
+</div><!--wrapper-->
+
+<div id="div_bg_" style="height: 727px;"> </div>
+
+<div id="footer">
+	<div id="footer_in" style="bottom: auto; position: static;">
+		<div id="footer_lbl">© MOCO 2010-2017. Powered by <a href="http://tmx-learning.info/" target="_blank">Technomatix</a></div>
+		<div class="social_media"><a target="_blank" href="https://www.facebook.com/Technomatix/?pnref=lhc"><img src="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/images/icon/social/facebook.png"></a><a target="_blank" href="https://myaccount.google.com/?utm_source=OGB"><img src="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/images/icon/social/google_plus.png"></a><a target="_blank" href="https://www.youtube.com/channel/UC3kgUstn4mqESPeev-O4T6A"><img src="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/images/icon/social/youtube.png"></a></div>		<div class="clear"></div>
+	</div>
+</div>
+<script>
+  function reassignFooter() {
+    if( $('body').height() < ($(window).height() ) ) {
+      $('#footer_in').css( 'bottom', 0 );
+      $('#footer_in').css( 'position', 'absolute' );
+    } 
+    if( $('body').height() > ($(window).height() - 65) ) {
+      $('#footer_in').css( 'bottom', 'auto' );
+      $('#footer_in').css( 'position', 'static' );
+    }
+  }
+  $(document).ready( function() {
+    $('#div_bg_').css( 'height', $(window).height() - 64 + 'px' );
+	reassignFooter();
+    setInterval( 'reassignFooter()', 500 );
+  } );
+</script>
+
+
+
+<div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front ui-dialog-buttons ui-draggable ui-resizable" style="display: block; position: absolute; height: auto; width: 800px; top: 85.5px; left: 307.5px;" tabindex="-1" role="dialog" aria-describedby="div_moderator_add" aria-labelledby="ui-id-1"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix ui-draggable-handle"><span id="ui-id-1" class="ui-dialog-title">Додавання модератора</span><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close" role="button" title="Закрити"><span class="ui-button-icon-primary ui-icon ui-icon-closethick"></span><span class="ui-button-text">Закрити</span></button></div><div id="div_moderator_add" style="width: auto; min-height: 0px; max-height: none; height: 466px;" class="ui-dialog-content ui-widget-content">
+<div style="width: 100%;">
+<div style="width: 140px; float: left; text-align: left; padding-top:7px" id="title_find">ПІБ модератора:</div><div style="float: left;">
+<input id="moderator_id" size="60" style="" type="text">
+<input id="type_role" value="0" type="hidden">
+<input id="ajax_proc" value="add" style="display: none;" type="text">
+<button class="select moderator-find-btn">Пошук</button></div>
+</div>
+<div class="clear"></div>
+<div class="moco_tabs tabtree">
+<ul class="tabrow0">
+<li id="tab_0" class="first onerow here selected">
+<a href="javascript: selectTab(0);" id="notActiveTab" class="nolink">
+<span>Структура</span></a>
+<div class="tabrow1 empty">&nbsp;</div></li>
+<li id="tab_1" class="">
+<a href="javascript: selectTab(1);" id="notActiveTab">
+<span>Категорія програм</span></a>
+</li>
+<li id="tab_2" class="">
+<a href="javascript: selectTab(2);" id="notActiveTab">
+<span>Категорія курсів</span></a>
+</li>
+<li id="tab_3" class="last">
+<a href="javascript: selectTab(3);" id="notActiveTab">
+<span>Дозволи</span></a>
+</li>
+</ul>
+</div>
+<div id="div_moderator_cover" style="height: 350px; overflow: auto; display: block;">
+<div id="div_moderator_departments" style="width: 49%; float: left; height: 340px;"><link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/moco/jquery/treeview.css">
+			<style type="text/css">
+				#div_moderator_departments {
+					overflow: auto;
+				}
+			</style><ul class="treeview"><li class="closed"><span><a href="javascript: void(0);" value="0" style="font-weight: bold;"><input value="0" class="depts" id="dep_0" checked="checked" type="checkbox"><label for="dep_0">Всі підрозділи</label></a></span></li><li class="closed" department="442"><input class="depts" value="442" id="dep_442" type="checkbox"><span><a href="javascript: void(0);" value="442" style="font-weight: normal;"><label for="dep_442" dep_id="442">AutoDep</label></a></span></li><li class="closed" department="488"><input class="depts" value="488" id="dep_488" type="checkbox"><span><a href="javascript: void(0);" value="488" style="font-weight: normal;"><label for="dep_488" dep_id="488">AutomationDepartment</label></a></span></li><li class="closed expandable" department="418"><div class="hitarea closed-hitarea expandable-hitarea"></div><input class="depts" value="418" id="dep_418" type="checkbox"><span><a href="javascript: void(0);" value="418" style="font-weight: normal;"><label for="dep_418" dep_id="418">Company</label></a></span><ul style="display: none;"><li class="closed" department="420"><input class="depts" value="420" id="dep_420" type="checkbox"><span><a href="javascript: void(0);" value="420" style="font-weight: normal;"><label for="dep_420" dep_id="420">CourseDev Team</label></a></span></li><li class="closed last" department="419"><input class="depts" value="419" id="dep_419" type="checkbox"><span><a href="javascript: void(0);" value="419" style="font-weight: normal;"><label for="dep_419" dep_id="419">Moco Team</label></a></span></li></ul></li><li class="closed expandable" department="414"><div class="hitarea closed-hitarea expandable-hitarea"></div><input class="depts" value="414" id="dep_414" type="checkbox"><span><a href="javascript: void(0);" value="414" style="font-weight: normal;"><label for="dep_414" dep_id="414">Department</label></a></span><ul style="display: none;"><li class="closed last" department="416"><input class="depts" value="416" id="dep_416" type="checkbox"><span><a href="javascript: void(0);" value="416" style="font-weight: normal;"><label for="dep_416" dep_id="416">depart</label></a></span></li></ul></li><li class="closed" department="252"><input class="depts" value="252" id="dep_252" type="checkbox"><span><a href="javascript: void(0);" value="252" style="font-weight: normal;"><label for="dep_252" dep_id="252">Energy</label></a></span></li><li class="closed" department="487"><input class="depts" value="487" id="dep_487" type="checkbox"><span><a href="javascript: void(0);" value="487" style="font-weight: normal;"><label for="dep_487" dep_id="487">ffffffffffffffffffffffffffffffffffffffffffffffffffffffffa;sgklfffffllllllfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffflllllllllllllllllllllllllllllllllllllllllllllloooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo</label></a></span></li><li class="closed" department="270"><input class="depts" value="270" id="dep_270" type="checkbox"><span><a href="javascript: void(0);" value="270" style="font-weight: normal;"><label for="dep_270" dep_id="270">Marketing</label></a></span></li><li class="closed expandable" department="115"><div class="hitarea closed-hitarea expandable-hitarea"></div><input class="depts" value="115" id="dep_115" type="checkbox"><span><a href="javascript: void(0);" value="115" style="font-weight: normal;"><label for="dep_115" dep_id="115">Oleg Kh</label></a></span><ul style="display: none;"><li class="closed" department="190"><input class="depts" value="190" id="dep_190" type="checkbox"><span><a href="javascript: void(0);" value="190" style="font-weight: normal;"><label for="dep_190" dep_id="190">Front-end development</label></a></span></li><li class="closed" department="111"><input class="depts" value="111" id="dep_111" type="checkbox"><span><a href="javascript: void(0);" value="111" style="font-weight: normal;"><label for="dep_111" dep_id="111">NewOne</label></a></span></li><li class="closed" department="168"><input class="depts" value="168" id="dep_168" type="checkbox"><span><a href="javascript: void(0);" value="168" style="font-weight: normal;"><label for="dep_168" dep_id="168">qweqwqeqwe</label></a></span></li><li class="closed last" department="167"><input class="depts" value="167" id="dep_167" type="checkbox"><span><a href="javascript: void(0);" value="167" style="font-weight: normal;"><label for="dep_167" dep_id="167">qwerty</label></a></span></li></ul></li><li class="closed expandable" department="202"><div class="hitarea closed-hitarea expandable-hitarea"></div><input class="depts" value="202" id="dep_202" type="checkbox"><span><a href="javascript: void(0);" value="202" style="font-weight: normal;"><label for="dep_202" dep_id="202">QA Sviatoslav</label></a></span><ul style="display: none;"><li class="closed" department="64"><input class="depts" value="64" id="dep_64" type="checkbox"><span><a href="javascript: void(0);" value="64" style="font-weight: normal;"><label for="dep_64" dep_id="64">AutoQA21</label></a></span></li><li class="closed expandable" department="228"><div class="hitarea closed-hitarea expandable-hitarea"></div><input class="depts" value="228" id="dep_228" type="checkbox"><span><a href="javascript: void(0);" value="228" style="font-weight: normal;"><label for="dep_228" dep_id="228">Technomatix</label></a></span><ul style="display: none;"><li class="closed" department="229"><input class="depts" value="229" id="dep_229" type="checkbox"><span><a href="javascript: void(0);" value="229" style="font-weight: normal;"><label for="dep_229" dep_id="229">Отдел модерирования</label></a></span></li><li class="closed" department="233"><input class="depts" value="233" id="dep_233" type="checkbox"><span><a href="javascript: void(0);" value="233" style="font-weight: normal;"><label for="dep_233" dep_id="233">Отдел по работе с клиентами</label></a></span></li><li class="closed" department="231"><input class="depts" value="231" id="dep_231" type="checkbox"><span><a href="javascript: void(0);" value="231" style="font-weight: normal;"><label for="dep_231" dep_id="231">Отдел по работе с сотрудниками</label></a></span></li><li class="closed" department="232"><input class="depts" value="232" id="dep_232" type="checkbox"><span><a href="javascript: void(0);" value="232" style="font-weight: normal;"><label for="dep_232" dep_id="232">Отдел продаж</label></a></span></li><li class="closed last" department="230"><input class="depts" value="230" id="dep_230" type="checkbox"><span><a href="javascript: void(0);" value="230" style="font-weight: normal;"><label for="dep_230" dep_id="230">Отдел работы с тренингами</label></a></span></li></ul></li><li class="closed last" department="120"><input class="depts" value="120" id="dep_120" type="checkbox"><span><a href="javascript: void(0);" value="120" style="font-weight: normal;"><label for="dep_120" dep_id="120">Руководители</label></a></span></li></ul></li><li class="closed expandable" department="236"><div class="hitarea closed-hitarea expandable-hitarea"></div><input class="depts" value="236" id="dep_236" type="checkbox"><span><a href="javascript: void(0);" value="236" style="font-weight: normal;"><label for="dep_236" dep_id="236">Technomatix</label></a></span><ul style="display: none;"><li class="closed" department="247"><input class="depts" value="247" id="dep_247" type="checkbox"><span><a href="javascript: void(0);" value="247" style="font-weight: normal;"><label for="dep_247" dep_id="247">Отдел модерирования</label></a></span></li><li class="closed" department="251"><input class="depts" value="251" id="dep_251" type="checkbox"><span><a href="javascript: void(0);" value="251" style="font-weight: normal;"><label for="dep_251" dep_id="251">Отдел по работе с клиентами</label></a></span></li><li class="closed" department="249"><input class="depts" value="249" id="dep_249" type="checkbox"><span><a href="javascript: void(0);" value="249" style="font-weight: normal;"><label for="dep_249" dep_id="249">Отдел по работе с сотрудниками</label></a></span></li><li class="closed" department="250"><input class="depts" value="250" id="dep_250" type="checkbox"><span><a href="javascript: void(0);" value="250" style="font-weight: normal;"><label for="dep_250" dep_id="250">Отдел продаж</label></a></span></li><li class="closed last" department="248"><input class="depts" value="248" id="dep_248" type="checkbox"><span><a href="javascript: void(0);" value="248" style="font-weight: normal;"><label for="dep_248" dep_id="248">Отдел работы с тренингами</label></a></span></li></ul></li><li class="closed expandable" department="212"><div class="hitarea closed-hitarea expandable-hitarea"></div><input class="depts" value="212" id="dep_212" type="checkbox"><span><a href="javascript: void(0);" value="212" style="font-weight: normal;"><label for="dep_212" dep_id="212">Test Structure </label></a></span><ul style="display: none;"><li class="closed" department="220"><input class="depts" value="220" id="dep_220" type="checkbox"><span><a href="javascript: void(0);" value="220" style="font-weight: normal;"><label for="dep_220" dep_id="220">Q1</label></a></span></li><li class="closed" department="221"><input class="depts" value="221" id="dep_221" type="checkbox"><span><a href="javascript: void(0);" value="221" style="font-weight: normal;"><label for="dep_221" dep_id="221">Q2</label></a></span></li><li class="closed last" department="218"><input class="depts" value="218" id="dep_218" type="checkbox"><span><a href="javascript: void(0);" value="218" style="font-weight: normal;"><label for="dep_218" dep_id="218">Q3</label></a></span></li></ul></li><li class="closed" department="417"><input class="depts" value="417" id="dep_417" type="checkbox"><span><a href="javascript: void(0);" value="417" style="font-weight: normal;"><label for="dep_417" dep_id="417">Test_QA_GY</label></a></span></li><li class="closed expandable" department="142"><div class="hitarea closed-hitarea expandable-hitarea"></div><input class="depts" value="142" id="dep_142" type="checkbox"><span><a href="javascript: void(0);" value="142" style="font-weight: normal;"><label for="dep_142" dep_id="142">test1</label></a></span><ul style="display: none;"><li class="closed expandable lastExpandable" department="143"><div class="hitarea closed-hitarea expandable-hitarea lastExpandable-hitarea"></div><input class="depts" value="143" id="dep_143" type="checkbox"><span><a href="javascript: void(0);" value="143" style="font-weight: normal;"><label for="dep_143" dep_id="143">test2</label></a></span><ul style="display: none;"><li class="closed expandable lastExpandable" department="193"><div class="hitarea closed-hitarea expandable-hitarea lastExpandable-hitarea"></div><input class="depts" value="193" id="dep_193" type="checkbox"><span><a href="javascript: void(0);" value="193" style="font-weight: normal;"><label for="dep_193" dep_id="193">дочерний уровень 3</label></a></span><ul style="display: none;"><li class="closed expandable lastExpandable" department="225"><div class="hitarea closed-hitarea expandable-hitarea lastExpandable-hitarea"></div><input class="depts" value="225" id="dep_225" type="checkbox"><span><a href="javascript: void(0);" value="225" style="font-weight: normal;"><label for="dep_225" dep_id="225">test13</label></a></span><ul style="display: none;"><li class="closed last" department="207"><input class="depts" value="207" id="dep_207" type="checkbox"><span><a href="javascript: void(0);" value="207" style="font-weight: normal;"><label for="dep_207" dep_id="207">dgfdf1</label></a></span></li></ul></li></ul></li></ul></li></ul></li><li class="closed expandable" department="208"><div class="hitarea closed-hitarea expandable-hitarea"></div><input class="depts" value="208" id="dep_208" type="checkbox"><span><a href="javascript: void(0);" value="208" style="font-weight: normal;"><label for="dep_208" dep_id="208">TMX</label></a></span><ul style="display: none;"><li class="closed" department="244"><input class="depts" value="244" id="dep_244" type="checkbox"><span><a href="javascript: void(0);" value="244" style="font-weight: normal;"><label for="dep_244" dep_id="244">3</label></a></span></li><li class="closed last" department="209"><input class="depts" value="209" id="dep_209" type="checkbox"><span><a href="javascript: void(0);" value="209" style="font-weight: normal;"><label for="dep_209" dep_id="209">TMX PM</label></a></span></li></ul></li><li class="closed expandable" department="271"><div class="hitarea closed-hitarea expandable-hitarea"></div><input class="depts" value="271" id="dep_271" type="checkbox"><span><a href="javascript: void(0);" value="271" style="font-weight: normal;"><label for="dep_271" dep_id="271">Traditional Trade</label></a></span><ul style="display: none;"><li class="closed expandable" department="272"><div class="hitarea closed-hitarea expandable-hitarea"></div><input class="depts" value="272" id="dep_272" type="checkbox"><span><a href="javascript: void(0);" value="272" style="font-weight: normal;"><label for="dep_272" dep_id="272">ЕТП</label></a></span><ul style="display: none;"><li class="closed" department="316"><input class="depts" value="316" id="dep_316" type="checkbox"><span><a href="javascript: void(0);" value="316" style="font-weight: normal;"><label for="dep_316" dep_id="316">АТЛАНТ БУДКОМПЛЕКТ</label></a></span></li><li class="closed" department="286"><input class="depts" value="286" id="dep_286" type="checkbox"><span><a href="javascript: void(0);" value="286" style="font-weight: normal;"><label for="dep_286" dep_id="286">БГ Капитал</label></a></span></li><li class="closed" department="293"><input class="depts" value="293" id="dep_293" type="checkbox"><span><a href="javascript: void(0);" value="293" style="font-weight: normal;"><label for="dep_293" dep_id="293">Буд-Лидер</label></a></span></li><li class="closed" department="278"><input class="depts" value="278" id="dep_278" type="checkbox"><span><a href="javascript: void(0);" value="278" style="font-weight: normal;"><label for="dep_278" dep_id="278">БУДIВЕЛЬНИЙ ДВIР</label></a></span></li><li class="closed" department="283"><input class="depts" value="283" id="dep_283" type="checkbox"><span><a href="javascript: void(0);" value="283" style="font-weight: normal;"><label for="dep_283" dep_id="283">Будцентр 2008</label></a></span></li><li class="closed" department="313"><input class="depts" value="313" id="dep_313" type="checkbox"><span><a href="javascript: void(0);" value="313" style="font-weight: normal;"><label for="dep_313" dep_id="313">Валми груп</label></a></span></li><li class="closed" department="279"><input class="depts" value="279" id="dep_279" type="checkbox"><span><a href="javascript: void(0);" value="279" style="font-weight: normal;"><label for="dep_279" dep_id="279">ВИНЮИССТАР ВИННИЦА</label></a></span></li><li class="closed" department="306"><input class="depts" value="306" id="dep_306" type="checkbox"><span><a href="javascript: void(0);" value="306" style="font-weight: normal;"><label for="dep_306" dep_id="306">Вігора</label></a></span></li><li class="closed" department="284"><input class="depts" value="284" id="dep_284" type="checkbox"><span><a href="javascript: void(0);" value="284" style="font-weight: normal;"><label for="dep_284" dep_id="284">Віктрейдинг</label></a></span></li><li class="closed" department="273"><input class="depts" value="273" id="dep_273" type="checkbox"><span><a href="javascript: void(0);" value="273" style="font-weight: normal;"><label for="dep_273" dep_id="273">ВП БУДСЕРВИС</label></a></span></li><li class="closed" department="295"><input class="depts" value="295" id="dep_295" type="checkbox"><span><a href="javascript: void(0);" value="295" style="font-weight: normal;"><label for="dep_295" dep_id="295">ГАХ В.А.</label></a></span></li><li class="closed" department="308"><input class="depts" value="308" id="dep_308" type="checkbox"><span><a href="javascript: void(0);" value="308" style="font-weight: normal;"><label for="dep_308" dep_id="308">Грико</label></a></span></li><li class="closed" department="305"><input class="depts" value="305" id="dep_305" type="checkbox"><span><a href="javascript: void(0);" value="305" style="font-weight: normal;"><label for="dep_305" dep_id="305">Гута</label></a></span></li><li class="closed" department="301"><input class="depts" value="301" id="dep_301" type="checkbox"><span><a href="javascript: void(0);" value="301" style="font-weight: normal;"><label for="dep_301" dep_id="301">ДЕКЕТ</label></a></span></li><li class="closed" department="304"><input class="depts" value="304" id="dep_304" type="checkbox"><span><a href="javascript: void(0);" value="304" style="font-weight: normal;"><label for="dep_304" dep_id="304">ДИМЕКС</label></a></span></li><li class="closed" department="307"><input class="depts" value="307" id="dep_307" type="checkbox"><span><a href="javascript: void(0);" value="307" style="font-weight: normal;"><label for="dep_307" dep_id="307">Євромета</label></a></span></li><li class="closed" department="276"><input class="depts" value="276" id="dep_276" type="checkbox"><span><a href="javascript: void(0);" value="276" style="font-weight: normal;"><label for="dep_276" dep_id="276">Євромета ТД (СТРОИТЕЛЬНЫЕ ЛИНИИ КИЕВ)</label></a></span></li><li class="closed" department="298"><input class="depts" value="298" id="dep_298" type="checkbox"><span><a href="javascript: void(0);" value="298" style="font-weight: normal;"><label for="dep_298" dep_id="298">Євромета-Центр</label></a></span></li><li class="closed" department="277"><input class="depts" value="277" id="dep_277" type="checkbox"><span><a href="javascript: void(0);" value="277" style="font-weight: normal;"><label for="dep_277" dep_id="277">Интергипс</label></a></span></li><li class="closed" department="311"><input class="depts" value="311" id="dep_311" type="checkbox"><span><a href="javascript: void(0);" value="311" style="font-weight: normal;"><label for="dep_311" dep_id="311">Минимакси</label></a></span></li><li class="closed" department="310"><input class="depts" value="310" id="dep_310" type="checkbox"><span><a href="javascript: void(0);" value="310" style="font-weight: normal;"><label for="dep_310" dep_id="310">ООО Семнадцать</label></a></span></li><li class="closed" department="312"><input class="depts" value="312" id="dep_312" type="checkbox"><span><a href="javascript: void(0);" value="312" style="font-weight: normal;"><label for="dep_312" dep_id="312">ПОЛО-ИНВЕСТБУД</label></a></span></li><li class="closed" department="274"><input class="depts" value="274" id="dep_274" type="checkbox"><span><a href="javascript: void(0);" value="274" style="font-weight: normal;"><label for="dep_274" dep_id="274">ПРОГРУП</label></a></span></li><li class="closed" department="296"><input class="depts" value="296" id="dep_296" type="checkbox"><span><a href="javascript: void(0);" value="296" style="font-weight: normal;"><label for="dep_296" dep_id="296">Саната Т</label></a></span></li><li class="closed" department="289"><input class="depts" value="289" id="dep_289" type="checkbox"><span><a href="javascript: void(0);" value="289" style="font-weight: normal;"><label for="dep_289" dep_id="289">Смена</label></a></span></li><li class="closed" department="287"><input class="depts" value="287" id="dep_287" type="checkbox"><span><a href="javascript: void(0);" value="287" style="font-weight: normal;"><label for="dep_287" dep_id="287">СТАНДАРТ БУДІВЕЛЬНИЙ</label></a></span></li><li class="closed" department="315"><input class="depts" value="315" id="dep_315" type="checkbox"><span><a href="javascript: void(0);" value="315" style="font-weight: normal;"><label for="dep_315" dep_id="315">Статор</label></a></span></li><li class="closed" department="275"><input class="depts" value="275" id="dep_275" type="checkbox"><span><a href="javascript: void(0);" value="275" style="font-weight: normal;"><label for="dep_275" dep_id="275">СТРОИТЕЛЬНЫЕ ЛИНИИ КИЕВ</label></a></span></li><li class="closed" department="314"><input class="depts" value="314" id="dep_314" type="checkbox"><span><a href="javascript: void(0);" value="314" style="font-weight: normal;"><label for="dep_314" dep_id="314">Універсал Постач</label></a></span></li><li class="closed" department="299"><input class="depts" value="299" id="dep_299" type="checkbox"><span><a href="javascript: void(0);" value="299" style="font-weight: normal;"><label for="dep_299" dep_id="299">Фасад</label></a></span></li><li class="closed" department="291"><input class="depts" value="291" id="dep_291" type="checkbox"><span><a href="javascript: void(0);" value="291" style="font-weight: normal;"><label for="dep_291" dep_id="291">Форт-Сервис</label></a></span></li><li class="closed last" department="282"><input class="depts" value="282" id="dep_282" type="checkbox"><span><a href="javascript: void(0);" value="282" style="font-weight: normal;"><label for="dep_282" dep_id="282">Ядро</label></a></span></li></ul></li><li class="closed expandable lastExpandable" department="280"><div class="hitarea closed-hitarea expandable-hitarea lastExpandable-hitarea"></div><input class="depts" value="280" id="dep_280" type="checkbox"><span><a href="javascript: void(0);" value="280" style="font-weight: normal;"><label for="dep_280" dep_id="280">ПРМ</label></a></span><ul style="display: none;"><li class="closed" department="281"><input class="depts" value="281" id="dep_281" type="checkbox"><span><a href="javascript: void(0);" value="281" style="font-weight: normal;"><label for="dep_281" dep_id="281">ВИНЮИССТАР ВИННИЦА</label></a></span></li><li class="closed" department="285"><input class="depts" value="285" id="dep_285" type="checkbox"><span><a href="javascript: void(0);" value="285" style="font-weight: normal;"><label for="dep_285" dep_id="285">Віктрейдинг</label></a></span></li><li class="closed" department="294"><input class="depts" value="294" id="dep_294" type="checkbox"><span><a href="javascript: void(0);" value="294" style="font-weight: normal;"><label for="dep_294" dep_id="294">ГАХ В.А.</label></a></span></li><li class="closed" department="309"><input class="depts" value="309" id="dep_309" type="checkbox"><span><a href="javascript: void(0);" value="309" style="font-weight: normal;"><label for="dep_309" dep_id="309">Грико</label></a></span></li><li class="closed" department="302"><input class="depts" value="302" id="dep_302" type="checkbox"><span><a href="javascript: void(0);" value="302" style="font-weight: normal;"><label for="dep_302" dep_id="302">ДЕКЕТ</label></a></span></li><li class="closed" department="303"><input class="depts" value="303" id="dep_303" type="checkbox"><span><a href="javascript: void(0);" value="303" style="font-weight: normal;"><label for="dep_303" dep_id="303">ДИМЕКС</label></a></span></li><li class="closed" department="297"><input class="depts" value="297" id="dep_297" type="checkbox"><span><a href="javascript: void(0);" value="297" style="font-weight: normal;"><label for="dep_297" dep_id="297">Саната Т</label></a></span></li><li class="closed" department="290"><input class="depts" value="290" id="dep_290" type="checkbox"><span><a href="javascript: void(0);" value="290" style="font-weight: normal;"><label for="dep_290" dep_id="290">Смена</label></a></span></li><li class="closed" department="288"><input class="depts" value="288" id="dep_288" type="checkbox"><span><a href="javascript: void(0);" value="288" style="font-weight: normal;"><label for="dep_288" dep_id="288">СТАНДАРТ БУДІВЕЛЬНИЙ</label></a></span></li><li class="closed" department="300"><input class="depts" value="300" id="dep_300" type="checkbox"><span><a href="javascript: void(0);" value="300" style="font-weight: normal;"><label for="dep_300" dep_id="300">Фасад</label></a></span></li><li class="closed last" department="292"><input class="depts" value="292" id="dep_292" type="checkbox"><span><a href="javascript: void(0);" value="292" style="font-weight: normal;"><label for="dep_292" dep_id="292">Форт-Сервис</label></a></span></li></ul></li></ul></li><li class="closed expandable" department="149"><div class="hitarea closed-hitarea expandable-hitarea"></div><input class="depts" value="149" id="dep_149" type="checkbox"><span><a href="javascript: void(0);" value="149" style="font-weight: normal;"><label for="dep_149" dep_id="149">Головний підрозділ</label></a></span><ul style="display: none;"><li class="closed last" department="150"><input class="depts" value="150" id="dep_150" type="checkbox"><span><a href="javascript: void(0);" value="150" style="font-weight: normal;"><label for="dep_150" dep_id="150">Підлеглий підрозділ</label></a></span></li></ul></li><li class="closed expandable" department="203"><div class="hitarea closed-hitarea expandable-hitarea"></div><input class="depts" value="203" id="dep_203" type="checkbox"><span><a href="javascript: void(0);" value="203" style="font-weight: normal;"><label for="dep_203" dep_id="203">гость</label></a></span><ul style="display: none;"><li class="closed expandable lastExpandable" department="5"><div class="hitarea closed-hitarea expandable-hitarea lastExpandable-hitarea"></div><input class="depts" value="5" id="dep_5" type="checkbox"><span><a href="javascript: void(0);" value="5" style="font-weight: normal;"><label for="dep_5" dep_id="5">Technomatix3</label></a></span><ul style="display: none;"><li class="closed" department="157"><input class="depts" value="157" id="dep_157" type="checkbox"><span><a href="javascript: void(0);" value="157" style="font-weight: normal;"><label for="dep_157" dep_id="157">123</label></a></span></li><li class="closed" department="222"><input class="depts" value="222" id="dep_222" type="checkbox"><span><a href="javascript: void(0);" value="222" style="font-weight: normal;"><label for="dep_222" dep_id="222">QA Engineer</label></a></span></li><li class="closed" department="164"><input class="depts" value="164" id="dep_164" type="checkbox"><span><a href="javascript: void(0);" value="164" style="font-weight: normal;"><label for="dep_164" dep_id="164">SPAM</label></a></span></li><li class="closed expandable" department="1"><div class="hitarea closed-hitarea expandable-hitarea"></div><input class="depts" value="1" id="dep_1" type="checkbox"><span><a href="javascript: void(0);" value="1" style="font-weight: normal;"><label for="dep_1" dep_id="1">TMX</label></a></span><ul style="display: none;"><li class="closed" department="130"><input class="depts" value="130" id="dep_130" type="checkbox"><span><a href="javascript: void(0);" value="130" style="font-weight: normal;"><label for="dep_130" dep_id="130">test10</label></a></span></li><li class="closed last" department="4"><input class="depts" value="4" id="dep_4" type="checkbox"><span><a href="javascript: void(0);" value="4" style="font-weight: normal;"><label for="dep_4" dep_id="4">Отдел проектирования курсов</label></a></span></li></ul></li><li class="closed" department="81"><input class="depts" value="81" id="dep_81" type="checkbox"><span><a href="javascript: void(0);" value="81" style="font-weight: normal;"><label for="dep_81" dep_id="81">Отдел по работе с сотрудниками</label></a></span></li><li class="closed" department="82"><input class="depts" value="82" id="dep_82" type="checkbox"><span><a href="javascript: void(0);" value="82" style="font-weight: normal;"><label for="dep_82" dep_id="82">Отдел продаж</label></a></span></li><li class="closed" department="80"><input class="depts" value="80" id="dep_80" type="checkbox"><span><a href="javascript: void(0);" value="80" style="font-weight: normal;"><label for="dep_80" dep_id="80">Отдел работы с тренингами</label></a></span></li><li class="closed last" department="159"><input class="depts" value="159" id="dep_159" type="checkbox"><span><a href="javascript: void(0);" value="159" style="font-weight: normal;"><label for="dep_159" dep_id="159">Підрозділ</label></a></span></li></ul></li></ul></li><li class="closed expandable" department="11"><div class="hitarea closed-hitarea expandable-hitarea"></div><input class="depts" value="11" id="dep_11" type="checkbox"><span><a href="javascript: void(0);" value="11" style="font-weight: normal;"><label for="dep_11" dep_id="11">Медиа Трейд</label></a></span><ul style="display: none;"><li class="closed" department="413"><input class="depts" value="413" id="dep_413" type="checkbox"><span><a href="javascript: void(0);" value="413" style="font-weight: normal;"><label for="dep_413" dep_id="413">111</label></a></span></li><li class="closed" department="15"><input class="depts" value="15" id="dep_15" type="checkbox"><span><a href="javascript: void(0);" value="15" style="font-weight: normal;"><label for="dep_15" dep_id="15">Отдел исследований</label></a></span></li><li class="closed" department="14"><input class="depts" value="14" id="dep_14" type="checkbox"><span><a href="javascript: void(0);" value="14" style="font-weight: normal;"><label for="dep_14" dep_id="14">Отдел медиа</label></a></span></li><li class="closed" department="17"><input class="depts" value="17" id="dep_17" type="checkbox"><span><a href="javascript: void(0);" value="17" style="font-weight: normal;"><label for="dep_17" dep_id="17">Отдел планирования спроса</label></a></span></li><li class="closed" department="13"><input class="depts" value="13" id="dep_13" type="checkbox"><span><a href="javascript: void(0);" value="13" style="font-weight: normal;"><label for="dep_13" dep_id="13">Отдел продаж</label></a></span></li><li class="closed" department="16"><input class="depts" value="16" id="dep_16" type="checkbox"><span><a href="javascript: void(0);" value="16" style="font-weight: normal;"><label for="dep_16" dep_id="16">Отдел производства</label></a></span></li><li class="closed last" department="12"><input class="depts" value="12" id="dep_12" type="checkbox"><span><a href="javascript: void(0);" value="12" style="font-weight: normal;"><label for="dep_12" dep_id="12">Трейд-маркетинг</label></a></span></li></ul></li><li class="closed expandable" department="169"><div class="hitarea closed-hitarea expandable-hitarea"></div><input class="depts" value="169" id="dep_169" type="checkbox"><span><a href="javascript: void(0);" value="169" style="font-weight: normal;"><label for="dep_169" dep_id="169">новое</label></a></span><ul style="display: none;"><li class="closed last" department="210"><input class="depts" value="210" id="dep_210" type="checkbox"><span><a href="javascript: void(0);" value="210" style="font-weight: normal;"><label for="dep_210" dep_id="210">qwerty</label></a></span></li></ul></li><li class="closed expandable" department="191"><div class="hitarea closed-hitarea expandable-hitarea"></div><input class="depts" value="191" id="dep_191" type="checkbox"><span><a href="javascript: void(0);" value="191" style="font-weight: normal;"><label for="dep_191" dep_id="191">Новое подразделение 123</label></a></span><ul style="display: none;"><li class="closed last" department="192"><input class="depts" value="192" id="dep_192" type="checkbox"><span><a href="javascript: void(0);" value="192" style="font-weight: normal;"><label for="dep_192" dep_id="192">Ещё новее 555</label></a></span></li></ul></li><li class="closed" department="84"><input class="depts" value="84" id="dep_84" type="checkbox"><span><a href="javascript: void(0);" value="84" style="font-weight: normal;"><label for="dep_84" dep_id="84">ПП Євстаф'єва Ю.А.</label></a></span></li><li class="closed" department="85"><input class="depts" value="85" id="dep_85" type="checkbox"><span><a href="javascript: void(0);" value="85" style="font-weight: normal;"><label for="dep_85" dep_id="85">ПП Євстафєва Ю.А.</label></a></span></li><li class="closed last" department="73"><input class="depts" value="73" id="dep_73" type="checkbox"><span><a href="javascript: void(0);" value="73" style="font-weight: normal;"><label for="dep_73" dep_id="73">ПП Петрова Ю.А.</label></a></span></li></ul></div><div id="div_moderator_posts" style="width: 49%; float: right; overflow: auto; height:340px;"><label><input id="exceptpost" value="1" type="checkbox"> Крім зазначеної посади</label><br><br><ul><li><a href="javascript:void(0);" onclick="javascript:checkAllPosts();">Виділити все</a> / <a href="javascript:void(0);" onclick="javascript:uncheckAllPosts();">Зняти всі</a><br></li><li><label><input name="posts[]" class="posts" value="0" checked="" type="checkbox"> Будь-яка посада</label></li><li><label><input name="posts[]" class="posts" value="159" type="checkbox"> </label></li><li><label><input name="posts[]" class="posts" value="156" type="checkbox"> 1 тест целевых групп</label></li><li><label><input name="posts[]" class="posts" value="8" type="checkbox"> Accounter</label></li><li><label><input name="posts[]" class="posts" value="258" type="checkbox"> Administrator</label></li><li><label><input name="posts[]" class="posts" value="323" type="checkbox"> AutomationPost</label></li><li><label><input name="posts[]" class="posts" value="76" type="checkbox"> AutoQA</label></li><li><label><input name="posts[]" class="posts" value="7" type="checkbox"> Business manager</label></li><li><label><input name="posts[]" class="posts" value="14" type="checkbox"> C# Developer</label></li><li><label><input name="posts[]" class="posts" value="6" type="checkbox"> Director</label></li><li><label><input name="posts[]" class="posts" value="160" type="checkbox"> HR менеджер</label></li><li><label><input name="posts[]" class="posts" value="13" type="checkbox"> Java Developer</label></li><li><label><input name="posts[]" class="posts" value="257" type="checkbox"> Junuior Tester</label></li><li><label><input name="posts[]" class="posts" value="3" type="checkbox"> Manager</label></li><li><label><input name="posts[]" class="posts" value="12" type="checkbox"> PHP Developer</label></li><li><label><input name="posts[]" class="posts" value="11" type="checkbox"> PHP Project Manager</label></li><li><label><input name="posts[]" class="posts" value="23" type="checkbox"> PR-менеджер</label></li><li><label><input name="posts[]" class="posts" value="10" type="checkbox"> Product Manager</label></li><li><label><input name="posts[]" class="posts" value="5" type="checkbox"> Product Owner</label></li><li><label><input name="posts[]" class="posts" value="151" type="checkbox"> Project Manager</label></li><li><label><input name="posts[]" class="posts" value="1" type="checkbox"> QA</label></li><li><label><input name="posts[]" class="posts" value="2" type="checkbox"> QA engineer</label></li><li><label><input name="posts[]" class="posts" value="154" type="checkbox"> QA Junior</label></li><li><label><input name="posts[]" class="posts" value="153" type="checkbox"> QA Lead</label></li><li><label><input name="posts[]" class="posts" value="155" type="checkbox"> QA Middle</label></li><li><label><input name="posts[]" class="posts" value="9" type="checkbox"> QA Team Lead</label></li><li><label><input name="posts[]" class="posts" value="18" type="checkbox"> QA1</label></li><li><label><input name="posts[]" class="posts" value="19" type="checkbox"> QA2</label></li><li><label><input name="posts[]" class="posts" value="4" type="checkbox"> Sales Manager</label></li><li><label><input name="posts[]" class="posts" value="77" type="checkbox"> SPAM</label></li><li><label><input name="posts[]" class="posts" value="32" type="checkbox"> Аналитик-маркетолог</label></li><li><label><input name="posts[]" class="posts" value="161" type="checkbox"> АТ (ТД)</label></li><li><label><input name="posts[]" class="posts" value="33" type="checkbox"> Бренд-менеджер</label></li><li><label><input name="posts[]" class="posts" value="34" type="checkbox"> Ведущий бренд-менеджер</label></li><li><label><input name="posts[]" class="posts" value="73" type="checkbox"> Ведущий консультант</label></li><li><label><input name="posts[]" class="posts" value="150" type="checkbox"> гость</label></li><li><label><input name="posts[]" class="posts" value="30" type="checkbox"> Директор по продажам</label></li><li><label><input name="posts[]" class="posts" value="78" type="checkbox"> Должность 1</label></li><li><label><input name="posts[]" class="posts" value="69" type="checkbox"> Должность для отображения в списках</label></li><li><label><input name="posts[]" class="posts" value="24" type="checkbox"> Маркетолог</label></li><li><label><input name="posts[]" class="posts" value="38" type="checkbox"> Медиа аналитик</label></li><li><label><input name="posts[]" class="posts" value="72" type="checkbox"> Менеджер</label></li><li><label><input name="posts[]" class="posts" value="25" type="checkbox"> Менеджер отдела связей с общественностью</label></li><li><label><input name="posts[]" class="posts" value="37" type="checkbox"> Менеджер по логистике</label></li><li><label><input name="posts[]" class="posts" value="22" type="checkbox"> Менеджер по продукции</label></li><li><label><input name="posts[]" class="posts" value="28" type="checkbox"> Менеджер по рекламе</label></li><li><label><input name="posts[]" class="posts" value="74" type="checkbox"> Оператор</label></li><li><label><input name="posts[]" class="posts" value="36" type="checkbox"> Офис-менеджер</label></li><li><label><input name="posts[]" class="posts" value="27" type="checkbox"> Продавец-консультант</label></li><li><label><input name="posts[]" class="posts" value="256" type="checkbox"> Разнорабочий</label></li><li><label><input name="posts[]" class="posts" value="20" type="checkbox"> Разработчик</label></li><li><label><input name="posts[]" class="posts" value="26" type="checkbox"> Руководитель отдела трейд-маркетинга</label></li><li><label><input name="posts[]" class="posts" value="21" type="checkbox"> Руководитель проекта</label></li><li><label><input name="posts[]" class="posts" value="35" type="checkbox"> Специалист по социальным медиа</label></li><li><label><input name="posts[]" class="posts" value="29" type="checkbox"> Старший менеджер</label></li><li><label><input name="posts[]" class="posts" value="70" type="checkbox"> Технический специалист</label></li><li><label><input name="posts[]" class="posts" value="31" type="checkbox"> Трейд-маркетолог</label></li><li><label><input name="posts[]" class="posts" value="157" type="checkbox"> Тренер</label></li><li><label><input name="posts[]" class="posts" value="71" type="checkbox"> Тренинговый инструктор</label></li><li><label><input name="posts[]" class="posts" value="255" type="checkbox"> Уборщик</label></li><li><label><input name="posts[]" class="posts" value="149" type="checkbox"> удаляем</label></li><li><label><input name="posts[]" class="posts" value="147" type="checkbox"> ук</label></li><li><label><input name="posts[]" class="posts" value="158" type="checkbox"> Юрист</label></li></ul></div>
+</div>
+<div id="div_profile_category" style="display: none; height:340px;">
+<ul class="treeview">
+<li class="closed last">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="0" style="font-weight: bold;">Всі категорії програм</a></span>
+</li>
+</ul>
+<ul class="treeview">
+<li class="closed last">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="-1" style="font-weight: normal;">Без доступу до програм</a></span>
+</li>
+</ul>
+<hr>
+<ul class="treeview">
+<ul>
+<li class="closed">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="52" style="font-weight: normal;">Autotest</a></span>
+</li>
+<li class="closed expandable"><div class="hitarea closed-hitarea expandable-hitarea"></div>
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="33" style="font-weight: normal;">AutotestAQA</a></span>
+<ul style="display: none;">
+<li class="closed last">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="72" style="font-weight: normal;">категория программы</a></span>
+</li>
+</ul>
+</li>
+<li class="closed">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="149" style="font-weight: normal;">DEV Mamonov</a></span>
+</li>
+<li class="closed">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="159" style="font-weight: normal;">DEV Vakulenko</a></span>
+</li>
+<li class="closed">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="142" style="font-weight: normal;">first</a></span>
+</li>
+<li class="closed">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="144" style="font-weight: normal;">Oleg Kh</a></span>
+</li>
+<li class="closed">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="162" style="font-weight: normal;">QA Olya</a></span>
+</li>
+<li class="closed expandable"><div class="hitarea closed-hitarea expandable-hitarea"></div>
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="151" style="font-weight: normal;">QA Svetlana</a></span>
+<ul style="display: none;">
+<li class="closed">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="160" style="font-weight: normal;">123</a></span>
+</li>
+<li class="closed">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="158" style="font-weight: normal;">UX</a></span>
+</li>
+<li class="closed last">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="152" style="font-weight: normal;">История обучения</a></span>
+</li>
+</ul>
+</li>
+<li class="closed expandable"><div class="hitarea closed-hitarea expandable-hitarea"></div>
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="141" style="font-weight: normal;">QA Sviatoslav</a></span>
+<ul style="display: none;">
+<li class="closed">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="154" style="font-weight: normal;">JMeter</a></span>
+</li>
+<li class="closed">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="150" style="font-weight: normal;">История</a></span>
+</li>
+<li class="closed">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="157" style="font-weight: normal;">Оргструктура</a></span>
+</li>
+<li class="closed">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="156" style="font-weight: normal;">Отчеты</a></span>
+</li>
+<li class="closed">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="145" style="font-weight: normal;">привязка к тренингу</a></span>
+</li>
+<li class="closed last">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="155" style="font-weight: normal;">уведомления</a></span>
+</li>
+</ul>
+</li>
+<li class="closed">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="153" style="font-weight: normal;">Кирилл</a></span>
+</li>
+<li class="closed">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="161" style="font-weight: normal;">Продажи</a></span>
+</li>
+<li class="closed last">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="163" style="font-weight: normal;">Сертификат</a></span>
+</li>
+</ul>
+</ul>
+</div>
+<div id="div_course_category" style="display: none; height:340px;">
+<ul class="treeview">
+<li class="closed last">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="0" style="font-weight: bold;">Всі категорії курсів</a></span>
+</li>
+</ul>
+<ul class="treeview">
+<li class="closed last">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="-1" style="font-weight: normal;">Без доступу до курсів</a></span>
+</li>
+</ul>
+<hr>
+<ul class="treeview">
+<ul>
+<li class="closed">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="308" style="font-weight: normal;">1111</a></span>
+</li>
+<li class="closed">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="321" style="font-weight: normal;">1111</a></span>
+</li>
+<li class="closed">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="318" style="font-weight: normal;">1_Renault Tests</a></span>
+</li>
+<li class="closed">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="323" style="font-weight: normal;">Notifications</a></span>
+</li>
+<li class="closed">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="320" style="font-weight: normal;">Oleg Kh</a></span>
+</li>
+<li class="closed">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="307" style="font-weight: normal;">PM Vikusia</a></span>
+</li>
+<li class="closed">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="2" style="font-weight: normal;">QA Avdieiev</a></span>
+</li>
+<li class="closed">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="270" style="font-weight: normal;">QA Bogush</a></span>
+</li>
+<li class="closed expandable"><div class="hitarea closed-hitarea expandable-hitarea"></div>
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="1" style="font-weight: normal;">Qa Krystyna</a></span>
+<ul style="display: none;">
+<li class="closed">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="306" style="font-weight: normal;">CorseTagWork</a></span>
+</li>
+<li class="closed">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="3" style="font-weight: normal;">S.GUT</a></span>
+</li>
+<li class="closed">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="272" style="font-weight: normal;">по-пд категория</a></span>
+</li>
+<li class="closed expandable lastExpandable"><div class="hitarea closed-hitarea expandable-hitarea lastExpandable-hitarea"></div>
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="277" style="font-weight: normal;">Подкатегория 1 уровень (без курсов)</a></span>
+<ul style="display: none;">
+<li class="closed">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="302" style="font-weight: normal;">FewCourse</a></span>
+</li>
+<li class="closed last">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="278" style="font-weight: normal;">Подкатегрия 2 уровень</a></span>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="closed">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="317" style="font-weight: normal;">QA Mikolaenko</a></span>
+</li>
+<li class="closed">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="327" style="font-weight: normal;">QA Olya</a></span>
+</li>
+<li class="closed">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="282" style="font-weight: normal;">QA Prysyazhny</a></span>
+</li>
+<li class="closed">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="5" style="font-weight: normal;">QA Sviatoslav</a></span>
+</li>
+<li class="closed">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="310" style="font-weight: normal;">QA SVITLANA</a></span>
+</li>
+<li class="closed">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="319" style="font-weight: normal;">QA Test</a></span>
+</li>
+<li class="closed expandable"><div class="hitarea closed-hitarea expandable-hitarea"></div>
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="311" style="font-weight: normal;">Test QA</a></span>
+<ul style="display: none;">
+<li class="closed expandable lastExpandable"><div class="hitarea closed-hitarea expandable-hitarea lastExpandable-hitarea"></div>
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="312" style="font-weight: normal;">Test QA Sinor</a></span>
+<ul style="display: none;">
+<li class="closed expandable lastExpandable"><div class="hitarea closed-hitarea expandable-hitarea lastExpandable-hitarea"></div>
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="313" style="font-weight: normal;">Test QA Middle</a></span>
+<ul style="display: none;">
+<li class="closed last">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="315" style="font-weight: normal;">Test Junior</a></span>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="closed">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="326" style="font-weight: normal;">Test_QA_YG</a></span>
+</li>
+<li class="closed">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="309" style="font-weight: normal;">База ВНД</a></span>
+</li>
+<li class="closed">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="322" style="font-weight: normal;">КПК</a></span>
+</li>
+<li class="closed expandable"><div class="hitarea closed-hitarea expandable-hitarea"></div>
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="325" style="font-weight: normal;">Продажи</a></span>
+<ul style="display: none;">
+<li class="closed last">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="324" style="font-weight: normal;">Общение с клиентом</a></span>
+</li>
+</ul>
+</li>
+<li class="closed last">
+<span style="margin-left:3px;">
+<a href="javascript: void(0);" value="316" style="font-weight: normal;">ТестированиеТестировщиков</a></span>
+</li>
+</ul>
+</ul>
+</div>
+<div id="div_permissions" style="display: none; height:370px; overflow: auto;">
+<label><input class="permissions" value="0" type="checkbox">
+ Перегляд звітів з навчання</label><br>
+<label><input class="permissions" value="1" type="checkbox">
+ Вхід під ім'ям підлеглого</label><br>
+<label><input class="permissions" value="9" type="checkbox">
+ Перегляд списку співробітників</label><br>
+<label><input class="permissions" value="8" type="checkbox">
+ Додавання, зміна та видалення співробітників</label><br>
+<label><input class="permissions" value="11" type="checkbox">
+ Додавання, зміна та видалення підрозділів</label><br>
+<label><input class="permissions" value="25" type="checkbox">
+ Редагування довідника керівників</label><br>
+<label><input class="permissions" value="26" type="checkbox">
+ Редагування шаблонів повідомлень</label><br>
+<hr>
+<label><input class="permissions" value="3" type="checkbox">
+ Створення програм</label><br>
+<label><input class="permissions" value="4" type="checkbox">
+ Видалення програм</label><br>
+<label><input class="permissions" value="5" type="checkbox">
+ Зміна програм</label><br>
+<label><input class="permissions" value="6" type="checkbox">
+ Призначення програм</label><br>
+<label><input class="permissions" value="33" type="checkbox">
+ Додавання прив'язки програми до всіх майбутнім дат заходу</label><br>
+<label><input class="permissions" value="14" type="checkbox">
+ Створення, зміна, видалення курсів</label><br>
+<label><input class="permissions" value="32" type="checkbox">
+ Видалення спроб проходження тестів</label><br>
+</div>
+</div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button"><span class="ui-button-text">Зберегти</span></button><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Відмінити</span></button></div></div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div></div><div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front ui-dialog-buttons ui-draggable ui-resizable" style="display: none; position: absolute;" tabindex="-1" role="dialog" aria-describedby="div_moderator_change" aria-labelledby="ui-id-2"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix ui-draggable-handle"><span id="ui-id-2" class="ui-dialog-title">Зміна модератора</span><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close" role="button" title="Закрити"><span class="ui-button-icon-primary ui-icon ui-icon-closethick"></span><span class="ui-button-text">Закрити</span></button></div><div id="div_moderator_change" style="" class="ui-dialog-content ui-widget-content">
+<div style="width: 100%;">
+<div style="width: 200px; float: left; text-align: right;">ПІБ нового модератора:</div><div style="float: left;">
+<input id="moderator_change_id" size="60" type="text">
+<button class="select" onclick="javascript: moderatorFind( $('#moderator_change_id') );">Пошук</button></div>
+</div>
+<div class="clear"></div>
+</div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">OK</span></button><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Відмінити</span></button></div></div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div></div><div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front ui-dialog-buttons ui-draggable ui-resizable" style="display: none; position: absolute; height: auto; width: 520px; top: 105.5px; left: 447.5px; z-index: 1003;" tabindex="-1" role="dialog" aria-describedby="div_moderator_select" aria-labelledby="ui-id-3"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix ui-draggable-handle"><span id="ui-id-3" class="ui-dialog-title">Оберіть користувача</span><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close" role="button" title="Закрити"><span class="ui-button-icon-primary ui-icon ui-icon-closethick"></span><span class="ui-button-text">Закрити</span></button></div><div id="div_moderator_select" style="width: auto; min-height: 0px; max-height: none; height: 426px;" class="ui-dialog-content ui-widget-content"><div class="moco-table"><table onload="" onloadshow="" nosortfirst="" hash="440ef25f204742d4d5320958357ad24c" class="" id="" style="width:100%; " border="1" align="center">
+<tbody>
+<tr header="header">
+<th id="_0_0" class="headermoco-table-sort-first" width="20%" align="center">№</th><th id="_0_1" class="header moco-table-sort" width="80%" align="left">П.І.Б.</th></tr>
+<tr>
+<td id="_1_0" class="cell  row_first" style="text-align: center;" width="20%" align="center">1</td><td id="_1_1" class="cell  row_first" style="text-align: left;" width="80%" align="left"><a href="javascript: void(0);" class="moderator_select" val="803" fullname="Automation Moderator">Automation Moderator</a></td></tr>
+</tbody>
+</table>
+<div class="clear"></div><br>
+</div>
+<div class="clear"></div>
+            <style>
+              .moco-table tr th.moco-table-sort {
+                cursor: pointer;
+              }
+            </style>
+            </div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Відмінити</span></button></div></div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div></div><div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front ui-dialog-buttons ui-draggable ui-resizable" style="display: none; position: absolute;" tabindex="-1" role="dialog" aria-describedby="div_moderator_delete" aria-labelledby="ui-id-4"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix ui-draggable-handle"><span id="ui-id-4" class="ui-dialog-title">Видалити модератора?</span><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close" role="button" title="Закрити"><span class="ui-button-icon-primary ui-icon ui-icon-closethick"></span><span class="ui-button-text">Закрити</span></button></div><div id="div_moderator_delete" style="" class="ui-dialog-content ui-widget-content">Ви впевнені що хочете видалити модератора?</div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Видалити</span></button><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Відмінити</span></button></div></div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div></div><div class="ui-widget-overlay ui-front" style="z-index: 1001;"></div><div class="preloading hide"><img src="/moco/img/loading.gif"></div></body></html>

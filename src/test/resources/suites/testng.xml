@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="SmokeTest" group-by-instances="false">
+    <test name="core_release">
+        <classes>
+            <class name="com.mocotms.core_release.Test.organization.Configurations"/>
+            <class name="com.mocotms.core_release.Test.organization.posts.PostTest"/>
+            <class name="com.mocotms.core_release.Test.organization.structure.DepartmentTest"/>
+            <class name="com.mocotms.core_release.Test.organization.user.EmployeeTest"/>
+            <class name="com.mocotms.core_release.Test.organization.chief.ChiefTest"/>
+            <class name="com.mocotms.core_release.Test.learning.trainers.TrainersTest"/>
+            <class name="com.mocotms.core_release.Test.organization.moderator.ModeratorTest"/>
+        </classes>
+    </test>
+</suite>

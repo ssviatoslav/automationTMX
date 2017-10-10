@@ -1,0 +1,989 @@
+<html lang="en"><head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/theme/standard/styles.php">
+<link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/styles.php">
+
+<!--[if IE 7]>
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/theme/standard/styles_ie7.css" />
+<![endif]-->
+<!--[if IE 6]>
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/theme/standard/styles_ie6.css" />
+<![endif]-->
+
+
+    <meta name="keywords" content="moodle, Список співробітників ">
+    <title>Список співробітників</title>
+    <link rel="shortcut icon" href="http://core-release-0.4.mocotms.com/favicon.ico">
+
+    <!--<style type="text/css">/*<![CDATA[*/ body{behavior:url(http://core-release-0.4.mocotms.com/lib/csshover.htc);} /*]]>*/</style>-->
+
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/javascript-static.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/javascript-mod.php"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/overlib/overlib.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/overlib/overlib_cssstyle.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/cookies.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/ufo.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/dropdown.js"></script>  
+
+<script type="text/javascript" defer="defer">
+//<![CDATA[
+setTimeout('fix_column_widths()', 20);
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+function openpopup(url, name, options, fullscreen) {
+    var fullurl = "http://core-release-0.4.mocotms.com" + url;
+    var windowobj = window.open(fullurl, name, options);
+    if (!windowobj) {
+        return true;
+    }
+    if (fullscreen) {
+        windowobj.moveTo(0, 0);
+        windowobj.resizeTo(screen.availWidth, screen.availHeight);
+    }
+    windowobj.focus();
+    return false;
+}
+
+function uncheckall() {
+    var inputs = document.getElementsByTagName('input');
+    for(var i = 0; i < inputs.length; i++) {
+        inputs[i].checked = false;
+    }
+}
+
+function checkall() {
+    var inputs = document.getElementsByTagName('input');
+    for(var i = 0; i < inputs.length; i++) {
+        inputs[i].checked = true;
+    }
+}
+
+function inserttext(text) {
+  text = ' ' + text + ' ';
+  if ( opener.document.forms['theform'].message.createTextRange && opener.document.forms['theform'].message.caretPos) {
+    var caretPos = opener.document.forms['theform'].message.caretPos;
+    caretPos.text = caretPos.text.charAt(caretPos.text.length - 1) == ' ' ? text + ' ' : text;
+  } else {
+    opener.document.forms['theform'].message.value  += text;
+  }
+  opener.document.forms['theform'].message.focus();
+}
+
+function getElementsByClassName(oElm, strTagName, oClassNames){
+	var arrElements = (strTagName == "*" && oElm.all)? oElm.all : oElm.getElementsByTagName(strTagName);
+	var arrReturnElements = new Array();
+	var arrRegExpClassNames = new Array();
+	if(typeof oClassNames == "object"){
+		for(var i=0; i<oClassNames.length; i++){
+			arrRegExpClassNames.push(new RegExp("(^|\\s)" + oClassNames[i].replace(/\-/g, "\\-") + "(\\s|$)"));
+		}
+	}
+	else{
+		arrRegExpClassNames.push(new RegExp("(^|\\s)" + oClassNames.replace(/\-/g, "\\-") + "(\\s|$)"));
+	}
+	var oElement;
+	var bMatchesAll;
+	for(var j=0; j<arrElements.length; j++){
+		oElement = arrElements[j];
+		bMatchesAll = true;
+		for(var k=0; k<arrRegExpClassNames.length; k++){
+			if(!arrRegExpClassNames[k].test(oElement.className)){
+				bMatchesAll = false;
+				break;
+			}
+		}
+		if(bMatchesAll){
+			arrReturnElements.push(oElement);
+		}
+	}
+	return (arrReturnElements)
+}
+//]]>
+</script>
+
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/style.css">
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/moco/jquery/jquery-ui.css">
+
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/js/jquery-1.8.3.js"></script>
+    <script src="http://core-release-0.4.mocotms.com/moco/jquery/development-bundle/jquery-ui.js"></script>
+
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/jquery-ui-datepicker.js"></script>
+            <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/jquery-ui-datepicker-ua.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/moco/jquery/treeview.css">
+
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/jquery.treeview.js"></script>
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/jquery.cookie.js"></script>
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/jquery.easing.1.3.js"></script>
+
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/swf/swfobject.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/menu.css">
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/js/menu.js.php"></script>
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/js/script.js"></script>
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/tree_library.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/lib/slideshow/css/camera.css">
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/slideshow/js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/slideshow/js/camera.min.1.11.js"></script> 
+    
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/moco/css/reports.css">
+<link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/moco/css/select2.css">
+    
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/custom.css">
+
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/d3.min.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/jquery.moco_chart.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/moco.core.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/moco_functions.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/reports.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/select2/select2.min.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/select2/translation/en.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/select2/translation/ru.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/select2/translation/uk.js"></script>
+
+    <script>
+        $(function() { 
+            $(window).scroll(function(){
+                if($(this).scrollTop() != 0){
+                    $('#toTop').fadeIn();
+                } else {
+                    $('#toTop').fadeOut();
+                }
+            });
+            $('#toTop').click(function() {
+                $('body,html').animate({scrollTop:0},800);
+            });
+        });
+        $('#id_language').live('change', function(){
+            window.location.href="http://core-release-0.4.mocotms.com/index.php?lang="+$(this).val();
+            return false;
+        });
+        function handleResponse(mes) {
+            if (mes.errors != null) {
+                $('#res').html('Помилка при завантаженні файлу: ' + mes.errors);
+            } else {
+                var params = new Object();
+                params.ajax = 'saveCentralImg';
+                $.ajax({
+                    type: 'POST',
+                    url: 'http://core-release-0.4.mocotms.com/theme/tmx_default_2015/ajax.php',
+                    data: params,
+                    success:
+                    function( answer ) {
+                        $('#central_img').html(answer.html);
+                    },
+                    dataType: 'json'
+                });
+            }
+        }
+    </script>
+</head>
+<body class="admin course-1 dir-ltr lang-uk_utf8 default" id="admin-user">
+
+    <div id="toTop">
+        <div class="top_button"></div>
+    </div>
+
+            <div id="wrapper">
+        <div class="head_width">
+            <div id="head">
+                <div id="id_div_header" style="margin-right:10px;">
+                
+                    <a href="http://core-release-0.4.mocotms.com" style="float:left">
+                        <img class="logo" src="http://core-release-0.4.mocotms.com/moco/logo/logo.php?logo=L2RhdGEvdG14L21vY28vY29yZS8wLlgvcmVsZWFzZV8wLjQvbW9vZGxlZGF0YS9waXgvbG9nby9sb2dvLnBuZw==&amp;nocache=1497445703" alt="Logotype">
+                    </a>                <div class="link_panel">
+                <div id="lang_menu"><span class="lang_title">Мова:</span><select id="id_language" style="vertical-align:middle; border:1px solid #d1d3d4; color:#6E6E6E;"><option value="en_utf8">ENG</option><option value="ru_utf8">RUS</option><option value="uk_utf8" selected="selected">UKR</option></select></div><a href="http://mocotms.com" class="link_3" target="_blank">Technomatix</a><a class="exit_button" href="http://core-release-0.4.mocotms.com/login/logout.php?sesskey=hsQ0cRjofH">Вийти</a>                </div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div id="head_menu">
+
+	<div style="width:100%; /*max-width: 1024px;*/">
+<div class="menu_left_block"></div>
+<div class="menu_right_block"></div>
+<ul id="nav_menu" style="z-index:1001;">
+<li class="first" style="width: 20%;">
+<a href="javascript: void(0);">Компанія</a><ul>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/structure/">Структура</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/posts/">Посади</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/admin/user.php">Співробітники</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/chiefs/">Керівники</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/moderators/">Модератори</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/confirmmanualuser/">Зареєстрованi користувачi</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/uploadimg/">Завантаження фото</a><div class="clear"></div>
+</li>
+</ul>
+<div class="clear"></div>
+</li>
+<li style="width: 20%;">
+<a href="javascript: void(0);">Навчання</a><ul>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/allcourses/">Каталог</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/profiles/">Програми</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/delhistory/">Історія</a><div class="clear"></div>
+</li>
+<li>
+<hr>
+<div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/tranings/">Заходи</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/trainer/">Тренери</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/training_rooms/">Тренінгові кімнати</a><div class="clear"></div>
+</li>
+<li>
+<hr>
+<div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/scales/">Шкали оцiнок</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/alerts/">Повідомлення</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/tag/">Теги</a><div class="clear"></div>
+</li>
+</ul>
+<div class="clear"></div>
+</li>
+<li style="width: 20%;">
+<a href="javascript: void(0);">Оцінка персоналу</a><ul>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco101/index.php/usr">Користувачі і привілегії</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco101/index.php/org">Організаційна структура</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco101/index.php/messaging">Повідомлення</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco101/index.php/indicator">Індикатори</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco101/index.php/appraisal">Оцінка</a><div class="clear"></div>
+</li>
+</ul>
+<div class="clear"></div>
+</li>
+<li style="width: 20%;">
+<a href="javascript: void(0);">Звіти</a><ul>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/profiles.php">Призначені програми</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/courses.php?tab=admin">Результати по програмам</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/scorms.php?tab=report">Результати по курсам</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/tests.php?tab=report">Результати по тестам</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/testsanalytics.php">Результати по тестах (аналітика)</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/scormandtest.php">Зведені результати по курсам та тестам</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/empreport.php?tab=admin">Зведені результати по співробітнику</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/fullprofiles.php">Детальні результати по співробітникам</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/successful.php?tab=admin">Детальні результати по програмам</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/selfcourses.php">Самопризначені курси</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/vacationstats.php">Статистика навчених і звільнених</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/universal.php?tab=admin">База співробітників і результатів</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/fullprofiles2.php">Анкета співробітника</a><div class="clear"></div>
+</li>
+<li>
+<hr>
+<div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/training.php?tab=admin">Статистика тренінгів</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/trainings.php?tab=admin&amp;subtab=1&amp;find_recursive=1">Результати аудиторних заходів</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/trainer.php?tab=admin">Статистика тренерів</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/workload_trainer.php">Завантаженість тренерів</a><div class="clear"></div>
+</li>
+<li>
+<hr>
+<div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/certificate.php">Видані сертифікати</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/player_play.php">Звіт про відео</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/permissions_log.php">Історія видачі прав</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/subscriptionhistory.php">Історія скасування розсилки</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/systemroles.php">Ролі системи</a><div class="clear"></div>
+</li>
+</ul>
+<div class="clear"></div>
+</li>
+<li style="width: 20%;">
+<a href="javascript: void(0);">Додатково</a><ul>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/holiday/">Свята</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/interview/">Опитування</a><div class="clear"></div>
+</li>
+</ul>
+<div class="clear"></div>
+</li>
+<div class="clear"></div>
+</ul>
+</div>
+		<div class="clear"></div>
+		
+	<div class="breadcrumb" style="display:block; "><h2 class="accesshide ">Ви тут</h2> <ul>
+<li class="first"><a onclick="this.target='_top'" href="http://core-release-0.4.mocotms.com/">LMS</a></li><li> <span class="accesshide ">/&nbsp;</span><span class="arrow sep">&gt;</span> Співробітники</li></ul></div>
+</div>
+        <div class="clear"></div>
+
+                <div class="clear"></div>
+
+        <div id="content" class="clearfix">
+
+        <div class="clear"></div><h2 class="page_title">Співробітники</h2><div class="clear"></div><table style="width:100%;">
+				<tbody><tr>
+					<td style="width:20px; vertical-align:middle;"><img src="../img/icons/user_add.png" style="width:15px;"></td>
+					<td style="width:200px; vertical-align:middle;"><a href="http://core-release-0.4.mocotms.com/user/editadvanced.php?id=-1" style="margin-left:10xp;">Додати нового користувача</a></td>
+				<td style="vertical-align:middle; color:grey; text-align:right;">
+					[ Знайдено 1 з 544 ]
+				</td>
+			</tr>
+		</tbody></table>
+		<div class="clear"></div>
+		<form method="post" action="http://core-release-0.4.mocotms.com/admin/user.php" id="fsearch">
+			<input name="sesskey" value="hsQ0cRjofH" type="hidden">
+			<div class="filter_bgcolor">
+				<table id="filter-chiefs">
+					<tbody><tr>
+						<td></td>
+						<td class="colortitle" colspan="3">Фільтрувати</td>
+					</tr>
+					<tr>
+						<td class="texttitle" width="200" align="right">П.І.Б. </td>
+						<td colspan="3">
+							<input name="realname" value="Automation User" type="text">
+						</td>
+					</tr>
+					<tr>
+						<td class="texttitle" align="right">Підрозділ </td>
+						<td colspan="3">
+							<input id="deptitle" value="Усі підрозділи" type="text">
+							<input id="id_but_dep" class="select" value="..." type="button"> 
+							<input id="id_empty_dep" class="select" value="Х" type="button">
+							<input id="id_depid" name="d_str" value="0" type="hidden">
+						</td>
+					</tr>
+					<tr>
+						<td style="padding-right:10px;" align="right"></td>
+						<td colspan="3">
+							<input id="not_in_all_departments" name="not_in_all_departments" value="1" type="checkbox">
+							<label for="not_in_all_departments">Не шукати у вкладених підрозділах</label>
+					   </td>
+					</tr>
+					<tr>
+						<td class="texttitle" align="right">Посада </td>
+						<td colspan="3">
+							<select name="p_str" id="id_postid" style="width: 602px;">
+								<option value="">---- Обрати посаду ----</option><option value="159"></option><option value="156">1 тест целевых групп</option><option value="8">Accounter</option><option value="258">Administrator</option><option value="302">AutomationPost</option><option value="76">AutoQA</option><option value="7">Business manager</option><option value="14">C# Developer</option><option value="6">Director</option><option value="160">HR менеджер</option><option value="13">Java Developer</option><option value="257">Junuior Tester</option><option value="3">Manager</option><option value="12">PHP Developer</option><option value="11">PHP Project Manager</option><option value="23">PR-менеджер</option><option value="10">Product Manager</option><option value="5">Product Owner</option><option value="151">Project Manager</option><option value="1">QA</option><option value="2">QA engineer</option><option value="154">QA Junior</option><option value="153">QA Lead</option><option value="155">QA Middle</option><option value="9">QA Team Lead</option><option value="18">QA1</option><option value="19">QA2</option><option value="4">Sales Manager</option><option value="77">SPAM</option><option value="32">Аналитик-маркетолог</option><option value="161">АТ (ТД)</option><option value="33">Бренд-менеджер</option><option value="34">Ведущий бренд-менеджер</option><option value="73">Ведущий консультант</option><option value="150">гость</option><option value="30">Директор по продажам</option><option value="78">Должность 1</option><option value="69">Должность для отображения в списках</option><option value="24">Маркетолог</option><option value="38">Медиа аналитик</option><option value="72">Менеджер</option><option value="25">Менеджер отдела связей с общественностью</option><option value="37">Менеджер по логистике</option><option value="22">Менеджер по продукции</option><option value="28">Менеджер по рекламе</option><option value="74">Оператор</option><option value="36">Офис-менеджер</option><option value="27">Продавец-консультант</option><option value="256">Разнорабочий</option><option value="20">Разработчик</option><option value="26">Руководитель отдела трейд-маркетинга</option><option value="21">Руководитель проекта</option><option value="35">Специалист по социальным медиа</option><option value="29">Старший менеджер</option><option value="70">Технический специалист</option><option value="31">Трейд-маркетолог</option><option value="157">Тренер</option><option value="71">Тренинговый инструктор</option><option value="255">Уборщик</option><option value="149">удаляем</option><option value="147">ук</option><option value="158">Юрист</option> 
+							</select>
+						</td>
+					</tr>
+					<tr class="idnumber">
+						<td class="texttitle" align="right">IПH</td>
+						<td colspan="3">
+							<input id="tab_numbtitle" name="tab_numb" value="" type="text">
+						</td>
+					</tr>
+					<tr>
+						<td class="texttitle" align="right">E-mail</td>
+						<td colspan="3">
+							<input id="email" name="email" value="" type="text">
+						</td>
+					</tr>
+					<tr>
+						<td style="padding-right:10px;" align="right"></td>
+						<td colspan="3">
+							<input id="show_fired_employees" name="show_fired_employees" value="1" type="checkbox">
+							<label for="show_fired_employees">Показати звільнених</label>
+						</td>
+					</tr>
+					<tr>
+						<td style="padding-right:10px;" align="right"></td>
+						<td colspan="3">
+							<input id="show_absent_dates" value="1" name="show_absent_dates" type="checkbox">
+							<label for="show_absent_dates">Сховати дати відсутності</label>
+						</td>
+					</tr>
+					<tr>
+						<td class="texttitle" align="right">Тег</td>
+						<td colspan="3" style="padding-bottom: 2px;">
+							<div id="id_div_choose_tag" showed="1" style="width:577px; max-height: 250px">
+								
+                    <div class="div_tag" style="display:none;">
+                        <input id="tag_42" class="tag_ids" name="tag_ids[]" value="42" type="checkbox">
+                        <label for="scorm_42">11tt22</label>
+                    </div>
+                    <div class="div_tag" style="display:none;">
+                        <input id="tag_46" class="tag_ids" name="tag_ids[]" value="46" type="checkbox">
+                        <label for="scorm_46">all</label>
+                    </div>
+                    <div class="div_tag" style="display:none;">
+                        <input id="tag_29" class="tag_ids" name="tag_ids[]" value="29" type="checkbox">
+                        <label for="scorm_29">Course</label>
+                    </div>
+                    <div class="div_tag" style="display:none;">
+                        <input id="tag_45" class="tag_ids" name="tag_ids[]" value="45" type="checkbox">
+                        <label for="scorm_45">fix13</label>
+                    </div>
+                    <div class="div_tag" style="display:none;">
+                        <input id="tag_44" class="tag_ids" name="tag_ids[]" value="44" type="checkbox">
+                        <label for="scorm_44">fix2</label>
+                    </div>
+                    <div class="div_tag" style="display:none;">
+                        <input id="tag_28" class="tag_ids" name="tag_ids[]" value="28" type="checkbox">
+                        <label for="scorm_28">Team</label>
+                    </div>
+                    <div class="div_tag" style="display:none;">
+                        <input id="tag_19" class="tag_ids" name="tag_ids[]" value="19" type="checkbox">
+                        <label for="scorm_19">а</label>
+                    </div>
+                    <div class="div_tag" style="display:none;">
+                        <input id="tag_26" class="tag_ids" name="tag_ids[]" value="26" type="checkbox">
+                        <label for="scorm_26">гость</label>
+                    </div>
+                    <div class="div_tag" style="display:none;">
+                        <input id="tag_18" class="tag_ids" name="tag_ids[]" value="18" type="checkbox">
+                        <label for="scorm_18">Мой тег</label>
+                    </div>
+                    <div class="div_tag" style="display:none;">
+                        <input id="tag_17" class="tag_ids" name="tag_ids[]" value="17" type="checkbox">
+                        <label for="scorm_17">Новичок</label>
+                    </div>
+                    <div class="div_tag" style="display:none;">
+                        <input id="tag_16" class="tag_ids" name="tag_ids[]" value="16" type="checkbox">
+                        <label for="scorm_16">новый тестовый тег</label>
+                    </div>
+                    <div class="div_tag" style="display:none;">
+                        <input id="tag_43" class="tag_ids" name="tag_ids[]" value="43" type="checkbox">
+                        <label for="scorm_43">нр</label>
+                    </div>
+                    <div class="div_tag" style="display:none;">
+                        <input id="tag_30" class="tag_ids" name="tag_ids[]" value="30" type="checkbox">
+                        <label for="scorm_30">тег первый</label>
+                    </div>
+                    <div class="div_tag" style="display:none;">
+                        <input id="tag_15" class="tag_ids" name="tag_ids[]" value="15" type="checkbox">
+                        <label for="scorm_15">тестовый тег</label>
+                    </div>
+                    <div class="div_tag" style="display:none;">
+                        <input id="tag_23" class="tag_ids" name="tag_ids[]" value="23" type="checkbox">
+                        <label for="scorm_23">у</label>
+                    </div>
+                    <div class="div_tag" style="display:none;">
+                        <input id="tag_20" class="tag_ids" name="tag_ids[]" value="20" type="checkbox">
+                        <label for="scorm_20">ш</label>
+                    </div>
+                    <div class="div_tag" style="display:none;">
+                        <input id="tag_21" class="tag_ids" name="tag_ids[]" value="21" type="checkbox">
+                        <label for="scorm_21">я4</label>
+                    </div>							</div>
+							<input id="id_select_tag" class="select" title="Обрати" value="..." type="button">
+							<input id="id_empty_tag" class="select" title="Видалити" value="X" type="button">
+						</td>
+					</tr>
+					<tr>
+						<td class="texttitle" align="right">Умова фільтрації за тегами</td>
+						<td colspan="3">
+						<div>
+							<div class="float-left">
+								<input id="id_radio_or" value="OR" name="tag_condition" checked="" type="radio">
+								<label>АБО</label>
+							</div>
+							<div>
+								<input id="id_radio_and" value="AND" name="tag_condition" type="radio">
+								<label>ТА</label>
+							</div>
+						</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="texttitle" width="188" align="right">Роль</td>
+						<td colspan="3" style="vertical-align:middle;">
+							<select id="role" name="role" style="width:604px;">
+								<option value="">---- Обрати роль ----</option>
+								 									<option value="0">Адміністратор</option>
+																	<option value="1">Модератор</option>
+																	<option value="2">Керівник</option>
+																	<option value="3">Тренер</option>
+																	<option value="4">Співробітник</option>
+															</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="texttitle" align="right">Дати відсутності з</td>
+						<td style="width:100px;"><input autocomplete="off" name="abs_from" id="abs_from" value="" style="width:100px;" class="hasDatepicker" type="text"></td>
+						<td class="texttitle" style="width:25px;" align="right">по</td>
+						<td><input autocomplete="off" name="abs_to" id="abs_to" value="" style="width:100px;" class="hasDatepicker" type="text"></td>
+					</tr>
+					<tr>
+						<td class="texttitle" align="right">Дата прийняття на роботу з</td>
+						<td style="width:100px;"><input autocomplete="off" name="reg_from" id="reg_from" value="" style="width:100px;" class="hasDatepicker" type="text"></td>
+						<td class="texttitle" style="width:25px;" align="right">по</td>
+						<td><input autocomplete="off" name="reg_to" id="reg_to" value="" style="width:100px;" class="hasDatepicker" type="text"></td>
+					</tr>
+					<tr>
+						<td class="texttitle" align="right">Дата прийняття на посаду з</td>
+						<td style="width:100px;"><input autocomplete="off" name="changed_from" id="changed_from" value="" style="width:100px;" class="hasDatepicker" type="text"></td>
+						<td class="texttitle" style="width:25px;" align="right">по</td>
+						<td><input autocomplete="off" name="changed_to" id="changed_to" value="" style="width:100px;" class="hasDatepicker" type="text"></td>
+					</tr>
+				</tbody></table>
+			</div>
+			<input name="p" value="1" type="hidden">
+			<input name="addfilter" value="Пошук" style="margin-bottom:20px;" type="submit">
+		</form>
+				<form id="mform2" class="mform" accept-charset="utf-8" method="post" action="" style="width:100%;">
+			<input name="sesskey" value="hsQ0cRjofH" type="hidden">
+			<input name="p" value="1" type="hidden"> 
+			<div class="filter_bgcolor">
+				<div style="display: block;">
+					<b class="colortitle">Aктивні фільтри</b>
+				</div>
+												<div>
+					<span>
+						<input id="id_71637" value="1" name="realname" type="checkbox">
+						<label for="id_71637">Повне ім'я містить "Automation User"</label>
+					</span>
+				</div>
+				
+								
+																																																											</div>
+			<input id="id_removeselected" value="Видалити обрані" class="imgsolong" name="removeselected" type="submit">
+			<input id="id_removeall" value="Видалити всі фільтри" class="imgsolong" name="removeall" type="submit">
+		</form>
+		<div class="clear"></div>
+		<div class="maintable">		<table style="width:100%;">
+			<tbody><tr>
+				<td style="width:100%; vertical-align:middle;">
+					<b style="color:gray;"><nobr>Знайдено: <span class="found_users">1</span></nobr></b>
+				</td>
+				<td style="vertical-align:middle; width:20px;">
+					<a class="download_excel" href="http://core-release-0.4.mocotms.com/admin/user_excel.php">
+						<img src="http://core-release-0.4.mocotms.com/moco/img/excel.png" width="20">
+					</a>
+				</td>
+				<td style="text-align:right; padding-right:10px; vertical-align:middle; padding-left:10px;">
+					<a class="download_excel" href="http://core-release-0.4.mocotms.com/admin/user_excel.php"><nobr>Завантажити Excel-файл</nobr></a>
+				</td>
+			</tr>
+		</tbody></table>
+		<div class="clear"></div>
+		<div class="moco-table"><table onload="" onloadshow="" nosortfirst="" hash="270fece878b34b769a6dbf702bef0e79" class="" id="id_table_results" style="" width="100%" border="1" align="center">
+<tbody>
+<tr header="header">
+<th id="_0_0" class="moco-table-sort-first" width="30" align="center">№</th><th id="_0_1" class="users_table_sort idnumber" width="80" align="center">IПH</th><th id="_0_2" class="users_table_sort" width="150" align="center">П.І.Б.</th><th id="_0_3" class="users_table_sort" width="100" align="center">E-mail</th><th id="_0_4" class="users_table_sort" width="160" align="center">Підрозділ</th><th id="_0_5" class="users_table_sort" width="150" align="center">Посада</th><th id="_0_6" class="moco-table-sort-first" width="150" align="center">Теги</th><th id="_0_7" class="users_table_sort" width="100" align="center">Дата прийняття на роботу</th><th id="_0_8" class="users_table_sort" width="100" align="center">Дата прийняття на посаду</th><th id="_0_9" class="users_table_sort" width="100" align="center">Стаж на посадi (днiв)</th><th id="_0_10" class="moco-table-sort" width="100" align="center">Початок відсутності</th><th id="_0_11" class="moco-table-sort" width="100" align="center">Кінець відсутності</th><th id="_0_12" class="users_table_sort" width="100" align="center">Останнiй вхiд</th><th id="_0_13" class="moco-table-sort-first" width="30" align="center">
+</th><th id="_0_14" class="moco-table-sort-first" width="30" align="center">
+</th></tr>
+<tr>
+<td id="_1_0" class="row2" width="30" align="center">1</td><td id="_1_1" class="row2 idnumber" width="80" align="center">Ні</td><td id="_1_2" class="row2" width="150" align="left"><a href="http://core-release-0.4.mocotms.com/user/view.php?id=803&amp;course=1">Automation User</a></td><td id="_1_3" class="row2" width="100" align="left">auto@mail.com</td><td id="_1_4" class="row2" width="160" align="left">AutomationDepartment</td><td id="_1_5" class="row2" width="150" align="left">AutomationPost</td><td id="_1_6" class="row2" width="150" align="center">Ні</td><td id="_1_7" class="row2" width="100" align="center">26.09.2017</td><td id="_1_8" class="row2" width="100" align="center">26.09.2017</td><td id="_1_9" class="row2" width="100" align="center">0</td><td id="_1_10" class="row2" width="100" align="center">Ні</td><td id="_1_11" class="row2" width="100" align="center">Ні</td><td id="_1_12" class="row2" width="100" align="center">Ніколи</td><td id="_1_13" class="row2" width="30" align="center"><a href="http://core-release-0.4.mocotms.com/user/editadvanced.php?id=803&amp;course=1"><img src="http://core-release-0.4.mocotms.com/img/icons/user_edit.png" style="width:15px; height:15px;" border="0"></a></td><td id="_1_14" class="row2" width="30" align="center"><a href="http://core-release-0.4.mocotms.com/admin/user.php?delete=803&amp;sesskey=hsQ0cRjofH"><img src="http://core-release-0.4.mocotms.com/img/icons/user_delete.png" style="width:15px; height:15px;"></a></td></tr>
+</tbody>
+</table>
+<div class="clear"></div><br>
+</div>
+<div class="clear"></div>
+            <style>
+              .moco-table tr th.moco-table-sort {
+                cursor: pointer;
+              }
+            </style>
+            <script type="text/javascript">
+              $(document).ready(function() {
+                function startLoading() {
+                  var div = $('<div />');
+                  $(div)
+                    .css( 'position', 'fixed' )
+                    .css( 'background-color', 'transparent' )
+                    .css( 'color', '#000000' )
+                    .css( 'left', '50%' )
+                    .css( 'top', '50%' )
+                    .css( 'border', 'none' )
+                    .css( 'z-index', '9999' )
+                    .append( $('<img>').attr( 'src', 'http://core-release-0.4.mocotms.com/moco/img/loading.gif' ) );
+                  $('body').append(div);
+                  return div;
+                }
+                $("td[comment]").each( function() { $(this).tooltip( {
+                  track: true,
+                  delay: 100,
+                  opacity: 0.85,
+                  bodyHandler: function() {
+                      return $(this).attr('comment');
+                  }
+                } ) } );
+                $('.moco-table .moco-table-page-link').live( 'click', function(e) {
+                  var loading = startLoading();
+                  var div = $(this).closest('div.moco-table');
+                  $(div).load( '?ajax=moco-table', {
+                    hash: $(this).closest('div.moco-table').find('table').attr('hash'),
+                    sort: $(this).closest('div.moco-table').find('table').attr('sortorder'),
+                    start: $(this).attr('start')
+                  }, function() {
+                    $(loading).remove();
+                    $(div).children('table').each( function() {
+                      var onload = $(this).attr('onload');
+                      if( onload !== undefined && onload.length > 0 ) eval( onload );
+                    } );
+                  } );
+                  e.preventDefault();
+                } );
+                $('.moco-table tr th.moco-table-sort').live( 'click', function(e) {
+
+
+                  var onloadshow =  '';
+
+
+                  if( $(this).find('input').length > 0 ) return;
+                  if( $(this).find('a').length > 0 ) return;
+                  if( $(this).get(0).onclick ) return;
+                  var hash = $(this).closest('div.moco-table').find('table').attr('hash');
+                  if( hash.length <= 0 ) return;
+                  var sortorder = 1 + $(this).index();
+                  if( sortorder == $(this).closest('div.moco-table').find('table').attr('sortorder') ) {
+                    sortorder = -sortorder;
+                  }
+                  if (onloadshow !== 'no')
+                    var loading = startLoading();
+                  var div = $(this).closest('div.moco-table');
+                  $(div).load( '?ajax=moco-table', {
+                    hash: $(this).closest('div.moco-table').find('table').attr('hash'),
+                    sort: sortorder,
+                    start: 0
+                  }, function() {
+                    $(loading).remove();
+                    $(div).children('table').each( function() {
+                      var onload = $(this).attr('onload');
+                      if( onload !== undefined && onload.length > 0 ) eval( onload );
+                    } );
+                  } );
+                } );
+              });
+            </script><div class="clear"></div></div>		<style>
+			.users_table_sort{cursor:pointer;}
+		</style>
+		<script>
+			$("#reg_from").datepicker( {  dateFormat: 'dd.mm.yy', defaultDate: +1, changeMonth: true, changeYear: true } );
+			$("#reg_to").datepicker( { dateFormat: 'dd.mm.yy', defaultDate: +1, changeMonth: true, changeYear: true } );
+			$("#changed_from").datepicker( {  dateFormat: 'dd.mm.yy', defaultDate: +1, changeMonth: true, changeYear: true } );
+			$("#changed_to").datepicker( { dateFormat: 'dd.mm.yy', defaultDate: +1, changeMonth: true, changeYear: true } );
+			$("#abs_from").datepicker( {  dateFormat: 'dd.mm.yy', defaultDate: +1, changeMonth: true, changeYear: true } );
+			$("#abs_to").datepicker( { dateFormat: 'dd.mm.yy', defaultDate: +1, changeMonth: true, changeYear: true } );
+
+			function get_posts(){
+				var senddata = new Object();
+				senddata.ajax = 'getposts';
+				senddata.post_id = $('#id_postid').val();
+				senddata.department_id = $('#id_depid').val();
+				senddata.recursive = ($('#not_in_all_departments').is(':checked') ? '0' : '1');
+
+				$.ajax({
+					type: 'POST',
+					url: '',
+					data: senddata,
+					beforeSend: function ( xhr ) {
+						$('#id_postid').html('<option value="">Завантаження, зачекайте ...</option>');
+					},
+					success: function(answer){
+						// Обновляем список курсов в профиле
+						$('#id_postid').html(answer);
+						if(answer.length){
+							$('#id_postid').removeAttr('disabled');
+						}
+					}, 
+					error: function(error){
+						alert('[[loading_posts_alert]]');
+					},
+					dataType: 'text'
+				});
+			}
+			
+			function startLoading() {
+			  var div = $('<div />');
+			  $(div)
+				.css( 'position', 'fixed' )
+				.css( 'background-color', 'transparent' )
+				.css( 'color', '#000000' )
+				.css( 'left', '50%' )
+				.css( 'top', '50%' )
+				.css( 'border', 'none' )
+				.css( 'z-index', '9999' )
+				.append( $('<img>').attr( 'src', 'http://core-release-0.4.mocotms.com/moco/img/loading.gif' ) );
+			  $('body').append(div);
+			  
+			  return div;
+			}
+
+			// По клику на поиск во вложенных подразделениях подгружаем список должностей
+			$('#not_in_all_departments').live('change', function(){
+				get_posts();
+			});
+
+			var departmenttitle = '';
+			var departmentid = '';
+			// Отображаем окно для выбора Подразделения
+			$('#id_div_choosedep').dialog({
+				autoOpen:false,
+				title:'Обрати підрозділ',
+				height:450,
+				width:500,
+				modal:true,
+				buttons:{
+					// Выбранную категорию передаем в $_GET и перегружаем страницу
+					"Обрати": function(){
+						$('#deptitle').val(departmenttitle);
+						$('#id_depid').val(departmentid);
+
+						$(this).dialog("close");
+						get_posts();
+					},
+					"Відмінити": function(){
+						$(this).dialog("close");
+					}
+				}
+			});
+
+			$('#id_but_dep').live('click',function(){
+				$('#id_div_choosedep').dialog('open');
+
+				$.ajax({
+					type: 'get',
+					url: '',
+					data: "ajax=GetStructureList&div_id=department",
+					beforeSend: function ( xhr ) {
+						$('#id_div_choosedep').html('Завантаження, зачекайте ...');
+					},
+					success: function(answer){
+						$('#id_div_choosedep').html(answer);
+					}, 
+					error: function(error){
+						console.log(error);
+					},    
+					dataType: 'text'
+				});
+				return false;
+			});
+
+			// выделяем выбранное Подразделение
+			$('#id_div_choosedep ul li span a').live('click', function(){
+				// передаем данные выбранной должности
+				departmenttitle = $(this).html();
+				departmentid = $(this).attr('value');
+				return false;
+			});
+
+			// Очищаем выбор данных подразделения
+			$('#id_empty_dep').live('click',function(){
+				$('#deptitle').val('');
+				$('#id_depid').val('');
+				return false;
+			});
+
+			// отображение списка тегов
+			$('#id_select_tag').live('click', function(){
+				if( $('#id_div_choose_tag').attr('showed') == '0' ){
+					$('input[class=tag_ids]').each(function(){
+						//alert($(this).is(':checked'));
+						if($(this).is(':checked')){
+							$(this).parent('div.div_tag').css('display', 'block');
+						} else {
+							$(this).parent('div.div_tag').css('display', 'none');
+						}
+					});
+					$('#id_div_choose_tag').css('height', '100%');
+					$('#id_div_choose_tag').attr('showed', '1');
+					$('#id_select_tag').val('...');
+				} else {
+					$('input[class=tag_ids]').each(function(){
+						$(this).parent('div.div_tag').css('display', 'block');
+					});
+					$('#id_div_choose_tag').css('height', 'auto');
+					$('#id_div_choose_tag').attr('showed', '0');
+					$('#id_select_tag').val('<');
+				}
+				return false;
+			});
+			$('#id_empty_tag').live('click',function(){
+				$('input[class=tag_ids]').each(function(){
+					if($(this).is(':checked')){
+						$(this).removeAttr('checked');
+					}
+				});
+			});
+
+			// Заголовок таблицы - сортировка
+			$('.users_table_sort').live('click',function(){
+				var params = new Object();
+				params.ajax = 'setorder';
+				params.page = $('.pagination span').text() != '' ? $('.pagination span').text() : '1';
+				params.sort_order = $(this).attr('id').substr(3,2).trim();
+				params.countusers = $('.found_users').text();
+				var loading = startLoading();
+				$.ajax({
+					type: 'post',
+					url: '/admin/user.php',
+					data: params,
+					success: function(answer){
+						$('.maintable').html(answer);
+						$(loading).remove();
+					},
+					error: function(error){
+						console.log(error);
+						$(loading).remove();
+					},    
+					dataType: 'text'
+				});
+				
+				return false;
+			});
+			
+			//Ajax пагинация
+			$('.moco-table-page-link').live('click',function(){
+				var params = new Object();
+				params.ajax = 'setorder';
+				params.page = $(this).attr('data-page');
+				params.countusers = $('.found_users').text();
+				var loading = startLoading();
+				$.ajax({
+					type: 'post',
+					url: '/admin/user.php',
+					data: params,
+					success: function(answer){
+						$('.maintable').html(answer);
+						$(loading).remove();
+					},
+					error: function(error){
+						console.log(error);
+						$(loading).remove();
+					},    
+					dataType: 'text'
+				});
+
+				return false;
+			});
+			
+			/*$('.download_excel').live('click',function(){
+				var params = new Object();
+				params.ajax = 'getexcel';
+				var loading = startLoading();
+				$.ajax({
+					type: 'post',
+					url: '/admin/user.php',
+					data: params,
+					success: function(answer){
+						$(loading).remove();
+						if (answer.error != ''){
+							alert(answer.error);
+						} else {
+							document.location.href = answer.url;
+						}
+					},
+					error: function(error){
+						console.log(error);
+						$(loading).remove();
+					},    
+					dataType: 'json'
+				});
+
+				return false;
+			});*/
+			
+		</script>
+		</div><!--content-->
+<!--br/><br/><br/ -->
+</div><div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div><div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front ui-dialog-buttons ui-draggable ui-resizable" style="display: none; position: absolute;" tabindex="-1" role="dialog" aria-describedby="id_div_choosedep" aria-labelledby="ui-id-1"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix ui-draggable-handle"><span id="ui-id-1" class="ui-dialog-title">Обрати підрозділ</span><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close" role="button" title="Close"><span class="ui-button-icon-primary ui-icon ui-icon-closethick"></span><span class="ui-button-text">Close</span></button></div><div id="id_div_choosedep" style="" class="ui-dialog-content ui-widget-content"></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Обрати</span></button><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Відмінити</span></button></div></div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div></div><!--wrapper-->
+
+<div id="div_bg_" style="height: 613px;"> </div>
+
+<div id="footer">
+	<div id="footer_in" style="bottom: auto; position: static;">
+		<div id="footer_lbl">© MOCO 2010-2017. Powered by <a href="http://tmx-learning.info/" target="_blank">Technomatix</a></div>
+		<div class="social_media"><a target="_blank" href="https://www.facebook.com/Technomatix/?pnref=lhc"><img src="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/images/icon/social/facebook.png"></a><a target="_blank" href="https://myaccount.google.com/?utm_source=OGB"><img src="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/images/icon/social/google_plus.png"></a><a target="_blank" href="https://www.youtube.com/channel/UC3kgUstn4mqESPeev-O4T6A"><img src="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/images/icon/social/youtube.png"></a></div>		<div class="clear"></div>
+	</div>
+</div>
+<script>
+  function reassignFooter() {
+    if( $('body').height() < ($(window).height() ) ) {
+      $('#footer_in').css( 'bottom', 0 );
+      $('#footer_in').css( 'position', 'absolute' );
+    } 
+    if( $('body').height() > ($(window).height() - 65) ) {
+      $('#footer_in').css( 'bottom', 'auto' );
+      $('#footer_in').css( 'position', 'static' );
+    }
+  }
+  $(document).ready( function() {
+    $('#div_bg_').css( 'height', $(window).height() - 64 + 'px' );
+	reassignFooter();
+    setInterval( 'reassignFooter()', 500 );
+  } );
+</script>
+
+
+
+</body></html>

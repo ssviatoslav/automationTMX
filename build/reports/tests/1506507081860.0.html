@@ -1,0 +1,1786 @@
+<html lang="en"><head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/theme/standard/styles.php">
+<link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/styles.php">
+
+<!--[if IE 7]>
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/theme/standard/styles_ie7.css" />
+<![endif]-->
+<!--[if IE 6]>
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/theme/standard/styles_ie6.css" />
+<![endif]-->
+
+
+    <meta name="keywords" content="moodle, Керівники ">
+    <title>Керівники</title>
+    <link rel="shortcut icon" href="http://core-release-0.4.mocotms.com/favicon.ico">
+
+    <!--<style type="text/css">/*<![CDATA[*/ body{behavior:url(http://core-release-0.4.mocotms.com/lib/csshover.htc);} /*]]>*/</style>-->
+
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/javascript-static.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/javascript-mod.php"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/overlib/overlib.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/overlib/overlib_cssstyle.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/cookies.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/ufo.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/dropdown.js"></script>  
+
+<script type="text/javascript" defer="defer">
+//<![CDATA[
+setTimeout('fix_column_widths()', 20);
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+function openpopup(url, name, options, fullscreen) {
+    var fullurl = "http://core-release-0.4.mocotms.com" + url;
+    var windowobj = window.open(fullurl, name, options);
+    if (!windowobj) {
+        return true;
+    }
+    if (fullscreen) {
+        windowobj.moveTo(0, 0);
+        windowobj.resizeTo(screen.availWidth, screen.availHeight);
+    }
+    windowobj.focus();
+    return false;
+}
+
+function uncheckall() {
+    var inputs = document.getElementsByTagName('input');
+    for(var i = 0; i < inputs.length; i++) {
+        inputs[i].checked = false;
+    }
+}
+
+function checkall() {
+    var inputs = document.getElementsByTagName('input');
+    for(var i = 0; i < inputs.length; i++) {
+        inputs[i].checked = true;
+    }
+}
+
+function inserttext(text) {
+  text = ' ' + text + ' ';
+  if ( opener.document.forms['theform'].message.createTextRange && opener.document.forms['theform'].message.caretPos) {
+    var caretPos = opener.document.forms['theform'].message.caretPos;
+    caretPos.text = caretPos.text.charAt(caretPos.text.length - 1) == ' ' ? text + ' ' : text;
+  } else {
+    opener.document.forms['theform'].message.value  += text;
+  }
+  opener.document.forms['theform'].message.focus();
+}
+
+function getElementsByClassName(oElm, strTagName, oClassNames){
+	var arrElements = (strTagName == "*" && oElm.all)? oElm.all : oElm.getElementsByTagName(strTagName);
+	var arrReturnElements = new Array();
+	var arrRegExpClassNames = new Array();
+	if(typeof oClassNames == "object"){
+		for(var i=0; i<oClassNames.length; i++){
+			arrRegExpClassNames.push(new RegExp("(^|\\s)" + oClassNames[i].replace(/\-/g, "\\-") + "(\\s|$)"));
+		}
+	}
+	else{
+		arrRegExpClassNames.push(new RegExp("(^|\\s)" + oClassNames.replace(/\-/g, "\\-") + "(\\s|$)"));
+	}
+	var oElement;
+	var bMatchesAll;
+	for(var j=0; j<arrElements.length; j++){
+		oElement = arrElements[j];
+		bMatchesAll = true;
+		for(var k=0; k<arrRegExpClassNames.length; k++){
+			if(!arrRegExpClassNames[k].test(oElement.className)){
+				bMatchesAll = false;
+				break;
+			}
+		}
+		if(bMatchesAll){
+			arrReturnElements.push(oElement);
+		}
+	}
+	return (arrReturnElements)
+}
+//]]>
+</script>
+
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/style.css">
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/moco/jquery/jquery-ui.css">
+
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/js/jquery-1.8.3.js"></script>
+    <script src="http://core-release-0.4.mocotms.com/moco/jquery/development-bundle/jquery-ui.js"></script>
+
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/jquery-ui-datepicker.js"></script>
+            <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/jquery-ui-datepicker-ua.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/moco/jquery/treeview.css">
+
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/jquery.treeview.js"></script>
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/jquery.cookie.js"></script>
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/jquery.easing.1.3.js"></script>
+
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/swf/swfobject.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/menu.css">
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/js/menu.js.php"></script>
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/js/script.js"></script>
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/tree_library.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/lib/slideshow/css/camera.css">
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/slideshow/js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/slideshow/js/camera.min.1.11.js"></script> 
+    
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/moco/css/reports.css">
+<link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/moco/css/select2.css">
+    
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/custom.css">
+
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/d3.min.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/jquery.moco_chart.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/moco.core.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/moco_functions.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/reports.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/select2/select2.min.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/select2/translation/en.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/select2/translation/ru.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/select2/translation/uk.js"></script>
+
+    <script>
+        $(function() { 
+            $(window).scroll(function(){
+                if($(this).scrollTop() != 0){
+                    $('#toTop').fadeIn();
+                } else {
+                    $('#toTop').fadeOut();
+                }
+            });
+            $('#toTop').click(function() {
+                $('body,html').animate({scrollTop:0},800);
+            });
+        });
+        $('#id_language').live('change', function(){
+            window.location.href="http://core-release-0.4.mocotms.com/index.php?lang="+$(this).val();
+            return false;
+        });
+        function handleResponse(mes) {
+            if (mes.errors != null) {
+                $('#res').html('Помилка при завантаженні файлу: ' + mes.errors);
+            } else {
+                var params = new Object();
+                params.ajax = 'saveCentralImg';
+                $.ajax({
+                    type: 'POST',
+                    url: 'http://core-release-0.4.mocotms.com/theme/tmx_default_2015/ajax.php',
+                    data: params,
+                    success:
+                    function( answer ) {
+                        $('#central_img').html(answer.html);
+                    },
+                    dataType: 'json'
+                });
+            }
+        }
+    </script>
+</head>
+<body class="moco-config-chiefs course-1 dir-ltr lang-uk_utf8 default" id="moco-config-chiefs-index">
+
+    <div id="toTop">
+        <div class="top_button"></div>
+    </div>
+
+            <div id="wrapper">
+        <div class="head_width">
+            <div id="head">
+                <div id="id_div_header" style="margin-right:10px;">
+                
+                    <a href="http://core-release-0.4.mocotms.com" style="float:left">
+                        <img class="logo" src="http://core-release-0.4.mocotms.com/moco/logo/logo.php?logo=L2RhdGEvdG14L21vY28vY29yZS8wLlgvcmVsZWFzZV8wLjQvbW9vZGxlZGF0YS9waXgvbG9nby9sb2dvLnBuZw==&amp;nocache=1497445703" alt="Logotype">
+                    </a>                <div class="link_panel">
+                <div id="lang_menu"><span class="lang_title">Мова:</span><select id="id_language" style="vertical-align:middle; border:1px solid #d1d3d4; color:#6E6E6E;"><option value="en_utf8">ENG</option><option value="ru_utf8">RUS</option><option value="uk_utf8" selected="selected">UKR</option></select></div><a href="http://mocotms.com" class="link_3" target="_blank">Technomatix</a><a class="exit_button" href="http://core-release-0.4.mocotms.com/login/logout.php?sesskey=qppzz2BuED">Вийти</a>                </div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div id="head_menu">
+
+	<div style="width:100%; /*max-width: 1024px;*/">
+<div class="menu_left_block"></div>
+<div class="menu_right_block"></div>
+<ul id="nav_menu" style="z-index:1001;">
+<li class="first" style="width: 20%;">
+<a href="javascript: void(0);">Компанія</a><ul>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/structure/">Структура</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/posts/">Посади</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/admin/user.php">Співробітники</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/chiefs/">Керівники</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/moderators/">Модератори</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/confirmmanualuser/">Зареєстрованi користувачi</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/uploadimg/">Завантаження фото</a><div class="clear"></div>
+</li>
+</ul>
+<div class="clear"></div>
+</li>
+<li style="width: 20%;">
+<a href="javascript: void(0);">Навчання</a><ul>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/allcourses/">Каталог</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/profiles/">Програми</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/delhistory/">Історія</a><div class="clear"></div>
+</li>
+<li>
+<hr>
+<div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/tranings/">Заходи</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/trainer/">Тренери</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/training_rooms/">Тренінгові кімнати</a><div class="clear"></div>
+</li>
+<li>
+<hr>
+<div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/scales/">Шкали оцiнок</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/alerts/">Повідомлення</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/tag/">Теги</a><div class="clear"></div>
+</li>
+</ul>
+<div class="clear"></div>
+</li>
+<li style="width: 20%;">
+<a href="javascript: void(0);">Оцінка персоналу</a><ul>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco101/index.php/usr">Користувачі і привілегії</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco101/index.php/org">Організаційна структура</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco101/index.php/messaging">Повідомлення</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco101/index.php/indicator">Індикатори</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco101/index.php/appraisal">Оцінка</a><div class="clear"></div>
+</li>
+</ul>
+<div class="clear"></div>
+</li>
+<li style="width: 20%;">
+<a href="javascript: void(0);">Звіти</a><ul>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/profiles.php">Призначені програми</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/courses.php?tab=admin">Результати по програмам</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/scorms.php?tab=report">Результати по курсам</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/tests.php?tab=report">Результати по тестам</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/testsanalytics.php">Результати по тестах (аналітика)</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/scormandtest.php">Зведені результати по курсам та тестам</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/empreport.php?tab=admin">Зведені результати по співробітнику</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/fullprofiles.php">Детальні результати по співробітникам</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/successful.php?tab=admin">Детальні результати по програмам</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/selfcourses.php">Самопризначені курси</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/vacationstats.php">Статистика навчених і звільнених</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/universal.php?tab=admin">База співробітників і результатів</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/fullprofiles2.php">Анкета співробітника</a><div class="clear"></div>
+</li>
+<li>
+<hr>
+<div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/training.php?tab=admin">Статистика тренінгів</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/trainings.php?tab=admin&amp;subtab=1&amp;find_recursive=1">Результати аудиторних заходів</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/trainer.php?tab=admin">Статистика тренерів</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/workload_trainer.php">Завантаженість тренерів</a><div class="clear"></div>
+</li>
+<li>
+<hr>
+<div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/certificate.php">Видані сертифікати</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/player_play.php">Звіт про відео</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/permissions_log.php">Історія видачі прав</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/subscriptionhistory.php">Історія скасування розсилки</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/systemroles.php">Ролі системи</a><div class="clear"></div>
+</li>
+</ul>
+<div class="clear"></div>
+</li>
+<li style="width: 20%;">
+<a href="javascript: void(0);">Додатково</a><ul>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/holiday/">Свята</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/interview/">Опитування</a><div class="clear"></div>
+</li>
+</ul>
+<div class="clear"></div>
+</li>
+<div class="clear"></div>
+</ul>
+</div>
+		<div class="clear"></div>
+		
+	<div class="breadcrumb" style="display:block; "><h2 class="accesshide ">Ви тут</h2> <ul>
+<li class="first"><a onclick="this.target='_top'" href="http://core-release-0.4.mocotms.com/">LMS</a></li><li> <span class="accesshide ">/&nbsp;</span><span class="arrow sep">&gt;</span> Керівники</li></ul></div>
+</div>
+        <div class="clear"></div>
+
+                <div class="clear"></div>
+
+        <div id="content" class="clearfix">
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <style> 
+        .help_table td, .help_table th { vertical-align: middle; padding: 5px;}
+        .help_table th { background-color: #e5e5e5; }
+        
+        #admin-moderators-index td {
+            word-wrap: break-word; 
+            overflow-wrap: break-word;
+        }
+        </style>
+        
+        <h2 class="page_title">Керівники</h2>
+        
+        <table class="help_table">
+            <tbody><tr>
+                <td style="text-align:right; width:100%;">
+                    <a href="javascript: return false;" class="help" title="На цій сторінці можна переглянути керівників компанії, призначати керівників чи підлеглих."><img alt="?" src="http://core-release-0.4.mocotms.com/img/help.png"></a>
+                </td>
+                <td style="width:150px;">
+                    <a href="javascript: return false;" class="help" title="На цій сторінці можна переглянути керівників компанії, призначати керівників чи підлеглих.">Довідка</a>
+                </td>
+            </tr>
+        </tbody></table>
+        
+        <table class="add_chief_employees_table">
+            <tbody><tr>
+                <td style="vertical-align:middle; width:20px; padding-right:5px;"><img src="http://core-release-0.4.mocotms.com/img/icons/folder_add.png"></td>
+                <td style="width:220px; vertical-align:middle;"><a id="id_add_chief_employees" href=""><nobr>Призначити керiвника спiвробiтникам</nobr></a></td>
+            </tr>
+            <tr></tr>
+            <tr>
+                <td style="vertical-align:middle; width:20px; padding-right:5px;"><img src="http://core-release-0.4.mocotms.com/img/icons/folder_delete.png"></td>
+                <td style="width:220px; vertical-align:middle;"><a id="id_delete_chief_employees" href=""><nobr>Зняти призначення керівника</nobr></a></td>
+                <td colspan="2"></td>
+            </tr>
+        </tbody></table>
+        
+        <div class="clear"></div>
+        
+                <form method="post" id="fsearch" action="http://core-release-0.4.mocotms.com/moco/config/chiefs/">
+            <div class="filter_bgcolor">
+                <table id="filter-chiefs">
+                    <tbody><tr>
+                        <td class="description"></td>
+                        <td class="colortitle">Пошук співробітника</td>
+                    </tr>
+                    <tr>
+                        <td class="texttitle" align="right">ПІБ співробітника </td>
+                        <td>
+                            <input name="realname" value="Automation User" type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="texttitle" align="right">ПІБ керівника </td>
+                        <td>
+                            <input name="chief_realname" value="" type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="texttitle" align="right">Підрозділ </td>
+                        <td>
+                            <input id="id_department_title" value="Усі підрозділи" disabled="disabled" type="text">
+                            <input id="id_but_dep" class="select" value="..." type="button">
+                            <input id="id_empty_dep" class="select" value="Х" type="button">
+                            <input id="id_department_id" name="d_str" value="0" type="hidden">
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td style="padding-right:10px;" align="right"></td>
+                        <td style="font-weight:normal;">
+                            <input id="not_in_all_departments" name="not_in_all_departments" value="1" type="checkbox">
+                            <label for="not_in_all_departments">Не шукати у вкладених підрозділах</label>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="texttitle" align="right">Посада </td>
+                        <td>
+                            <select id="id_postid" name="p_str" style="width:602px;">
+                                                                <option value="">---- Обрати посаду ----</option><option value="159"></option><option value="156">1 тест целевых групп</option><option value="8">Accounter</option><option value="258">Administrator</option><option value="318">AutomationPost</option><option value="76">AutoQA</option><option value="7">Business manager</option><option value="14">C# Developer</option><option value="6">Director</option><option value="160">HR менеджер</option><option value="13">Java Developer</option><option value="257">Junuior Tester</option><option value="3">Manager</option><option value="12">PHP Developer</option><option value="11">PHP Project Manager</option><option value="23">PR-менеджер</option><option value="10">Product Manager</option><option value="5">Product Owner</option><option value="151">Project Manager</option><option value="1">QA</option><option value="2">QA engineer</option><option value="154">QA Junior</option><option value="153">QA Lead</option><option value="155">QA Middle</option><option value="9">QA Team Lead</option><option value="18">QA1</option><option value="19">QA2</option><option value="4">Sales Manager</option><option value="77">SPAM</option><option value="32">Аналитик-маркетолог</option><option value="161">АТ (ТД)</option><option value="33">Бренд-менеджер</option><option value="34">Ведущий бренд-менеджер</option><option value="73">Ведущий консультант</option><option value="150">гость</option><option value="30">Директор по продажам</option><option value="78">Должность 1</option><option value="69">Должность для отображения в списках</option><option value="24">Маркетолог</option><option value="38">Медиа аналитик</option><option value="72">Менеджер</option><option value="25">Менеджер отдела связей с общественностью</option><option value="37">Менеджер по логистике</option><option value="22">Менеджер по продукции</option><option value="28">Менеджер по рекламе</option><option value="74">Оператор</option><option value="36">Офис-менеджер</option><option value="27">Продавец-консультант</option><option value="256">Разнорабочий</option><option value="20">Разработчик</option><option value="26">Руководитель отдела трейд-маркетинга</option><option value="21">Руководитель проекта</option><option value="35">Специалист по социальным медиа</option><option value="29">Старший менеджер</option><option value="70">Технический специалист</option><option value="31">Трейд-маркетолог</option><option value="157">Тренер</option><option value="71">Тренинговый инструктор</option><option value="255">Уборщик</option><option value="149">удаляем</option><option value="147">ук</option><option value="158">Юрист</option>                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-right:10px;" align="right"></td>
+                        <td style="font-weight:normal;">
+                            <input id="show_fired_employees" name="show_fired_employees" value="1" type="checkbox">
+                            <label for="show_fired_employees">Показати звільнених</label>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="texttitle" align="right">Тег</td>
+                        <td style="padding-bottom: 2px;">
+                            <div id="id_div_choose_tag" showed="1" style="width:577px; max-height: 250px">
+                                <div class="div_tag" style="display:none;"><input id="tag_42" class="tag_ids" name="tag_ids[]" value="42" type="checkbox"><label for="scorm_42">11tt22</label></div><div class="div_tag" style="display:none;"><input id="tag_46" class="tag_ids" name="tag_ids[]" value="46" type="checkbox"><label for="scorm_46">all</label></div><div class="div_tag" style="display:none;"><input id="tag_29" class="tag_ids" name="tag_ids[]" value="29" type="checkbox"><label for="scorm_29">Course</label></div><div class="div_tag" style="display:none;"><input id="tag_45" class="tag_ids" name="tag_ids[]" value="45" type="checkbox"><label for="scorm_45">fix13</label></div><div class="div_tag" style="display:none;"><input id="tag_44" class="tag_ids" name="tag_ids[]" value="44" type="checkbox"><label for="scorm_44">fix2</label></div><div class="div_tag" style="display:none;"><input id="tag_28" class="tag_ids" name="tag_ids[]" value="28" type="checkbox"><label for="scorm_28">Team</label></div><div class="div_tag" style="display:none;"><input id="tag_19" class="tag_ids" name="tag_ids[]" value="19" type="checkbox"><label for="scorm_19">а</label></div><div class="div_tag" style="display:none;"><input id="tag_26" class="tag_ids" name="tag_ids[]" value="26" type="checkbox"><label for="scorm_26">гость</label></div><div class="div_tag" style="display:none;"><input id="tag_18" class="tag_ids" name="tag_ids[]" value="18" type="checkbox"><label for="scorm_18">Мой тег</label></div><div class="div_tag" style="display:none;"><input id="tag_17" class="tag_ids" name="tag_ids[]" value="17" type="checkbox"><label for="scorm_17">Новичок</label></div><div class="div_tag" style="display:none;"><input id="tag_16" class="tag_ids" name="tag_ids[]" value="16" type="checkbox"><label for="scorm_16">новый тестовый тег</label></div><div class="div_tag" style="display:none;"><input id="tag_43" class="tag_ids" name="tag_ids[]" value="43" type="checkbox"><label for="scorm_43">нр</label></div><div class="div_tag" style="display:none;"><input id="tag_30" class="tag_ids" name="tag_ids[]" value="30" type="checkbox"><label for="scorm_30">тег первый</label></div><div class="div_tag" style="display:none;"><input id="tag_15" class="tag_ids" name="tag_ids[]" value="15" type="checkbox"><label for="scorm_15">тестовый тег</label></div><div class="div_tag" style="display:none;"><input id="tag_23" class="tag_ids" name="tag_ids[]" value="23" type="checkbox"><label for="scorm_23">у</label></div><div class="div_tag" style="display:none;"><input id="tag_20" class="tag_ids" name="tag_ids[]" value="20" type="checkbox"><label for="scorm_20">ш</label></div><div class="div_tag" style="display:none;"><input id="tag_21" class="tag_ids" name="tag_ids[]" value="21" type="checkbox"><label for="scorm_21">я4</label></div>                            </div>
+                            <input id="id_select_tag" class="select" title="Обрати" value="..." type="button">
+                            <input id="id_empty_tag" class="select" title="Видалити" value="X" type="button">
+                        </td>    
+                    </tr>
+                    <tr>
+                        <td class="texttitle" align="right">Умова фільтрації за тегами</td>
+                        <td>
+                            <div>
+                                <div class="float-left">
+                                    <input id="id_radio_or" value="OR" name="tag_condition" checked="" type="radio">
+                                    <label>АБО</label>
+                                </div>
+                                <div>
+                                    <input id="id_radio_and" value="AND" name="tag_condition" type="radio">
+                                    <label>ТА</label>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </td>    
+                    </tr>
+
+                </tbody></table>
+            </div>
+            <input name="p" value="0" type="hidden">
+            <input id="addfilter" name="addfilter" value="Фільтрувати" style="margin-bottom:20px;" type="submit">
+        </form>
+        
+        
+
+                <form id="mform2" class="mform" accept-charset="utf-8" method="post" action="" style="width:100%;">
+            <div class="filter_bgcolor">
+                <div style="display: block;">
+                    <b class="colortitle">Aктивні фільтри</b>
+                </div>
+                                    <div>
+                        <span>
+                            <input id="id_62577" value="1" name="filter_realname" type="checkbox">
+                            <label for="id_62577">ПІБ співробітника містить "Automation User"</label>
+                        </span>
+                    </div>
+                                                                                                                                </div>
+            <input id="id_removeselected" value="Видалити обрані" class="imgsolong" name="removeselected" type="submit">
+            <input id="id_removeall" value="Видалити всі фільтри" class="imgsolong" name="removeall" type="submit">
+        </form>
+        <div class="clear"></div>
+                
+        
+
+          
+
+        
+
+                    <table class="gray_and_excel" style="width:100%;">
+                <tbody><tr>
+                    <td style="width:100%; vertical-align:middle;">
+                        <b style="color:gray;"><nobr>Знайдено: 1</nobr></b>
+                    </td>
+                    <td style="vertical-align:middle; width:20px;">
+                        <a href="http://core-release-0.4.mocotms.com/moco/config/chiefs/chiefs_excel.php">
+                            <img src="http://core-release-0.4.mocotms.com/moco/img/excel.png" width="20">
+                        </a>
+                    </td>
+                    <td style="text-align:right; padding-right:10px; vertical-align:middle; padding-left:10px;">
+                        <a href="#" class="download-xls"><nobr>Завантажити Excel-файл</nobr></a>
+                    </td>
+                </tr>
+            </tbody></table>
+            
+            <div class="clear"></div>
+            
+            <div class="moco-table"><table onload="" hash="27437a0ad88e60401576eec5f7fb9dbd" class="" id="admin-moderators-index" style="" total="1" border="1" align="center" width="100%">
+<tbody>
+<tr header="header">
+<th id="_0_0" class="headermoco-table-sort-first" align="center" width="3%">№</th><th id="_0_1" class="table-sort sort-fullname asc" align="center" width="15%">Співробітник</th><th id="_0_2" class="table-sort sort-post " align="center" width="15%">Посада</th><th id="_0_3" class="table-sort sort-department " align="center" width="20%">Підрозділ</th><th id="_0_4" class="moco-table-sort-first" align="center" width="10%">Теги</th><th id="_0_5" class="moco-table-sort-first" align="center" width="18%">Керівники</th><th id="_0_6" class="moco-table-sort-first" align="center" width="20%">Підрозділ керівника</th><th id="_0_7" class="moco-table-sort-first" align="center" width="20%">Посада керівника</th><th id="_0_8" class="moco-table-sort-first" align="center" width="11%">Ролі / теги керівника</th><th id="_0_9" class="header moco-table-sort" align="center" width="2%">&nbsp;</th><th id="_0_10" class="header moco-table-sort" align="center" width="2%">&nbsp;</th></tr>
+<tr>
+<td id="_1_0" class="odd cell row_first" style="vertical-align:baseline;" align="center" width="3%">1</td><td id="_1_1" class="even cell row_first" style="vertical-align:baseline;" align="center" width="15%"><a href="http://core-release-0.4.mocotms.com/user/view.php?id=854&amp;course=1">Automation User</a></td><td id="_1_2" class="odd cell row_first" style="vertical-align:baseline;" align="center" width="15%">AutomationPost</td><td id="_1_3" class="even cell row_first" style="text-align: center; vertical-align:baseline;" align="center" width="20%">AutomationDepartment</td><td id="_1_4" class="odd cell row_first" style="text-align: center;" align="center" width="10%">
+</td><td id="_1_5" class="even cell row_first" style="text-align: left;" align="left" width="18%">&nbsp;</td><td id="_1_6" class="odd cell row_first" style="text-align: left;" align="left" width="20%">&nbsp;</td><td id="_1_7" class="even cell row_first" style="text-align: left;" align="left" width="20%">&nbsp;</td><td id="_1_8" class="odd cell row_first" style="text-align: left;" align="left" width="11%">&nbsp;</td><td id="_1_9" class="even cell row_first" align="center" width="2%"><img class="add" style="cursor:pointer;" val="854" src="http://core-release-0.4.mocotms.com/img/icons/user_add.png" border="0"></td><td id="_1_10" class="odd cell row_first" align="center" width="2%">&nbsp;</td></tr>
+</tbody>
+</table>
+<div class="clear"></div>
+</div>
+<div class="clear"></div>
+            <style>
+              .moco-table tr th.moco-table-sort {
+                cursor: pointer;
+              }
+            </style>
+            <script type="text/javascript">
+              $(document).ready(function() {
+                function startLoading() {
+                  var div = $('<div />');
+                  $(div)
+                    .css( 'position', 'fixed' )
+                    .css( 'background-color', 'transparent' )
+                    .css( 'color', '#000000' )
+                    .css( 'left', '50%' )
+                    .css( 'top', '50%' )
+                    .css( 'border', 'none' )
+                    .css( 'z-index', '9999' )
+                    .append( $('<img>').attr( 'src', 'http://core-release-0.4.mocotms.com/moco/img/loading.gif' ) );
+                  $('body').append(div);
+                  return div;
+                }
+                $("td[comment]").each( function() { $(this).tooltip( {
+                  track: true,
+                  delay: 100,
+                  opacity: 0.85,
+                  bodyHandler: function() {
+                      return $(this).attr('comment');
+                  }
+                } ) } );
+
+                $('.moco-table tr th.moco-table-sort').live( 'click', function(e) {
+                  if( $(this).find('input').length > 0 ) return;
+                  if( $(this).find('a').length > 0 ) return;
+                  if( $(this).get(0).onclick ) return;
+                  
+                  var div = $(this).closest('div.moco-table');
+                  
+                  var sortorder = 1 + $(this).index();
+                  if( sortorder == $(div).find('table').attr('sortorder') ) {
+                    sortorder = -sortorder;
+                  }
+                  var loading = startLoading();
+                  $.get('', {
+                      s: sortorder,
+                      p: 1
+                    },
+                    function( result ) {
+                      $(loading).remove();
+                      $(div).empty().html( $('div.moco-table', result).html() );
+                      $('div.pagination').empty().html( $('div.pagination', result).html() );
+                      $(div).find('table').attr('sortorder', sortorder);
+                  });
+                } );
+              });
+            </script><div class="clear"></div>        
+
+        
+        
+        
+
+        
+
+        
+        
+
+                <script>
+            $(document).ready( function() {
+                
+                initMultiSelectTagControl();
+                
+                $(document).on('click', '.chiefs-paging a', function(e) {
+                    e.preventDefault();
+                    
+                    var pagination = $('.pagination');
+                    var resultContainer = $('div.moco-table');
+                    var frm = $('#fsearch');
+                    
+                    var sort = $(document).data().sort;
+                    var sort_dir = $(document).data().sort_dir;
+                    
+                    var data = {};
+                    data.page = $(this).attr('data-page');
+                    data.ajax = 'loadTable';
+                    
+                    if (typeof(sort) != 'undefined') {
+                        data.sort = sort;
+                    }
+                    if (typeof(sort_dir) != 'undefined') {
+                        data.sort_dir = sort_dir;
+                    }
+                    
+                    loadTableByAjax({
+                        url : frm.attr('action'),
+                        data : data,
+                        tableContainer : resultContainer,
+                        paginationContainer : pagination,
+                        errorBtnTxt : 'Помилка',
+                        closeBtnTxt : 'Закрити',
+                    });
+                });
+                
+                $(document).on('click', '.table-sort', function(e) {
+                    e.preventDefault();
+                    
+                    var pagination = $('.pagination');
+                    var resultContainer = $('div.moco-table');
+                    var frm = $('#fsearch');
+                    
+                    var sort = $(this).attr('class').match(/sort-[A-Z]\w+/gi)[0];
+                    var dir = $(this).attr('class').match(/desc/gi);
+                    if (!dir) {
+                        dir = 'asc';
+                    } else {
+                        dir = dir[0];
+                    }
+                    
+                    $(document).data({sort: sort, sort_dir: dir});
+                    
+                    var data = {};
+                    data.page = $(this).attr('data-page');
+                    data.sort = sort;
+                    data.sort_dir = dir;
+                    data.ajax = 'loadTable';
+                    
+                    loadTableByAjax({
+                        url : frm.attr('action'),
+                        data : data,
+                        tableContainer : resultContainer,
+                        paginationContainer : pagination,
+                        errorBtnTxt : 'Помилка',
+                        closeBtnTxt : 'Закрити',
+                    });
+                });
+                
+                $(document).on('click', '.download-xls', function(e) {
+                    e.preventDefault();
+                    
+                    var frm = $('#fsearch');
+                    
+                    var sort = $(document).data().sort;
+                    var sort_dir = $(document).data().sort_dir;
+                    
+                    var data = {};
+                    data.ajax = 'downloadXls';
+                    
+                    if (typeof(sort) != 'undefined') {
+                        data.sort = sort;
+                    }
+                    if (typeof(sort_dir) != 'undefined') {
+                        data.sort_dir = sort_dir;
+                    }
+                    
+                    downloadXlsByAjax({
+                        url : frm.attr('action'),
+                        data : data,
+                        errorBtnTxt : 'Помилка',
+                        closeBtnTxt : 'Закрити',
+                    });
+                });
+                
+                $('#id_div_info').dialog({
+                    dialog: true,
+                    autoOpen:false,
+                    title:'',
+                    modal: true,
+                    width:'auto',
+                    buttons:{
+                        "Відмінити": function(){
+                            $(this).dialog("close");
+                        }
+                    }
+                });
+                $('#set_chief').dialog({
+                    dialog: true,
+                    autoOpen:false,
+                    title:'Управління керівниками співробітника',
+                    modal: true,
+                    width: 750,
+                    height: 420,
+                    buttons:{
+                        "Відмінити": function(){
+                            $(this).dialog("close");
+                        },
+                        "Зберегти": function(){
+                            save_chiefs();
+                        }
+                    }
+                });
+                $('#set_chief .chief_weight').live("change", function() {
+                    var weight = Math.abs(parseInt(this.value, 10) || 0);
+                    this.value = weight > 100 ? 100 : weight;
+                });
+
+                $('#id_div_delete_chief').dialog({
+                    autoOpen:false,
+                    title:'Видалити керівника?',
+                    closeText: 'Закрити',
+                    modal:true,
+                    width:'500',
+                    buttons:{
+                        "Видалити": function(){
+                            var id = $('#id_delete_chief_frm').val();
+                            var params = new Object();
+                            params.ajax = 'delete';
+                            params.id = id;
+                            $.post( '?', params,
+                                function(answer) {
+                                    if(answer.trim() == 'OK') {
+                                        $('#id_div_delete_chief').dialog("close");
+                                        $('#fsearch').submit();
+                                    } else alert(answer);
+                                }
+                            );
+                        },
+                        "Відмінити": function(){
+                            $(this).dialog("close");
+                        }
+                    }    
+                });
+
+                $('#id_div_delete_chief_pseudo').dialog({
+                    autoOpen:false,
+                    title:'Видалити керівника?',
+                    modal:true,
+                    width:'450',
+                    height:'240',
+                    buttons:{
+                        "Видалити": function(){
+                            var el_class = $('#id_delete_chief_frm_pseudo').val();
+                            $('#set_chief td.'+el_class).addClass('deleted');//визуальный признак удаления
+                            $('#set_chief td.'+el_class+' input.is_deleted').val(1);//скрытый признак удаления
+                            $('#set_chief td.'+el_class+' input.chief_weight').val(0);
+                            $('#set_chief td.'+el_class+' a.delete').empty();
+                            $(this).dialog("close");
+                        },
+                        "Відмінити": function(){
+                            $(this).dialog("close");
+                        }
+                    }    
+                });
+                $('a.imgdelete img').live('click',function(){
+                    $('#id_delete_chief_frm').val($(this).attr('val')); 
+                    $('#id_div_delete_chief').dialog('open');
+                    return false;
+                });
+                $('a.delete').live('click',function(){
+                    $('#id_delete_chief_frm_pseudo').val($(this).attr('val')); 
+                    $('#id_div_delete_chief_pseudo').dialog('open');
+                    return false;
+                });
+                $('#id_cancel_delete_cheif').live('click',function(){
+                    $('#id_div_delete_chief').dialog('close');
+                    return false;
+                });
+
+                $('#add_new_chief').dialog({
+                    dialog: true,
+                    autoOpen:false,
+                    title:'Пошук співробітника для призначення керівником',
+                    modal: true,
+                    width: 870
+                });
+                
+                // search employees begin --------------------------------------
+                $(document).on('click', '.user-pagination a', function(e) {
+                    e.preventDefault();
+                    var dialogContainer = $(this).closest('.ui-dialog');
+                    var resultContainer = dialogContainer.find('#id_div_employees');
+                    
+                    var data = {
+                        ajax: 'LoadEmployeesTable',
+                        lastname: $('#realname2').val(),
+                        postid: $('#postid2').val(),
+                        depid: $('#depid2').val(),
+                        empid: $('#empid').val(),
+                        in_deps: $('#id_in_all_deps:checked').val(),
+                        p_str: '',
+                        d_str: '',
+                        page: $(this).attr('data-page'),
+                        page_link_user: $('.chiefs-paging span').html()
+                    };
+                    
+                    $.ajax({
+                        url: '?',
+                        type: 'POST',
+                        data: data,
+                        dataType: 'json',
+                        beforeSend: function (xhr) {
+                            preloader();
+                        }
+                    })
+                    .always(function() {
+                        preloader(false);
+                    })
+                    .done(function(response) {
+                        resultContainer.html(response.data);
+                    })
+                    .fail(function(jqXHR, textStatus) {
+                        console.error("Request failed: " + textStatus);
+                    });
+                });
+                
+                $('img.add').live('click',function(){
+                    $('#id_div_employees').empty();
+                    $('#empid').val($(this).attr('val'));
+                    $('#add_new_chief').dialog('open');
+                    $('#ui-id-8').parent().attr('id', 'dialog_title_add');
+                    return false;
+                });
+                
+                $('#frm_add_employee').submit(function(e){
+                    e.preventDefault();
+                    var dialogContainer = $(this).closest('.ui-dialog');
+                    var resultContainer = dialogContainer.find('#id_div_employees');
+                    
+                    var data = {
+                        ajax: 'LoadEmployeesTable',
+                        lastname: $('#realname2').val(),
+                        postid: $('#postid2').val(),
+                        depid: $('#depid2').val(),
+                        empid: $('#empid').val(),
+                        in_deps: $('#id_in_all_deps:checked').val(),
+                        p_str: '',
+                        d_str: '',
+                        page_link_user: $('.chiefs-paging span').html()
+                    };
+                    
+                    $.ajax({
+                        url: '?',
+                        type: 'POST',
+                        data: data,
+                        dataType: 'json',
+                        beforeSend: function (xhr) {
+                            resultContainer.html('<img src="http://core-release-0.4.mocotms.com/moco/img/preloader.gif">');
+                        }
+                    })
+                    .always(function() {
+                        resultContainer.html('');
+                    })
+                    .done(function(response) {
+                        resultContainer.html(response.data);
+                        dialogContainer.position({my: "center", at: "center", of: window});
+                        
+                        if (parseInt(dialogContainer.css('top').substring(0, dialogContainer.css('top').length-2)) < 10) {
+                            dialogContainer.css('top', '10px');
+                        }
+                    })
+                    .fail(function(jqXHR, textStatus) {
+                        console.error("Request failed: " + textStatus);
+                    });
+                });
+                // search employees end ----------------------------------------
+
+                // Отображаем окно для выбора Должности
+                var posttitle2 = '';
+                var postid2 = '';
+                $('#id_treeposts2').treeview({
+                    cookieId: "treeview-chief-post2",
+                    persist: "cookie",
+                    animated: "fast",
+                    unique: true
+                });
+                $('#id_div_choosepost2').dialog({
+                    autoOpen:false,
+                    title:'Обрати посаду',
+                    height:350,
+                    width:500,
+                    modal:true,
+                    buttons:{
+                        "Обрати": function(){
+                            $('#posttitle2').val($.trim(posttitle2));
+                            $('#postid2').val(postid2);
+                            $(this).dialog("close");
+                        },
+                        "Відмінити": function(){
+                            $(this).dialog("close");
+                        }
+                    }
+                });
+                $('#id_but2_post').live('click',function(){
+                    $('#id_div_choosepost2').dialog('open');
+                    $('#ui-id-9').parent().attr('id', 'dialog_title_pos');
+                    return false;
+                });
+                // выделяем выбранную должность 
+                $('#id_treeposts2 ul li span a').live('click',function(){
+                    $('#id_treeposts2 ul li span').find('a').css('font-weight', 'normal');
+                    $(this).css('font-weight', 'bold');
+                    // передаем данные выбранной должности
+                    posttitle2 = $(this).html();
+                    postid2 = $(this).attr('val');
+                    return false;
+                });
+
+                $('#id_div_choosedep2').dialog({
+                    autoOpen:false,
+                    title:'Обрати підрозділ',
+                    height:350,
+                    width:500,
+                    modal:true,
+                    buttons:{
+                        "Обрати": function(){
+                            var params = new Object();
+                            params.ajax = 'getdepartment';
+                            params.id = department2Selected;
+                            $.post( 'http://core-release-0.4.mocotms.com/moco/base/structure.php', params,
+                                function( json ) {
+                                    $('#depid2').val(department2Selected);
+                                    $('#deptitle2').val(json.department.path);
+                                }, 'json'
+                            );
+                            $(this).dialog("close");
+                        },
+                        "Відмінити": function(){
+                            $(this).dialog("close");
+                        }
+                    }
+                });
+                $('#id_but2_dep').live('click',function(e) {
+                    e.preventDefault();
+                    
+                    var container = $('#id_div_choosedep2');
+                    
+                    var selectedId = $('#depid2').val();
+                    selectedId = selectedId ? selectedId : 0;
+                  
+                    loadDepartmentsStructureByAjax({
+                        structureId : 'department2',
+                        container : container,
+                        onBeforeExecute: function() {
+                            container.dialog('open');
+                            $('#ui-id-10').parent().attr('id', 'dialog_title_dep');
+                        },
+                        onLoad: function(response) {
+                            container.find('a[value='+selectedId+']').first().css('font-weight', 'bold');
+                        },
+                        onLoadError : function(error, response) {
+                            showAlert(error, 
+                                'Помилка', 
+                                {closeBtnName: 'Закрити'});
+                        }
+                    });
+                });
+
+                // Очищаем выбор данных должности
+                $('#id_empty2_post').live('click',function(){
+                    $('#posttitle2').val('');
+                    $('#postid2').val('');
+                    return false;
+                });
+                // Очищаем выбор данных подразделения
+                $('#id_empty2_dep').live('click',function(){
+                    $('#deptitle2').val('');
+                    $('#depid2').val('');
+                    return false;
+                });
+            });
+
+            $( document ).tooltip();
+
+            $('#frmSelectChief').submit(function(){
+                if ($('#id_chief_id').val() != '' && $('#dep_id').val() != ''){
+                    return true;
+                } else {
+                    return false;
+                }
+            });
+
+            $('#id_find_chief').focus(function(){
+                if( $('#id_find_chief').val().trim() == "Вкажіть ім'я керівника" ){
+                    $('#id_find_chief').val('');
+                }
+            });
+            
+            $('#id_find_chief').focusout(function(){
+                if( $('#id_find_chief').val().trim() == '' ){
+                    $('#id_find_chief').val("Вкажіть ім'я керівника");
+                } 
+            });
+            
+            function find_chief(error){
+                if( $('#id_find_chief').val().trim() != '' ){
+                    // Подгружаем список employees
+                    $.ajax({
+                        type: 'POST',
+                        url: 'http://core-release-0.4.mocotms.com/moco/config/chiefs/',
+                        data: 'chief_fullname=' + $('#id_find_chief').val() + "&ajax=findChief",
+                        beforeSend: function ( xhr ) {
+                            $('#id_find_chief').html('Завантаження, зачекайте ...');
+                        },
+                        success: function(answer){
+                            console.log(answer);
+                            answer = answer.trim();
+                            // Обновляем список курсов в профиле
+                            var str_answer_array = answer.substring(0,5);
+                            var str_answer_no = answer.substring(0,2);
+
+                            $('#not_found_chief').html('');
+                            
+                            if( str_answer_array == 'ARRAY' ){
+                                var str_links = answer.substring(5);
+                                $('#id_select_employees').html( str_links );
+                                $('#id_select_employees').dialog('open');
+                            } else if ( str_answer_no == 'NO' ){
+                                if (error){
+                                    $('#not_found_chief').html('Нічого не знайдено');
+                                    $('#id_chief_id').removeAttr('value');
+                                }
+                                //alert('NO: '+answer);
+                            } else {
+                                var uu = jQuery.parseJSON(answer);
+                                $('#id_find_chief').val(uu.fullname);
+                                $('#id_chief_id').val(uu.chief_id);
+                                $('#not_found_chief').html('');
+                            }
+                        },
+                        dataType: 'text'
+                    });
+                }
+                return false;
+            }
+
+            $('#id_submit_find_chief').live('click', function(e){
+                e.preventDefault();
+                find_chief(true);
+            });
+            
+            $('#id_find_chief').live('change', function(){
+                find_chief(true);
+            });
+
+            $('#id_select_employees').dialog({
+                autoOpen:false,
+                title:"Оберіть",
+                height:300,
+                width:400,
+                modal:true
+            });
+            
+            $('.select_chiefs').live('click', function(e){
+                e.preventDefault();
+                $('#id_find_chief').val( $(this).html().trim() );
+                $('#id_chief_id').val( $(this).attr('chief_id') );
+                $('#id_select_employees').dialog('close');
+            });
+
+            // выделяем выбранный отдел
+            $('#div_form_departments ul li span a').live('click',function(e){
+                e.preventDefault();
+                
+                // выделяем 
+                $('#div_form_departments ul li span').find('a').css('font-weight', 'normal');
+                $(this).css('font-weight', 'bold');
+                
+                // запоминаем department_id в dep_id
+                $('#dep_id').val( $(this).attr('value') );
+                
+                // Получаем список должностей
+                $.ajax({
+                    type: 'post',
+                    url: '?',
+                    data: "ajax=ListPosts&dep_id="+$('#dep_id').val()+"&recursive="+$('#id_recursive').attr('value'),
+                    beforeSend: function ( xhr ) {
+                        $('#choose_post').fadeIn(300);
+                        $('#div_posts').fadeIn(300);
+                        $('#div_posts').html('Завантаження, зачекайте ...');
+                    },
+                    success: function(answer){
+                        $('#choose_post').fadeIn(300);
+                        $('#div_posts').fadeIn(300);
+                        $('#div_posts').html(answer);
+                        // Кнопка Назначить - активная
+                        $('#okbtnid').removeAttr('disabled');
+                        $('#okbtnid').css('color', 'white');
+                    },
+                    dataType: 'text'
+                });
+                
+                var tagsCont = $('#div_tags');
+                
+                if (typeof(tagsCont.data('data_loaded')) == 'undefined') {
+                    // Получаем список тегов
+                    $.ajax({
+                        type: 'get',
+                        url: '',
+                        data: "ajax=ListTags&dep_id="+$('#dep_id').val(),
+                        beforeSend: function ( xhr ) {
+                            $('#choose_tag').fadeIn(300);
+                            tagsCont.fadeIn(300);
+                            tagsCont.html('Завантаження, зачекайте ...');
+                        },
+                        success: function(answer){
+                            tagsCont.data('data_loaded', '1');
+                            $('#choose_tag').fadeIn(300);
+                            tagsCont.fadeIn(300);
+                            tagsCont.html(answer);
+                        }, 
+                        error: function(error){
+                            alert(error);    
+                        },    
+                        dataType: 'text'
+                    });
+                }
+
+            });
+
+            function checkAllPosts()
+            {
+                $('.class_post').prop('checked', true);
+                $('#post_id_0').prop('checked', false);
+            } 
+
+            function uncheckAllPosts()
+            {
+                $('.class_post').prop('checked', false);
+                $('#post_id_0').prop('checked', true);
+            } 
+
+            function checkAllTags()
+            {
+                $('.class_tag').prop('checked', true);
+                $('#tag_id_0').prop('checked', false);
+            } 
+
+            function uncheckAllTags(){
+                $('.class_tag').prop('checked', false); 
+                $('#tag_id_0').prop('checked', true);
+            } 
+
+            $('input.class_post').live('click',function(){
+                if( $(this).val() != 0 ){
+                    $('#post_id_0').removeAttr('checked');
+                } else {
+                    $('.class_post').each(function(){
+                        $(this).removeAttr('checked'); 
+                    });
+                    $('#post_id_0').attr('checked', 'checked');
+                }
+            });
+
+            $('input.class_tag').live('click',function(){
+                if( $(this).val() != 0 ){
+                    $('#tag_id_0').removeAttr('checked');
+                } else {
+                    $('.class_tag').each(function(){
+                        $(this).removeAttr('checked'); 
+                    });
+                    $('#tag_id_0').attr('checked', 'checked');
+                }
+            });
+
+            $('#id_div_add_chief_employees').dialog({
+                autoOpen:false,
+                title:"Призначити керiвника спiвробiтникам",
+                height:650,
+                width:1000,
+                modal:true,
+                buttons:{
+                    "OkButton" : {
+                        text: "Призначити",
+                        id: "okbtnid",
+                        click: function(){
+                            $('#frmSelectChief').submit();             }   
+                    }, 
+                    "Відмінити": function(){
+                        $(this).dialog("close");
+                    },
+                },
+                create: function() {
+                    // Изначально кнопка Назначить - неактивна
+                    $('#okbtnid').attr('disabled', 'disabled');
+                    $('#okbtnid').css('color', 'rgb(210, 208, 208)');
+                }            
+
+            });
+
+            $('#id_add_chief_employees').live('click', function(e) {
+                
+                e.preventDefault();
+                
+                $('#ui-id-2').parent().attr('id', 'chief_employees_dialog_w');
+                
+                var container = $('#div_form_departments');
+                
+                loadDepartmentsStructureByAjax({
+                    structureId : 'department_qwe',
+                    container : container,
+                    onBeforeExecute: function() {
+                        $('#id_div_add_chief_employees').dialog('open');
+                    },
+                    onLoadError : function(error, response) {
+                        showAlert(error, 
+                            'Помилка', 
+                            {closeBtnName: 'Закрити'});
+                    }
+                });
+                if ($('#choose_post').css('display') == 'none'){
+                    var link_all_departments = false;
+                    $('.treeview').find('a').each(function(){
+                        if ($(this).attr('value') == '0'){
+                            link_all_departments = $(this);
+                        }
+                    });
+                    if (link_all_departments){
+                        link_all_departments.click();
+                    }
+                }
+            });
+
+            // По клику на поиск во вложенных подразделениях 
+            // - подгружаем список должностей
+            $('#not_in_all_departments').live('change', function(){
+                var form = $("form#fsearch");
+
+                // Подгружаем список Должностей
+                $.ajax({
+                    type: 'POST',
+                    url: form.attr("action"),
+                    data: form.serialize() + "&ajax=posts",
+                    beforeSend: function ( xhr ) {
+                        $('#id_postid').html('<option value="">Завантаження, зачекайте ...</option>');
+                    },
+                    success: function(answer){
+                        // Обновляем список курсов в профиле
+                        $('#id_postid').html(answer);
+                        if(answer.length)
+                            $('#id_postid').removeAttr('disabled');
+                    },
+                    dataType: 'text'
+                });
+            });
+            // Отображаем окно для выбора Отдела
+            var deptitle = '';
+            var depid = ''; 
+            // Создаем модальное окно Подразделений
+            $('#id_div_choosedep').dialog({
+                autoOpen:false,
+                title:"Обрати підрозділ",
+                height:510,
+                width:550,
+                modal:true,
+                buttons:{
+                    // Выбранную категорию передаем в $_GET и перегружаем страницу
+                    "Обрати": function(){
+                        $('#id_department_title').val(deptitle);
+                        $('#title_department').val(deptitle);
+                        $('#id_department_id').val(depid);
+                        $('#departmentid').val(depid);
+                        $(this).dialog("close");
+
+                        var form = $("form#fsearch");
+
+                        // Подгружаем список Должностей
+                        $.ajax({
+                            type: 'POST',
+                            url: form.attr("action"),
+                            data: form.serialize() + "&ajax=posts",
+                            beforeSend: function ( xhr ) {
+                                $('#id_postid').html('<option value="">Завантаження, зачекайте ...</option>');
+                            },
+                            success: function(answer){
+                                // Обновляем список курсов в профиле
+                                $('#id_postid').html(answer);
+                                if(answer.length)
+                                    $('#id_postid').removeAttr('disabled');
+                            },
+                            dataType: 'text'
+                        });
+                    },
+                    "Відмінити": function(){
+                        $(this).dialog("close");
+                    }
+                }
+            });
+            $('#id_but_dep').live('click',function(e) {
+                
+                e.preventDefault();
+                
+                var container = $('#id_div_choosedep');
+                
+                var selectedId = $('#id_department_id').val();
+                selectedId = selectedId ? selectedId : 0;
+              
+                loadDepartmentsStructureByAjax({
+                    structureId : 'department_choosedep',
+                    container : container,
+                    onBeforeExecute: function() {
+                        container.dialog('open');
+                    },
+                    onLoad: function(response) {
+                        container.find('a[value='+selectedId+']').first().css('font-weight', 'bold');
+                    },
+                    onLoadError : function(error, response) {
+                        showAlert(error, 
+                            'Помилка', 
+                            {closeBtnName: 'Закрити'});
+                    }
+                });
+            });
+            // выделяем выбранный отдел
+            $('#id_div_choosedep ul li span a').live('click',function(){
+                $('#id_div_choosedep ul li span').find('a').css('font-weight', 'normal');
+                $(this).css('font-weight', 'bold');
+                // передаем данные выбранного отдела
+                deptitle = $(this).html();
+                depid = $(this).attr('value');
+                return false;
+            });
+            // Очищаем выбор данных подразделения
+            $('#id_empty_dep').live('click',function(){
+                $('#deptitle').val('');
+                $('#id_depid').val('');
+                $('#id_department_title').val('');
+                $('#id_department_id').val('');
+                return false;    
+            });
+
+
+            $('#id_add_chief_employees').live('click', function(){
+                $('#id_div_add_chief_employees').dialog('open');
+                return false;
+            });
+
+            // Удаление руководителя
+            $('#id_div_delete_chief_employees').dialog({
+                autoOpen:false,
+                title:"Зняття призначення",
+                height:670,
+                width:500,
+                modal:true,
+                closeText: 'Закрити',
+                buttons:{
+                    // Выбранную категорию передаем в $_GET и перегружаем страницу
+                    "Зняти": function(){
+                        $('#frmDeleteChief').submit(); 
+                        //  $(this).dialog("close");
+                    },
+                    "Відмінити": function(){
+                        $(this).dialog("close");
+                    }
+                }
+            });
+
+            $('#id_delete_chief_employees').live('click', function(e){
+                
+                e.preventDefault();
+                
+                var dialog = $('#id_div_delete_chief_employees');
+                var cont = dialog.find('.chiefs-list-cont');
+                
+                dialog.dialog('open');
+                
+                if (typeof(cont.data('data_loaded')) != 'undefined') {
+                    return;
+                }
+                
+                var loading = $('<div class="centered-cont" />')
+                    .append($('<span class="centerer" />'))
+                    .append($('<img class="centered" />').attr('src', '/moco/img/loading.gif'));
+                    
+                cont.html(loading);
+                
+                $.ajax({
+                    url: 'http://core-release-0.4.mocotms.com/moco/config/chiefs/',
+                    type: 'POST',
+                    data: {ajax: 'ListChiefs'},
+                    dataType: 'json',
+                    beforeSend: function (xhr) {
+                        cont.html(loading);
+                    }
+                })
+                .always(function() {
+                    cont.html('');
+                })
+                .done(function(response) {
+                    if (response.error) {
+                        showAlert(response.error, 
+                            'Помилка', 
+                            {closeBtnName: 'Закрити'});
+                        
+                    } else {
+                        cont.html(response.data);
+                        cont.data('data_loaded', '1');
+                    }
+                })
+                .fail(function(jqXHR, textStatus) {
+                    console.error("Request failed: " + textStatus);
+                });
+            });
+
+            function checkAllChiefs(){
+                $('.class_chief').each(function(){
+                    $(this).attr('checked', 'checked');
+                });
+            } 
+
+            function uncheckAllChiefs(){
+                $('.class_chief').each(function(){
+                    $(this).removeAttr('checked'); 
+                });
+            }
+            
+            var chief_arr = [];
+
+            function set_chief(event, add_new_chief) {
+                event.preventDefault ? event.preventDefault() : event.returnValue = false;
+                var $set_chief_dialog = $('#set_chief');
+                $set_chief_dialog.empty();
+                add_new_chief = add_new_chief || false;
+                var target = event.target || event.srcElement;
+                var $el = $(target);
+                var emp_id = $el.attr('data-id');
+
+                var chief_el = '\
+                    <tr>\
+                        <th></th>\
+                        <th>Керiвник</th>\
+                        <th>Тип керiвника</th>\
+                        <th>Вес в оцінці, %</th>\
+                        <th></th>\
+                    </tr>\
+                ';
+                var one_chief = {};
+                //добавление руководителя
+                if( add_new_chief ) {
+                    var chief_id = $el.attr('data-chief-id');
+                    var id = $el.parent().attr('id');//id = _1_2
+                    var index = id.split('_');
+                    var chief_post_id = '#_' + index[1] + '_' + ( +index[2] + 1 );//id = #_1_3
+                    var chief_department_id = '#_' + index[1] + '_' + ( +index[2] + 2 );//id = #_1_4
+
+                    one_chief = {
+                        i                : '<img border="0" src="http://core-release-0.4.mocotms.com/img/icons/user_add.png">',
+                        chief_id         : chief_id,
+                        chief            : 0,
+                        fullname         : $el.html(),
+                        post             : $(chief_post_id).html(),
+                        department         : $(chief_department_id).html(),
+                        chief_type         : '',
+                        appraisal_weight : 0
+                    };
+                    chief_el += get_chief_el(one_chief);
+                }
+
+                //редактирование существующих руководителей
+                if(emp_id in chief_arr) {//если есть руководители
+                    var i = 1;
+                    for( var chief in chief_arr[emp_id] ) {
+                        one_chief = chief_arr[emp_id][chief];
+                        one_chief.chief = chief;
+                        one_chief.i = i;
+                        chief_el += get_chief_el(one_chief);
+                        ++i;
+                    }
+                }
+
+                chief_el = '<table>'+ chief_el +'</table>';
+                $set_chief_dialog.append(chief_el);
+                $set_chief_dialog.attr('data-emp-id',emp_id);
+
+                $('#add_new_chief').dialog('close');
+                $set_chief_dialog.dialog('open');
+            }
+
+            function get_chief_el(chief) {
+                return '\
+                <tr>\
+                <td class="'+( chief['chief'] ? chief['chief_id'] : 'add')+' num" rowspan="3">'
+                +chief['i']+
+                '<input value="'+chief['chief_id']+'" class="chief_id" type="hidden"/>\
+                <input value="0" class="is_deleted" type="hidden"/>\
+                </td>\
+                <td class="'+( chief['chief'] ? chief['chief_id'] : 'add')+'">'
+                +( chief['fullname'] ? chief['fullname'] : '-' )+
+                '</td>\
+                <td class="'+( chief['chief'] ? chief['chief_id'] : 'add')+'" rowspan="3">\
+                <select class="chief_type">\
+                <option value="functional" '+( ( chief['chief_type'] === 'functional' ) ? 'selected' : '' )+'>Функціональний</option>\
+                <option value="administrative" '+( ( chief['chief_type'] === 'administrative' ) ? 'selected' : '' )+'>Адміністративний</option>\
+                </select>\
+                </td>\
+                <td class="'+( chief['chief'] ? chief['chief_id'] : 'add')+'" rowspan="3">\
+                <input value="'+chief['appraisal_weight']+'" class="chief_weight inputtext" type="number" min="0" max="100"/>\
+                </td>\
+                <td class="'+( chief['chief'] ? chief['chief_id'] : 'add')+'" rowspan="3">'
+                +( chief['chief'] ? '<a class="delete" val="'+chief['chief_id']+'" style="cursor:pointer;">Видалити</a>' : '')+
+                '</td>\
+                </tr>\
+                <tr>\
+                <td class="'+( chief['chief'] ? chief['chief_id'] : 'add')+'">'
+                +( chief['post'] ? chief['post'] : '-' )+
+                '</td>\
+                </tr>\
+                <tr>\
+                <td class="'+( chief['chief'] ? chief['chief_id'] : 'add')+'">'
+                +( chief['department'] ? chief['department'] : '-' )+
+                '</td>\
+                </tr>\
+                ';
+            }
+
+            function save_chiefs() {
+                var send = {
+                    is_deleted : {},
+                    chief_id : {},
+                    chief_type : {},
+                    chief_weight : {}
+                };
+                var $set_chief_dialog = $('#set_chief');
+                var emp_id = $set_chief_dialog.attr('data-emp-id');
+                var sum = 0;
+                var count = 0;
+
+                $set_chief_dialog.find('input.is_deleted').each(function (i) {
+                    send['is_deleted'][i] = +$(this).val();
+                });
+                $set_chief_dialog.find('input.chief_id').each(function (i) {
+                    send['chief_id'][i] = $(this).val();
+                });
+                $set_chief_dialog.find('select.chief_type').each(function (i) {
+                    send['chief_type'][i] = $(this).val();
+                });
+                $set_chief_dialog.find('input.chief_weight').each(function (i) {
+                    send['chief_weight'][i] = $(this).val();
+                    sum += ( !send['is_deleted'][i] ) ? +send['chief_weight'][i] : 0;
+                    count++;
+                });
+
+                //при удалении последнего руководителя сумма может быть равна 0
+                var sum_can_be_zero = ( count === 1 && send['is_deleted'][0] === 1 ) ? true : false;
+                if( sum !== 100 && !sum_can_be_zero ) {
+                    alert_error('Сума ваг повинна дорівнювати 100%');
+                    return false;
+                }
+
+                $.getJSON( window.location.href, { operation: 'save_chiefs', emp_id: emp_id, send: JSON.stringify(send) }, function(result){
+                    if(result.success) {
+                        window.location.href = window.location.href;//чтобы не было повторной отправки формы как при window.location.reload()
+                    } else {
+                        alert_error(result.message);
+                    }
+                });
+            }
+
+            function alert_error(error) {
+                var $error_dialog = $('#id_div_info');
+                $error_dialog.html('<div class="ui-state-error-text">'+error+'</div>');
+                $error_dialog.dialog('open');
+            }
+        </script>
+        </div><!--content-->
+<!--br/><br/><br/ -->
+</div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front ui-draggable ui-resizable" style="display: none; position: absolute;" tabindex="-1" role="dialog" aria-describedby="id_select_employees" aria-labelledby="ui-id-1"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix ui-draggable-handle"><span id="ui-id-1" class="ui-dialog-title">Оберіть</span><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close" role="button" title="Close"><span class="ui-button-icon-primary ui-icon ui-icon-closethick"></span><span class="ui-button-text">Close</span></button></div><div id="id_select_employees" class="ui-dialog-content ui-widget-content"></div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div></div><div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front ui-dialog-buttons ui-draggable ui-resizable" style="display: none; position: absolute;" tabindex="-1" role="dialog" aria-describedby="id_div_add_chief_employees" aria-labelledby="ui-id-2"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix ui-draggable-handle"><span id="ui-id-2" class="ui-dialog-title">Призначити керiвника спiвробiтникам</span><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close" role="button" title="Close"><span class="ui-button-icon-primary ui-icon ui-icon-closethick"></span><span class="ui-button-text">Close</span></button></div><div id="id_div_add_chief_employees" style="" class="ui-dialog-content ui-widget-content">
+            <div class="notifyproblem notify_info" style="text-align:left;">
+                            <table style="width:100%;">
+                                <tbody><tr>
+                                    <td style="width:33px; vertical-align:top;" width="33">
+                                        <img src="http://core-release-0.4.mocotms.com/pix/icons/info.png" style="margin-right:20px;">
+                                    </td>
+                                    <td style="vertical-align:middle;">
+                                        Виберіть керівника, після чого вкажіть підрозділ та/або посаду для призначення.
+                                    </td>
+                                </tr>
+                            </tbody></table>    
+                      </div>
+
+            <form id="frmSelectChief" action="http://core-release-0.4.mocotms.com/moco/config/chiefs/" method="post" enctype="multipart/form-data">
+                <table class="" style="margin: 10px 0 0 0; border-collapse:separate; width:100%;">
+                    <tbody><tr>
+                        <td colspan="5" style="padding-bottom:15px;">
+                            <input id="id_find_chief" name="chief_fullname" value="Вкажіть ім'я керівника" style="color:#888888; padding:0 5px; width:500px;" type="text"> 
+                            <input id="id_submit_find_chief" value="Знайти" type="submit">
+                            <input id="id_chief_id" name="id_chief_id" value="" type="hidden">
+                            <span id="not_found_chief" style="color:red"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align:top; width:300px;">
+                            <b>Обрати підрозділ</b><div class="clear"></div>
+                            <div id="div_form_departments" style="background-color:#FFF; border:1px solid #e7e7e7; padding:5px; overflow:auto; height:300px;">
+                            </div>
+                            <input name="department" id="dep_id" value="" type="hidden">
+                            <label>
+                                <input name="recursive" checked="checked" value="1" id="id_recursive" type="checkbox">
+                                Призначати на дочiрнi пiдроздiли                            </label>
+                        </td>
+                        <td style="width:10px;"></td>
+                        <td style="vertical-align:top; width:300px;">
+                            <b id="choose_post" style="display:none;">Обрати посаду</b><div class="clear"></div>
+                            <div id="div_posts" style="background-color:#FFF; border:1px solid #e7e7e7; padding:5px; overflow:auto; height:300px; display:none;">
+
+                            </div>
+                        </td>
+
+                        <td style="width:10px;"></td>
+                        <td style="vertical-align:top; width:300px;">
+                            <b id="choose_tag" style="display:none;">Вибрати тег</b>
+                            <div class="clear"></div>
+                            <div id="div_tags" style="background-color:#FFF; border:1px solid #e7e7e7; padding:5px; overflow:auto; height:300px; display:none;">
+                            </div>
+                        </td>
+
+                    </tr>
+                </tbody></table>
+            </form>
+        </div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" id="okbtnid" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" disabled="disabled" style="color: rgb(210, 208, 208);"><span class="ui-button-text">Призначити</span></button><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Відмінити</span></button></div></div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div></div><div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front ui-dialog-buttons ui-draggable ui-resizable" style="display: none; position: absolute;" tabindex="-1" role="dialog" aria-describedby="id_div_choosedep" aria-labelledby="ui-id-3"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix ui-draggable-handle"><span id="ui-id-3" class="ui-dialog-title">Обрати підрозділ</span><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close" role="button" title="Close"><span class="ui-button-icon-primary ui-icon ui-icon-closethick"></span><span class="ui-button-text">Close</span></button></div><div id="id_div_choosedep" style="" class="ui-dialog-content ui-widget-content"></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Обрати</span></button><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Відмінити</span></button></div></div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div></div><div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front ui-dialog-buttons ui-draggable ui-resizable" style="display: none; position: absolute;" tabindex="-1" role="dialog" aria-describedby="id_div_delete_chief_employees" aria-labelledby="ui-id-4"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix ui-draggable-handle"><span id="ui-id-4" class="ui-dialog-title">Зняття призначення</span><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close" role="button" title="Закрити"><span class="ui-button-icon-primary ui-icon ui-icon-closethick"></span><span class="ui-button-text">Закрити</span></button></div><div id="id_div_delete_chief_employees" style="" class="ui-dialog-content ui-widget-content">
+            <div class="notifyproblem notify_info" style="text-align:left;">
+                            <table style="width:100%;">
+                                <tbody><tr>
+                                    <td style="width:33px; vertical-align:top;" width="33">
+                                        <img src="http://core-release-0.4.mocotms.com/pix/icons/info.png" style="margin-right:20px;">
+                                    </td>
+                                    <td style="vertical-align:middle;">
+                                        Оберіть керівника для зняття з нього призначення
+                                    </td>
+                                </tr>
+                            </tbody></table>    
+                      </div>
+            <form id="frmDeleteChief" action="http://core-release-0.4.mocotms.com/moco/config/chiefs/" method="post" enctype="multipart/form-data">
+                <input name="del_chiefs" value="true" type="hidden">
+                <div style="background-color:#FFF; border:1px solid #e7e7e7; margin-top:20px; padding:5px; overflow:auto; height:400px;" class="chiefs-list-cont">
+                </div>
+            </form>
+        </div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Зняти</span></button><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Відмінити</span></button></div></div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div></div><!--wrapper-->
+
+<div id="div_bg_" style="height: 613px;"> </div>
+
+<div id="footer">
+	<div id="footer_in" style="bottom: auto; position: static;">
+		<div id="footer_lbl">© MOCO 2010-2017. Powered by <a href="http://tmx-learning.info/" target="_blank">Technomatix</a></div>
+		<div class="social_media"><a target="_blank" href="https://www.facebook.com/Technomatix/?pnref=lhc"><img src="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/images/icon/social/facebook.png"></a><a target="_blank" href="https://myaccount.google.com/?utm_source=OGB"><img src="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/images/icon/social/google_plus.png"></a><a target="_blank" href="https://www.youtube.com/channel/UC3kgUstn4mqESPeev-O4T6A"><img src="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/images/icon/social/youtube.png"></a></div>		<div class="clear"></div>
+	</div>
+</div>
+<script>
+  function reassignFooter() {
+    if( $('body').height() < ($(window).height() ) ) {
+      $('#footer_in').css( 'bottom', 0 );
+      $('#footer_in').css( 'position', 'absolute' );
+    } 
+    if( $('body').height() > ($(window).height() - 65) ) {
+      $('#footer_in').css( 'bottom', 'auto' );
+      $('#footer_in').css( 'position', 'static' );
+    }
+  }
+  $(document).ready( function() {
+    $('#div_bg_').css( 'height', $(window).height() - 64 + 'px' );
+	reassignFooter();
+    setInterval( 'reassignFooter()', 500 );
+  } );
+</script>
+
+
+
+<div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front ui-dialog-buttons ui-draggable ui-resizable" style="display: none; position: absolute;" tabindex="-1" role="dialog" aria-describedby="id_div_info" aria-labelledby="ui-id-5"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix ui-draggable-handle"><span id="ui-id-5" class="ui-dialog-title">&nbsp;</span><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close" role="button" title="Close"><span class="ui-button-icon-primary ui-icon ui-icon-closethick"></span><span class="ui-button-text">Close</span></button></div><div id="id_div_info" style="" class="ui-dialog-content ui-widget-content"></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Відмінити</span></button></div></div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div></div><div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front ui-dialog-buttons ui-draggable ui-resizable" style="display: none; position: absolute;" tabindex="-1" role="dialog" aria-describedby="set_chief" aria-labelledby="ui-id-6"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix ui-draggable-handle"><span id="ui-id-6" class="ui-dialog-title">Управління керівниками співробітника</span><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close" role="button" title="Close"><span class="ui-button-icon-primary ui-icon ui-icon-closethick"></span><span class="ui-button-text">Close</span></button></div><div id="set_chief" style="" class="ui-dialog-content ui-widget-content"></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Відмінити</span></button><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Зберегти</span></button></div></div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div></div><div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front ui-dialog-buttons ui-draggable ui-resizable" style="display: none; position: absolute;" tabindex="-1" role="dialog" aria-describedby="id_div_delete_chief" aria-labelledby="ui-id-7"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix ui-draggable-handle"><span id="ui-id-7" class="ui-dialog-title">Видалити керівника?</span><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close" role="button" title="Закрити"><span class="ui-button-icon-primary ui-icon ui-icon-closethick"></span><span class="ui-button-text">Закрити</span></button></div><div id="id_div_delete_chief" style="" class="ui-dialog-content ui-widget-content">
+            Ви впевнені, що хочете видалити цього керівника?            <form id="frmDeleteChief" action="" method="post">
+                <input id="id_delete_chief_frm" name="del" value="" type="hidden">
+                <input name="count" value="" type="hidden">
+                <input name="realname" value="Automation User" type="hidden">
+                <input name="p_str" value="" type="hidden">
+                <input name="d_str" value="" type="hidden">
+            </form>
+        </div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Видалити</span></button><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Відмінити</span></button></div></div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div></div><div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front ui-dialog-buttons ui-draggable ui-resizable" style="display: none; position: absolute;" tabindex="-1" role="dialog" aria-describedby="id_div_delete_chief_pseudo" aria-labelledby="ui-id-8"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix ui-draggable-handle"><span id="ui-id-8" class="ui-dialog-title">Видалити керівника?</span><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close" role="button" title="Close"><span class="ui-button-icon-primary ui-icon ui-icon-closethick"></span><span class="ui-button-text">Close</span></button></div><div id="id_div_delete_chief_pseudo" style="" class="ui-dialog-content ui-widget-content">
+            Ви впевнені, що хочете видалити цього керівника?            <input id="id_delete_chief_frm_pseudo" name="del" value="" type="hidden">
+        </div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Видалити</span></button><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Відмінити</span></button></div></div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div></div><div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front ui-draggable ui-resizable" style="display: none; position: absolute;" tabindex="-1" role="dialog" aria-describedby="add_new_chief" aria-labelledby="ui-id-9"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix ui-draggable-handle"><span id="ui-id-9" class="ui-dialog-title">Пошук співробітника для призначення керівником</span><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close" role="button" title="Close"><span class="ui-button-icon-primary ui-icon ui-icon-closethick"></span><span class="ui-button-text">Close</span></button></div><div id="add_new_chief" style="" class="ui-dialog-content ui-widget-content">
+            <form id="frm_add_employee" action="" method="post" style="width:100%;">
+                <input id="empid" name="empid" value="" type="hidden">
+                <div class="colortitle" style="padding:10px;">
+                    <table>
+                        <tbody><tr>
+                            <td class="texttitle" align="right">П.І.Б. </td>
+                            <td><input class="inputtext" id="realname2" name="realname2" autocomplete="off" value="" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td class="texttitle" align="right">Посада </td>
+                            <td>
+                                <input class="inputtext" id="posttitle2" value="" disabled="disabled" type="text">
+                                <input id="id_but2_post" class="select" value="..." type="button">
+                                <input id="id_empty2_post" class="select" value="X" type="button">
+                                <input id="postid2" value="" type="hidden">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="texttitle" align="right">Підрозділ </td>
+                            <td>
+                                <input class="inputtext" id="deptitle2" value="" disabled="disabled" type="text">
+                                <input id="id_but2_dep" class="select" value="..." type="button">
+                                <input id="id_empty2_dep" class="select" value="X" type="button">
+                                <input id="depid2" value="" type="hidden">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="texttitle" align="right">
+                                &nbsp;
+                            </td>
+                            <td class="search_in_departments" style="font-weight:normal;">
+                                <input id="id_in_all_deps" name="in_all_departments" style="margin:2px;" value="1" checked="checked" type="checkbox">
+                                <label for="id_in_all_deps">Шукати у вкладених підрозділах</label>
+                            </td>
+                        </tr>
+                    </tbody></table>
+                </div>    
+                <input id="but_add" value="Пошук" style="margin-top:10px; font-size:13px;" type="submit">
+            </form>
+            <div id="id_div_employees" style="margin-top:10px;"></div>
+        </div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div></div><div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front ui-dialog-buttons ui-draggable ui-resizable" style="display: none; position: absolute;" tabindex="-1" role="dialog" aria-describedby="id_div_choosepost2" aria-labelledby="ui-id-10"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix ui-draggable-handle"><span id="ui-id-10" class="ui-dialog-title">Обрати посаду</span><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close" role="button" title="Close"><span class="ui-button-icon-primary ui-icon ui-icon-closethick"></span><span class="ui-button-text">Close</span></button></div><div id="id_div_choosepost2" style="" class="ui-dialog-content ui-widget-content">
+            <ul id="id_treeposts2" class="filetree treeview">
+                <ul><li class="closed"><span style="margin-left:3px;"><a href="" val="159"> </a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="156"> 1 тест целевых групп</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="8"> Accounter</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="258"> Administrator</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="318"> AutomationPost</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="76"> AutoQA</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="7"> Business manager</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="14"> C# Developer</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="6"> Director</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="160"> HR менеджер</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="13"> Java Developer</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="257"> Junuior Tester</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="3"> Manager</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="12"> PHP Developer</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="11"> PHP Project Manager</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="23"> PR-менеджер</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="10"> Product Manager</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="5"> Product Owner</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="151"> Project Manager</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="1"> QA</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="2"> QA engineer</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="154"> QA Junior</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="153"> QA Lead</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="155"> QA Middle</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="9"> QA Team Lead</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="18"> QA1</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="19"> QA2</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="4"> Sales Manager</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="77"> SPAM</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="32"> Аналитик-маркетолог</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="161"> АТ (ТД)</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="33"> Бренд-менеджер</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="34"> Ведущий бренд-менеджер</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="73"> Ведущий консультант</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="150"> гость</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="30"> Директор по продажам</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="78"> Должность 1</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="69"> Должность для отображения в списках</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="24"> Маркетолог</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="38"> Медиа аналитик</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="72"> Менеджер</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="25"> Менеджер отдела связей с общественностью</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="37"> Менеджер по логистике</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="22"> Менеджер по продукции</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="28"> Менеджер по рекламе</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="74"> Оператор</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="36"> Офис-менеджер</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="27"> Продавец-консультант</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="256"> Разнорабочий</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="20"> Разработчик</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="26"> Руководитель отдела трейд-маркетинга</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="21"> Руководитель проекта</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="35"> Специалист по социальным медиа</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="29"> Старший менеджер</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="70"> Технический специалист</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="31"> Трейд-маркетолог</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="157"> Тренер</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="71"> Тренинговый инструктор</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="255"> Уборщик</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="149"> удаляем</a></span></li><li class="closed"><span style="margin-left:3px;"><a href="" val="147"> ук</a></span></li><li class="closed last"><span style="margin-left:3px;"><a href="" val="158"> Юрист</a></span></li></ul>            </ul>
+        </div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Обрати</span></button><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Відмінити</span></button></div></div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div></div><div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front ui-dialog-buttons ui-draggable ui-resizable" style="display: none; position: absolute;" tabindex="-1" role="dialog" aria-describedby="id_div_choosedep2" aria-labelledby="ui-id-11"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix ui-draggable-handle"><span id="ui-id-11" class="ui-dialog-title">Обрати підрозділ</span><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close" role="button" title="Close"><span class="ui-button-icon-primary ui-icon ui-icon-closethick"></span><span class="ui-button-text">Close</span></button></div><div id="id_div_choosedep2" style="" class="ui-dialog-content ui-widget-content"></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Обрати</span></button><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Відмінити</span></button></div></div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div></div></body></html>

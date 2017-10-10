@@ -1,0 +1,2293 @@
+<html lang="en"><head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/theme/standard/styles.php">
+<link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/styles.php">
+
+<!--[if IE 7]>
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/theme/standard/styles_ie7.css" />
+<![endif]-->
+<!--[if IE 6]>
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/theme/standard/styles_ie6.css" />
+<![endif]-->
+
+
+    <meta name="keywords" content="moodle, LMS: Керування: Користувачі: Облікові записи: Масовi дії користувача ">
+    <title>LMS: Керування: Користувачі: Облікові записи: Масовi дії користувача</title>
+    <link rel="shortcut icon" href="http://core-release-0.4.mocotms.com/favicon.ico">
+
+    <!--<style type="text/css">/*<![CDATA[*/ body{behavior:url(http://core-release-0.4.mocotms.com/lib/csshover.htc);} /*]]>*/</style>-->
+
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/javascript-static.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/javascript-mod.php"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/overlib/overlib.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/overlib/overlib_cssstyle.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/cookies.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/ufo.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/dropdown.js"></script>  
+
+<script type="text/javascript" defer="defer">
+//<![CDATA[
+setTimeout('fix_column_widths()', 20);
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+function openpopup(url, name, options, fullscreen) {
+    var fullurl = "http://core-release-0.4.mocotms.com" + url;
+    var windowobj = window.open(fullurl, name, options);
+    if (!windowobj) {
+        return true;
+    }
+    if (fullscreen) {
+        windowobj.moveTo(0, 0);
+        windowobj.resizeTo(screen.availWidth, screen.availHeight);
+    }
+    windowobj.focus();
+    return false;
+}
+
+function uncheckall() {
+    var inputs = document.getElementsByTagName('input');
+    for(var i = 0; i < inputs.length; i++) {
+        inputs[i].checked = false;
+    }
+}
+
+function checkall() {
+    var inputs = document.getElementsByTagName('input');
+    for(var i = 0; i < inputs.length; i++) {
+        inputs[i].checked = true;
+    }
+}
+
+function inserttext(text) {
+  text = ' ' + text + ' ';
+  if ( opener.document.forms['theform'].message.createTextRange && opener.document.forms['theform'].message.caretPos) {
+    var caretPos = opener.document.forms['theform'].message.caretPos;
+    caretPos.text = caretPos.text.charAt(caretPos.text.length - 1) == ' ' ? text + ' ' : text;
+  } else {
+    opener.document.forms['theform'].message.value  += text;
+  }
+  opener.document.forms['theform'].message.focus();
+}
+
+function getElementsByClassName(oElm, strTagName, oClassNames){
+	var arrElements = (strTagName == "*" && oElm.all)? oElm.all : oElm.getElementsByTagName(strTagName);
+	var arrReturnElements = new Array();
+	var arrRegExpClassNames = new Array();
+	if(typeof oClassNames == "object"){
+		for(var i=0; i<oClassNames.length; i++){
+			arrRegExpClassNames.push(new RegExp("(^|\\s)" + oClassNames[i].replace(/\-/g, "\\-") + "(\\s|$)"));
+		}
+	}
+	else{
+		arrRegExpClassNames.push(new RegExp("(^|\\s)" + oClassNames.replace(/\-/g, "\\-") + "(\\s|$)"));
+	}
+	var oElement;
+	var bMatchesAll;
+	for(var j=0; j<arrElements.length; j++){
+		oElement = arrElements[j];
+		bMatchesAll = true;
+		for(var k=0; k<arrRegExpClassNames.length; k++){
+			if(!arrRegExpClassNames[k].test(oElement.className)){
+				bMatchesAll = false;
+				break;
+			}
+		}
+		if(bMatchesAll){
+			arrReturnElements.push(oElement);
+		}
+	}
+	return (arrReturnElements)
+}
+//]]>
+</script>
+
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/style.css">
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/moco/jquery/jquery-ui.css">
+
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/js/jquery-1.8.3.js"></script>
+    <script src="http://core-release-0.4.mocotms.com/moco/jquery/development-bundle/jquery-ui.js"></script>
+
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/jquery-ui-datepicker.js"></script>
+            <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/jquery-ui-datepicker-ua.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/moco/jquery/treeview.css">
+
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/jquery.treeview.js"></script>
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/jquery.cookie.js"></script>
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/jquery.easing.1.3.js"></script>
+
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/swf/swfobject.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/menu.css">
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/js/menu.js.php"></script>
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/js/script.js"></script>
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/tree_library.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/lib/slideshow/css/camera.css">
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/slideshow/js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/slideshow/js/camera.min.1.11.js"></script> 
+    
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/moco/css/reports.css">
+<link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/moco/css/select2.css">
+    
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/custom.css">
+
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/d3.min.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/jquery.moco_chart.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/moco.core.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/moco_functions.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/reports.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/select2/select2.min.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/select2/translation/en.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/select2/translation/ru.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/js/select2/translation/uk.js"></script>
+
+    <script>
+        $(function() { 
+            $(window).scroll(function(){
+                if($(this).scrollTop() != 0){
+                    $('#toTop').fadeIn();
+                } else {
+                    $('#toTop').fadeOut();
+                }
+            });
+            $('#toTop').click(function() {
+                $('body,html').animate({scrollTop:0},800);
+            });
+        });
+        $('#id_language').live('change', function(){
+            window.location.href="http://core-release-0.4.mocotms.com/index.php?lang="+$(this).val();
+            return false;
+        });
+        function handleResponse(mes) {
+            if (mes.errors != null) {
+                $('#res').html('Помилка при завантаженні файлу: ' + mes.errors);
+            } else {
+                var params = new Object();
+                params.ajax = 'saveCentralImg';
+                $.ajax({
+                    type: 'POST',
+                    url: 'http://core-release-0.4.mocotms.com/theme/tmx_default_2015/ajax.php',
+                    data: params,
+                    success:
+                    function( answer ) {
+                        $('#central_img').html(answer.html);
+                    },
+                    dataType: 'json'
+                });
+            }
+        }
+    </script>
+</head>
+<body class="admin course-1 dir-ltr lang-uk_utf8 default" id="admin-user-user_bulk">
+
+    <div id="toTop">
+        <div class="top_button"></div>
+    </div>
+
+            <div id="wrapper">
+        <div class="head_width">
+            <div id="head">
+                <div id="id_div_header" style="margin-right:10px;">
+                
+                    <a href="http://core-release-0.4.mocotms.com" style="float:left">
+                        <img class="logo" src="http://core-release-0.4.mocotms.com/moco/logo/logo.php?logo=L2RhdGEvdG14L21vY28vY29yZS8wLlgvcmVsZWFzZV8wLjQvbW9vZGxlZGF0YS9waXgvbG9nby9sb2dvLnBuZw==&amp;nocache=1497445703" alt="Logotype">
+                    </a>                <div class="link_panel">
+                <div id="lang_menu"><span class="lang_title">Мова:</span><select id="id_language" style="vertical-align:middle; border:1px solid #d1d3d4; color:#6E6E6E;"><option value="en_utf8">ENG</option><option value="ru_utf8">RUS</option><option value="uk_utf8" selected="selected">UKR</option></select></div><a href="http://mocotms.com" class="link_3" target="_blank">Technomatix</a><a class="exit_button" href="http://core-release-0.4.mocotms.com/login/logout.php?sesskey=nvgZWnplju">Вийти</a>                </div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div id="head_menu">
+
+	<div style="width:100%; /*max-width: 1024px;*/">
+<div class="menu_left_block"></div>
+<div class="menu_right_block"></div>
+<ul id="nav_menu" style="z-index:1001;">
+<li class="first" style="width: 20%;">
+<a href="javascript: void(0);">Компанія</a><ul>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/structure/">Структура</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/posts/">Посади</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/admin/user.php">Співробітники</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/chiefs/">Керівники</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/moderators/">Модератори</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/confirmmanualuser/">Зареєстрованi користувачi</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/uploadimg/">Завантаження фото</a><div class="clear"></div>
+</li>
+</ul>
+<div class="clear"></div>
+</li>
+<li style="width: 20%;">
+<a href="javascript: void(0);">Навчання</a><ul>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/allcourses/">Каталог</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/profiles/">Програми</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/delhistory/">Історія</a><div class="clear"></div>
+</li>
+<li>
+<hr>
+<div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/tranings/">Заходи</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/trainer/">Тренери</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/training_rooms/">Тренінгові кімнати</a><div class="clear"></div>
+</li>
+<li>
+<hr>
+<div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/scales/">Шкали оцiнок</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/alerts/">Повідомлення</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/tag/">Теги</a><div class="clear"></div>
+</li>
+</ul>
+<div class="clear"></div>
+</li>
+<li style="width: 20%;">
+<a href="javascript: void(0);">Оцінка персоналу</a><ul>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco101/index.php/usr">Користувачі і привілегії</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco101/index.php/org">Організаційна структура</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco101/index.php/messaging">Повідомлення</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco101/index.php/indicator">Індикатори</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco101/index.php/appraisal">Оцінка</a><div class="clear"></div>
+</li>
+</ul>
+<div class="clear"></div>
+</li>
+<li style="width: 20%;">
+<a href="javascript: void(0);">Звіти</a><ul>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/profiles.php">Призначені програми</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/courses.php?tab=admin">Результати по програмам</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/scorms.php?tab=report">Результати по курсам</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/tests.php?tab=report">Результати по тестам</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/testsanalytics.php">Результати по тестах (аналітика)</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/scormandtest.php">Зведені результати по курсам та тестам</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/empreport.php?tab=admin">Зведені результати по співробітнику</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/fullprofiles.php">Детальні результати по співробітникам</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/successful.php?tab=admin">Детальні результати по програмам</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/selfcourses.php">Самопризначені курси</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/vacationstats.php">Статистика навчених і звільнених</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/universal.php?tab=admin">База співробітників і результатів</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/fullprofiles2.php">Анкета співробітника</a><div class="clear"></div>
+</li>
+<li>
+<hr>
+<div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/training.php?tab=admin">Статистика тренінгів</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/trainings.php?tab=admin&amp;subtab=1&amp;find_recursive=1">Результати аудиторних заходів</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/trainer.php?tab=admin">Статистика тренерів</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/workload_trainer.php">Завантаженість тренерів</a><div class="clear"></div>
+</li>
+<li>
+<hr>
+<div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/certificate.php">Видані сертифікати</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/player_play.php">Звіт про відео</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/permissions_log.php">Історія видачі прав</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/subscriptionhistory.php">Історія скасування розсилки</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/reports/systemroles.php">Ролі системи</a><div class="clear"></div>
+</li>
+</ul>
+<div class="clear"></div>
+</li>
+<li style="width: 20%;">
+<a href="javascript: void(0);">Додатково</a><ul>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/holiday/">Свята</a><div class="clear"></div>
+</li>
+<li>
+<a href="http://core-release-0.4.mocotms.com/moco/config/interview/">Опитування</a><div class="clear"></div>
+</li>
+</ul>
+<div class="clear"></div>
+</li>
+<div class="clear"></div>
+</ul>
+</div>
+		<div class="clear"></div>
+		
+	<div class="breadcrumb" style="display:block; "><h2 class="accesshide ">Ви тут</h2> <ul>
+<li class="first"><a onclick="this.target='_top'" href="http://core-release-0.4.mocotms.com/">LMS</a></li><li> <span class="accesshide ">/&nbsp;</span><span class="arrow sep">&gt;</span> Керування</li><li> <span class="accesshide ">/&nbsp;</span><span class="arrow sep">&gt;</span> Користувачі</li><li> <span class="accesshide ">/&nbsp;</span><span class="arrow sep">&gt;</span> Облікові записи</li><li> <span class="accesshide ">/&nbsp;</span><span class="arrow sep">&gt;</span> Масовi дії користувача</li></ul></div>
+</div>
+        <div class="clear"></div>
+
+                <div class="clear"></div>
+
+        <div id="content" class="clearfix">
+
+        <table id="layout-table" summary=""><tbody><tr><td style="width: 210px;" id="left-column"><div><a href="#sb-1" class="skip-block">Пропустити Керування сайтом</a><div id="inst5" class="block_admin_tree sideblock"><div class="header"><div class="title"><h2 class="title_block">Керування сайтом</h2></div></div><div class="content">
+<script type="text/javascript">
+//<![CDATA[
+var vh_numdivs = 21;
+var parkplatz  = new Array();
+for (var i=1; i<=vh_numdivs; i++) {
+    parkplatz[i] = null;
+}
+
+function menu_toggle(i) {
+    i = parseInt(i);
+    if (parkplatz[i] === null) {
+        collapse(i);
+    } else {
+        expand(i);
+    }
+}
+
+function collapse(i) {
+    if (parkplatz[i] !== null) {
+        return;
+    }
+    var obj = document.getElementById("vh_div"+String(i));
+    if (obj === null) {
+        return;
+    }
+    var nothing = document.createElement("span");
+    nothing.setAttribute("id", "vh_div"+String(i));
+    parkplatz[i] = obj;
+    obj.parentNode.replaceChild(nothing, obj);
+    var icon = document.getElementById("vh_div"+String(i)+"indicator");
+    icon.innerHTML = "<img src=\"http://core-release-0.4.mocotms.com/pix/i/closed.gif\" alt=\"Закрита тека\" />";
+}
+
+function expand(i) {
+    if (parkplatz[i] === null) {
+        return;
+    }
+    var nothing = document.getElementById("vh_div"+String(i));
+    var obj = parkplatz[i];
+    parkplatz[i] = null;
+    nothing.parentNode.replaceChild(obj, nothing);
+    var icon = document.getElementById("vh_div"+String(i)+"indicator");
+    icon.innerHTML = "<img src=\"http://core-release-0.4.mocotms.com/pix/i/open.gif\" alt=\"Відкрита тека\" />";
+}
+
+function expandall() {
+    for (i=1; i<=vh_numdivs; i++) {
+        expand(i);
+    }
+}
+
+function collapseall() {
+    for (var i=vh_numdivs; i>0; i--) {
+        collapse(i);
+    }
+}
+
+//]]>
+</script>
+<div class="admintree">
+
+<div class="depth0"><a class="link" href="http://core-release-0.4.mocotms.com/admin/index.php"><img src="http://core-release-0.4.mocotms.com/pix/i/item.gif" alt="">Повідомлення</a></div>
+<div class="depth0"><a href="#" onclick="menu_toggle('1');return false"><span id="vh_div1indicator"><img src="http://core-release-0.4.mocotms.com/pix/i/open.gif" alt="Відкрита тека"></span> Користувачі</a></div><div id="vh_div1">
+<div class="depth1"><a href="#" onclick="menu_toggle('2');return false"><span id="vh_div2indicator"><img src="http://core-release-0.4.mocotms.com/pix/i/closed.gif" alt="Закрита тека"></span> Аутентифікація</a></div><span id="vh_div2"></span>
+<div class="depth1"><a href="#" onclick="menu_toggle('3');return false"><span id="vh_div3indicator"><img src="http://core-release-0.4.mocotms.com/pix/i/open.gif" alt="Відкрита тека"></span> Облікові записи</a></div><div id="vh_div3">
+<div class="depth2"><a class="link" href="http://core-release-0.4.mocotms.com/admin/user.php"><img src="http://core-release-0.4.mocotms.com/pix/i/item.gif" alt="">Список користувачів</a></div>
+<div class="depth2"><a class="link current" href="http://core-release-0.4.mocotms.com/admin/user/user_bulk.php"><img src="http://core-release-0.4.mocotms.com/pix/i/item.gif" alt="">Масовi дії користувача</a></div>
+<div class="depth2"><a class="link" href="http://core-release-0.4.mocotms.com/user/editadvanced.php?id=-1"><img src="http://core-release-0.4.mocotms.com/pix/i/item.gif" alt="">Додати нового користувача</a></div>
+<div class="depth2"><a class="link" href="http://core-release-0.4.mocotms.com/admin/uploaduser.php"><img src="http://core-release-0.4.mocotms.com/pix/i/item.gif" alt="">Завантажити користувачiв</a></div>
+<div class="depth2"><a class="link" href="http://core-release-0.4.mocotms.com/admin/uploadpicture.php"><img src="http://core-release-0.4.mocotms.com/pix/i/item.gif" alt="">Завантаження зображень користувачів</a></div>
+<div class="depth2"><a class="link" href="http://core-release-0.4.mocotms.com/user/profile/index.php"><img src="http://core-release-0.4.mocotms.com/pix/i/item.gif" alt="">Поля профілю користувача</a></div>
+</div>
+<div class="depth1"><a href="#" onclick="menu_toggle('4');return false"><span id="vh_div4indicator"><img src="http://core-release-0.4.mocotms.com/pix/i/closed.gif" alt="Закрита тека"></span> Права</a></div><span id="vh_div4"></span>
+</div>
+<div class="depth0"><a href="#" onclick="menu_toggle('5');return false"><span id="vh_div5indicator"><img src="http://core-release-0.4.mocotms.com/pix/i/closed.gif" alt="Закрита тека"></span> Курси</a></div><span id="vh_div5"></span>
+<div class="depth0"><a href="#" onclick="menu_toggle('6');return false"><span id="vh_div6indicator"><img src="http://core-release-0.4.mocotms.com/pix/i/closed.gif" alt="Закрита тека"></span> Журнал оцінок</a></div><span id="vh_div6"></span>
+<div class="depth0"><a href="#" onclick="menu_toggle('8');return false"><span id="vh_div8indicator"><img src="http://core-release-0.4.mocotms.com/pix/i/closed.gif" alt="Закрита тека"></span> Локалізація</a></div><span id="vh_div8"></span>
+<div class="depth0"><a href="#" onclick="menu_toggle('9');return false"><span id="vh_div9indicator"><img src="http://core-release-0.4.mocotms.com/pix/i/closed.gif" alt="Закрита тека"></span> Мова інтерфейсу</a></div><span id="vh_div9"></span>
+<div class="depth0"><a href="#" onclick="menu_toggle('10');return false"><span id="vh_div10indicator"><img src="http://core-release-0.4.mocotms.com/pix/i/closed.gif" alt="Закрита тека"></span> Модулі</a></div><span id="vh_div10"></span>
+<div class="depth0"><a href="#" onclick="menu_toggle('14');return false"><span id="vh_div14indicator"><img src="http://core-release-0.4.mocotms.com/pix/i/closed.gif" alt="Закрита тека"></span> Безпека</a></div><span id="vh_div14"></span>
+<div class="depth0"><a href="#" onclick="menu_toggle('15');return false"><span id="vh_div15indicator"><img src="http://core-release-0.4.mocotms.com/pix/i/closed.gif" alt="Закрита тека"></span> Сторінки сайту</a></div><span id="vh_div15"></span>
+<div class="depth0"><a href="#" onclick="menu_toggle('17');return false"><span id="vh_div17indicator"><img src="http://core-release-0.4.mocotms.com/pix/i/closed.gif" alt="Закрита тека"></span> Головна сторінка</a></div><span id="vh_div17"></span>
+<div class="depth0"><a href="#" onclick="menu_toggle('18');return false"><span id="vh_div18indicator"><img src="http://core-release-0.4.mocotms.com/pix/i/closed.gif" alt="Закрита тека"></span> Сервер</a></div><span id="vh_div18"></span>
+<div class="depth0"><a href="#" onclick="menu_toggle('19');return false"><span id="vh_div19indicator"><img src="http://core-release-0.4.mocotms.com/pix/i/closed.gif" alt="Закрита тека"></span> Мережа</a></div><span id="vh_div19"></span>
+<div class="depth0"><a href="#" onclick="menu_toggle('20');return false"><span id="vh_div20indicator"><img src="http://core-release-0.4.mocotms.com/pix/i/closed.gif" alt="Закрита тека"></span> Звіти</a></div><span id="vh_div20"></span>
+<div class="depth0"><a href="#" onclick="menu_toggle('21');return false"><span id="vh_div21indicator"><img src="http://core-release-0.4.mocotms.com/pix/i/closed.gif" alt="Закрита тека"></span> Різне</a></div><span id="vh_div21"></span>
+<div class="depth0"><a class="link" href="http://core-release-0.4.mocotms.com/moco/config/admin_additional_settings/"><img src="http://core-release-0.4.mocotms.com/pix/i/item.gif" alt="">Додаткові налаштування</a></div>
+
+
+</div>
+<script type="text/javascript">
+//<![CDATA[
+collapseall();
+expand(1);
+expand(3);
+;
+//]]>
+</script></div></div><script type="text/javascript">
+//<![CDATA[
+elementCookieHide("inst5","Показати блок Керування сайтом","Сховати блок Керування сайтом");
+//]]>
+</script><span id="sb-1" class="skip-block-to"></span></div></td><td id="middle-column"><div class=" clearfix"><br><br><script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/yui/yahoo/yahoo-min.js"></script>
+<script type="text/javascript" src="http://core-release-0.4.mocotms.com/lib/yui/event/event-min.js"></script>
+
+<form autocomplete="off" action="http://core-release-0.4.mocotms.com/admin/user/user_bulk.php" method="post" accept-charset="utf-8" id="mform2" class="mform">
+	<div style="display: none;"><input name="MAX_FILE_SIZE" value="268435456" type="hidden">
+<input name="mform_showadvanced_last" value="" type="hidden">
+<input name="sesskey" value="nvgZWnplju" type="hidden">
+<input name="_qf__user_add_filter_form" value="1" type="hidden">
+</div>
+
+	<fieldset class="clearfix" id="newfilter">
+		<legend class="ftoggler">Новий фільтр</legend>
+		<div class="advancedbutton"><img class="adv" title="Додатковий елемент" alt="Додатковий елемент" src="http://core-release-0.4.mocotms.com/pix/adv.gif"><input value="Показати додаткове" name="mform_showadvanced" type="button"><script id="newfilter_script" type="text/javascript">
+showAdvancedInit('newfilter_script', 'mform_showadvanced', 'Показати додаткове', 'Сховати додаткове', 'Показати додаткове');
+</script><noscript><div style="display:inline"><input name="mform_showadvanced" value="Показати додаткове" type="submit" /></div></noscript></div><div class="fcontainer clearfix">
+		
+		<div class="fitem"><div class="fitemtitle"><div class="fgrouplabel"><label>Повна назва <span class="helplink"><a title="Допомогти з Повна назва (нове вікно)" href="http://core-release-0.4.mocotms.com/help.php?module=filters&amp;file=text.html&amp;forcelang=" onclick="this.target='popup'; return openpopup('/help.php?module=filters&amp;file=text.html&amp;forcelang=', 'popup', 'menubar=0,location=0,scrollbars,resizable,width=500,height=400', 0);"><img class="iconhelp" alt="Допомогти з Повна назва (нове вікно)" src="http://core-release-0.4.mocotms.com/pix/help.gif"></a></span>&nbsp;</label></div></div><fieldset class="felement fgroup"><label class="accesshide" for="id_realname_op">&nbsp;</label><select name="realname_op" id="id_realname_op">
+	<option value="0">містить</option>
+	<option value="1">не містить</option>
+	<option value="2">дорівнює</option>
+	<option value="3">починається з</option>
+	<option value="4">закінчується на</option>
+	<option value="5">порожній</option>
+</select><label class="accesshide" for="id_realname">&nbsp;</label><input name="realname" id="id_realname" type="text"></fieldset></div>
+		<div class="fitem advanced hide"><div class="fitemtitle"><div class="fgrouplabel"><label>Прізвище<img class="adv" title="Додатковий елемент" alt="Додатковий елемент" src="http://core-release-0.4.mocotms.com/pix/adv.gif"> <span class="helplink"><a title="Допомогти з Прізвище (нове вікно)" href="http://core-release-0.4.mocotms.com/help.php?module=filters&amp;file=text.html&amp;forcelang=" onclick="this.target='popup'; return openpopup('/help.php?module=filters&amp;file=text.html&amp;forcelang=', 'popup', 'menubar=0,location=0,scrollbars,resizable,width=500,height=400', 0);"><img class="iconhelp" alt="Допомогти з Прізвище (нове вікно)" src="http://core-release-0.4.mocotms.com/pix/help.gif"></a></span>&nbsp;</label></div></div><fieldset class="felement fgroup"><label class="accesshide" for="id_lastname_op">&nbsp;</label><select name="lastname_op" id="id_lastname_op">
+	<option value="0">містить</option>
+	<option value="1">не містить</option>
+	<option value="2">дорівнює</option>
+	<option value="3">починається з</option>
+	<option value="4">закінчується на</option>
+	<option value="5">порожній</option>
+</select><label class="accesshide" for="id_lastname">&nbsp;</label><input name="lastname" id="id_lastname" type="text"></fieldset></div>
+		<div class="fitem advanced hide"><div class="fitemtitle"><div class="fgrouplabel"><label>Ім'я<img class="adv" title="Додатковий елемент" alt="Додатковий елемент" src="http://core-release-0.4.mocotms.com/pix/adv.gif"> <span class="helplink"><a title="Допомогти з Ім'я (нове вікно)" href="http://core-release-0.4.mocotms.com/help.php?module=filters&amp;file=text.html&amp;forcelang=" onclick="this.target='popup'; return openpopup('/help.php?module=filters&amp;file=text.html&amp;forcelang=', 'popup', 'menubar=0,location=0,scrollbars,resizable,width=500,height=400', 0);"><img class="iconhelp" alt="Допомогти з Ім'я (нове вікно)" src="http://core-release-0.4.mocotms.com/pix/help.gif"></a></span>&nbsp;</label></div></div><fieldset class="felement fgroup"><label class="accesshide" for="id_firstname_op">&nbsp;</label><select name="firstname_op" id="id_firstname_op">
+	<option value="0">містить</option>
+	<option value="1">не містить</option>
+	<option value="2">дорівнює</option>
+	<option value="3">починається з</option>
+	<option value="4">закінчується на</option>
+	<option value="5">порожній</option>
+</select><label class="accesshide" for="id_firstname">&nbsp;</label><input name="firstname" id="id_firstname" type="text"></fieldset></div>
+		<div class="fitem advanced hide"><div class="fitemtitle"><div class="fgrouplabel"><label>ел.пошта<img class="adv" title="Додатковий елемент" alt="Додатковий елемент" src="http://core-release-0.4.mocotms.com/pix/adv.gif"> <span class="helplink"><a title="Допомогти з ел.пошта (нове вікно)" href="http://core-release-0.4.mocotms.com/help.php?module=filters&amp;file=text.html&amp;forcelang=" onclick="this.target='popup'; return openpopup('/help.php?module=filters&amp;file=text.html&amp;forcelang=', 'popup', 'menubar=0,location=0,scrollbars,resizable,width=500,height=400', 0);"><img class="iconhelp" alt="Допомогти з ел.пошта (нове вікно)" src="http://core-release-0.4.mocotms.com/pix/help.gif"></a></span>&nbsp;</label></div></div><fieldset class="felement fgroup"><label class="accesshide" for="id_email_op">&nbsp;</label><select name="email_op" id="id_email_op">
+	<option value="0">містить</option>
+	<option value="1">не містить</option>
+	<option value="2">дорівнює</option>
+	<option value="3">починається з</option>
+	<option value="4">закінчується на</option>
+	<option value="5">порожній</option>
+</select><label class="accesshide" for="id_email">&nbsp;</label><input name="email" id="id_email" type="text"></fieldset></div>
+		<div class="fitem advanced hide"><div class="fitemtitle"><div class="fgrouplabel"><label>Місто<img class="adv" title="Додатковий елемент" alt="Додатковий елемент" src="http://core-release-0.4.mocotms.com/pix/adv.gif"> <span class="helplink"><a title="Допомогти з Місто (нове вікно)" href="http://core-release-0.4.mocotms.com/help.php?module=filters&amp;file=text.html&amp;forcelang=" onclick="this.target='popup'; return openpopup('/help.php?module=filters&amp;file=text.html&amp;forcelang=', 'popup', 'menubar=0,location=0,scrollbars,resizable,width=500,height=400', 0);"><img class="iconhelp" alt="Допомогти з Місто (нове вікно)" src="http://core-release-0.4.mocotms.com/pix/help.gif"></a></span>&nbsp;</label></div></div><fieldset class="felement fgroup"><label class="accesshide" for="id_city_op">&nbsp;</label><select name="city_op" id="id_city_op">
+	<option value="0">містить</option>
+	<option value="1">не містить</option>
+	<option value="2">дорівнює</option>
+	<option value="3">починається з</option>
+	<option value="4">закінчується на</option>
+	<option value="5">порожній</option>
+</select><label class="accesshide" for="id_city">&nbsp;</label><input name="city" id="id_city" type="text"></fieldset></div>
+		<div class="fitem advanced hide"><div class="fitemtitle"><div class="fgrouplabel"><label>Країна<img class="adv" title="Додатковий елемент" alt="Додатковий елемент" src="http://core-release-0.4.mocotms.com/pix/adv.gif"> <span class="helplink"><a title="Допомогти з Країна (нове вікно)" href="http://core-release-0.4.mocotms.com/help.php?module=filters&amp;file=select.html&amp;forcelang=" onclick="this.target='popup'; return openpopup('/help.php?module=filters&amp;file=select.html&amp;forcelang=', 'popup', 'menubar=0,location=0,scrollbars,resizable,width=500,height=400', 0);"><img class="iconhelp" alt="Допомогти з Країна (нове вікно)" src="http://core-release-0.4.mocotms.com/pix/help.gif"></a></span>&nbsp;</label></div></div><fieldset class="felement fgroup"><label class="accesshide" for="id_country_op">&nbsp;</label><select name="country_op" id="id_country_op">
+	<option value="0">будь-яке значення</option>
+	<option value="1">дорівнює</option>
+	<option value="2">не дорівнює</option>
+</select><label class="accesshide" for="id_country">&nbsp;</label><select name="country" id="id_country" disabled="">
+	<option value="AU" disabled="">Австралія</option>
+	<option value="AT" disabled="">Австрія</option>
+	<option value="AZ" disabled="">Азербайджан</option>
+	<option value="AX" disabled="">Аландські острови</option>
+	<option value="AL" disabled="">Албанія</option>
+	<option value="DZ" disabled="">Алжир</option>
+	<option value="AS" disabled="">Американське Самоа</option>
+	<option value="AI" disabled="">Анґілья</option>
+	<option value="AO" disabled="">Анґола</option>
+	<option value="AD" disabled="">Андорра</option>
+	<option value="AQ" disabled="">Антарктика</option>
+	<option value="AG" disabled="">Антиґуа і Барбуда</option>
+	<option value="AN" disabled="">Антильські Острови (Нід.)</option>
+	<option value="AR" disabled="">Аргентина</option>
+	<option value="AW" disabled="">Аруба</option>
+	<option value="AF" disabled="">Афганістан</option>
+	<option value="BS" disabled="">Багами</option>
+	<option value="BD" disabled="">Банґладеш</option>
+	<option value="BB" disabled="">Барбадос</option>
+	<option value="BH" disabled="">Бахрейн</option>
+	<option value="BE" disabled="">Бельгія</option>
+	<option value="BZ" disabled="">Беліз</option>
+	<option value="BJ" disabled="">Бенін</option>
+	<option value="BM" disabled="">Бермуди</option>
+	<option value="BY" disabled="">Білорусь</option>
+	<option value="BG" disabled="">Болгарія</option>
+	<option value="BO" disabled="">Болівія</option>
+	<option value="BA" disabled="">Боснія і Герцеґовина</option>
+	<option value="BW" disabled="">Ботсвана</option>
+	<option value="BR" disabled="">Бразилія</option>
+	<option value="IO" disabled="">Британська територія в Індійському океані</option>
+	<option value="BN" disabled="">Бруней</option>
+	<option value="BF" disabled="">Буркіна-Фасо</option>
+	<option value="BI" disabled="">Бурунді</option>
+	<option value="BT" disabled="">Бутан</option>
+	<option value="VU" disabled="">Вануату</option>
+	<option value="VA" disabled="">Ватикан</option>
+	<option value="GB" disabled="">Велика Британія</option>
+	<option value="VE" disabled="">Венесуела</option>
+	<option value="VN" disabled="">В'єтнам</option>
+	<option value="VG" disabled="">Віргінські Острови (Брит.)</option>
+	<option value="VI" disabled="">Віргінські Острови (США)</option>
+	<option value="AM" disabled="">Вірменія</option>
+	<option value="HT" disabled="">Гаїті</option>
+	<option value="GH" disabled="">Гана</option>
+	<option value="GG" disabled="">Гернсей</option>
+	<option value="HN" disabled="">Гондурас</option>
+	<option value="GR" disabled="">Греція</option>
+	<option value="GE" disabled="">Грузія</option>
+	<option value="GA" disabled="">Ґабон</option>
+	<option value="GY" disabled="">Ґайана</option>
+	<option value="GM" disabled="">Ґамбія</option>
+	<option value="GP" disabled="">Ґваделупа</option>
+	<option value="GT" disabled="">Ґватемала</option>
+	<option value="GN" disabled="">Ґвінея</option>
+	<option value="GW" disabled="">Ґвінея-Бісау</option>
+	<option value="GI" disabled="">Ґібралтар</option>
+	<option value="HK" disabled="">Ґонконг (Сянґан)</option>
+	<option value="GD" disabled="">Ґренада</option>
+	<option value="GL" disabled="">Ґренландія</option>
+	<option value="GU" disabled="">Ґуам</option>
+	<option value="DK" disabled="">Данія</option>
+	<option value="ZR" disabled="">Демократична Республіка Конґо (Заїр)</option>
+	<option value="JE" disabled="">Джерсей</option>
+	<option value="DJ" disabled="">Джібуті</option>
+	<option value="DM" disabled="">Домініка</option>
+	<option value="DO" disabled="">Домініканська Республіка</option>
+	<option value="EG" disabled="">Єгипет</option>
+	<option value="EC" disabled="">Еквадор</option>
+	<option value="GQ" disabled="">Екваторіальна Ґвінея</option>
+	<option value="YE" disabled="">Ємен</option>
+	<option value="ER" disabled="">Еритрея</option>
+	<option value="EE" disabled="">Естонія</option>
+	<option value="ET" disabled="">Ефіопія</option>
+	<option value="ZM" disabled="">Замбія</option>
+	<option value="EH" disabled="">Західна Сахара</option>
+	<option value="ZW" disabled="">Зімбабве</option>
+	<option value="IL" disabled="">Ізраїль</option>
+	<option value="IN" disabled="">Індія</option>
+	<option value="ID" disabled="">Індонезія</option>
+	<option value="IQ" disabled="">Ірак</option>
+	<option value="IR" disabled="">Іран</option>
+	<option value="IE" disabled="">Ірландія</option>
+	<option value="IS" disabled="">Ісландія</option>
+	<option value="ES" disabled="">Іспанія</option>
+	<option value="IT" disabled="">Італія</option>
+	<option value="JO" disabled="">Йорданія</option>
+	<option value="CV" disabled="">Кабо-Верде</option>
+	<option value="KZ" disabled="">Казахстан</option>
+	<option value="KY" disabled="">Кайманові Острови</option>
+	<option value="KH" disabled="">Камбоджа</option>
+	<option value="CM" disabled="">Камерун</option>
+	<option value="CA" disabled="">Канада</option>
+	<option value="QA" disabled="">Катар</option>
+	<option value="KE" disabled="">Кенія</option>
+	<option value="KG" disabled="">Киргизстан</option>
+	<option value="CN" disabled="">Китай</option>
+	<option value="CY" disabled="">Кіпр</option>
+	<option value="KI" disabled="">Кірибаті</option>
+	<option value="CC" disabled="">Кокосові (Кілінґ) Острови</option>
+	<option value="CO" disabled="">Колумбія</option>
+	<option value="KM" disabled="">Комори</option>
+	<option value="CD" disabled="">Конго, Демократична Республіка</option>
+	<option value="CG" disabled="">Конґо</option>
+	<option value="KR" disabled="">Корея Південна</option>
+	<option value="KP" disabled="">Корея Північна</option>
+	<option value="KO" disabled="">Косово</option>
+	<option value="CR" disabled="">Коста-Ріка</option>
+	<option value="CI" disabled="">Кот-д'Івуар</option>
+	<option value="CU" disabled="">Куба</option>
+	<option value="KW" disabled="">Кувейт</option>
+	<option value="LA" disabled="">Лаос</option>
+	<option value="LV" disabled="">Латвія</option>
+	<option value="LS" disabled="">Лесото</option>
+	<option value="LT" disabled="">Литва</option>
+	<option value="LR" disabled="">Ліберія</option>
+	<option value="LB" disabled="">Ліван</option>
+	<option value="LY" disabled="">Лівія</option>
+	<option value="LI" disabled="">Ліхтенштейн</option>
+	<option value="LU" disabled="">Люксембурґ</option>
+	<option value="MU" disabled="">Маврикій</option>
+	<option value="MR" disabled="">Мавританія</option>
+	<option value="MG" disabled="">Мадаґаскар</option>
+	<option value="YT" disabled="">Майотта</option>
+	<option value="MO" disabled="">Макау</option>
+	<option value="MK" disabled="">Македонія</option>
+	<option value="MW" disabled="">Малаві</option>
+	<option value="MY" disabled="">Малайзія</option>
+	<option value="MV" disabled="">Мальдіви</option>
+	<option value="ML" disabled="">Малі</option>
+	<option value="MT" disabled="">Мальта</option>
+	<option value="MA" disabled="">Марокко</option>
+	<option value="MQ" disabled="">Мартиніка</option>
+	<option value="MH" disabled="">Маршаллові Острови</option>
+	<option value="MX" disabled="">Мексика</option>
+	<option value="MZ" disabled="">Мозамбік</option>
+	<option value="MD" disabled="">Молдова</option>
+	<option value="MC" disabled="">Монако</option>
+	<option value="MN" disabled="">Монголія</option>
+	<option value="MS" disabled="">Монтсеррат</option>
+	<option value="MM" disabled="">М'янма</option>
+	<option value="NA" disabled="">Намібія</option>
+	<option value="NR" disabled="">Науру</option>
+	<option value="NP" disabled="">Непал</option>
+	<option value="NE" disabled="">Ніґер</option>
+	<option value="NG" disabled="">Ніґерія</option>
+	<option value="NL" disabled="">Нідерланди</option>
+	<option value="NI" disabled="">Нікараґуа</option>
+	<option value="DE" disabled="">Німеччина</option>
+	<option value="NU" disabled="">Ніуе</option>
+	<option value="NZ" disabled="">Нова Зеландія</option>
+	<option value="NC" disabled="">Нова Каледонія</option>
+	<option value="NO" disabled="">Норвегія</option>
+	<option value="AE" disabled="">Об'єднані Арабські Емірати</option>
+	<option value="BV" disabled="">о. Буве</option>
+	<option value="WF" disabled="">о-ви Волліс і Футуна</option>
+	<option value="HM" disabled="">о-ви Герд і Макдональд</option>
+	<option value="CK" disabled="">о-ви Кука</option>
+	<option value="TC" disabled="">о-ви Теркс і Кайкос</option>
+	<option value="SJ" disabled="">о-ви Ян-Маєн і Свалбард</option>
+	<option value="OM" disabled="">Оман</option>
+	<option value="NF" disabled="">о. Норфолк</option>
+	<option value="CX" disabled="">о. Різдва</option>
+	<option value="SH" disabled="">о. Св. Єлени</option>
+	<option value="IM" disabled="">Острів Мен</option>
+	<option value="PK" disabled="">Пакистан</option>
+	<option value="PW" disabled="">Палау</option>
+	<option value="PS" disabled="">Палестина</option>
+	<option value="PA" disabled="">Панама</option>
+	<option value="PG" disabled="">Папуа-Нова Ґвінея</option>
+	<option value="PY" disabled="">Параґвай</option>
+	<option value="PE" disabled="">Перу</option>
+	<option value="ZA" disabled="">Південна Африка</option>
+	<option value="GS" disabled="">Південна Джорджія</option>
+	<option value="MP" disabled="">Північні Маріанські Острови</option>
+	<option value="PN" disabled="">Піткерн</option>
+	<option value="PL" disabled="">Польща</option>
+	<option value="PT" disabled="">Португалія</option>
+	<option value="PR" disabled="">Пуерто-Рико</option>
+	<option value="RE" disabled="">Реюньйон</option>
+	<option value="RU" disabled="">Росія</option>
+	<option value="RW" disabled="">Руанда</option>
+	<option value="RO" disabled="">Румунія</option>
+	<option value="SV" disabled="">Сальвадор</option>
+	<option value="WS" disabled="">Самоа</option>
+	<option value="SM" disabled="">Сан-Марино</option>
+	<option value="BL" disabled="">СантБарталам'ю</option>
+	<option value="MF" disabled="">СантМартін</option>
+	<option value="ST" disabled="">Сан-Томе і Принсіпі</option>
+	<option value="SA" disabled="">Саудівська Аравія</option>
+	<option value="SZ" disabled="">Свазіленд</option>
+	<option value="SC" disabled="">Сейшельські Острови</option>
+	<option value="SN" disabled="">Сенеґал</option>
+	<option value="PM" disabled="">Сен-П'єр і Мікелон</option>
+	<option value="VC" disabled="">Сент-Вінсент і Ґренадини</option>
+	<option value="KN" disabled="">Сент-Кітс і Невіс</option>
+	<option value="LC" disabled="">Сент-Люсія</option>
+	<option value="RS" disabled="">Сербія</option>
+	<option value="CS" disabled="">Сербія і Чорногорія</option>
+	<option value="SL" disabled="">Сьєрра-Леоне</option>
+	<option value="SY" disabled="">Сирія</option>
+	<option value="SG" disabled="">Сінґапур</option>
+	<option value="SK" disabled="">Словаччина</option>
+	<option value="SI" disabled="">Словенія</option>
+	<option value="SB" disabled="">Соломонові Острови</option>
+	<option value="SO" disabled="">Сомалі</option>
+	<option value="US" disabled="">Сполучені Штати Америки</option>
+	<option value="SD" disabled="">Судан</option>
+	<option value="SR" disabled="">Суринам</option>
+	<option value="TP" disabled="">Східний Тімор</option>
+	<option value="UM" disabled="">США віддалені острови</option>
+	<option value="TJ" disabled="">Таджикистан</option>
+	<option value="TH" disabled="">Таїланд</option>
+	<option value="TW" disabled="">Тайвань</option>
+	<option value="TZ" disabled="">Танзанія</option>
+	<option value="TL" disabled="">Тімор-Лесте</option>
+	<option value="TG" disabled="">Тоґо</option>
+	<option value="TK" disabled="">Токелау</option>
+	<option value="TO" disabled="">Тонґа</option>
+	<option value="TT" disabled="">Тринідад і Тобаґо</option>
+	<option value="TV" disabled="">Тувалу</option>
+	<option value="TN" disabled="">Туніс</option>
+	<option value="TR" disabled="">Туреччина</option>
+	<option value="TM" disabled="">Туркменістан</option>
+	<option value="HU" disabled="">Угорщина</option>
+	<option value="UG" disabled="">Уґанда</option>
+	<option value="WA" disabled="">Уельс</option>
+	<option value="UZ" disabled="">Узбекистан</option>
+	<option value="UA" selected="selected" disabled="">Україна</option>
+	<option value="UY" disabled="">Уруґвай</option>
+	<option value="FO" disabled="">Фарерські Острови</option>
+	<option value="FM" disabled="">Федеративні Штати Мікронезії</option>
+	<option value="FJ" disabled="">Фіджі</option>
+	<option value="PH" disabled="">Філіппіни</option>
+	<option value="FI" disabled="">Фінляндія</option>
+	<option value="FK" disabled="">Фолклендські (Мальвінські) Острови</option>
+	<option value="FR" disabled="">Франція</option>
+	<option value="FX" disabled="">Франція; Метрополія</option>
+	<option value="GF" disabled="">Французька Гвіана</option>
+	<option value="PF" disabled="">Французька Полінезія</option>
+	<option value="TF" disabled="">Французькі Південнополярні території</option>
+	<option value="HR" disabled="">Хорватія</option>
+	<option value="CF" disabled="">Центральноафриканська Республіка</option>
+	<option value="TD" disabled="">Чад</option>
+	<option value="CZ" disabled="">Чехія</option>
+	<option value="CL" disabled="">Чилі</option>
+	<option value="ME" disabled="">Чорногорія</option>
+	<option value="CH" disabled="">Швейцарія</option>
+	<option value="SE" disabled="">Швеція</option>
+	<option value="LK" disabled="">Шрі-Ланка</option>
+	<option value="JM" disabled="">Ямайка</option>
+	<option value="JP" disabled="">Японія</option>
+</select></fieldset></div>
+		<div class="fitem advanced hide"><div class="fitemtitle"><label for="id_confirmed">Підтверджено<img class="adv" title="Додатковий елемент" alt="Додатковий елемент" src="http://core-release-0.4.mocotms.com/pix/adv.gif"> <span class="helplink"><a title="Допомогти з Підтверджено (нове вікно)" href="http://core-release-0.4.mocotms.com/help.php?module=filters&amp;file=simpleselect.html&amp;forcelang=" onclick="this.target='popup'; return openpopup('/help.php?module=filters&amp;file=simpleselect.html&amp;forcelang=', 'popup', 'menubar=0,location=0,scrollbars,resizable,width=500,height=400', 0);"><img class="iconhelp" alt="Допомогти з Підтверджено (нове вікно)" src="http://core-release-0.4.mocotms.com/pix/help.gif"></a></span>&nbsp;</label></div><div class="felement fselect"><select name="confirmed" id="id_confirmed">
+	<option value="">будь-яке значення</option>
+	<option value="0">Ні</option>
+	<option value="1">Так</option>
+</select></div></div>
+		<div class="fitem advanced hide"><div class="fitemtitle"><div class="fgrouplabel"><label>Роль в курсі<img class="adv" title="Додатковий елемент" alt="Додатковий елемент" src="http://core-release-0.4.mocotms.com/pix/adv.gif"> <span class="helplink"><a title="Допомогти з Роль в курсі (нове вікно)" href="http://core-release-0.4.mocotms.com/help.php?module=filters&amp;file=courserole.html&amp;forcelang=" onclick="this.target='popup'; return openpopup('/help.php?module=filters&amp;file=courserole.html&amp;forcelang=', 'popup', 'menubar=0,location=0,scrollbars,resizable,width=500,height=400', 0);"><img class="iconhelp" alt="Допомогти з Роль в курсі (нове вікно)" src="http://core-release-0.4.mocotms.com/pix/help.gif"></a></span>&nbsp;</label></div></div><fieldset class="felement fgroup"><label class="accesshide" for="id_courserole_rl">&nbsp;</label><select name="courserole_rl" id="id_courserole_rl">
+	<option value="0">будь-яка роль</option>
+	<option value="1">Administrator</option>
+	<option value="2">Course creator</option>
+	<option value="3">Teacher</option>
+	<option value="4">Non-editing teacher</option>
+	<option value="5">Student</option>
+	<option value="6">Guest</option>
+</select><label class="accesshide" for="id_courserole_ct">&nbsp;</label><select name="courserole_ct" id="id_courserole_ct">
+	<option value="0">будь-яка категорія</option>
+	<option value="1">Qa Krystyna</option>
+	<option value="272">Qa Krystyna / по-пд категория</option>
+	<option value="3">Qa Krystyna / S.GUT</option>
+	<option value="277">Qa Krystyna / Подкатегория 1 уровень (без курсов)</option>
+	<option value="302">Qa Krystyna / Подкатегория 1 уровень (без курсов) / FewCourse</option>
+	<option value="278">Qa Krystyna / Подкатегория 1 уровень (без курсов) / Подкатегрия 2 уровень</option>
+	<option value="306">Qa Krystyna / CorseTagWork</option>
+	<option value="5">QA Sviatoslav</option>
+	<option value="270">QA Bogush</option>
+	<option value="2">QA Avdieiev</option>
+	<option value="282">QA Prysyazhny</option>
+	<option value="307">PM Vikusia</option>
+	<option value="308">1111</option>
+	<option value="309">База ВНД</option>
+	<option value="310">QA SVITLANA</option>
+	<option value="311">Test QA</option>
+	<option value="312">Test QA / Test QA Sinor</option>
+	<option value="313">Test QA / Test QA Sinor / Test QA Middle</option>
+	<option value="315">Test QA / Test QA Sinor / Test QA Middle / Test Junior</option>
+	<option value="316">ТестированиеТестировщиков</option>
+	<option value="317">QA Mikolaenko</option>
+	<option value="318">1_Renault Tests</option>
+	<option value="319">QA Test</option>
+	<option value="320">Oleg Kh</option>
+	<option value="321">1111</option>
+	<option value="322">КПК</option>
+	<option value="325">Продажи</option>
+	<option value="324">Продажи / Общение с клиентом</option>
+	<option value="323">Notifications</option>
+	<option value="326">Test_QA_YG</option>
+	<option value="327">QA Olya</option>
+</select><label class="accesshide" for="id_courserole">&nbsp;</label><input name="courserole" id="id_courserole" type="text"></fieldset></div>
+		<div class="fitem advanced hide"><div class="fitemtitle"><label for="id_systemrole">Глобальна роль<img class="adv" title="Додатковий елемент" alt="Додатковий елемент" src="http://core-release-0.4.mocotms.com/pix/adv.gif"> <span class="helplink"><a title="Допомогти з Глобальна роль (нове вікно)" href="http://core-release-0.4.mocotms.com/help.php?module=filters&amp;file=globalrole.html&amp;forcelang=" onclick="this.target='popup'; return openpopup('/help.php?module=filters&amp;file=globalrole.html&amp;forcelang=', 'popup', 'menubar=0,location=0,scrollbars,resizable,width=500,height=400', 0);"><img class="iconhelp" alt="Допомогти з Глобальна роль (нове вікно)" src="http://core-release-0.4.mocotms.com/pix/help.gif"></a></span>&nbsp;</label></div><div class="felement fselect"><select name="systemrole" id="id_systemrole">
+	<option value="0" selected="selected">будь-яка роль</option>
+	<option value="1">Administrator</option>
+	<option value="2">Course creator</option>
+	<option value="3">Teacher</option>
+	<option value="4">Non-editing teacher</option>
+	<option value="5">Student</option>
+	<option value="6">Guest</option>
+</select></div></div>
+		<div class="fitem advanced hide"><div class="fitemtitle"><div class="fgrouplabel"><label>Перший доступ<img class="adv" title="Додатковий елемент" alt="Додатковий елемент" src="http://core-release-0.4.mocotms.com/pix/adv.gif"> <span class="helplink"><a title="Допомогти з Перший доступ (нове вікно)" href="http://core-release-0.4.mocotms.com/help.php?module=filters&amp;file=date.html&amp;forcelang=" onclick="this.target='popup'; return openpopup('/help.php?module=filters&amp;file=date.html&amp;forcelang=', 'popup', 'menubar=0,location=0,scrollbars,resizable,width=500,height=400', 0);"><img class="iconhelp" alt="Допомогти з Перший доступ (нове вікно)" src="http://core-release-0.4.mocotms.com/pix/help.gif"></a></span>&nbsp;</label></div></div><fieldset class="felement fgroup"><span><input name="firstaccess_sck" value="1" id="id_e869d7" type="checkbox"><label for="id_e869d7">після </label></span>
+        <script>
+            $(document).ready( function() {
+
+              // Пересчет дней  для всех элементов dateselector-а на форме
+              $("select[name*='[month]']").each(function (){
+                var selected_month = $(this).val();
+                var selected_year = $(this).next().next().val();
+                var selected_day = $(this).prev().prev().val();
+                var day_element_id = $(this).prev().prev().attr("id");
+                var day_this_month = new Date(selected_year,selected_month,0).getDate();
+
+                recreate_day_select(day_this_month, selected_day, day_element_id);                
+              });
+
+              // Пересчет дней в месяце при смене месяца
+              $("select[name*='[month]']").change(function(){
+                var selected_month = $(this).val();
+                var selected_year = $(this).next().next().val();
+                var selected_day = $(this).prev().prev().val();
+                var day_element_id = $(this).prev().prev().attr("id");
+                var day_this_month = new Date(selected_year,selected_month,0).getDate();
+
+                recreate_day_select(day_this_month, selected_day, day_element_id);                
+              });
+
+              // При смене года пересчитываем дни, только если выбран месяц февраль
+              $("select[name*='[year]']").change(function(){
+                var selected_month = $(this).prev().prev().val();
+                if (selected_month == 2){
+                    var selected_year = $(this).val();
+                    var selected_day = $(this).prev().prev().prev().prev().val();
+                    var day_element_id = $(this).prev().prev().prev().prev().attr("id");
+                    var day_this_month = new Date(selected_year,selected_month,0).getDate();
+
+                    recreate_day_select(day_this_month, selected_day, day_element_id);
+                }
+
+              });
+
+              function recreate_day_select(day_this_month, selected_day, day_element_id){
+                    $("#"+day_element_id).empty();
+                    var i;
+                    for (i = 1; i <= day_this_month; i++) {
+                        if (i == selected_day)
+                            $("#"+day_element_id).append("<option value='"+i+"' selected='selected'>"+i+"</option>");
+                        else
+                            $("#"+day_element_id).append("<option value='"+i+"'>"+i+"</option>");
+                    }
+              }  
+
+            });
+        </script><label class="accesshide" for="id_bb59bd">День</label><select name="firstaccess_sdt[day]" id="id_bb59bd" disabled="">
+	<option value="1" disabled="">1</option>
+	<option value="2" disabled="">2</option>
+	<option value="3" disabled="">3</option>
+	<option value="4" disabled="">4</option>
+	<option value="5" disabled="">5</option>
+	<option value="6" disabled="">6</option>
+	<option value="7" disabled="">7</option>
+	<option value="8" disabled="">8</option>
+	<option value="9" selected="selected" disabled="">9</option>
+	<option value="10" disabled="">10</option>
+	<option value="11" disabled="">11</option>
+	<option value="12" disabled="">12</option>
+	<option value="13" disabled="">13</option>
+	<option value="14" disabled="">14</option>
+	<option value="15" disabled="">15</option>
+	<option value="16" disabled="">16</option>
+	<option value="17" disabled="">17</option>
+	<option value="18" disabled="">18</option>
+	<option value="19" disabled="">19</option>
+	<option value="20" disabled="">20</option>
+	<option value="21" disabled="">21</option>
+	<option value="22" disabled="">22</option>
+	<option value="23" disabled="">23</option>
+	<option value="24" disabled="">24</option>
+	<option value="25" disabled="">25</option>
+	<option value="26" disabled="">26</option>
+	<option value="27" disabled="">27</option>
+	<option value="28" disabled="">28</option>
+	<option value="29" disabled="">29</option>
+	<option value="30" disabled="">30</option>
+	<option value="31" disabled="">31</option>
+</select>&nbsp;<label class="accesshide" for="id_62fade">Місяць</label><select name="firstaccess_sdt[month]" id="id_62fade" disabled="">
+	<option value="1" disabled="">Січень</option>
+	<option value="2" disabled="">Лютий</option>
+	<option value="3" disabled="">Березень</option>
+	<option value="4" disabled="">Квітень</option>
+	<option value="5" disabled="">Травень</option>
+	<option value="6" disabled="">Червень</option>
+	<option value="7" disabled="">Липень</option>
+	<option value="8" disabled="">Серпень</option>
+	<option value="9" disabled="">Вересень</option>
+	<option value="10" selected="selected" disabled="">Жовтень</option>
+	<option value="11" disabled="">Листопад</option>
+	<option value="12" disabled="">Грудень</option>
+</select>&nbsp;<label class="accesshide" for="id_f8aac8">Рік</label><select name="firstaccess_sdt[year]" id="id_f8aac8" disabled="">
+	<option value="1970" disabled="">1970</option>
+	<option value="1971" disabled="">1971</option>
+	<option value="1972" disabled="">1972</option>
+	<option value="1973" disabled="">1973</option>
+	<option value="1974" disabled="">1974</option>
+	<option value="1975" disabled="">1975</option>
+	<option value="1976" disabled="">1976</option>
+	<option value="1977" disabled="">1977</option>
+	<option value="1978" disabled="">1978</option>
+	<option value="1979" disabled="">1979</option>
+	<option value="1980" disabled="">1980</option>
+	<option value="1981" disabled="">1981</option>
+	<option value="1982" disabled="">1982</option>
+	<option value="1983" disabled="">1983</option>
+	<option value="1984" disabled="">1984</option>
+	<option value="1985" disabled="">1985</option>
+	<option value="1986" disabled="">1986</option>
+	<option value="1987" disabled="">1987</option>
+	<option value="1988" disabled="">1988</option>
+	<option value="1989" disabled="">1989</option>
+	<option value="1990" disabled="">1990</option>
+	<option value="1991" disabled="">1991</option>
+	<option value="1992" disabled="">1992</option>
+	<option value="1993" disabled="">1993</option>
+	<option value="1994" disabled="">1994</option>
+	<option value="1995" disabled="">1995</option>
+	<option value="1996" disabled="">1996</option>
+	<option value="1997" disabled="">1997</option>
+	<option value="1998" disabled="">1998</option>
+	<option value="1999" disabled="">1999</option>
+	<option value="2000" disabled="">2000</option>
+	<option value="2001" disabled="">2001</option>
+	<option value="2002" disabled="">2002</option>
+	<option value="2003" disabled="">2003</option>
+	<option value="2004" disabled="">2004</option>
+	<option value="2005" disabled="">2005</option>
+	<option value="2006" disabled="">2006</option>
+	<option value="2007" disabled="">2007</option>
+	<option value="2008" disabled="">2008</option>
+	<option value="2009" disabled="">2009</option>
+	<option value="2010" disabled="">2010</option>
+	<option value="2011" disabled="">2011</option>
+	<option value="2012" disabled="">2012</option>
+	<option value="2013" disabled="">2013</option>
+	<option value="2014" disabled="">2014</option>
+	<option value="2015" disabled="">2015</option>
+	<option value="2016" disabled="">2016</option>
+	<option value="2017" selected="selected" disabled="">2017</option>
+	<option value="2018" disabled="">2018</option>
+	<option value="2019" disabled="">2019</option>
+	<option value="2020" disabled="">2020</option>
+</select><br><span><input name="firstaccess_eck" value="1" id="id_34fc3f" type="checkbox"><label for="id_34fc3f">перед </label></span>
+        <script>
+            $(document).ready( function() {
+
+              // Пересчет дней  для всех элементов dateselector-а на форме
+              $("select[name*='[month]']").each(function (){
+                var selected_month = $(this).val();
+                var selected_year = $(this).next().next().val();
+                var selected_day = $(this).prev().prev().val();
+                var day_element_id = $(this).prev().prev().attr("id");
+                var day_this_month = new Date(selected_year,selected_month,0).getDate();
+
+                recreate_day_select(day_this_month, selected_day, day_element_id);                
+              });
+
+              // Пересчет дней в месяце при смене месяца
+              $("select[name*='[month]']").change(function(){
+                var selected_month = $(this).val();
+                var selected_year = $(this).next().next().val();
+                var selected_day = $(this).prev().prev().val();
+                var day_element_id = $(this).prev().prev().attr("id");
+                var day_this_month = new Date(selected_year,selected_month,0).getDate();
+
+                recreate_day_select(day_this_month, selected_day, day_element_id);                
+              });
+
+              // При смене года пересчитываем дни, только если выбран месяц февраль
+              $("select[name*='[year]']").change(function(){
+                var selected_month = $(this).prev().prev().val();
+                if (selected_month == 2){
+                    var selected_year = $(this).val();
+                    var selected_day = $(this).prev().prev().prev().prev().val();
+                    var day_element_id = $(this).prev().prev().prev().prev().attr("id");
+                    var day_this_month = new Date(selected_year,selected_month,0).getDate();
+
+                    recreate_day_select(day_this_month, selected_day, day_element_id);
+                }
+
+              });
+
+              function recreate_day_select(day_this_month, selected_day, day_element_id){
+                    $("#"+day_element_id).empty();
+                    var i;
+                    for (i = 1; i <= day_this_month; i++) {
+                        if (i == selected_day)
+                            $("#"+day_element_id).append("<option value='"+i+"' selected='selected'>"+i+"</option>");
+                        else
+                            $("#"+day_element_id).append("<option value='"+i+"'>"+i+"</option>");
+                    }
+              }  
+
+            });
+        </script><label class="accesshide" for="id_31010e">День</label><select name="firstaccess_edt[day]" id="id_31010e" disabled="">
+	<option value="1" disabled="">1</option>
+	<option value="2" disabled="">2</option>
+	<option value="3" disabled="">3</option>
+	<option value="4" disabled="">4</option>
+	<option value="5" disabled="">5</option>
+	<option value="6" disabled="">6</option>
+	<option value="7" disabled="">7</option>
+	<option value="8" disabled="">8</option>
+	<option value="9" selected="selected" disabled="">9</option>
+	<option value="10" disabled="">10</option>
+	<option value="11" disabled="">11</option>
+	<option value="12" disabled="">12</option>
+	<option value="13" disabled="">13</option>
+	<option value="14" disabled="">14</option>
+	<option value="15" disabled="">15</option>
+	<option value="16" disabled="">16</option>
+	<option value="17" disabled="">17</option>
+	<option value="18" disabled="">18</option>
+	<option value="19" disabled="">19</option>
+	<option value="20" disabled="">20</option>
+	<option value="21" disabled="">21</option>
+	<option value="22" disabled="">22</option>
+	<option value="23" disabled="">23</option>
+	<option value="24" disabled="">24</option>
+	<option value="25" disabled="">25</option>
+	<option value="26" disabled="">26</option>
+	<option value="27" disabled="">27</option>
+	<option value="28" disabled="">28</option>
+	<option value="29" disabled="">29</option>
+	<option value="30" disabled="">30</option>
+	<option value="31" disabled="">31</option>
+</select>&nbsp;<label class="accesshide" for="id_a86faf">Місяць</label><select name="firstaccess_edt[month]" id="id_a86faf" disabled="">
+	<option value="1" disabled="">Січень</option>
+	<option value="2" disabled="">Лютий</option>
+	<option value="3" disabled="">Березень</option>
+	<option value="4" disabled="">Квітень</option>
+	<option value="5" disabled="">Травень</option>
+	<option value="6" disabled="">Червень</option>
+	<option value="7" disabled="">Липень</option>
+	<option value="8" disabled="">Серпень</option>
+	<option value="9" disabled="">Вересень</option>
+	<option value="10" selected="selected" disabled="">Жовтень</option>
+	<option value="11" disabled="">Листопад</option>
+	<option value="12" disabled="">Грудень</option>
+</select>&nbsp;<label class="accesshide" for="id_8ca1a9">Рік</label><select name="firstaccess_edt[year]" id="id_8ca1a9" disabled="">
+	<option value="1970" disabled="">1970</option>
+	<option value="1971" disabled="">1971</option>
+	<option value="1972" disabled="">1972</option>
+	<option value="1973" disabled="">1973</option>
+	<option value="1974" disabled="">1974</option>
+	<option value="1975" disabled="">1975</option>
+	<option value="1976" disabled="">1976</option>
+	<option value="1977" disabled="">1977</option>
+	<option value="1978" disabled="">1978</option>
+	<option value="1979" disabled="">1979</option>
+	<option value="1980" disabled="">1980</option>
+	<option value="1981" disabled="">1981</option>
+	<option value="1982" disabled="">1982</option>
+	<option value="1983" disabled="">1983</option>
+	<option value="1984" disabled="">1984</option>
+	<option value="1985" disabled="">1985</option>
+	<option value="1986" disabled="">1986</option>
+	<option value="1987" disabled="">1987</option>
+	<option value="1988" disabled="">1988</option>
+	<option value="1989" disabled="">1989</option>
+	<option value="1990" disabled="">1990</option>
+	<option value="1991" disabled="">1991</option>
+	<option value="1992" disabled="">1992</option>
+	<option value="1993" disabled="">1993</option>
+	<option value="1994" disabled="">1994</option>
+	<option value="1995" disabled="">1995</option>
+	<option value="1996" disabled="">1996</option>
+	<option value="1997" disabled="">1997</option>
+	<option value="1998" disabled="">1998</option>
+	<option value="1999" disabled="">1999</option>
+	<option value="2000" disabled="">2000</option>
+	<option value="2001" disabled="">2001</option>
+	<option value="2002" disabled="">2002</option>
+	<option value="2003" disabled="">2003</option>
+	<option value="2004" disabled="">2004</option>
+	<option value="2005" disabled="">2005</option>
+	<option value="2006" disabled="">2006</option>
+	<option value="2007" disabled="">2007</option>
+	<option value="2008" disabled="">2008</option>
+	<option value="2009" disabled="">2009</option>
+	<option value="2010" disabled="">2010</option>
+	<option value="2011" disabled="">2011</option>
+	<option value="2012" disabled="">2012</option>
+	<option value="2013" disabled="">2013</option>
+	<option value="2014" disabled="">2014</option>
+	<option value="2015" disabled="">2015</option>
+	<option value="2016" disabled="">2016</option>
+	<option value="2017" selected="selected" disabled="">2017</option>
+	<option value="2018" disabled="">2018</option>
+	<option value="2019" disabled="">2019</option>
+	<option value="2020" disabled="">2020</option>
+</select><span><input name="firstaccess_never" value="1" id="id_56b08f" disabled="" type="checkbox"><label for="id_56b08f">Не заходив у систему</label></span></fieldset></div>
+		<div class="fitem advanced hide"><div class="fitemtitle"><div class="fgrouplabel"><label>Останній вхід на сайт<img class="adv" title="Додатковий елемент" alt="Додатковий елемент" src="http://core-release-0.4.mocotms.com/pix/adv.gif"> <span class="helplink"><a title="Допомогти з Останній вхід на сайт (нове вікно)" href="http://core-release-0.4.mocotms.com/help.php?module=filters&amp;file=date.html&amp;forcelang=" onclick="this.target='popup'; return openpopup('/help.php?module=filters&amp;file=date.html&amp;forcelang=', 'popup', 'menubar=0,location=0,scrollbars,resizable,width=500,height=400', 0);"><img class="iconhelp" alt="Допомогти з Останній вхід на сайт (нове вікно)" src="http://core-release-0.4.mocotms.com/pix/help.gif"></a></span>&nbsp;</label></div></div><fieldset class="felement fgroup"><span><input name="lastaccess_sck" value="1" id="id_d7bb6c" type="checkbox"><label for="id_d7bb6c">після </label></span>
+        <script>
+            $(document).ready( function() {
+
+              // Пересчет дней  для всех элементов dateselector-а на форме
+              $("select[name*='[month]']").each(function (){
+                var selected_month = $(this).val();
+                var selected_year = $(this).next().next().val();
+                var selected_day = $(this).prev().prev().val();
+                var day_element_id = $(this).prev().prev().attr("id");
+                var day_this_month = new Date(selected_year,selected_month,0).getDate();
+
+                recreate_day_select(day_this_month, selected_day, day_element_id);                
+              });
+
+              // Пересчет дней в месяце при смене месяца
+              $("select[name*='[month]']").change(function(){
+                var selected_month = $(this).val();
+                var selected_year = $(this).next().next().val();
+                var selected_day = $(this).prev().prev().val();
+                var day_element_id = $(this).prev().prev().attr("id");
+                var day_this_month = new Date(selected_year,selected_month,0).getDate();
+
+                recreate_day_select(day_this_month, selected_day, day_element_id);                
+              });
+
+              // При смене года пересчитываем дни, только если выбран месяц февраль
+              $("select[name*='[year]']").change(function(){
+                var selected_month = $(this).prev().prev().val();
+                if (selected_month == 2){
+                    var selected_year = $(this).val();
+                    var selected_day = $(this).prev().prev().prev().prev().val();
+                    var day_element_id = $(this).prev().prev().prev().prev().attr("id");
+                    var day_this_month = new Date(selected_year,selected_month,0).getDate();
+
+                    recreate_day_select(day_this_month, selected_day, day_element_id);
+                }
+
+              });
+
+              function recreate_day_select(day_this_month, selected_day, day_element_id){
+                    $("#"+day_element_id).empty();
+                    var i;
+                    for (i = 1; i <= day_this_month; i++) {
+                        if (i == selected_day)
+                            $("#"+day_element_id).append("<option value='"+i+"' selected='selected'>"+i+"</option>");
+                        else
+                            $("#"+day_element_id).append("<option value='"+i+"'>"+i+"</option>");
+                    }
+              }  
+
+            });
+        </script><label class="accesshide" for="id_e67bb1">День</label><select name="lastaccess_sdt[day]" id="id_e67bb1" disabled="">
+	<option value="1" disabled="">1</option>
+	<option value="2" disabled="">2</option>
+	<option value="3" disabled="">3</option>
+	<option value="4" disabled="">4</option>
+	<option value="5" disabled="">5</option>
+	<option value="6" disabled="">6</option>
+	<option value="7" disabled="">7</option>
+	<option value="8" disabled="">8</option>
+	<option value="9" selected="selected" disabled="">9</option>
+	<option value="10" disabled="">10</option>
+	<option value="11" disabled="">11</option>
+	<option value="12" disabled="">12</option>
+	<option value="13" disabled="">13</option>
+	<option value="14" disabled="">14</option>
+	<option value="15" disabled="">15</option>
+	<option value="16" disabled="">16</option>
+	<option value="17" disabled="">17</option>
+	<option value="18" disabled="">18</option>
+	<option value="19" disabled="">19</option>
+	<option value="20" disabled="">20</option>
+	<option value="21" disabled="">21</option>
+	<option value="22" disabled="">22</option>
+	<option value="23" disabled="">23</option>
+	<option value="24" disabled="">24</option>
+	<option value="25" disabled="">25</option>
+	<option value="26" disabled="">26</option>
+	<option value="27" disabled="">27</option>
+	<option value="28" disabled="">28</option>
+	<option value="29" disabled="">29</option>
+	<option value="30" disabled="">30</option>
+	<option value="31" disabled="">31</option>
+</select>&nbsp;<label class="accesshide" for="id_c5652a">Місяць</label><select name="lastaccess_sdt[month]" id="id_c5652a" disabled="">
+	<option value="1" disabled="">Січень</option>
+	<option value="2" disabled="">Лютий</option>
+	<option value="3" disabled="">Березень</option>
+	<option value="4" disabled="">Квітень</option>
+	<option value="5" disabled="">Травень</option>
+	<option value="6" disabled="">Червень</option>
+	<option value="7" disabled="">Липень</option>
+	<option value="8" disabled="">Серпень</option>
+	<option value="9" disabled="">Вересень</option>
+	<option value="10" selected="selected" disabled="">Жовтень</option>
+	<option value="11" disabled="">Листопад</option>
+	<option value="12" disabled="">Грудень</option>
+</select>&nbsp;<label class="accesshide" for="id_d0c977">Рік</label><select name="lastaccess_sdt[year]" id="id_d0c977" disabled="">
+	<option value="1970" disabled="">1970</option>
+	<option value="1971" disabled="">1971</option>
+	<option value="1972" disabled="">1972</option>
+	<option value="1973" disabled="">1973</option>
+	<option value="1974" disabled="">1974</option>
+	<option value="1975" disabled="">1975</option>
+	<option value="1976" disabled="">1976</option>
+	<option value="1977" disabled="">1977</option>
+	<option value="1978" disabled="">1978</option>
+	<option value="1979" disabled="">1979</option>
+	<option value="1980" disabled="">1980</option>
+	<option value="1981" disabled="">1981</option>
+	<option value="1982" disabled="">1982</option>
+	<option value="1983" disabled="">1983</option>
+	<option value="1984" disabled="">1984</option>
+	<option value="1985" disabled="">1985</option>
+	<option value="1986" disabled="">1986</option>
+	<option value="1987" disabled="">1987</option>
+	<option value="1988" disabled="">1988</option>
+	<option value="1989" disabled="">1989</option>
+	<option value="1990" disabled="">1990</option>
+	<option value="1991" disabled="">1991</option>
+	<option value="1992" disabled="">1992</option>
+	<option value="1993" disabled="">1993</option>
+	<option value="1994" disabled="">1994</option>
+	<option value="1995" disabled="">1995</option>
+	<option value="1996" disabled="">1996</option>
+	<option value="1997" disabled="">1997</option>
+	<option value="1998" disabled="">1998</option>
+	<option value="1999" disabled="">1999</option>
+	<option value="2000" disabled="">2000</option>
+	<option value="2001" disabled="">2001</option>
+	<option value="2002" disabled="">2002</option>
+	<option value="2003" disabled="">2003</option>
+	<option value="2004" disabled="">2004</option>
+	<option value="2005" disabled="">2005</option>
+	<option value="2006" disabled="">2006</option>
+	<option value="2007" disabled="">2007</option>
+	<option value="2008" disabled="">2008</option>
+	<option value="2009" disabled="">2009</option>
+	<option value="2010" disabled="">2010</option>
+	<option value="2011" disabled="">2011</option>
+	<option value="2012" disabled="">2012</option>
+	<option value="2013" disabled="">2013</option>
+	<option value="2014" disabled="">2014</option>
+	<option value="2015" disabled="">2015</option>
+	<option value="2016" disabled="">2016</option>
+	<option value="2017" selected="selected" disabled="">2017</option>
+	<option value="2018" disabled="">2018</option>
+	<option value="2019" disabled="">2019</option>
+	<option value="2020" disabled="">2020</option>
+</select><br><span><input name="lastaccess_eck" value="1" id="id_edd0b7" type="checkbox"><label for="id_edd0b7">перед </label></span>
+        <script>
+            $(document).ready( function() {
+
+              // Пересчет дней  для всех элементов dateselector-а на форме
+              $("select[name*='[month]']").each(function (){
+                var selected_month = $(this).val();
+                var selected_year = $(this).next().next().val();
+                var selected_day = $(this).prev().prev().val();
+                var day_element_id = $(this).prev().prev().attr("id");
+                var day_this_month = new Date(selected_year,selected_month,0).getDate();
+
+                recreate_day_select(day_this_month, selected_day, day_element_id);                
+              });
+
+              // Пересчет дней в месяце при смене месяца
+              $("select[name*='[month]']").change(function(){
+                var selected_month = $(this).val();
+                var selected_year = $(this).next().next().val();
+                var selected_day = $(this).prev().prev().val();
+                var day_element_id = $(this).prev().prev().attr("id");
+                var day_this_month = new Date(selected_year,selected_month,0).getDate();
+
+                recreate_day_select(day_this_month, selected_day, day_element_id);                
+              });
+
+              // При смене года пересчитываем дни, только если выбран месяц февраль
+              $("select[name*='[year]']").change(function(){
+                var selected_month = $(this).prev().prev().val();
+                if (selected_month == 2){
+                    var selected_year = $(this).val();
+                    var selected_day = $(this).prev().prev().prev().prev().val();
+                    var day_element_id = $(this).prev().prev().prev().prev().attr("id");
+                    var day_this_month = new Date(selected_year,selected_month,0).getDate();
+
+                    recreate_day_select(day_this_month, selected_day, day_element_id);
+                }
+
+              });
+
+              function recreate_day_select(day_this_month, selected_day, day_element_id){
+                    $("#"+day_element_id).empty();
+                    var i;
+                    for (i = 1; i <= day_this_month; i++) {
+                        if (i == selected_day)
+                            $("#"+day_element_id).append("<option value='"+i+"' selected='selected'>"+i+"</option>");
+                        else
+                            $("#"+day_element_id).append("<option value='"+i+"'>"+i+"</option>");
+                    }
+              }  
+
+            });
+        </script><label class="accesshide" for="id_64d485">День</label><select name="lastaccess_edt[day]" id="id_64d485" disabled="">
+	<option value="1" disabled="">1</option>
+	<option value="2" disabled="">2</option>
+	<option value="3" disabled="">3</option>
+	<option value="4" disabled="">4</option>
+	<option value="5" disabled="">5</option>
+	<option value="6" disabled="">6</option>
+	<option value="7" disabled="">7</option>
+	<option value="8" disabled="">8</option>
+	<option value="9" selected="selected" disabled="">9</option>
+	<option value="10" disabled="">10</option>
+	<option value="11" disabled="">11</option>
+	<option value="12" disabled="">12</option>
+	<option value="13" disabled="">13</option>
+	<option value="14" disabled="">14</option>
+	<option value="15" disabled="">15</option>
+	<option value="16" disabled="">16</option>
+	<option value="17" disabled="">17</option>
+	<option value="18" disabled="">18</option>
+	<option value="19" disabled="">19</option>
+	<option value="20" disabled="">20</option>
+	<option value="21" disabled="">21</option>
+	<option value="22" disabled="">22</option>
+	<option value="23" disabled="">23</option>
+	<option value="24" disabled="">24</option>
+	<option value="25" disabled="">25</option>
+	<option value="26" disabled="">26</option>
+	<option value="27" disabled="">27</option>
+	<option value="28" disabled="">28</option>
+	<option value="29" disabled="">29</option>
+	<option value="30" disabled="">30</option>
+	<option value="31" disabled="">31</option>
+</select>&nbsp;<label class="accesshide" for="id_ac6140">Місяць</label><select name="lastaccess_edt[month]" id="id_ac6140" disabled="">
+	<option value="1" disabled="">Січень</option>
+	<option value="2" disabled="">Лютий</option>
+	<option value="3" disabled="">Березень</option>
+	<option value="4" disabled="">Квітень</option>
+	<option value="5" disabled="">Травень</option>
+	<option value="6" disabled="">Червень</option>
+	<option value="7" disabled="">Липень</option>
+	<option value="8" disabled="">Серпень</option>
+	<option value="9" disabled="">Вересень</option>
+	<option value="10" selected="selected" disabled="">Жовтень</option>
+	<option value="11" disabled="">Листопад</option>
+	<option value="12" disabled="">Грудень</option>
+</select>&nbsp;<label class="accesshide" for="id_dc1477">Рік</label><select name="lastaccess_edt[year]" id="id_dc1477" disabled="">
+	<option value="1970" disabled="">1970</option>
+	<option value="1971" disabled="">1971</option>
+	<option value="1972" disabled="">1972</option>
+	<option value="1973" disabled="">1973</option>
+	<option value="1974" disabled="">1974</option>
+	<option value="1975" disabled="">1975</option>
+	<option value="1976" disabled="">1976</option>
+	<option value="1977" disabled="">1977</option>
+	<option value="1978" disabled="">1978</option>
+	<option value="1979" disabled="">1979</option>
+	<option value="1980" disabled="">1980</option>
+	<option value="1981" disabled="">1981</option>
+	<option value="1982" disabled="">1982</option>
+	<option value="1983" disabled="">1983</option>
+	<option value="1984" disabled="">1984</option>
+	<option value="1985" disabled="">1985</option>
+	<option value="1986" disabled="">1986</option>
+	<option value="1987" disabled="">1987</option>
+	<option value="1988" disabled="">1988</option>
+	<option value="1989" disabled="">1989</option>
+	<option value="1990" disabled="">1990</option>
+	<option value="1991" disabled="">1991</option>
+	<option value="1992" disabled="">1992</option>
+	<option value="1993" disabled="">1993</option>
+	<option value="1994" disabled="">1994</option>
+	<option value="1995" disabled="">1995</option>
+	<option value="1996" disabled="">1996</option>
+	<option value="1997" disabled="">1997</option>
+	<option value="1998" disabled="">1998</option>
+	<option value="1999" disabled="">1999</option>
+	<option value="2000" disabled="">2000</option>
+	<option value="2001" disabled="">2001</option>
+	<option value="2002" disabled="">2002</option>
+	<option value="2003" disabled="">2003</option>
+	<option value="2004" disabled="">2004</option>
+	<option value="2005" disabled="">2005</option>
+	<option value="2006" disabled="">2006</option>
+	<option value="2007" disabled="">2007</option>
+	<option value="2008" disabled="">2008</option>
+	<option value="2009" disabled="">2009</option>
+	<option value="2010" disabled="">2010</option>
+	<option value="2011" disabled="">2011</option>
+	<option value="2012" disabled="">2012</option>
+	<option value="2013" disabled="">2013</option>
+	<option value="2014" disabled="">2014</option>
+	<option value="2015" disabled="">2015</option>
+	<option value="2016" disabled="">2016</option>
+	<option value="2017" selected="selected" disabled="">2017</option>
+	<option value="2018" disabled="">2018</option>
+	<option value="2019" disabled="">2019</option>
+	<option value="2020" disabled="">2020</option>
+</select><span><input name="lastaccess_never" value="1" id="id_3843ec" disabled="" type="checkbox"><label for="id_3843ec">Не заходив у систему</label></span></fieldset></div>
+		<div class="fitem advanced hide"><div class="fitemtitle"><div class="fgrouplabel"><label>Останній вхід<img class="adv" title="Додатковий елемент" alt="Додатковий елемент" src="http://core-release-0.4.mocotms.com/pix/adv.gif"> <span class="helplink"><a title="Допомогти з Останній вхід (нове вікно)" href="http://core-release-0.4.mocotms.com/help.php?module=filters&amp;file=date.html&amp;forcelang=" onclick="this.target='popup'; return openpopup('/help.php?module=filters&amp;file=date.html&amp;forcelang=', 'popup', 'menubar=0,location=0,scrollbars,resizable,width=500,height=400', 0);"><img class="iconhelp" alt="Допомогти з Останній вхід (нове вікно)" src="http://core-release-0.4.mocotms.com/pix/help.gif"></a></span>&nbsp;</label></div></div><fieldset class="felement fgroup"><span><input name="lastlogin_sck" value="1" id="id_10dcba" type="checkbox"><label for="id_10dcba">після </label></span>
+        <script>
+            $(document).ready( function() {
+
+              // Пересчет дней  для всех элементов dateselector-а на форме
+              $("select[name*='[month]']").each(function (){
+                var selected_month = $(this).val();
+                var selected_year = $(this).next().next().val();
+                var selected_day = $(this).prev().prev().val();
+                var day_element_id = $(this).prev().prev().attr("id");
+                var day_this_month = new Date(selected_year,selected_month,0).getDate();
+
+                recreate_day_select(day_this_month, selected_day, day_element_id);                
+              });
+
+              // Пересчет дней в месяце при смене месяца
+              $("select[name*='[month]']").change(function(){
+                var selected_month = $(this).val();
+                var selected_year = $(this).next().next().val();
+                var selected_day = $(this).prev().prev().val();
+                var day_element_id = $(this).prev().prev().attr("id");
+                var day_this_month = new Date(selected_year,selected_month,0).getDate();
+
+                recreate_day_select(day_this_month, selected_day, day_element_id);                
+              });
+
+              // При смене года пересчитываем дни, только если выбран месяц февраль
+              $("select[name*='[year]']").change(function(){
+                var selected_month = $(this).prev().prev().val();
+                if (selected_month == 2){
+                    var selected_year = $(this).val();
+                    var selected_day = $(this).prev().prev().prev().prev().val();
+                    var day_element_id = $(this).prev().prev().prev().prev().attr("id");
+                    var day_this_month = new Date(selected_year,selected_month,0).getDate();
+
+                    recreate_day_select(day_this_month, selected_day, day_element_id);
+                }
+
+              });
+
+              function recreate_day_select(day_this_month, selected_day, day_element_id){
+                    $("#"+day_element_id).empty();
+                    var i;
+                    for (i = 1; i <= day_this_month; i++) {
+                        if (i == selected_day)
+                            $("#"+day_element_id).append("<option value='"+i+"' selected='selected'>"+i+"</option>");
+                        else
+                            $("#"+day_element_id).append("<option value='"+i+"'>"+i+"</option>");
+                    }
+              }  
+
+            });
+        </script><label class="accesshide" for="id_ecb667">День</label><select name="lastlogin_sdt[day]" id="id_ecb667" disabled="">
+	<option value="1" disabled="">1</option>
+	<option value="2" disabled="">2</option>
+	<option value="3" disabled="">3</option>
+	<option value="4" disabled="">4</option>
+	<option value="5" disabled="">5</option>
+	<option value="6" disabled="">6</option>
+	<option value="7" disabled="">7</option>
+	<option value="8" disabled="">8</option>
+	<option value="9" selected="selected" disabled="">9</option>
+	<option value="10" disabled="">10</option>
+	<option value="11" disabled="">11</option>
+	<option value="12" disabled="">12</option>
+	<option value="13" disabled="">13</option>
+	<option value="14" disabled="">14</option>
+	<option value="15" disabled="">15</option>
+	<option value="16" disabled="">16</option>
+	<option value="17" disabled="">17</option>
+	<option value="18" disabled="">18</option>
+	<option value="19" disabled="">19</option>
+	<option value="20" disabled="">20</option>
+	<option value="21" disabled="">21</option>
+	<option value="22" disabled="">22</option>
+	<option value="23" disabled="">23</option>
+	<option value="24" disabled="">24</option>
+	<option value="25" disabled="">25</option>
+	<option value="26" disabled="">26</option>
+	<option value="27" disabled="">27</option>
+	<option value="28" disabled="">28</option>
+	<option value="29" disabled="">29</option>
+	<option value="30" disabled="">30</option>
+	<option value="31" disabled="">31</option>
+</select>&nbsp;<label class="accesshide" for="id_adbb3c">Місяць</label><select name="lastlogin_sdt[month]" id="id_adbb3c" disabled="">
+	<option value="1" disabled="">Січень</option>
+	<option value="2" disabled="">Лютий</option>
+	<option value="3" disabled="">Березень</option>
+	<option value="4" disabled="">Квітень</option>
+	<option value="5" disabled="">Травень</option>
+	<option value="6" disabled="">Червень</option>
+	<option value="7" disabled="">Липень</option>
+	<option value="8" disabled="">Серпень</option>
+	<option value="9" disabled="">Вересень</option>
+	<option value="10" selected="selected" disabled="">Жовтень</option>
+	<option value="11" disabled="">Листопад</option>
+	<option value="12" disabled="">Грудень</option>
+</select>&nbsp;<label class="accesshide" for="id_17e6d2">Рік</label><select name="lastlogin_sdt[year]" id="id_17e6d2" disabled="">
+	<option value="1970" disabled="">1970</option>
+	<option value="1971" disabled="">1971</option>
+	<option value="1972" disabled="">1972</option>
+	<option value="1973" disabled="">1973</option>
+	<option value="1974" disabled="">1974</option>
+	<option value="1975" disabled="">1975</option>
+	<option value="1976" disabled="">1976</option>
+	<option value="1977" disabled="">1977</option>
+	<option value="1978" disabled="">1978</option>
+	<option value="1979" disabled="">1979</option>
+	<option value="1980" disabled="">1980</option>
+	<option value="1981" disabled="">1981</option>
+	<option value="1982" disabled="">1982</option>
+	<option value="1983" disabled="">1983</option>
+	<option value="1984" disabled="">1984</option>
+	<option value="1985" disabled="">1985</option>
+	<option value="1986" disabled="">1986</option>
+	<option value="1987" disabled="">1987</option>
+	<option value="1988" disabled="">1988</option>
+	<option value="1989" disabled="">1989</option>
+	<option value="1990" disabled="">1990</option>
+	<option value="1991" disabled="">1991</option>
+	<option value="1992" disabled="">1992</option>
+	<option value="1993" disabled="">1993</option>
+	<option value="1994" disabled="">1994</option>
+	<option value="1995" disabled="">1995</option>
+	<option value="1996" disabled="">1996</option>
+	<option value="1997" disabled="">1997</option>
+	<option value="1998" disabled="">1998</option>
+	<option value="1999" disabled="">1999</option>
+	<option value="2000" disabled="">2000</option>
+	<option value="2001" disabled="">2001</option>
+	<option value="2002" disabled="">2002</option>
+	<option value="2003" disabled="">2003</option>
+	<option value="2004" disabled="">2004</option>
+	<option value="2005" disabled="">2005</option>
+	<option value="2006" disabled="">2006</option>
+	<option value="2007" disabled="">2007</option>
+	<option value="2008" disabled="">2008</option>
+	<option value="2009" disabled="">2009</option>
+	<option value="2010" disabled="">2010</option>
+	<option value="2011" disabled="">2011</option>
+	<option value="2012" disabled="">2012</option>
+	<option value="2013" disabled="">2013</option>
+	<option value="2014" disabled="">2014</option>
+	<option value="2015" disabled="">2015</option>
+	<option value="2016" disabled="">2016</option>
+	<option value="2017" selected="selected" disabled="">2017</option>
+	<option value="2018" disabled="">2018</option>
+	<option value="2019" disabled="">2019</option>
+	<option value="2020" disabled="">2020</option>
+</select><br><span><input name="lastlogin_eck" value="1" id="id_80a8d8" type="checkbox"><label for="id_80a8d8">перед </label></span>
+        <script>
+            $(document).ready( function() {
+
+              // Пересчет дней  для всех элементов dateselector-а на форме
+              $("select[name*='[month]']").each(function (){
+                var selected_month = $(this).val();
+                var selected_year = $(this).next().next().val();
+                var selected_day = $(this).prev().prev().val();
+                var day_element_id = $(this).prev().prev().attr("id");
+                var day_this_month = new Date(selected_year,selected_month,0).getDate();
+
+                recreate_day_select(day_this_month, selected_day, day_element_id);                
+              });
+
+              // Пересчет дней в месяце при смене месяца
+              $("select[name*='[month]']").change(function(){
+                var selected_month = $(this).val();
+                var selected_year = $(this).next().next().val();
+                var selected_day = $(this).prev().prev().val();
+                var day_element_id = $(this).prev().prev().attr("id");
+                var day_this_month = new Date(selected_year,selected_month,0).getDate();
+
+                recreate_day_select(day_this_month, selected_day, day_element_id);                
+              });
+
+              // При смене года пересчитываем дни, только если выбран месяц февраль
+              $("select[name*='[year]']").change(function(){
+                var selected_month = $(this).prev().prev().val();
+                if (selected_month == 2){
+                    var selected_year = $(this).val();
+                    var selected_day = $(this).prev().prev().prev().prev().val();
+                    var day_element_id = $(this).prev().prev().prev().prev().attr("id");
+                    var day_this_month = new Date(selected_year,selected_month,0).getDate();
+
+                    recreate_day_select(day_this_month, selected_day, day_element_id);
+                }
+
+              });
+
+              function recreate_day_select(day_this_month, selected_day, day_element_id){
+                    $("#"+day_element_id).empty();
+                    var i;
+                    for (i = 1; i <= day_this_month; i++) {
+                        if (i == selected_day)
+                            $("#"+day_element_id).append("<option value='"+i+"' selected='selected'>"+i+"</option>");
+                        else
+                            $("#"+day_element_id).append("<option value='"+i+"'>"+i+"</option>");
+                    }
+              }  
+
+            });
+        </script><label class="accesshide" for="id_238c2f">День</label><select name="lastlogin_edt[day]" id="id_238c2f" disabled="">
+	<option value="1" disabled="">1</option>
+	<option value="2" disabled="">2</option>
+	<option value="3" disabled="">3</option>
+	<option value="4" disabled="">4</option>
+	<option value="5" disabled="">5</option>
+	<option value="6" disabled="">6</option>
+	<option value="7" disabled="">7</option>
+	<option value="8" disabled="">8</option>
+	<option value="9" selected="selected" disabled="">9</option>
+	<option value="10" disabled="">10</option>
+	<option value="11" disabled="">11</option>
+	<option value="12" disabled="">12</option>
+	<option value="13" disabled="">13</option>
+	<option value="14" disabled="">14</option>
+	<option value="15" disabled="">15</option>
+	<option value="16" disabled="">16</option>
+	<option value="17" disabled="">17</option>
+	<option value="18" disabled="">18</option>
+	<option value="19" disabled="">19</option>
+	<option value="20" disabled="">20</option>
+	<option value="21" disabled="">21</option>
+	<option value="22" disabled="">22</option>
+	<option value="23" disabled="">23</option>
+	<option value="24" disabled="">24</option>
+	<option value="25" disabled="">25</option>
+	<option value="26" disabled="">26</option>
+	<option value="27" disabled="">27</option>
+	<option value="28" disabled="">28</option>
+	<option value="29" disabled="">29</option>
+	<option value="30" disabled="">30</option>
+	<option value="31" disabled="">31</option>
+</select>&nbsp;<label class="accesshide" for="id_96b93e">Місяць</label><select name="lastlogin_edt[month]" id="id_96b93e" disabled="">
+	<option value="1" disabled="">Січень</option>
+	<option value="2" disabled="">Лютий</option>
+	<option value="3" disabled="">Березень</option>
+	<option value="4" disabled="">Квітень</option>
+	<option value="5" disabled="">Травень</option>
+	<option value="6" disabled="">Червень</option>
+	<option value="7" disabled="">Липень</option>
+	<option value="8" disabled="">Серпень</option>
+	<option value="9" disabled="">Вересень</option>
+	<option value="10" selected="selected" disabled="">Жовтень</option>
+	<option value="11" disabled="">Листопад</option>
+	<option value="12" disabled="">Грудень</option>
+</select>&nbsp;<label class="accesshide" for="id_b30012">Рік</label><select name="lastlogin_edt[year]" id="id_b30012" disabled="">
+	<option value="1970" disabled="">1970</option>
+	<option value="1971" disabled="">1971</option>
+	<option value="1972" disabled="">1972</option>
+	<option value="1973" disabled="">1973</option>
+	<option value="1974" disabled="">1974</option>
+	<option value="1975" disabled="">1975</option>
+	<option value="1976" disabled="">1976</option>
+	<option value="1977" disabled="">1977</option>
+	<option value="1978" disabled="">1978</option>
+	<option value="1979" disabled="">1979</option>
+	<option value="1980" disabled="">1980</option>
+	<option value="1981" disabled="">1981</option>
+	<option value="1982" disabled="">1982</option>
+	<option value="1983" disabled="">1983</option>
+	<option value="1984" disabled="">1984</option>
+	<option value="1985" disabled="">1985</option>
+	<option value="1986" disabled="">1986</option>
+	<option value="1987" disabled="">1987</option>
+	<option value="1988" disabled="">1988</option>
+	<option value="1989" disabled="">1989</option>
+	<option value="1990" disabled="">1990</option>
+	<option value="1991" disabled="">1991</option>
+	<option value="1992" disabled="">1992</option>
+	<option value="1993" disabled="">1993</option>
+	<option value="1994" disabled="">1994</option>
+	<option value="1995" disabled="">1995</option>
+	<option value="1996" disabled="">1996</option>
+	<option value="1997" disabled="">1997</option>
+	<option value="1998" disabled="">1998</option>
+	<option value="1999" disabled="">1999</option>
+	<option value="2000" disabled="">2000</option>
+	<option value="2001" disabled="">2001</option>
+	<option value="2002" disabled="">2002</option>
+	<option value="2003" disabled="">2003</option>
+	<option value="2004" disabled="">2004</option>
+	<option value="2005" disabled="">2005</option>
+	<option value="2006" disabled="">2006</option>
+	<option value="2007" disabled="">2007</option>
+	<option value="2008" disabled="">2008</option>
+	<option value="2009" disabled="">2009</option>
+	<option value="2010" disabled="">2010</option>
+	<option value="2011" disabled="">2011</option>
+	<option value="2012" disabled="">2012</option>
+	<option value="2013" disabled="">2013</option>
+	<option value="2014" disabled="">2014</option>
+	<option value="2015" disabled="">2015</option>
+	<option value="2016" disabled="">2016</option>
+	<option value="2017" selected="selected" disabled="">2017</option>
+	<option value="2018" disabled="">2018</option>
+	<option value="2019" disabled="">2019</option>
+	<option value="2020" disabled="">2020</option>
+</select><span><input name="lastlogin_never" value="1" id="id_02eb9f" disabled="" type="checkbox"><label for="id_02eb9f">Не заходив у систему</label></span></fieldset></div>
+		<div class="fitem advanced hide"><div class="fitemtitle"><div class="fgrouplabel"><label>Остання зміна<img class="adv" title="Додатковий елемент" alt="Додатковий елемент" src="http://core-release-0.4.mocotms.com/pix/adv.gif"> <span class="helplink"><a title="Допомогти з Остання зміна (нове вікно)" href="http://core-release-0.4.mocotms.com/help.php?module=filters&amp;file=date.html&amp;forcelang=" onclick="this.target='popup'; return openpopup('/help.php?module=filters&amp;file=date.html&amp;forcelang=', 'popup', 'menubar=0,location=0,scrollbars,resizable,width=500,height=400', 0);"><img class="iconhelp" alt="Допомогти з Остання зміна (нове вікно)" src="http://core-release-0.4.mocotms.com/pix/help.gif"></a></span>&nbsp;</label></div></div><fieldset class="felement fgroup"><span><input name="timemodified_sck" value="1" id="id_9d8a9c" type="checkbox"><label for="id_9d8a9c">після </label></span>
+        <script>
+            $(document).ready( function() {
+
+              // Пересчет дней  для всех элементов dateselector-а на форме
+              $("select[name*='[month]']").each(function (){
+                var selected_month = $(this).val();
+                var selected_year = $(this).next().next().val();
+                var selected_day = $(this).prev().prev().val();
+                var day_element_id = $(this).prev().prev().attr("id");
+                var day_this_month = new Date(selected_year,selected_month,0).getDate();
+
+                recreate_day_select(day_this_month, selected_day, day_element_id);                
+              });
+
+              // Пересчет дней в месяце при смене месяца
+              $("select[name*='[month]']").change(function(){
+                var selected_month = $(this).val();
+                var selected_year = $(this).next().next().val();
+                var selected_day = $(this).prev().prev().val();
+                var day_element_id = $(this).prev().prev().attr("id");
+                var day_this_month = new Date(selected_year,selected_month,0).getDate();
+
+                recreate_day_select(day_this_month, selected_day, day_element_id);                
+              });
+
+              // При смене года пересчитываем дни, только если выбран месяц февраль
+              $("select[name*='[year]']").change(function(){
+                var selected_month = $(this).prev().prev().val();
+                if (selected_month == 2){
+                    var selected_year = $(this).val();
+                    var selected_day = $(this).prev().prev().prev().prev().val();
+                    var day_element_id = $(this).prev().prev().prev().prev().attr("id");
+                    var day_this_month = new Date(selected_year,selected_month,0).getDate();
+
+                    recreate_day_select(day_this_month, selected_day, day_element_id);
+                }
+
+              });
+
+              function recreate_day_select(day_this_month, selected_day, day_element_id){
+                    $("#"+day_element_id).empty();
+                    var i;
+                    for (i = 1; i <= day_this_month; i++) {
+                        if (i == selected_day)
+                            $("#"+day_element_id).append("<option value='"+i+"' selected='selected'>"+i+"</option>");
+                        else
+                            $("#"+day_element_id).append("<option value='"+i+"'>"+i+"</option>");
+                    }
+              }  
+
+            });
+        </script><label class="accesshide" for="id_06b0f8">День</label><select name="timemodified_sdt[day]" id="id_06b0f8" disabled="">
+	<option value="1" disabled="">1</option>
+	<option value="2" disabled="">2</option>
+	<option value="3" disabled="">3</option>
+	<option value="4" disabled="">4</option>
+	<option value="5" disabled="">5</option>
+	<option value="6" disabled="">6</option>
+	<option value="7" disabled="">7</option>
+	<option value="8" disabled="">8</option>
+	<option value="9" selected="selected" disabled="">9</option>
+	<option value="10" disabled="">10</option>
+	<option value="11" disabled="">11</option>
+	<option value="12" disabled="">12</option>
+	<option value="13" disabled="">13</option>
+	<option value="14" disabled="">14</option>
+	<option value="15" disabled="">15</option>
+	<option value="16" disabled="">16</option>
+	<option value="17" disabled="">17</option>
+	<option value="18" disabled="">18</option>
+	<option value="19" disabled="">19</option>
+	<option value="20" disabled="">20</option>
+	<option value="21" disabled="">21</option>
+	<option value="22" disabled="">22</option>
+	<option value="23" disabled="">23</option>
+	<option value="24" disabled="">24</option>
+	<option value="25" disabled="">25</option>
+	<option value="26" disabled="">26</option>
+	<option value="27" disabled="">27</option>
+	<option value="28" disabled="">28</option>
+	<option value="29" disabled="">29</option>
+	<option value="30" disabled="">30</option>
+	<option value="31" disabled="">31</option>
+</select>&nbsp;<label class="accesshide" for="id_0599ef">Місяць</label><select name="timemodified_sdt[month]" id="id_0599ef" disabled="">
+	<option value="1" disabled="">Січень</option>
+	<option value="2" disabled="">Лютий</option>
+	<option value="3" disabled="">Березень</option>
+	<option value="4" disabled="">Квітень</option>
+	<option value="5" disabled="">Травень</option>
+	<option value="6" disabled="">Червень</option>
+	<option value="7" disabled="">Липень</option>
+	<option value="8" disabled="">Серпень</option>
+	<option value="9" disabled="">Вересень</option>
+	<option value="10" selected="selected" disabled="">Жовтень</option>
+	<option value="11" disabled="">Листопад</option>
+	<option value="12" disabled="">Грудень</option>
+</select>&nbsp;<label class="accesshide" for="id_03436f">Рік</label><select name="timemodified_sdt[year]" id="id_03436f" disabled="">
+	<option value="1970" disabled="">1970</option>
+	<option value="1971" disabled="">1971</option>
+	<option value="1972" disabled="">1972</option>
+	<option value="1973" disabled="">1973</option>
+	<option value="1974" disabled="">1974</option>
+	<option value="1975" disabled="">1975</option>
+	<option value="1976" disabled="">1976</option>
+	<option value="1977" disabled="">1977</option>
+	<option value="1978" disabled="">1978</option>
+	<option value="1979" disabled="">1979</option>
+	<option value="1980" disabled="">1980</option>
+	<option value="1981" disabled="">1981</option>
+	<option value="1982" disabled="">1982</option>
+	<option value="1983" disabled="">1983</option>
+	<option value="1984" disabled="">1984</option>
+	<option value="1985" disabled="">1985</option>
+	<option value="1986" disabled="">1986</option>
+	<option value="1987" disabled="">1987</option>
+	<option value="1988" disabled="">1988</option>
+	<option value="1989" disabled="">1989</option>
+	<option value="1990" disabled="">1990</option>
+	<option value="1991" disabled="">1991</option>
+	<option value="1992" disabled="">1992</option>
+	<option value="1993" disabled="">1993</option>
+	<option value="1994" disabled="">1994</option>
+	<option value="1995" disabled="">1995</option>
+	<option value="1996" disabled="">1996</option>
+	<option value="1997" disabled="">1997</option>
+	<option value="1998" disabled="">1998</option>
+	<option value="1999" disabled="">1999</option>
+	<option value="2000" disabled="">2000</option>
+	<option value="2001" disabled="">2001</option>
+	<option value="2002" disabled="">2002</option>
+	<option value="2003" disabled="">2003</option>
+	<option value="2004" disabled="">2004</option>
+	<option value="2005" disabled="">2005</option>
+	<option value="2006" disabled="">2006</option>
+	<option value="2007" disabled="">2007</option>
+	<option value="2008" disabled="">2008</option>
+	<option value="2009" disabled="">2009</option>
+	<option value="2010" disabled="">2010</option>
+	<option value="2011" disabled="">2011</option>
+	<option value="2012" disabled="">2012</option>
+	<option value="2013" disabled="">2013</option>
+	<option value="2014" disabled="">2014</option>
+	<option value="2015" disabled="">2015</option>
+	<option value="2016" disabled="">2016</option>
+	<option value="2017" selected="selected" disabled="">2017</option>
+	<option value="2018" disabled="">2018</option>
+	<option value="2019" disabled="">2019</option>
+	<option value="2020" disabled="">2020</option>
+</select><br><span><input name="timemodified_eck" value="1" id="id_1560e8" type="checkbox"><label for="id_1560e8">перед </label></span>
+        <script>
+            $(document).ready( function() {
+
+              // Пересчет дней  для всех элементов dateselector-а на форме
+              $("select[name*='[month]']").each(function (){
+                var selected_month = $(this).val();
+                var selected_year = $(this).next().next().val();
+                var selected_day = $(this).prev().prev().val();
+                var day_element_id = $(this).prev().prev().attr("id");
+                var day_this_month = new Date(selected_year,selected_month,0).getDate();
+
+                recreate_day_select(day_this_month, selected_day, day_element_id);                
+              });
+
+              // Пересчет дней в месяце при смене месяца
+              $("select[name*='[month]']").change(function(){
+                var selected_month = $(this).val();
+                var selected_year = $(this).next().next().val();
+                var selected_day = $(this).prev().prev().val();
+                var day_element_id = $(this).prev().prev().attr("id");
+                var day_this_month = new Date(selected_year,selected_month,0).getDate();
+
+                recreate_day_select(day_this_month, selected_day, day_element_id);                
+              });
+
+              // При смене года пересчитываем дни, только если выбран месяц февраль
+              $("select[name*='[year]']").change(function(){
+                var selected_month = $(this).prev().prev().val();
+                if (selected_month == 2){
+                    var selected_year = $(this).val();
+                    var selected_day = $(this).prev().prev().prev().prev().val();
+                    var day_element_id = $(this).prev().prev().prev().prev().attr("id");
+                    var day_this_month = new Date(selected_year,selected_month,0).getDate();
+
+                    recreate_day_select(day_this_month, selected_day, day_element_id);
+                }
+
+              });
+
+              function recreate_day_select(day_this_month, selected_day, day_element_id){
+                    $("#"+day_element_id).empty();
+                    var i;
+                    for (i = 1; i <= day_this_month; i++) {
+                        if (i == selected_day)
+                            $("#"+day_element_id).append("<option value='"+i+"' selected='selected'>"+i+"</option>");
+                        else
+                            $("#"+day_element_id).append("<option value='"+i+"'>"+i+"</option>");
+                    }
+              }  
+
+            });
+        </script><label class="accesshide" for="id_507c43">День</label><select name="timemodified_edt[day]" id="id_507c43" disabled="">
+	<option value="1" disabled="">1</option>
+	<option value="2" disabled="">2</option>
+	<option value="3" disabled="">3</option>
+	<option value="4" disabled="">4</option>
+	<option value="5" disabled="">5</option>
+	<option value="6" disabled="">6</option>
+	<option value="7" disabled="">7</option>
+	<option value="8" disabled="">8</option>
+	<option value="9" selected="selected" disabled="">9</option>
+	<option value="10" disabled="">10</option>
+	<option value="11" disabled="">11</option>
+	<option value="12" disabled="">12</option>
+	<option value="13" disabled="">13</option>
+	<option value="14" disabled="">14</option>
+	<option value="15" disabled="">15</option>
+	<option value="16" disabled="">16</option>
+	<option value="17" disabled="">17</option>
+	<option value="18" disabled="">18</option>
+	<option value="19" disabled="">19</option>
+	<option value="20" disabled="">20</option>
+	<option value="21" disabled="">21</option>
+	<option value="22" disabled="">22</option>
+	<option value="23" disabled="">23</option>
+	<option value="24" disabled="">24</option>
+	<option value="25" disabled="">25</option>
+	<option value="26" disabled="">26</option>
+	<option value="27" disabled="">27</option>
+	<option value="28" disabled="">28</option>
+	<option value="29" disabled="">29</option>
+	<option value="30" disabled="">30</option>
+	<option value="31" disabled="">31</option>
+</select>&nbsp;<label class="accesshide" for="id_233e58">Місяць</label><select name="timemodified_edt[month]" id="id_233e58" disabled="">
+	<option value="1" disabled="">Січень</option>
+	<option value="2" disabled="">Лютий</option>
+	<option value="3" disabled="">Березень</option>
+	<option value="4" disabled="">Квітень</option>
+	<option value="5" disabled="">Травень</option>
+	<option value="6" disabled="">Червень</option>
+	<option value="7" disabled="">Липень</option>
+	<option value="8" disabled="">Серпень</option>
+	<option value="9" disabled="">Вересень</option>
+	<option value="10" selected="selected" disabled="">Жовтень</option>
+	<option value="11" disabled="">Листопад</option>
+	<option value="12" disabled="">Грудень</option>
+</select>&nbsp;<label class="accesshide" for="id_414577">Рік</label><select name="timemodified_edt[year]" id="id_414577" disabled="">
+	<option value="1970" disabled="">1970</option>
+	<option value="1971" disabled="">1971</option>
+	<option value="1972" disabled="">1972</option>
+	<option value="1973" disabled="">1973</option>
+	<option value="1974" disabled="">1974</option>
+	<option value="1975" disabled="">1975</option>
+	<option value="1976" disabled="">1976</option>
+	<option value="1977" disabled="">1977</option>
+	<option value="1978" disabled="">1978</option>
+	<option value="1979" disabled="">1979</option>
+	<option value="1980" disabled="">1980</option>
+	<option value="1981" disabled="">1981</option>
+	<option value="1982" disabled="">1982</option>
+	<option value="1983" disabled="">1983</option>
+	<option value="1984" disabled="">1984</option>
+	<option value="1985" disabled="">1985</option>
+	<option value="1986" disabled="">1986</option>
+	<option value="1987" disabled="">1987</option>
+	<option value="1988" disabled="">1988</option>
+	<option value="1989" disabled="">1989</option>
+	<option value="1990" disabled="">1990</option>
+	<option value="1991" disabled="">1991</option>
+	<option value="1992" disabled="">1992</option>
+	<option value="1993" disabled="">1993</option>
+	<option value="1994" disabled="">1994</option>
+	<option value="1995" disabled="">1995</option>
+	<option value="1996" disabled="">1996</option>
+	<option value="1997" disabled="">1997</option>
+	<option value="1998" disabled="">1998</option>
+	<option value="1999" disabled="">1999</option>
+	<option value="2000" disabled="">2000</option>
+	<option value="2001" disabled="">2001</option>
+	<option value="2002" disabled="">2002</option>
+	<option value="2003" disabled="">2003</option>
+	<option value="2004" disabled="">2004</option>
+	<option value="2005" disabled="">2005</option>
+	<option value="2006" disabled="">2006</option>
+	<option value="2007" disabled="">2007</option>
+	<option value="2008" disabled="">2008</option>
+	<option value="2009" disabled="">2009</option>
+	<option value="2010" disabled="">2010</option>
+	<option value="2011" disabled="">2011</option>
+	<option value="2012" disabled="">2012</option>
+	<option value="2013" disabled="">2013</option>
+	<option value="2014" disabled="">2014</option>
+	<option value="2015" disabled="">2015</option>
+	<option value="2016" disabled="">2016</option>
+	<option value="2017" selected="selected" disabled="">2017</option>
+	<option value="2018" disabled="">2018</option>
+	<option value="2019" disabled="">2019</option>
+	<option value="2020" disabled="">2020</option>
+</select><span><input name="timemodified_never" value="1" id="id_0ee161" disabled="" type="checkbox"><label for="id_0ee161">Не заходив у систему</label></span></fieldset></div>
+		<div class="fitem advanced hide"><div class="fitemtitle"><div class="fgrouplabel"><label>Логiн<img class="adv" title="Додатковий елемент" alt="Додатковий елемент" src="http://core-release-0.4.mocotms.com/pix/adv.gif"> <span class="helplink"><a title="Допомогти з Логiн (нове вікно)" href="http://core-release-0.4.mocotms.com/help.php?module=filters&amp;file=text.html&amp;forcelang=" onclick="this.target='popup'; return openpopup('/help.php?module=filters&amp;file=text.html&amp;forcelang=', 'popup', 'menubar=0,location=0,scrollbars,resizable,width=500,height=400', 0);"><img class="iconhelp" alt="Допомогти з Логiн (нове вікно)" src="http://core-release-0.4.mocotms.com/pix/help.gif"></a></span>&nbsp;</label></div></div><fieldset class="felement fgroup"><label class="accesshide" for="id_username_op">&nbsp;</label><select name="username_op" id="id_username_op">
+	<option value="0">містить</option>
+	<option value="1">не містить</option>
+	<option value="2">дорівнює</option>
+	<option value="3">починається з</option>
+	<option value="4">закінчується на</option>
+	<option value="5">порожній</option>
+</select><label class="accesshide" for="id_username">&nbsp;</label><input name="username" id="id_username" type="text"></fieldset></div>
+		<div class="fitem advanced hide"><div class="fitemtitle"><label for="id_auth">Аутентифікація<img class="adv" title="Додатковий елемент" alt="Додатковий елемент" src="http://core-release-0.4.mocotms.com/pix/adv.gif"> <span class="helplink"><a title="Допомогти з Аутентифікація (нове вікно)" href="http://core-release-0.4.mocotms.com/help.php?module=filters&amp;file=simpleselect.html&amp;forcelang=" onclick="this.target='popup'; return openpopup('/help.php?module=filters&amp;file=simpleselect.html&amp;forcelang=', 'popup', 'menubar=0,location=0,scrollbars,resizable,width=500,height=400', 0);"><img class="iconhelp" alt="Допомогти з Аутентифікація (нове вікно)" src="http://core-release-0.4.mocotms.com/pix/help.gif"></a></span>&nbsp;</label></div><div class="felement fselect"><select name="auth" id="id_auth">
+	<option value="">будь-яке значення</option>
+	<option value="cas">Використати CAS сервер (SSO)</option>
+	<option value="db">Використати зовнішню базу даних</option>
+	<option value="email">E-mail - ідентифікація</option>
+	<option value="fc">Використовують сервер FirstClass</option>
+	<option value="imap">Використати IMAP-сервер</option>
+	<option value="ldap">Використати LDAP-сервер</option>
+	<option value="manual">Тільки вручну заведені облікові записи.</option>
+	<option value="mnet">Аутентифікація Мережі Мудл</option>
+	<option value="moco">Моко аутентифікація</option>
+	<option value="nntp">Використовувати NNTP-сервер</option>
+	<option value="nologin">Не входити</option>
+	<option value="none">Не використовувати ідентифікацію</option>
+	<option value="pam">PAM (Pluggable Authentication Modules)</option>
+	<option value="pop3">Використати POP3-сервер</option>
+	<option value="radius">Використати сервер RADIUS</option>
+	<option value="shibboleth">Shibboleth</option>
+</select></div></div>
+		<div class="fitem advanced hide"><div class="fitemtitle"><label for="id_mnethostid">mnethostid<img class="adv" title="Додатковий елемент" alt="Додатковий елемент" src="http://core-release-0.4.mocotms.com/pix/adv.gif"> <span class="helplink"><a title="Допомогти з mnethostid (нове вікно)" href="http://core-release-0.4.mocotms.com/help.php?module=filters&amp;file=simpleselect.html&amp;forcelang=" onclick="this.target='popup'; return openpopup('/help.php?module=filters&amp;file=simpleselect.html&amp;forcelang=', 'popup', 'menubar=0,location=0,scrollbars,resizable,width=500,height=400', 0);"><img class="iconhelp" alt="Допомогти з mnethostid (нове вікно)" src="http://core-release-0.4.mocotms.com/pix/help.gif"></a></span>&nbsp;</label></div><div class="felement fselect"><select name="mnethostid" id="id_mnethostid">
+	<option value="">будь-яке значення</option>
+	<option value="1">core-release_0.4.mocotms.com (Локально)</option>
+	<option value="0">id: 0 (Помилка)</option>
+</select></div></div>
+		<div class="fitem"><div class="fitemtitle"><label for="id_addfilter"> </label></div><div class="felement fsubmit"><input name="addfilter" value="Додати фільтр" id="id_addfilter" type="submit"></div></div>
+		</div></fieldset>
+</form>
+<script type="text/javascript">
+//<![CDATA[
+var mform2items = Array();
+mform2items['realname_op'] = Array();
+mform2items['realname_op']['eq'] = Array();
+mform2items['realname_op']['eq']['5'] = Array();
+mform2items['realname_op']['eq']['5'][0]='realname';
+mform2items['lastname_op'] = Array();
+mform2items['lastname_op']['eq'] = Array();
+mform2items['lastname_op']['eq']['5'] = Array();
+mform2items['lastname_op']['eq']['5'][0]='lastname';
+mform2items['firstname_op'] = Array();
+mform2items['firstname_op']['eq'] = Array();
+mform2items['firstname_op']['eq']['5'] = Array();
+mform2items['firstname_op']['eq']['5'][0]='firstname';
+mform2items['email_op'] = Array();
+mform2items['email_op']['eq'] = Array();
+mform2items['email_op']['eq']['5'] = Array();
+mform2items['email_op']['eq']['5'][0]='email';
+mform2items['city_op'] = Array();
+mform2items['city_op']['eq'] = Array();
+mform2items['city_op']['eq']['5'] = Array();
+mform2items['city_op']['eq']['5'][0]='city';
+mform2items['country_op'] = Array();
+mform2items['country_op']['eq'] = Array();
+mform2items['country_op']['eq']['0'] = Array();
+mform2items['country_op']['eq']['0'][0]='country';
+mform2items['firstaccess_sck'] = Array();
+mform2items['firstaccess_sck']['notchecked'] = Array();
+mform2items['firstaccess_sck']['notchecked']['1'] = Array();
+mform2items['firstaccess_sck']['notchecked']['1'][0]='firstaccess_sdt[day]';
+mform2items['firstaccess_sck']['notchecked']['1'][1]='firstaccess_sdt[month]';
+mform2items['firstaccess_sck']['notchecked']['1'][2]='firstaccess_sdt[year]';
+mform2items['firstaccess_eck'] = Array();
+mform2items['firstaccess_eck']['notchecked'] = Array();
+mform2items['firstaccess_eck']['notchecked']['1'] = Array();
+mform2items['firstaccess_eck']['notchecked']['1'][0]='firstaccess_edt[day]';
+mform2items['firstaccess_eck']['notchecked']['1'][1]='firstaccess_edt[month]';
+mform2items['firstaccess_eck']['notchecked']['1'][2]='firstaccess_edt[year]';
+mform2items['firstaccess_eck']['notchecked']['1'][3]='firstaccess_never';
+mform2items['lastaccess_sck'] = Array();
+mform2items['lastaccess_sck']['notchecked'] = Array();
+mform2items['lastaccess_sck']['notchecked']['1'] = Array();
+mform2items['lastaccess_sck']['notchecked']['1'][0]='lastaccess_sdt[day]';
+mform2items['lastaccess_sck']['notchecked']['1'][1]='lastaccess_sdt[month]';
+mform2items['lastaccess_sck']['notchecked']['1'][2]='lastaccess_sdt[year]';
+mform2items['lastaccess_eck'] = Array();
+mform2items['lastaccess_eck']['notchecked'] = Array();
+mform2items['lastaccess_eck']['notchecked']['1'] = Array();
+mform2items['lastaccess_eck']['notchecked']['1'][0]='lastaccess_edt[day]';
+mform2items['lastaccess_eck']['notchecked']['1'][1]='lastaccess_edt[month]';
+mform2items['lastaccess_eck']['notchecked']['1'][2]='lastaccess_edt[year]';
+mform2items['lastaccess_eck']['notchecked']['1'][3]='lastaccess_never';
+mform2items['lastlogin_sck'] = Array();
+mform2items['lastlogin_sck']['notchecked'] = Array();
+mform2items['lastlogin_sck']['notchecked']['1'] = Array();
+mform2items['lastlogin_sck']['notchecked']['1'][0]='lastlogin_sdt[day]';
+mform2items['lastlogin_sck']['notchecked']['1'][1]='lastlogin_sdt[month]';
+mform2items['lastlogin_sck']['notchecked']['1'][2]='lastlogin_sdt[year]';
+mform2items['lastlogin_eck'] = Array();
+mform2items['lastlogin_eck']['notchecked'] = Array();
+mform2items['lastlogin_eck']['notchecked']['1'] = Array();
+mform2items['lastlogin_eck']['notchecked']['1'][0]='lastlogin_edt[day]';
+mform2items['lastlogin_eck']['notchecked']['1'][1]='lastlogin_edt[month]';
+mform2items['lastlogin_eck']['notchecked']['1'][2]='lastlogin_edt[year]';
+mform2items['lastlogin_eck']['notchecked']['1'][3]='lastlogin_never';
+mform2items['timemodified_sck'] = Array();
+mform2items['timemodified_sck']['notchecked'] = Array();
+mform2items['timemodified_sck']['notchecked']['1'] = Array();
+mform2items['timemodified_sck']['notchecked']['1'][0]='timemodified_sdt[day]';
+mform2items['timemodified_sck']['notchecked']['1'][1]='timemodified_sdt[month]';
+mform2items['timemodified_sck']['notchecked']['1'][2]='timemodified_sdt[year]';
+mform2items['timemodified_eck'] = Array();
+mform2items['timemodified_eck']['notchecked'] = Array();
+mform2items['timemodified_eck']['notchecked']['1'] = Array();
+mform2items['timemodified_eck']['notchecked']['1'][0]='timemodified_edt[day]';
+mform2items['timemodified_eck']['notchecked']['1'][1]='timemodified_edt[month]';
+mform2items['timemodified_eck']['notchecked']['1'][2]='timemodified_edt[year]';
+mform2items['timemodified_eck']['notchecked']['1'][3]='timemodified_never';
+mform2items['username_op'] = Array();
+mform2items['username_op']['eq'] = Array();
+mform2items['username_op']['eq']['5'] = Array();
+mform2items['username_op']['eq']['5'][0]='username';
+lockoptionsallsetup('mform2');
+//]]>
+</script>
+
+<form autocomplete="off" action="http://core-release-0.4.mocotms.com/admin/user/user_bulk.php" method="post" accept-charset="utf-8" id="mform3" class="mform">
+	<div style="display: none;"><input name="MAX_FILE_SIZE" value="268435456" type="hidden">
+<input name="sesskey" value="nvgZWnplju" type="hidden">
+<input name="_qf__user_active_filter_form" value="1" type="hidden">
+</div>
+
+	<fieldset class="clearfix" id="actfilterhdr">
+		<legend class="ftoggler">Активні фільтри</legend>
+		<div class="advancedbutton"></div><div class="fcontainer clearfix">
+		
+		<div class="fitem"><div class="fitemtitle"><label for="id_ad08a5"> </label></div><div class="felement fcheckbox"><span><input name="filter[realname][0]" value="1" id="id_ad08a5" type="checkbox"><label for="id_ad08a5"><b>Повна назва</b> містить "Moderator Automation"</label></span></div></div>
+		<div class="fitem"><div class="fitemtitle"><div class="fgrouplabel"><label> </label></div></div><fieldset class="felement fgroup"><input name="removeselected" value="Видалити вибране" id="id_removeselected" type="submit"> <input name="removeall" value="Видалити все" id="id_removeall" type="submit"></fieldset></div>
+		</div></fieldset>
+</form>
+<script type="text/javascript">
+//<![CDATA[
+var mform3items = Array();
+lockoptionsallsetup('mform3');
+//]]>
+</script>
+
+<form autocomplete="off" action="http://core-release-0.4.mocotms.com/admin/user/user_bulk.php" method="post" accept-charset="utf-8" id="mform5" class="mform">
+	<div style="display: none;"><input name="MAX_FILE_SIZE" value="268435456" type="hidden">
+<input name="sesskey" value="nvgZWnplju" type="hidden">
+<input name="_qf__user_bulk_form" value="1" type="hidden">
+</div>
+
+	<fieldset class="clearfix" id="users">
+		<legend class="ftoggler">Користувачі в списку</legend>
+		<div class="advancedbutton"></div><div class="fcontainer clearfix">
+		
+		<div class="fitem"><div class="fitemtitle"><div class="fgrouplabel"><label>Користувачі <span class="helplink"><a title="Допомогти з Користувачі (нове вікно)" href="http://core-release-0.4.mocotms.com/help.php?module=bulkusers&amp;file=lists.html&amp;forcelang=" onclick="this.target='popup'; return openpopup('/help.php?module=bulkusers&amp;file=lists.html&amp;forcelang=', 'popup', 'menubar=0,location=0,scrollbars,resizable,width=500,height=400', 0);"><img class="iconhelp" alt="Допомогти з Користувачі (нове вікно)" src="http://core-release-0.4.mocotms.com/pix/help.gif"></a></span>&nbsp;</label></div></div><fieldset class="felement fgroup"><label class="qflabel" style="vertical-align:top">Доступно</label> <label class="accesshide" for="id_ausers">Доступно</label><select size="15" name="ausers[]" multiple="multiple" id="id_ausers">
+	<option value="-1">Нікого не знайдено (0/543)</option>
+</select> <label class="qflabel" style="vertical-align:top">Вибрано</label> <label class="accesshide" for="id_susers">Вибрано</label><select size="15" name="susers[]" multiple="multiple" id="id_susers">
+	<option value="-1">Нікого не вибрано</option>
+</select></fieldset></div>
+		<div class="fitem"><div class="fitemtitle"><div class="fstaticlabel"><label> </label></div></div><div class="felement fstatic">&nbsp;</div></div>
+		<div class="fitem"><div class="fitemtitle"><div class="fgrouplabel"><label>Список відібраних користувачів <span class="helplink"><a title="Допомогти з Список відібраних користувачів (нове вікно)" href="http://core-release-0.4.mocotms.com/help.php?module=bulkusers&amp;file=selectedlist.html&amp;forcelang=" onclick="this.target='popup'; return openpopup('/help.php?module=bulkusers&amp;file=selectedlist.html&amp;forcelang=', 'popup', 'menubar=0,location=0,scrollbars,resizable,width=500,height=400', 0);"><img class="iconhelp" alt="Допомогти з Список відібраних користувачів (нове вікно)" src="http://core-release-0.4.mocotms.com/pix/help.gif"></a></span>&nbsp;</label></div></div><fieldset class="felement fgroup"><input name="addsel" value="Додати до секції" id="id_addsel" type="submit"> <input name="removesel" value="Видалити з секції" id="id_removesel" type="submit"><br><input name="addall" value="Додати все до секції" id="id_addall" type="submit"> <input name="removeall" value="Видалити все з секції" id="id_removeall" type="submit"></fieldset></div>
+		</div></fieldset>
+</form>
+<script type="text/javascript">
+//<![CDATA[
+var mform5items = Array();
+lockoptionsallsetup('mform5');
+//]]>
+</script>
+
+<form autocomplete="off" action="http://core-release-0.4.mocotms.com/admin/user/user_bulk.php" method="post" accept-charset="utf-8" id="mform4" class="mform">
+	<div style="display: none;"><input name="MAX_FILE_SIZE" value="268435456" type="hidden">
+<input name="sesskey" value="nvgZWnplju" type="hidden">
+<input name="_qf__user_bulk_action_form" value="1" type="hidden">
+</div>
+
+	<fieldset class="hidden"><div>
+		<div class="fitem"><div class="fitemtitle"><div class="fgrouplabel"><label>З відміченими користувачами... </label></div></div><fieldset class="felement fgroup"><label class="accesshide" for="id_action">&nbsp;</label><select name="action" id="id_action">
+	<option value="0">Обрати...</option>
+	<option value="1">Підтвердження</option>
+	<option value="2">Надіслати повідомлення</option>
+	<option value="3">Видалити</option>
+	<option value="4">Показати на сторінці</option>
+	<option value="5">Завантажити</option>
+	<option value="6">Примусити змінити пароль</option>
+</select> <input name="doaction" value="Шукати" id="id_doaction" type="submit"></fieldset></div>
+		</div></fieldset>
+</form>
+<script type="text/javascript">
+//<![CDATA[
+var mform4items = Array();
+lockoptionsallsetup('mform4');
+//]]>
+</script>
+</div></td></tr></tbody></table></div><!--content-->
+<!--br/><br/><br/ -->
+</div><!--wrapper-->
+
+<div id="div_bg_"> </div>
+
+<div id="footer">
+	<div id="footer_in">
+		<div id="footer_lbl">© MOCO 2010-2017. Powered by <a href="http://tmx-learning.info/" target="_blank">Technomatix</a></div>
+		<div class="social_media"><a target="_blank" href="https://www.facebook.com/Technomatix/?pnref=lhc"><img src="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/images/icon/social/facebook.png"></a><a target="_blank" href="https://myaccount.google.com/?utm_source=OGB"><img src="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/images/icon/social/google_plus.png"></a><a target="_blank" href="https://www.youtube.com/channel/UC3kgUstn4mqESPeev-O4T6A"><img src="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/images/icon/social/youtube.png"></a></div>		<div class="clear"></div>
+	</div>
+</div>
+<script>
+  function reassignFooter() {
+    if( $('body').height() < ($(window).height() ) ) {
+      $('#footer_in').css( 'bottom', 0 );
+      $('#footer_in').css( 'position', 'absolute' );
+    } 
+    if( $('body').height() > ($(window).height() - 65) ) {
+      $('#footer_in').css( 'bottom', 'auto' );
+      $('#footer_in').css( 'position', 'static' );
+    }
+  }
+  $(document).ready( function() {
+    $('#div_bg_').css( 'height', $(window).height() - 64 + 'px' );
+	reassignFooter();
+    setInterval( 'reassignFooter()', 500 );
+  } );
+</script>
+
+
+
+</body></html>

@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <br/>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" class="navigator-link" panel-name="suite-SmokeTest">
+              <span class="suite-name border-failed">SmokeTest</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="test-xml-SmokeTest">
+                    <span>C:\Users\Святослав\moco0xtest\src\test\resources\suites\testng.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="testlist-SmokeTest">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="group-SmokeTest">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="times-SmokeTest">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="reporter-SmokeTest">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-SmokeTest">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="chronological-SmokeTest">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">19 methods, 1 failed,   18 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-SmokeTest" class="hide-methods failed suite-SmokeTest"> (hide)</a> <!-- hide-methods failed suite-SmokeTest -->
+                      <a href="#" panel-name="suite-SmokeTest" class="show-methods failed suite-SmokeTest"> (show)</a> <!-- show-methods failed suite-SmokeTest -->
+                    </span>
+                    <div class="method-list-content failed suite-SmokeTest">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SmokeTest" title="com.mocotms.core_release.Test.organization.chief.ChiefTest" hash-for-method="deleteChief">deleteChief</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-SmokeTest -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-SmokeTest" class="hide-methods passed suite-SmokeTest"> (hide)</a> <!-- hide-methods passed suite-SmokeTest -->
+                      <a href="#" panel-name="suite-SmokeTest" class="show-methods passed suite-SmokeTest"> (show)</a> <!-- show-methods passed suite-SmokeTest -->
+                    </span>
+                    <div class="method-list-content passed suite-SmokeTest">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SmokeTest" title="com.mocotms.core_release.Test.organization.chief.ChiefTest" hash-for-method="addChief">addChief</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SmokeTest" title="com.mocotms.core_release.Test.organization.moderator.ModeratorTest" hash-for-method="addModerator">addModerator</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SmokeTest" title="com.mocotms.core_release.Test.learning.trainers.TrainersTest" hash-for-method="addTrainer">addTrainer</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SmokeTest" title="com.mocotms.core_release.Test.organization.structure.DepartmentTest" hash-for-method="createDepartment">createDepartment</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SmokeTest" title="com.mocotms.core_release.Test.organization.user.EmployeeTest" hash-for-method="createNewUser">createNewUser</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SmokeTest" title="com.mocotms.core_release.Test.organization.chief.ChiefTest" hash-for-method="createNewUserChief">createNewUserChief</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SmokeTest" title="com.mocotms.core_release.Test.organization.moderator.ModeratorTest" hash-for-method="createNewUserModerator">createNewUserModerator</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SmokeTest" title="com.mocotms.core_release.Test.organization.posts.PostTest" hash-for-method="createPost">createPost</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SmokeTest" title="com.mocotms.core_release.Test.organization.user.EmployeeTest" hash-for-method="deleteCreatedUser">deleteCreatedUser</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SmokeTest" title="com.mocotms.core_release.Test.organization.chief.ChiefTest" hash-for-method="deleteCreatedUserChief">deleteCreatedUserChief</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SmokeTest" title="com.mocotms.core_release.Test.organization.moderator.ModeratorTest" hash-for-method="deleteCreatedUserModerator">deleteCreatedUserModerator</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SmokeTest" title="com.mocotms.core_release.Test.organization.structure.DepartmentTest" hash-for-method="deleteDepartment">deleteDepartment</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SmokeTest" title="com.mocotms.core_release.Test.organization.posts.PostTest" hash-for-method="deletePost">deletePost</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SmokeTest" title="com.mocotms.core_release.Test.organization.structure.DepartmentTest" hash-for-method="editDepartment">editDepartment</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SmokeTest" title="com.mocotms.core_release.Test.organization.posts.PostTest" hash-for-method="editPost">editPost</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SmokeTest" title="com.mocotms.core_release.Test.organization.chief.ChiefTest" hash-for-method="findAddedChief">findAddedChief</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SmokeTest" title="com.mocotms.core_release.Test.organization.user.EmployeeTest" hash-for-method="findCreatedUserName">findCreatedUserName</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SmokeTest" title="com.mocotms.core_release.Test.organization.Configurations" hash-for-method="setBrowser">setBrowser</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-SmokeTest -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-SmokeTest" class="panel SmokeTest">
+          <div class="suite-SmokeTest-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.mocotms.core_release.Test.organization.chief.ChiefTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="deleteChief">
+                  </a> <!-- deleteChief -->
+                  <span class="method-name">deleteChief</span>
+                  <div class="stack-trace">Element should be visible {By.xpath: //*[@id=&apos;moco-config-chiefs-index&apos;]/div[12]/div[3]/div/button[1]}
+Element: &apos;&lt;button class=&quot;ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only&quot; role=&quot;button&quot; type=&quot;button&quot; displayed:false&gt;&lt;/button&gt;&apos;
+Screenshot: file:/C:/Users/Святослав/moco0xtest/build/reports/tests/1506502418954.0.png
+Timeout: 4 s.
+	at com.codeborne.selenide.impl.WebElementSource.checkCondition(WebElementSource.java:66)
+	at com.codeborne.selenide.impl.WebElementSource.findAndAssertElementIsVisible(WebElementSource.java:72)
+	at com.codeborne.selenide.commands.Click.execute(Click.java:14)
+	at com.codeborne.selenide.commands.Click.execute(Click.java:11)
+	at com.codeborne.selenide.commands.Commands.execute(Commands.java:143)
+	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:87)
+	at com.codeborne.selenide.impl.SelenideElementProxy.invoke(SelenideElementProxy.java:63)
+	at com.sun.proxy.$Proxy2.click(Unknown Source)
+	at com.mocotms.core_release.Test.organization.chief.ChiefTest.deleteChief(ChiefTest.java:53)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-SmokeTest-class-failed -->
+          <div class="suite-SmokeTest-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.mocotms.core_release.Test.organization.posts.PostTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="createPost">
+                  </a> <!-- createPost -->
+                  <span class="method-name">createPost</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="deletePost">
+                  </a> <!-- deletePost -->
+                  <span class="method-name">deletePost</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="editPost">
+                  </a> <!-- editPost -->
+                  <span class="method-name">editPost</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-SmokeTest-class-passed -->
+          <div class="suite-SmokeTest-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.mocotms.core_release.Test.organization.user.EmployeeTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="createNewUser">
+                  </a> <!-- createNewUser -->
+                  <span class="method-name">createNewUser</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="deleteCreatedUser">
+                  </a> <!-- deleteCreatedUser -->
+                  <span class="method-name">deleteCreatedUser</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="findCreatedUserName">
+                  </a> <!-- findCreatedUserName -->
+                  <span class="method-name">findCreatedUserName</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-SmokeTest-class-passed -->
+          <div class="suite-SmokeTest-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.mocotms.core_release.Test.organization.Configurations</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="setBrowser">
+                  </a> <!-- setBrowser -->
+                  <span class="method-name">setBrowser</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-SmokeTest-class-passed -->
+          <div class="suite-SmokeTest-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.mocotms.core_release.Test.learning.trainers.TrainersTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="addTrainer">
+                  </a> <!-- addTrainer -->
+                  <span class="method-name">addTrainer</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-SmokeTest-class-passed -->
+          <div class="suite-SmokeTest-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.mocotms.core_release.Test.organization.structure.DepartmentTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="createDepartment">
+                  </a> <!-- createDepartment -->
+                  <span class="method-name">createDepartment</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="deleteDepartment">
+                  </a> <!-- deleteDepartment -->
+                  <span class="method-name">deleteDepartment</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="editDepartment">
+                  </a> <!-- editDepartment -->
+                  <span class="method-name">editDepartment</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-SmokeTest-class-passed -->
+          <div class="suite-SmokeTest-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.mocotms.core_release.Test.organization.moderator.ModeratorTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="addModerator">
+                  </a> <!-- addModerator -->
+                  <span class="method-name">addModerator</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="createNewUserModerator">
+                  </a> <!-- createNewUserModerator -->
+                  <span class="method-name">createNewUserModerator</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="deleteCreatedUserModerator">
+                  </a> <!-- deleteCreatedUserModerator -->
+                  <span class="method-name">deleteCreatedUserModerator</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-SmokeTest-class-passed -->
+          <div class="suite-SmokeTest-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.mocotms.core_release.Test.organization.chief.ChiefTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="addChief">
+                  </a> <!-- addChief -->
+                  <span class="method-name">addChief</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="createNewUserChief">
+                  </a> <!-- createNewUserChief -->
+                  <span class="method-name">createNewUserChief</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="deleteCreatedUserChief">
+                  </a> <!-- deleteCreatedUserChief -->
+                  <span class="method-name">deleteCreatedUserChief</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="findAddedChief">
+                  </a> <!-- findAddedChief -->
+                  <span class="method-name">findAddedChief</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-SmokeTest-class-passed -->
+        </div> <!-- panel SmokeTest -->
+        <div panel-name="test-xml-SmokeTest" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\Users\Святослав\moco0xtest\src\test\resources\suites\testng.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot; name=&quot;SmokeTest&quot;&gt;
+  &lt;test name=&quot;core_release&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.mocotms.core_release.Test.organization.Configurations&quot;/&gt;
+      &lt;class name=&quot;com.mocotms.core_release.Test.organization.posts.PostTest&quot;/&gt;
+      &lt;class name=&quot;com.mocotms.core_release.Test.organization.structure.DepartmentTest&quot;/&gt;
+      &lt;class name=&quot;com.mocotms.core_release.Test.organization.user.EmployeeTest&quot;/&gt;
+      &lt;class name=&quot;com.mocotms.core_release.Test.organization.chief.ChiefTest&quot;/&gt;
+      &lt;class name=&quot;com.mocotms.core_release.Test.learning.trainers.TrainersTest&quot;/&gt;
+      &lt;class name=&quot;com.mocotms.core_release.Test.organization.moderator.ModeratorTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- core_release --&gt;
+&lt;/suite&gt; &lt;!-- SmokeTest --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-SmokeTest" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for SmokeTest</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">core_release (7 classes)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-SmokeTest" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for SmokeTest</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-SmokeTest" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for SmokeTest</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_SmokeTest');
+function tableData_SmokeTest() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(19);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'setBrowser')
+data.setCell(0, 2, 'com.mocotms.core_release.Test.organization.Configurations')
+data.setCell(0, 3, 28672);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'deleteCreatedUserChief')
+data.setCell(1, 2, 'com.mocotms.core_release.Test.organization.chief.ChiefTest')
+data.setCell(1, 3, 22036);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'deleteCreatedUser')
+data.setCell(2, 2, 'com.mocotms.core_release.Test.organization.user.EmployeeTest')
+data.setCell(2, 3, 21408);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'deleteCreatedUserModerator')
+data.setCell(3, 2, 'com.mocotms.core_release.Test.organization.moderator.ModeratorTest')
+data.setCell(3, 3, 21042);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'editPost')
+data.setCell(4, 2, 'com.mocotms.core_release.Test.organization.posts.PostTest')
+data.setCell(4, 3, 16736);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'createNewUser')
+data.setCell(5, 2, 'com.mocotms.core_release.Test.organization.user.EmployeeTest')
+data.setCell(5, 3, 15716);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'createNewUserChief')
+data.setCell(6, 2, 'com.mocotms.core_release.Test.organization.chief.ChiefTest')
+data.setCell(6, 3, 15082);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'createNewUserModerator')
+data.setCell(7, 2, 'com.mocotms.core_release.Test.organization.moderator.ModeratorTest')
+data.setCell(7, 3, 15007);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'addTrainer')
+data.setCell(8, 2, 'com.mocotms.core_release.Test.learning.trainers.TrainersTest')
+data.setCell(8, 3, 14909);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'addChief')
+data.setCell(9, 2, 'com.mocotms.core_release.Test.organization.chief.ChiefTest')
+data.setCell(9, 3, 11969);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'deletePost')
+data.setCell(10, 2, 'com.mocotms.core_release.Test.organization.posts.PostTest')
+data.setCell(10, 3, 11805);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'addModerator')
+data.setCell(11, 2, 'com.mocotms.core_release.Test.organization.moderator.ModeratorTest')
+data.setCell(11, 3, 11733);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'findCreatedUserName')
+data.setCell(12, 2, 'com.mocotms.core_release.Test.organization.user.EmployeeTest')
+data.setCell(12, 3, 10925);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'editDepartment')
+data.setCell(13, 2, 'com.mocotms.core_release.Test.organization.structure.DepartmentTest')
+data.setCell(13, 3, 8563);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'createPost')
+data.setCell(14, 2, 'com.mocotms.core_release.Test.organization.posts.PostTest')
+data.setCell(14, 3, 8173);
+data.setCell(15, 0, 15)
+data.setCell(15, 1, 'createDepartment')
+data.setCell(15, 2, 'com.mocotms.core_release.Test.organization.structure.DepartmentTest')
+data.setCell(15, 3, 7212);
+data.setCell(16, 0, 16)
+data.setCell(16, 1, 'deleteChief')
+data.setCell(16, 2, 'com.mocotms.core_release.Test.organization.chief.ChiefTest')
+data.setCell(16, 3, 6894);
+data.setCell(17, 0, 17)
+data.setCell(17, 1, 'deleteDepartment')
+data.setCell(17, 2, 'com.mocotms.core_release.Test.organization.structure.DepartmentTest')
+data.setCell(17, 3, 6595);
+data.setCell(18, 0, 18)
+data.setCell(18, 1, 'findAddedChief')
+data.setCell(18, 2, 'com.mocotms.core_release.Test.organization.chief.ChiefTest')
+data.setCell(18, 3, 670);
+window.suiteTableData['SmokeTest']= { tableData: data, tableDiv: 'times-div-SmokeTest'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 4 minutes</span>
+              <div id="times-div-SmokeTest">
+              </div> <!-- times-div-SmokeTest -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-SmokeTest" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for SmokeTest</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-SmokeTest" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-SmokeTest" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.mocotms.core_release.Test.organization.Configurations</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">setBrowser</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.mocotms.core_release.Test.organization.posts.PostTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">createPost</span>
+                <span class="method-start">28678 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.mocotms.core_release.Test.organization.structure.DepartmentTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">createDepartment</span>
+                <span class="method-start">36853 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.mocotms.core_release.Test.organization.user.EmployeeTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">createNewUser</span>
+                <span class="method-start">44065 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">findCreatedUserName</span>
+                <span class="method-start">59796 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.mocotms.core_release.Test.organization.chief.ChiefTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">createNewUserChief</span>
+                <span class="method-start">70721 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">addChief</span>
+                <span class="method-start">85803 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">findAddedChief</span>
+                <span class="method-start">97772 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">deleteChief</span>
+                <span class="method-start">98442 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.mocotms.core_release.Test.organization.moderator.ModeratorTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">createNewUserModerator</span>
+                <span class="method-start">105403 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">addModerator</span>
+                <span class="method-start">120410 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.mocotms.core_release.Test.learning.trainers.TrainersTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">addTrainer</span>
+                <span class="method-start">132143 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.mocotms.core_release.Test.organization.posts.PostTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">editPost</span>
+                <span class="method-start">147052 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.mocotms.core_release.Test.organization.structure.DepartmentTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">editDepartment</span>
+                <span class="method-start">163789 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.mocotms.core_release.Test.organization.user.EmployeeTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">deleteCreatedUser</span>
+                <span class="method-start">172352 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.mocotms.core_release.Test.organization.moderator.ModeratorTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">deleteCreatedUserModerator</span>
+                <span class="method-start">193760 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.mocotms.core_release.Test.organization.chief.ChiefTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">deleteCreatedUserChief</span>
+                <span class="method-start">214802 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.mocotms.core_release.Test.organization.posts.PostTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">deletePost</span>
+                <span class="method-start">236838 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.mocotms.core_release.Test.organization.structure.DepartmentTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">deleteDepartment</span>
+                <span class="method-start">248644 ms</span>
+              </div> <!-- test-method -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+</html>

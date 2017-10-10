@@ -1,0 +1,234 @@
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" xml:lang="en" lang="en"><head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/theme/standard/style.css">
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/style.css">
+    <meta name="description" content="TMX 2017">
+    <meta name="keywords" content="MOCO, TMX, Technomatix">
+    <title>LMS</title>
+    <link rel="shortcut icon" href="http://core-release-0.4.mocotms.com/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/moco/jquery/jquery-ui.css">
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/js/jquery-1.8.3.js"></script>
+    <script type="text/javascript" src="http://core-release-0.4.mocotms.com/moco/jquery/development-bundle/jquery-ui.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="http://core-release-0.4.mocotms.com/theme/tmx_default_2015/custom.css">
+</head>
+
+<body class="enter_page">
+    <div id="enter_page_bg" style="background: rgba(0, 0, 0, 0) url(&quot;http://core-release-0.4.mocotms.com/file.php/pix/login_page_bg/login_page_bg.png&quot;) no-repeat scroll center center;">
+        <table><tbody><tr><td><a id="id_enter" href="javascript:void(0);">Увійти</a></td></tr></tbody></table>
+    </div>
+    
+    
+	        <script>
+	/*
+	jQuery.noConflict();
+    (function ($) {
+	*/
+        $(document).ready( function() {
+            // подстановка картинки
+            $("#enter_page_bg").css("background", "url('http://core-release-0.4.mocotms.com/file.php/pix/login_page_bg/login_page_bg.png') no-repeat scroll center center rgba(0, 0, 0, 0)");
+            // main login form
+			$('#id_frm_login').submit(function(){
+				//var username = $('username').val();
+				//var password = $('password').val();
+				$.ajax({
+					url: "http://core-release-0.4.mocotms.com/login/ajax_enter.php",
+					type: 'POST',
+					data: { username: $('#username').val(), password: $('#password').val() },
+                    beforeSend: function() {
+                        $('#error_msg').html('');
+                    },
+					success: function(response){
+						var data = jQuery.parseJSON(response);
+						if (data.result == 'OK') {
+							if (data.loginurl) {
+								window.location.href = data.loginurl;
+							} else {
+								window.location.href = "http://core-release-0.4.mocotms.com/";
+							}
+						} else if (data.result == 'change_password' || data.result == "change_password\r\n") {
+							window.location.href = "http://core-release-0.4.mocotms.com/login/change_password.php";
+						} else if (data.result == 'error') {
+							$('#error_msg').html('<div class="loginerrors"><span class="error">'+data.msg+'</span></div>');
+						}
+					},
+					dataType: 'html'
+				});
+				return false;
+			});
+
+            // guest login 
+			$('#guestlogin').submit(function(){
+				$.ajax({
+					url: "http://core-release-0.4.mocotms.com/login/ajax_enter.php",
+					type: 'POST',
+					data: { username: $('#guestlogin input[name="username"]').val(), password: $('#guestlogin input[name="password"]').val(), testcookies: $('#guestlogin input[name="testcookies"]').val() },
+					success: function(response){
+						var data = jQuery.parseJSON(response);
+						var rootUrl = "http://core-release-0.4.mocotms.com/";
+						if (data.result == 'OK') {
+							if (data.loginurl) {
+								if (data.loginurl == rootUrl)
+									window.location.href = rootUrl + '?tab=start&tab_l=l0';
+								else
+									window.location.href = data.loginurl;
+							} else {
+								window.location.href = rootUrl + '?tab=start&tab_l=l0';
+							}
+						} else if (data.result == 'error') {
+							$('#error_msg').html('<div class="loginerrors"><span class="error">'+data.msg+'</span></div>');
+						}
+					},
+					dataType: 'html'
+				});
+				return false;
+			});
+
+			$('#id_enter').click( function(){
+				$('#id_div_enter').dialog({width:620, resizable: false});
+			});
+
+			$('#btn_get_password').click(function(){
+				$('#div_get_password').dialog({width: 400, resizable: false, modal: true});
+                $('#div_get_password').parent().attr('id', 'div_get_password_dialog_ui');
+				/*
+				if($('#div_get_password').css('display') == 'none'){
+					$('#div_get_password').fadeIn('500');
+					$('#error_password').css('display', 'none');
+					$('#super_password').css('display', 'none');
+				} else {
+					$('#div_get_password').fadeOut('500');
+					$('#error_password').css('display', 'none');
+					$('#super_password').css('display', 'none');
+				}
+				*/
+				return false;
+			});
+			/*
+			$('#id_close2').click(function(){
+				$('#div_get_password').fadeOut('500');
+				$('#super_password').css('display', 'none');
+				$('#error_password').css('display', 'none');
+			});
+			*/
+			
+			var id_btn_submit = $('#id_btn_submit');
+			var id_btn_ok = $('#id_btn_ok');
+			
+			$('#newpassword').submit(function(){
+				var form = $('#newpassword');
+				id_btn_submit.hide();
+				id_btn_ok.show();
+				$.ajax({
+					type: 'POST',
+					url: form.attr("action"),
+					data: form.serialize(),
+					success: function(answer){
+						if(answer === 'OK'){
+							//alert(answer);
+							$('#error_password').css('display', 'none');
+							$('#super_password').css('display', 'block');
+						} else {
+							//alert(answer);
+							$('#super_password').css('display', 'none');
+							$('#error_password').css('display', 'block');
+							$('#error_password').html(answer);
+						}
+					},
+					dataType: 'text'
+				});
+				return false;
+			});
+			
+			id_btn_ok.click(function(){
+				id_btn_submit.show();
+				id_btn_ok.hide();
+				$('#error_password').hide();
+				$('#super_password').hide();
+				$('#div_get_password').dialog("close");
+				return false;
+			});
+		});
+		/*
+	})(jQuery);*/
+    </script>
+
+
+<div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front ui-draggable" style="display: block; height: auto; width: 620px; top: 106px; left: 677px;" tabindex="-1" role="dialog" aria-describedby="id_div_enter" aria-labelledby="ui-id-1"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix ui-draggable-handle"><span id="ui-id-1" class="ui-dialog-title">Вхiд до системи</span><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close" role="button" title="Close"><span class="ui-button-icon-primary ui-icon ui-icon-closethick"></span><span class="ui-button-text">Close</span></button></div><div id="id_div_enter" style="display: block; width: auto; min-height: 38px; max-height: none; height: auto;" class="ui-dialog-content ui-widget-content">
+        <form id="id_frm_login" action="http://core-release-0.4.mocotms.com/login/ajax_enter.php" method="post">
+            <table>
+                <tbody><tr>
+                    <td colspan="2">Вітаємо Вас на порталі дистанційного навчання!<br><br>Тут Ви зможете багато чого дізнатися та багато чому навчитися, що допоможе Вам у роботі і підвищить професійні навички.<br><br></td>
+                </tr>
+                <tr>
+                    <td colspan="2">Cookies мають бути дозволенi у Вашому браузерi<br><br></td>
+                </tr>
+                <tr>
+                    <td colspan="2" id="error_msg"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><br><br><br></td>
+                </tr>
+                <tr>
+                    <td colspan="2" id="login_input">
+                        <table>
+                            <tbody><tr>
+                                <td id="username_label">Ваш логін (email)</td>
+                                <td id="username_input">
+                                     <input id="username" name="username" value="" type="text">
+                                </td>
+                            </tr>
+                            <tr><td colspan="2"></td></tr>
+                            <tr>
+                                <td id="password_label">Пароль</td>
+                                <td id="password_input">
+                                     <input id="password" name="password" value="" type="password">
+                                </td>
+                            </tr>
+                            <tr><td colspan="2"><br></td></tr>
+                        </tbody></table>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="submit_input" colspan="2">
+                        <input class="imgsolong" id="submit_frm" name="submit_frm" value="Увійти" type="submit">
+                        <br><br><br>
+                    </td>
+                </tr>
+                            </tbody></table>
+        </form>
+
+                
+            <table id="alternative_login">
+            <tbody><tr>
+                                  <td id="left_text_enter">
+                    На деякі курси передбачено<br> гостьовий доступ                    <br><br>
+                  </td>
+                				                                  <td id="registration_text_enter">
+                    Реєстрація нового користувача                    <br><br>
+                  </td>
+                            </tr>
+            <tr>
+                          <td id="guest_login">
+                <form id="guestlogin" method="post" action="http://core-release-0.4.mocotms.com/login/ajax_enter.php">
+                  <div class="guestform">
+                    <input value="guest" name="username" type="hidden">
+                    <input value="guest" name="password" type="hidden">
+                    <input value="1" name="testcookies" type="hidden">
+                    <input class="imgsolong" value="Вхід без логіна" type="submit">
+                  </div>
+                </form>
+              </td>
+            			  <td id="reg_form">
+				<form id="reg" method="post" action="http://core-release-0.4.mocotms.com/login/signup.php">
+				  <div class="regform">
+					<input value="1Ou9pwsuP5" name="SNnh5w92bG" type="hidden">
+					<input id="btn_registration" class="imgsolong" value="Зареєструватися" type="submit">
+				  </div>
+				</form>
+			  </td>
+			            </tr>
+        </tbody></table>
+    </div></div></body></html>
